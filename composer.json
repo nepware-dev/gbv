@@ -30,6 +30,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "brainmaestro/composer-git-hooks": "^2.6",
         "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
@@ -80,6 +81,11 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "hooks": {
+            "pre-commit": [
+                "./hooks/js-lint.sh"
+            ]
         }
     }
 }
