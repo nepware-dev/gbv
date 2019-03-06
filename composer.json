@@ -31,6 +31,7 @@
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": "^2.6",
+        "drupal/coder": "^8.3",
         "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
@@ -84,7 +85,9 @@
         },
         "hooks": {
             "pre-commit": [
-                "./hooks/js-lint.sh"
+                "echo pre",
+                "./hooks/js-lint.sh",
+                "./hooks/php-lint.sh"
             ]
         }
     }
