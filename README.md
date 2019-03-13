@@ -4,7 +4,7 @@
 ```
 cd project_dir
 composer install
-yarn install
+yarn
 ```
 # Usage
 ## Composer

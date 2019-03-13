@@ -29,7 +29,7 @@ done
 if [ "$FILES" != "" ]
 then
 	echo "Running Code Sniffer..."
-	./vendor/bin/phpcs --standard=PSR2 -n -p $FILES
+	./vendor/bin/phpcs --standard=Drupal -n -p $FILES
 	if [ $? != 0 ]
 	then
 		echo "Fix the error before commit."
