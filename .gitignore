@@ -18,5 +18,8 @@
 
 # Ignore .env files as they are personal
 /.env
-/node_modules
+node_modules/
 cghooks.lock
+
+.vscode/
+yarn-error.log
