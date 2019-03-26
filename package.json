@@ -1,4 +1,7 @@
 {
+  "name": "gbv",
+  "author": "Bansaj Pradhan",
+  "version": "0.0.1",
   "devDependencies": {
     "eslint": "^5.15.1"
   }
