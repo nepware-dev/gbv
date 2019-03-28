@@ -778,13 +778,3 @@ $settings['entity_update_batch_size'] = 50;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $config_directories['sync'] = '../config/sync';
-$databases['default']['default'] = array (
-  'database' => 'gbv_staging',
-  'username' => 'root',
-  'password' => 'root',
-  'prefix' => '',
-  'host' => '127.0.0.1',
-  'port' => '8889',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
