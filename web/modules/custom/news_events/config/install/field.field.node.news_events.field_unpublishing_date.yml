@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - news_events
+  config:
+    - field.storage.node.field_unpublishing_date
+    - node.type.news_events
+  module:
+    - datetime
+id: node.news_events.field_unpublishing_date
+field_name: field_unpublishing_date
+entity_type: node
+bundle: news_events
+label: 'Unpublishing date'
+description: 'Date to automatically unpublish.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

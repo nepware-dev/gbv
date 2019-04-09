@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - news_events
+name: 'News & Events'
+type: news_events
+description: 'Content type that can be used to add <em>News & Events</em> page.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

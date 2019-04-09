@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - news_events
+  config:
+    - field.field.node.news_events.body
+    - field.field.node.news_events.field_news_img
+    - field.field.node.news_events.field_unpublishing_date
+    - node.type.news_events
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.news_events.default
+targetEntityType: node
+bundle: news_events
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_unpublishing_date:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_news_img:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

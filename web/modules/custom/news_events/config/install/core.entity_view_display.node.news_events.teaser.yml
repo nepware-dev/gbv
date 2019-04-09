@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - news_events
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news_events.body
+    - node.type.news_events
+  module:
+    - text
+    - user
+id: node.news_events.teaser
+targetEntityType: node
+bundle: news_events
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
