@@ -3,16 +3,16 @@ status: true
 dependencies:
   enforced:
     module:
-    - news_events
+    - gbv_news
   config:
     - field.storage.node.field_news_img
-    - node.type.news_events
+    - node.type.gbv_news
   module:
     - image
-id: node.news_events.field_news_img
+id: node.gbv_news.field_news_img
 field_name: field_news_img
 entity_type: node
-bundle: news_events
+bundle: gbv_news
 label: 'Image'
 description: ''
 required: false

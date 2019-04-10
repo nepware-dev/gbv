@@ -3,16 +3,16 @@ status: true
 dependencies:
   enforced:
     module:
-    - news_events
+    - gbv_news
   config:
     - field.storage.node.body
-    - node.type.news_events
+    - node.type.gbv_news
   module:
     - text
-id: node.news_events.body
+id: node.gbv_news.body
 field_name: body
 entity_type: node
-bundle: news_events
+bundle: gbv_news
 label: Description
 description: 'Details about the news and events.'
 required: false

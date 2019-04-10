@@ -1,6 +1,0 @@
-name: News & Events Detail
-type: module
-description: 'Adds Custom "News & Events" content type.'
-core: 8.x
-dependencies:
-  - node

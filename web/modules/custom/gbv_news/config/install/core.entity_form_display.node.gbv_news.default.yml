@@ -3,21 +3,21 @@ status: true
 dependencies:
   enforced:
     module:
-    - news_events
+    - gbv_news
   config:
-    - field.field.node.news_events.body
-    - field.field.node.news_events.field_unpublishing_date
-    - field.field.node.news_events.field_news_img
+    - field.field.node.gbv_news.body
+    - field.field.node.gbv_news.field_unpublishing_date
+    - field.field.node.gbv_news.field_news_img
     - image.style.thumbnail
-    - node.type.news_events
+    - node.type.gbv_news
   module:
     - datetime
     - image
     - path
     - text
-id: node.news_events.default
+id: node.gbv_news.default
 targetEntityType: node
-bundle: news_events
+bundle: gbv_news
 mode: default
 content:
   body:

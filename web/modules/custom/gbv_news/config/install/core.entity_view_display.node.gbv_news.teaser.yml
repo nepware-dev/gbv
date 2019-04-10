@@ -3,17 +3,17 @@ status: true
 dependencies:
   enforced:
     module:
-    - news_events
+    - gbv_news
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.news_events.body
-    - node.type.news_events
+    - field.field.node.gbv_news.body
+    - node.type.gbv_news
   module:
     - text
     - user
-id: node.news_events.teaser
+id: node.gbv_news.teaser
 targetEntityType: node
-bundle: news_events
+bundle: gbv_news
 mode: teaser
 content:
   body:
