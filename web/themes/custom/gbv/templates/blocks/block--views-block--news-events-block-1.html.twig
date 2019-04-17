@@ -1,0 +1,43 @@
+
+{%
+  set classes = [
+    'block',
+    'news-block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+     {{ content }}
+    </div>
+  {% endblock %}
+</div>
+
+{# <div class="news-events-block">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="events">
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="news">
+          <div class="row">
+            <div class="col-3">
+              <div class="news-single">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> #}

@@ -1,10 +1,11 @@
 /* VARIABLES */
 
 // colors
-$primary-shade: #A8CF45;
+$primary-shade: #ffff;
 $primary-light: lighten($primary-shade, 37%);
 $primary-dark: darken($primary-shade, 12%);
-$accent-shade: #0079C0;
+$secondary-shade: #F3F3F3;
+$accent-shade: #4a4a4a;
 $accent-light: lighten($accent-shade, 37%);
 $accent-dark: darken($accent-shade, 12%);
 // Reassign color vars to semantic color scheme
