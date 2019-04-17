@@ -24,8 +24,14 @@
       default_row_class ? 'views-row',
     ]
   %}
-  <div{{ row.attributes.addClass(row_classes) }}>
-    {{ row.content }}
+  {{ kint(row.content['#row']._entity.type) }}
+  {% if row.content['#row']._entity.type =='article' %}
+  article
+  {% elseif row.content['#row']._entity.type =='events' %}
+  events
+  {% endif %}
+  {# <div{{ row.attributes.addClass(row_classes) }}>
+    {{ kint(row.content['#row']) }}
     {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ body }}'] }}
-  </div>
+  </div> #}
 {% endfor %}
