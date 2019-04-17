@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(git rev-parse --show-toplevel)"
-ESLINT="node_modules/.bin/eslint"
+ESLINT="web/core/node_modules/.bin/eslint"
 pwd
 
 if [[ ! -x "$ESLINT" ]]; then
