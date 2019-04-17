@@ -18,16 +18,15 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-{% for row in rows %}
+{% for row in rows|slice(0,2) %}
   {%
     set row_classes = [
       default_row_class ? 'views-row',
     ]
   %}
-  {{ kint(row.content['#row']._entity.type) }}
-  {% if row.content['#row']._entity.type =='article' %}
+  {% if row.content['#row']._entity.type[0].target_id == 'article' %}
   article
-  {% elseif row.content['#row']._entity.type =='events' %}
+  {% elseif row.content['#row']._entity.type[0].target_id == 'events' %}
   events
   {% endif %}
   {# <div{{ row.attributes.addClass(row_classes) }}>
