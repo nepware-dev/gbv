@@ -29,7 +29,7 @@
     {% if entity.type[0].target_id == 'events' %}
     <div class="col-3 events">
         <div class="event-single">
-            <h3 class="event-date">{{entity.field_date[0].value}} - {{entity.field_date[1].value}} </h3>
+            <h3 class="event-date">{{entity.field_date[0].value|date('n M, Y')}} - {{entity.field_date[1].value|date('n M, Y')}} </h3>
             <h1 class="event-title">{{entity.title[0].value}}</h1>
             {# <img src="{{file_url(entity.field_image.entity.uri.value)}}" class="events-image" /> #}
             <h5 class="event-body">{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ body }}'] }}</h5>
