@@ -1,0 +1,85 @@
+.news-block{
+    background-color: #fcfcfc;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    h2{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+}
+.events{
+    background-color: $secondary-shade;
+    padding: 75px 50px;
+    .event-single{
+        background-color: $white;
+        padding: 30px 50px 50px;
+        border: 1px solid $gray-800;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        .event-date{
+            color: $gray-800;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .event-title{
+            color: $gray-800;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .events-image{
+            width: 120px;
+        }
+        .event-body{
+            color: $gray-800;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+    }
+}
+
+
+    .news-single{
+        background-color: $white;
+        padding: 30px 20px 50px;
+        border: 1px solid $gray-800;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        .news-date{
+            color: $gray-800;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .news-title{
+            color: $gray-800;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .news-image{
+            width: 120px;
+        }
+        .news-body{
+            color: $gray-800;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+    }
+
+    .see-more-btn{
+        background-color: transparent;
+        border: 1px solid $gray-800;
+        padding: 10px 40px;
+        color: $gray-800; 
+    }

@@ -3,6 +3,27 @@
 .bg-secondary{
     background-color: $secondary-shade !important;
     height: 80px;
+    .header-mailing{
+        .newsletter-block{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .subscribe-text{
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        #mc_embed_signup form{
+            padding: 0;
+            .email-input{
+                padding: 10px;
+            }
+            .btn-signup{
+                padding: 10px;
+            }
+        }
+    }
 }
 .bg-primary{
     background-color: $primary-shade !important;
@@ -11,6 +32,9 @@
     box-shadow: 0px 3px 5px -6px rgba(0,0,0,0.75);
     .navbar-collapse{
         justify-content: flex-end;
+    }
+    .navbar-nav{
+        align-items: center;
     }
     .nav-item{
         margin-right: 10px;
@@ -23,5 +47,25 @@
                 color: $gray-800
             }
         }
+        &:last-child{
+            background-color: $red;
+            padding: 14px;
+            .nav-link{
+                color: #fff !important;
+                font-weight: bold !important;
+            }
+        }
+        
+        
+    }
+    .navbar-brand{
+        background-color: #ffffff;
+        margin-top: -75px;
+        margin-left: 50px;
+        img{
+            width: 200px;
+        }
     }
 }
+
+

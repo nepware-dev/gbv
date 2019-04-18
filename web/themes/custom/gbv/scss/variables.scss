@@ -2,14 +2,15 @@
 
 // colors
 $primary-shade: #ffff;
-$primary-light: lighten($primary-shade, 37%);
-$primary-dark: darken($primary-shade, 12%);
-$secondary-shade: #F3F3F3;
+$secondary-shade: #FCFCFC;
+$primary-light: lighten($secondary-shade, 37%);
+$primary-dark: #E7E7E7;
 $accent-shade: #4a4a4a;
 $accent-light: lighten($accent-shade, 37%);
 $accent-dark: darken($accent-shade, 12%);
 // Reassign color vars to semantic color scheme
-$red: #dc3545;
+$white: #ffffff;
+$red: #FF6666;
 $yellow: #ffc107;
 $green: #28a745;
 $cyan: #17a2b8;
