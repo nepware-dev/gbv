@@ -11,12 +11,12 @@
         flex-direction: column;
         padding-left: 100px;
         .hero-title{
-            margin-top: 200px;
+            margin-top: 25%;
             width: 70%;
-            font-size: 42px;
+            font-size: $hero-font-size;
         }
         .read-more-btn{
-            margin-top: 100px;
+            margin-top: 75px;
             .btn-read-more{
                 background-color: transparent;
                 color: $gray-800;

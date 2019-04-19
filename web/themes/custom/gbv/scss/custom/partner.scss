@@ -2,7 +2,8 @@
     margin-bottom: 20px;
     h2{
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: $title-margin-bottom;
+        font-size: $title-font-size;
     }
     .partner-inner-block{
         background-color: $secondary-shade;
@@ -27,7 +28,7 @@
         align-items: center;
         justify-content: center;
         .tab-text{
-            font-size: 24px;
+            font-size: $tab-font-size;
         }
     }
     .divider{

@@ -1,6 +1,7 @@
 {%
   set classes = [
     'block',
+    'rega-team-block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
   ]
@@ -13,7 +14,9 @@
   {{ title_suffix }}
   {% block content %}
     <div{{ content_attributes.addClass('content') }}>
-     {{content}}
+      <div class="container">
+        {{content}}
+      </div>
     </div>
   {% endblock %}
 </div>
