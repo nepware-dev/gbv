@@ -1,16 +1,19 @@
 .news-block{
     background-color: #fcfcfc;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 2em;
+    padding-bottom: 2em;
     h2{
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: $title-margin-bottom;
+        font-size: $title-font-size;
     }
     
 }
 .events{
     background-color: $secondary-shade;
-    padding: 75px 50px;
+    padding: 140px 50px;
+    margin-top: -135px;
+    margin-bottom: -30px;
     .event-single{
         background-color: $white;
         padding: 30px 50px 50px;
@@ -18,16 +21,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        // width: 350px;
         .event-date{
             color: $gray-800;
-            font-size: 18px;
+            font-size: $date-font-size;
             text-align: center;
             margin-bottom: 50px;
         }
         .event-title{
             color: $gray-800;
-            font-size: 24px;
+            font-size: $news-title-font-size;
             font-weight: bold;
             text-align: center;
         }
@@ -36,7 +38,7 @@
         }
         .event-body{
             color: $gray-800;
-            font-size: 18px;
+            font-size: $news-body-font-size;
             text-align: center;
             margin-top: 30px;
             font-weight: 500;
@@ -52,16 +54,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        // width: 350px;
         .news-date{
             color: $gray-800;
-            font-size: 18px;
+            font-size: $date-font-size;
             text-align: center;
             margin-bottom: 50px;
         }
         .news-title{
             color: $gray-800;
-            font-size: 24px;
+            font-size: $news-title-font-size;
             font-weight: bold;
             text-align: center;
         }
@@ -70,7 +71,7 @@
         }
         .news-body{
             color: $gray-800;
-            font-size: 18px;
+            font-size: $news-body-font-size;
             text-align: center;
             margin-top: 30px;
             font-weight: 500;

@@ -19,7 +19,7 @@
         margin-bottom: 30px;
         font-family: $font-family-base;
         text-transform: uppercase;
-        font-size: 24px;
+        font-size: $footer-title-font-size;
     }
     .social-media-links--platforms{
         display: flex;
@@ -42,6 +42,9 @@
         .btn-signup{
             padding: 10px;
         }
+    }
+    a{
+        color: $white;
     }
 }
 

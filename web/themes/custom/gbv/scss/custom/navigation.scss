@@ -1,16 +1,19 @@
 
-
+.navbar{
+    padding: 0;
+}
 .bg-secondary{
     background-color: $secondary-shade !important;
     height: 80px;
     .header-mailing{
+        margin-right: 50px;
         .newsletter-block{
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .subscribe-text{
-            font-size: 24px;
+            font-size: $subscribe-font-size;
             font-weight: bold;
             margin-right: 10px;
         }
@@ -27,37 +30,46 @@
 }
 .bg-primary{
     background-color: $primary-shade !important;
-    padding-top: 20px;
-    padding-bottom: 80px;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    // padding-top: 20px;
+    // padding-bottom: 80px;
     box-shadow: 0px 3px 5px -6px rgba(0,0,0,0.75);
     .navbar-collapse{
         justify-content: flex-end;
     }
     .navbar-nav{
         align-items: center;
-    }
-    .nav-item{
-        margin-right: 10px;
-        .nav-link{
-            color: $gray-800;
-            font-size: 24px;
-            text-transform: uppercase;
-            font-weight: 500;
-            &:hover{
-                color: $gray-800
-            }
-        }
-        &:last-child{
-            background-color: $red;
-            padding: 14px;
+        margin-right: 50px;
+        .nav-item{
+            margin-right: 10px;
             .nav-link{
-                color: #fff !important;
-                font-weight: bold !important;
+                color: $gray-800;
+                font-size: $menu-font-size;
+                text-transform: uppercase;
+                font-weight: 500;
+                &:hover{
+                    color: $gray-800
+                }
+                &:focus{
+                    color: $gray-800
+                }
+            }
+            &:last-child{
+                background-color: $red;
+                padding: 14px;
+                .nav-link{
+                    color: #fff !important;
+                    font-weight: bold !important;
+                }
             }
         }
-        
-        
+        .nav-item .active{
+            color: $gray-800 !important;
+            border-bottom: 2px solid $primary-dark;
+        }
     }
+    
     .navbar-brand{
         background-color: #ffffff;
         margin-top: -75px;

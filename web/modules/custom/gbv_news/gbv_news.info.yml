@@ -1,8 +1,0 @@
-name: News Detail
-type: module
-description: 'Adds Custom "News" content type.'
-core: 8.x
-dependencies:
-  - node
-
-  

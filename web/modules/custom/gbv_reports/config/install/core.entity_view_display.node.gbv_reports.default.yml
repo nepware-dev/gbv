@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_reports
+  config:
+    - field.field.node.gbv_reports.field_report_body
+    - field.field.node.gbv_reports.field_report_image
+    - field.field.node.gbv_reports.field_report_date
+    - node.type.gbv_reports
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.gbv_reports.default
+targetEntityType: node
+bundle: gbv_reports
+mode: default
+content:
+  field_report_body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_report_date:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_report_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

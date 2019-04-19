@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% for row in rows %}
+    {% set entity = row.content['#row']._entity %}
+    {%
+        set row_classes = [
+        default_row_class ? 'views-row',
+        ]
+    %}
+    {% if entity.type[0].target_id == 'gbv_events' %}
+    <div class="col-3 events">
+        <div class="event-single">
+            <h3 class="event-date">{{entity.field_event_date[0].value|date('d M, Y')}} - {{entity.field_event_date[0].end_value|date('d M, Y')}} </h3>
+            <h1 class="event-title">{{entity.title[0].value}}</h1>
+            {# <img src="{{file_url(entity.field_image.entity.uri.value)}}" class="events-image" /> #}
+            <h5 class="event-body">{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_body }}'] }}</h5>
+        </div>
+    </div>
+    <div class="offset-md-1"></div>
+    {% elseif entity.type[0].target_id == 'gbv_reports' %}
+    <div class="col-2dot4">
+        <div class="news-single">
+            {# <h3 class="news-date">{{entity.field_date[0].value}}</h3> #}
+            <h1 class="news-title">{{entity.title[0].value}}</h1>
+            {# <img src="{{file_url(entity.field_image.entity.uri.value)}}" class="news-image" /> #}
+            <h5 class="news-body">{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_report_body }}'] }}</h5>
+        </div>
+    </div>
+    {# <div class="col-1">
+        <a href="" class="see-more-btn">SEE MORE</a>
+    </div> #}
+    {% endif %}
+    
+  
+  {# <div{{ row.attributes.addClass(row_classes) }}>
+    {{ kint(row.content['#row']) }}
+    {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ body }}'] }}
+  </div> #}
+{% endfor %}

@@ -1,0 +1,24 @@
+langcode: en
+status: false
+dependencies:
+  enforced:
+    module:
+      - gbv_map
+  config:
+    - field.storage.node.field_map_body
+    - node.type.gbv_map
+  module:
+    - text
+id: node.gbv_map.field_map_body
+field_name: field_map_body
+entity_type: node
+bundle: gbv_map
+label: 'Map Description'
+description: 'More specific information about the map layers.'
+required: true
+translatable: true
+default_value: ''
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

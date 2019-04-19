@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - gbv_map
+    config:
+        - core.entity_view_mode.node.teaser
+        - field.field.node.gbv_map.field_countries
+        - field.field.node.gbv_map.field_map_body
+        - node.type.gbv_map
+    module:
+        - text
+        - user
+id: node.gbv_map.teaser
+targetEntityType: node
+bundle: gbv_map
+mode: teaser
+content:
+    field_map_body:
+        label: hidden
+        type: text_summary_or_trimmed
+        weight: 101
+        settings:
+            trim_length: 600
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

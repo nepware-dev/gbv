@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_documents
+  config:
+    - field.field.node.gbv_documents.field_document_body
+    - field.field.node.gbv_documents.field_document_file
+    - node.type.gbv_documents
+  module:
+    - file
+    - text
+    - user
+id: node.gbv_documents.default
+targetEntityType: node
+bundle: gbv_documents
+mode: default
+content:
+  field_document_body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_document_file:
+    weight: 102
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

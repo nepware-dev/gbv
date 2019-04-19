@@ -1,21 +1,28 @@
 .keydocument-container{
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 5em;
+    padding-right: 5em;
 }
 .keydocument-block{
-    margin-top: 120px;
-    margin-bottom: 120px;
+    margin-top: 5em;
+    margin-bottom: 5em;
     h2{
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: $title-margin-bottom;
+        font-size: $title-font-size;
     }
 }
 .document-header{
     background-color: $primary-dark;
     padding: 10px;
+    display: flex;
     .document-title{
         text-align: center;
         font-weight: bold;
+        font-size: $document-title-font-size;
+        flex: 9.9;
+    }
+    a{
+        flex: 0.1;
     }
     
     
@@ -24,5 +31,5 @@
     text-align: center;
     margin-top: 20px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: $document-body-font-size;
 }

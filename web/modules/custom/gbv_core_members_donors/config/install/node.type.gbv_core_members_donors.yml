@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_core_members_donors
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Core Members & Donors
+type: gbv_core_members_donors
+description: 'Core Members & Donors'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

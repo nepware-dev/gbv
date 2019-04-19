@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_reports
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gbv_reports.field_report_body
+    - node.type.gbv_reports
+  module:
+    - text
+    - user
+id: node.gbv_reports.teaser
+targetEntityType: node
+bundle: gbv_reports
+mode: teaser
+content:
+  field_report_body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

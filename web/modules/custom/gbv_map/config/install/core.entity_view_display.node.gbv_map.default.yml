@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - gbv_map
+  config:
+    - field.field.node.gbv_map.field_map_body
+    - field.field.node.gbv_map.field_countries
+    - node.type.gbv_map
+  module:
+    - options
+    - text
+    - user
+id: node.gbv_map.default
+targetEntityType: node
+bundle: gbv_map
+mode: default
+content:
+  field_map_body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_countries:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

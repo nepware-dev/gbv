@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_events
+  config:
+    - field.storage.node.field_event_date
+    - node.type.gbv_events
+  module:
+    - datetime_range
+id: node.gbv_events.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: gbv_events
+label: Event Date
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

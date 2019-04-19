@@ -1,0 +1,6 @@
+name: GBV Documents
+type: module
+description: 'Adds Custom "Document" content type for adding key document'
+core: 8.x
+dependencies:
+  - node
