@@ -56,9 +56,10 @@ $font-size-h6: 1em;
 
 $menu-font-size: 1.25em;
 $hero-font-size: 2.5em;
-$summary-font-size: 1.75em;
+$summary-font-size: 1.5em;
+$sub-heading-font-size: 1.25em;
 $title-font-size: 2em;
-$news-title-font-size: 1.5em;
+$news-title-font-size: 1.25em;
 $date-font-size: 1.2em;
 $news-body-font-size: 1.2em;
 $document-title-font-size: 1.25em;
@@ -68,4 +69,32 @@ $footer-title-font-size: 1.5em;
 $subscribe-font-size: 1.2em;
 
 $title-margin-bottom: 2em;
+
+
+
+@media screen and (min-width: 320px) {
+	html {
+	  	font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+	}
+  }
+  @media screen and (min-width: 1024px) {
+	html {
+		font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1024 - 320)));
+	}
+  }
+  @media screen and (min-width: 2560px) {
+	html {
+		font-size: calc(14px + (16 - 14) * ((100vw - 1024px) / (2560 - 1024)));
+	}
+  }
+  @media screen and (min-width: 2880px) {
+	html {
+		font-size: calc(16px + (18 - 16) * ((100vw - 2560px) / (2880 - 2560)));
+	}
+  }
+  @media screen and (min-width: 3840px) {
+	html {
+		font-size: calc(18px + (22 - 18) * ((100vw - 2880px) / (3840 - 2880)));
+	}
+  }
 
