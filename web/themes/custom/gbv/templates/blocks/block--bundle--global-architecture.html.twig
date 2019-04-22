@@ -1,10 +1,15 @@
 {%
   set classes = [
     'block',
-    'coordination-team-block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'global-architecture-section'
   ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
 %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
@@ -13,10 +18,12 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
-      <div class="container">
-        {{content}}
-      </div>
+    <div{{ content_attributes.addClass(contentClasses) }}>
+        <div class="container">
+            {{content.body}}
+        </div>
     </div>
   {% endblock %}
 </div>
+
+

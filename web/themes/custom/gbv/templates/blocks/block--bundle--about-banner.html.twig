@@ -1,10 +1,14 @@
 {%
   set classes = [
     'block',
-    'coordination-team-block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
   ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
 %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
@@ -13,10 +17,12 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
-      <div class="container">
-        {{content}}
-      </div>
+    <div{{ content_attributes.addClass(contentClasses) }}>
+        <div class="about-banner">
+            <img src="{{file_url(content.field_about_banner_image['#items'].entity.uri.value)}}" class="hero-about-image">
+        </div>
     </div>
   {% endblock %}
 </div>
+
+

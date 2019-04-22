@@ -1,0 +1,16 @@
+.global-architecture-section{
+    background-color: $secondary-shade;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+    h2{
+        text-align: center;
+        font-size: $title-font-size;
+        margin-bottom: $title-margin-bottom;
+        font-weight: bold;
+    }
+    p{
+        font-size: $sub-heading-font-size;
+        text-align: center;
+    }
+}
