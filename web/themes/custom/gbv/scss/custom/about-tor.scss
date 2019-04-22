@@ -1,0 +1,14 @@
+.about-tor-section{
+    background-color: $secondary-shade;
+    .tor-sidebar{
+        background-color: $accent-shade;
+        padding: 50px;
+        color: $white;
+        font-size: $sub-heading-font-size;
+        font-weight: bold;
+    }
+    .tor-content{
+        padding:50px;
+        font-size: $sub-heading-font-size;
+    }
+}
