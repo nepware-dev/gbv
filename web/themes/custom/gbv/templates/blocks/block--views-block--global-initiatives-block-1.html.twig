@@ -1,12 +1,12 @@
 {%
   set classes = [
     'block',
-    'coordination-team-block',
+    'global-initiatives-block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<div{{ attributes.addClass(classes) }} id="coordination-team" data-title="GBV AoR Coordination Team">
+<div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>

@@ -27,18 +27,13 @@
         ]
     %}
     <div class="col-4">
-    <div class="team-single">
-        <img src="{{file_url(entity.field_image.entity.uri.value)}}" class="team-image"/>
-        <div class="team-content-wrapper">
-            <h3 class="team-region">{{entity.field_short_description[0].value}}</h3>
-            <h4 class="team-title">{{entity.title[0].value}} </h4>
-            <h5 class="team-email">{{entity.field_email[0].value}}</h5>
+        <div class="team-single">
+            <img src="{{file_url(entity.field_image.entity.uri.value)}}" class="team-image"/>
+            <div class="team-content-wrapper">
+                <h3 class="team-region">{{entity.field_short_description[0].value}}</h3>
+                <h4 class="team-title">{{entity.title[0].value}} </h4>
+                <h5 class="team-email">{{entity.field_email[0].value}}</h5>
+            </div>
         </div>
     </div>
-    </div>
-    
-    
-    
-    
-      {# <a target="_blank" href="{{entity.field_partner_url[0].uri}}"> <img src="{{file_url(entity.field_partner_image.entity.uri.value)}}"/> </a> #}
 {% endfor %}

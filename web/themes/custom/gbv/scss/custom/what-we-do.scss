@@ -1,0 +1,15 @@
+.what-we-do{
+    background-color: $secondary-shade;
+    padding: 50px 100px;
+    margin-top: -300px;
+    h2{
+        text-align: center;
+        font-weight: bold;
+        font-size: $title-font-size;
+        margin-bottom: $title-margin-bottom;
+    }
+    p{
+        font-size: $summary-font-size;
+        
+    }
+}

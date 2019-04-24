@@ -3,7 +3,6 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'global-architecture-section'
   ]
 %}
 {%
@@ -11,7 +10,7 @@
         'content'
     ]
 %}
-<div{{ attributes.addClass(classes) }} id="gpc-architecture" data-title="GPC ARCHITECTURE">
+<div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -19,8 +18,12 @@
   {{ title_suffix }}
   {% block content %}
     <div{{ content_attributes.addClass(contentClasses) }}>
-        <div class="container">
-            {{content.body}}
+        <div class="what-we-do-contact-section">
+            <div class="inner-content">
+                <div class="container">
+                    {{content.body}}
+                </div>
+            </div>
         </div>
     </div>
   {% endblock %}

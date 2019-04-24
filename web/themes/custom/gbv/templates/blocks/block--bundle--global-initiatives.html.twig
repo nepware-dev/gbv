@@ -1,0 +1,37 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'global-initiatives-section'
+  ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass(contentClasses) }}>
+        <div class="container">
+            <div class="row">
+                <div class="col-9 content">
+                    <h3> {{content.field_global_initiatives_heading}} </h3>
+                    {{content.body}}
+                </div>
+                <div class="col-3 image">
+                    <img src="{{file_url(content.field_global_initiatives_image['#items'].entity.uri.value)}}" class="global-initiatives-img img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endblock %}
+</div>
+
+

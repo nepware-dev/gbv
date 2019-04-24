@@ -26,14 +26,13 @@
         default_row_class ? 'views-row',
         ]
     %}
-    <div class="col-3">
-        <div class="document-header">
-            <h4 class="document-title">{{entity.title[0].value}}</h4>
-            <a href="{{file_url(entity.field_file.entity.uri.value)}}" download><i class="fa fa-arrow-down"></i></a>
+    <div class="col-4">
+        <div class="group-single">
+            <h4 class="title">{{entity.field_reference_group_heading[0].value}}</h4>
+            {{entity.body[0].value|raw}}
+            <a href="{{file_url(entity.field__reference_group_file.entity.uri.value)}}" download><span class="download-btn">CLICK TO DOWNLOAD TOR  <i class="fa fa-download"></i> </span>   </a>
         </div>
-        <div class="document-body">
-           {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ body }}'] }}
-        </div>
+        
     </div>
     
     
