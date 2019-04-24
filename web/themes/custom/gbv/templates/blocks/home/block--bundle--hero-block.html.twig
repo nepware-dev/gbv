@@ -1,0 +1,36 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass(contentClasses) }}>
+        <div class="hero-banner">
+            <div class="row">
+                <div class="col-6">
+                    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" class="hero-image img-responsive">
+                </div>
+            <div class="col-6 hero-content">
+                <h2 class="hero-title">{{content.body}}</h2>
+                <div class="read-more-btn"><a href="{{ content.field_button[0]['#url'] }}" class="btn btn-read-more">{{ content.field_button[0]['#title'] }}</a></div>
+            </div>
+            </div>
+        </div>
+    </div>
+  {% endblock %}
+</div>
+
+

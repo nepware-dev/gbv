@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_documents
+  config:
+    - field.storage.node.field_document_file
+    - node.type.gbv_documents
+  module:
+    - file
+id: node.gbv_documents.field_document_file
+field_name: field_document_file
+entity_type: node
+bundle: gbv_documents
+label: File
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

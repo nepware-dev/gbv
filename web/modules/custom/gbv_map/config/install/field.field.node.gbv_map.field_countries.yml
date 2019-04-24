@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - gbv_map
+  config:
+    - field.storage.node.field_countries
+    - node.type.gbv_map
+  module:
+    - options
+id: node.gbv_map.field_countries
+field_name: field_countries
+entity_type: node
+bundle: gbv_map
+label: 'Countries'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

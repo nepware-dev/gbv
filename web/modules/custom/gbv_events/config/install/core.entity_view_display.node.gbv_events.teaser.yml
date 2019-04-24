@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_events
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gbv_events.field_event_body
+    - node.type.gbv_events
+  module:
+    - text
+    - user
+id: node.gbv_events.teaser
+targetEntityType: node
+bundle: gbv_events
+mode: teaser
+content:
+  field_event_body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

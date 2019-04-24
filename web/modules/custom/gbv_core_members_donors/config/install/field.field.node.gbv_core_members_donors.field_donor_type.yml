@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_core_members_donors
+  config:
+    - field.storage.node.field_donor_type
+    - node.type.gbv_core_members_donors
+  module:
+    - options
+id: node.gbv_core_members_donors.field_donor_type
+field_name: field_donor_type
+entity_type: node
+bundle: gbv_core_members_donors
+label: 'Select Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

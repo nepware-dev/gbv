@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_reports
+  config:
+    - field.storage.node.field_report_date
+    - node.type.gbv_reports
+  module:
+    - datetime
+id: node.gbv_reports.field_report_date
+field_name: field_report_date
+entity_type: node
+bundle: gbv_reports
+label: 'Unpublishing date'
+description: 'Date to automatically unpublish.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -32,6 +32,7 @@ regions:
   footer_third: 'Footer third'
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
+  footer_sixth: 'Footer sixth'
 
 version: '8.x-1.9'
 core: '8.x'

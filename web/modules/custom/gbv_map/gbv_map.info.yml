@@ -1,0 +1,7 @@
+name: Mapbox module for GBV Website
+type: module
+description: 'Adds Mapbox module, block & Map Detail Content type'
+core: 8.x
+dependencies:
+  - node
+  - block

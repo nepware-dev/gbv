@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_core_members_donors
+  config:
+    - field.storage.node.field_donor_url
+    - node.type.gbv_core_members_donors
+  module:
+    - link
+id: node.gbv_core_members_donors.field_donor_url
+field_name: field_donor_url
+entity_type: node
+bundle: gbv_core_members_donors
+label: 'Website URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

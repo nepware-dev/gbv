@@ -1,0 +1,50 @@
+.site-footer__top {
+    justify-content: center;
+}
+
+.site-footer__bottom {
+    display: flex;
+    justify-content: center;
+}
+.region-footer-third, .region-footer-sixth {
+    display: flex;
+    justify-content: center;
+}
+.site-footer{
+    background-color: $accent-shade !important;
+    padding: 50px 30px;
+    color: $gray-100;
+    h2{
+        color: $gray-100;
+        margin-bottom: 30px;
+        font-family: $font-family-base;
+        text-transform: uppercase;
+        font-size: $footer-title-font-size;
+    }
+    .social-media-links--platforms{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            margin-right: 10px;
+        }
+        .fa{
+            color: $gray-100;
+            font-size: 42px;
+        }
+    }
+    #mc_embed_signup form{
+        padding: 0 !important;
+        margin-top: 30px;
+        .email-input{
+            padding: 10px;
+        }
+        .btn-signup{
+            padding: 10px;
+        }
+    }
+    a{
+        color: $white;
+    }
+}
+

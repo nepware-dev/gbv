@@ -1,0 +1,6 @@
+name: Core Members & Donors
+type: module
+description: 'Adds Custom "CORE MEMBERS AND DONORS" content type.'
+core: 8.x
+dependencies:
+  - node
