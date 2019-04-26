@@ -1,0 +1,49 @@
+.events-block{
+    background-color: $secondary-shade;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    h2{
+        text-align: center;
+        margin-bottom: $title-margin-bottom;
+        font-size: $title-font-size;
+        font-weight: bold;
+    }
+    .event-single{
+        background-color: $white;
+        padding: 30px 15px;
+        border: 1px solid $gray-800;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .event-date{
+            color: $gray-800;
+            font-size: $date-font-size;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .event-title{
+            color: $gray-800;
+            font-size: $news-title-font-size;
+            font-weight: bold;
+            text-align: center;
+        }
+        .events-image{
+            width: 120px;
+        }
+        .event-body{
+            color: $gray-800;
+            font-size: $news-body-font-size;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        .learn-more{
+            color: $gray-800;
+            font-size: $news-body-font-size;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    }
+    
+}

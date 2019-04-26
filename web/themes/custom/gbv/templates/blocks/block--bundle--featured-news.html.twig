@@ -1,0 +1,30 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'featured-news',
+    'container',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content',
+        'featured-news-inner'
+    ]
+%}
+<div{{ attributes.addClass(classes) }} id="who-we-are" data-title="Who We Are">
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass(contentClasses) }}>
+        <span class="date"> {{content.field_featured_news_date}} </span>
+        <h4 class="title">{{content.field_featured_news_heading}}</h4>
+        <span class="body">{{content.body}}</span>
+        <a href="" class="more-btn">READ MORE</a>
+    </div>
+  {% endblock %}
+</div>
