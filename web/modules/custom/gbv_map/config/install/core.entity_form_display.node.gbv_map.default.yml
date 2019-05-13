@@ -7,10 +7,12 @@ dependencies:
   config:
     - field.field.node.gbv_map.field_map_body
     - field.field.node.gbv_map.field_countries
+    - field.field.node.gbv_map.field_country_url
     - node.type.gbv_map
   module:
     - path
     - text
+    - link
 id: node.gbv_map.default
 targetEntityType: node
 bundle: gbv_map
@@ -36,6 +38,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_country_url:
+    weight: 123
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   path:
     type: path

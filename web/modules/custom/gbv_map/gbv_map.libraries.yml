@@ -1,0 +1,23 @@
+mapboxgl:
+  version: 0.53.1
+  css:
+    layout:
+      https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css: { type: external }
+  js:
+    https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js: { type: external }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.ajax
+
+gbvmap:
+  version: 1.x
+  js:
+    assets/js/module.js: {}
+  css:
+    theme:
+      assets/css/module.css: {}
+  dependencies:
+    - gbv_map/mapbox

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_map
+  config:
+    - field.storage.node.field_country_url
+    - node.type.gbv_map
+  module:
+    - link
+id: node.gbv_map.field_country_url
+field_name: field_country_url
+entity_type: node
+bundle: gbv_map
+label: 'Country Page URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link
