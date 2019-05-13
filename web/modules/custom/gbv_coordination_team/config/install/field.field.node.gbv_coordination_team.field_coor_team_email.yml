@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_coordination_team
+  config:
+    - field.storage.node.field_coor_team_email
+    - node.type.gbv_coordination_team
+id: node.gbv_coordination_team.field_coor_team_email
+field_name: field_coor_team_email
+entity_type: node
+bundle: gbv_coordination_team
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

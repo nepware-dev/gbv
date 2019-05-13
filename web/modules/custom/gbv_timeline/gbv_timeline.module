@@ -1,0 +1,8 @@
+<?php
+ function gbv_timeline_theme() {
+  return [
+    'gbv_timeline-timeline' => [
+      'variables' => ['var1' => 'test'],
+    ],
+  ];
+}

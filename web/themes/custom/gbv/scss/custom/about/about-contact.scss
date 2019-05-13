@@ -1,0 +1,18 @@
+.about-contact-section{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .inner-content{
+        background-color: $secondary-shade;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        p{
+            color: $gray-800;
+            font-size: $sub-heading-font-size;
+            margin: 0;
+            text-align: center;
+        }
+        a{
+            font-weight: bold;
+        }
+    }
+}

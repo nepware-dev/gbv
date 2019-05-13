@@ -1,0 +1,26 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'who-are-we',
+    'container',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content',
+    ]
+%}
+<div{{ attributes.addClass(classes) }} id="who-we-are" data-title="Who We Are">
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass(contentClasses) }}>
+      {{ content }}
+    </div>
+  {% endblock %}
+</div>

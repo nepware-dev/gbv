@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_coordination_team
+  config:
+    - field.storage.node.field_coor_team_position
+    - node.type.gbv_coordination_team
+id: node.gbv_coordination_team.field_coor_team_position
+field_name: field_coor_team_position
+entity_type: node
+bundle: gbv_coordination_team
+label: Position
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

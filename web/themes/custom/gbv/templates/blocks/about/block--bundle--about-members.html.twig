@@ -1,0 +1,37 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
+%}
+<div{{ attributes.addClass(classes) }} id="members" data-title="CORE MEMBERS AND ASSOCIATE MEMBERS">
+  {{ title_prefix }}
+  {% if label %}
+    {# <h2{{ title_attributes }}>{{ label }}</h2> #}
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass(contentClasses) }}>
+        <div class="about-members-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 core-members">
+                        {{content.field_core_members}}
+                    </div>
+                    <div class="col-6 associated-members">
+                        {{content.field_associated_members}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endblock %}
+</div>
+
+

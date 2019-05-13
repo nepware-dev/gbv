@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_rega_team
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.gbv_rega_team
+  module:
+    - text
+    - user
+id: node.gbv_rega_team.teaser
+targetEntityType: node
+bundle: gbv_rega_team
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,50 @@
+.rega-team-block{
+    border-top: 2px solid $secondary-shade;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    h2{
+        text-align: center;
+        font-weight: bold;
+        font-size: $title-font-size;
+        margin-bottom: $title-margin-bottom;
+    }
+    .view-header {
+        p{
+            font-size: $summary-font-size;
+            text-align: center;
+            margin-bottom: 100px;
+
+        }
+    }
+    padding-bottom: 200px;
+}
+
+.team-single{
+    position: relative;
+    margin-bottom: 100px;
+    .team-image{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+    .team-content-wrapper{
+        position: absolute;
+        background-color: $secondary-shade;
+        bottom: -20%;
+        padding: 20px;
+        width: 90%;
+        left: 5%;
+        .team-region{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .team-title{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .team-email{
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+}
