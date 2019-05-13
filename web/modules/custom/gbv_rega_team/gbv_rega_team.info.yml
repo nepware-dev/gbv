@@ -1,0 +1,6 @@
+name: GBV REGA Team
+type: module
+description: 'Adds Custom "GBV REGA Team" content type.'
+core: 8.x
+dependencies:
+  - node

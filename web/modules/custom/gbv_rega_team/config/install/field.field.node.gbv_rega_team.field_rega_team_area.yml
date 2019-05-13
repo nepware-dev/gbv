@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_rega_team
+  config:
+    - field.storage.node.field_rega_team_area
+    - node.type.gbv_rega_team
+id: node.gbv_rega_team.field_rega_team_area
+field_name: field_rega_team_area
+entity_type: node
+bundle: gbv_rega_team
+label: Area
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -5,6 +5,8 @@
 
 .site-footer {
     padding: $spacer 0;
+    position: relative;
+    z-index: 999;
     .layout-container {
         padding: 0 $spacer;
     }
