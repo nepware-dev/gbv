@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_coordination_in_field
+  config:
+    - node.type.gbv_coordination_in_field
+  module:
+    - user
+id: node.gbv_coordination_in_field.default
+targetEntityType: node
+bundle: gbv_coordination_in_field
+mode: default
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

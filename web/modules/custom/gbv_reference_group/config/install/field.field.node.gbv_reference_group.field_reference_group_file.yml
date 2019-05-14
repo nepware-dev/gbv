@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_reference_group
+  config:
+    - field.storage.node.field_reference_group_file
+    - node.type.gbv_reference_group
+  module:
+    - file
+id: node.gbv_reference_group.field_reference_group_file
+field_name: field_reference_group_file
+entity_type: node
+bundle: gbv_reference_group
+label: File
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

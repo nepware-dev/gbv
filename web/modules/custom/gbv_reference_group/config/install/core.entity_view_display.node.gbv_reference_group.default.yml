@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_reference_group
+  config:
+    - field.field.node.gbv_reference_group.field_reference_group_body
+    - field.field.node.gbv_reference_group.field_reference_group_file
+    - node.type.gbv_reference_group
+  module:
+    - file
+    - text
+    - user
+id: node.gbv_reference_group.default
+targetEntityType: node
+bundle: gbv_reference_group
+mode: default
+content:
+  field_reference_group_body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_reference_group_file:
+    weight: 103
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_reference_group
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gbv_reference_group.field_reference_group_body
+    - node.type.gbv_reference_group
+  module:
+    - text
+    - user
+id: node.gbv_reference_group.teaser
+targetEntityType: node
+bundle: gbv_reference_group
+mode: teaser
+content:
+  field_reference_group_body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
