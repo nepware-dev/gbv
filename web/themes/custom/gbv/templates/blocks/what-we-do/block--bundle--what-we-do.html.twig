@@ -1,0 +1,27 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'what-we-do',
+    'container',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content',
+    ]
+%}
+<div{{ attributes.addClass(classes) }} id="coordination-level" data-title="GBV COORDINATION AT GLOBAL LEVEL">
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass(contentClasses) }}>
+        <h2>{{ content.field_what_we_do_heading }} </h2>
+        {{content.body}}
+    </div>
+  {% endblock %}
+</div>

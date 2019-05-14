@@ -1,0 +1,35 @@
+.task-team-block{
+    .view-header{
+        font-size: $summary-font-size;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .group-single{
+        box-shadow: -1px 1px 5px 4px rgba(184,173,184,1);
+        padding: 50px 30px; 
+        margin-top: 50px;
+        .title{
+            font-size: $document-title-font-size;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            line-height: 1.5em;
+        }
+        p{
+            font-size: $document-body-font-size;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+        .download-btn{
+            font-size: $button-font-size;
+            border: 2px solid $gray-800;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+        i{
+            padding-left: 10px;
+        }
+    }
+}
+
+

@@ -1,0 +1,7 @@
+name: GBV Task Team and Reference Group
+type: module
+description: 'Adds Task Team and Reference Group Content type'
+core: 8.x
+dependencies:
+  - node
+  - block

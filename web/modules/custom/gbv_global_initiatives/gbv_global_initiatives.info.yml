@@ -1,0 +1,7 @@
+name: GBV Global Initiatives
+type: module
+description: 'Adds Global Initiatives Content type'
+core: 8.x
+dependencies:
+  - node
+  - block

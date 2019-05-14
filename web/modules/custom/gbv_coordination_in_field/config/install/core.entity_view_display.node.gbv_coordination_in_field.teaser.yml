@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_coordination_in_field
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.gbv_coordination_in_field
+  module:
+    - user
+id: node.gbv_coordination_in_field.teaser
+targetEntityType: node
+bundle: gbv_coordination_in_field
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

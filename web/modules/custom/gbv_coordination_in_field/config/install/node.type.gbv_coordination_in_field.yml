@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_coordination_in_field
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: GBV Coordination in the Field
+type: gbv_coordination_in_field
+description: 'GBV Coordination in the Field Content'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_reference_group
+  config:
+    - field.storage.node.field_reference_group_body
+    - node.type.gbv_reference_group
+  module:
+    - text
+id: node.gbv_reference_group.field_reference_group_body
+field_name: field_reference_group_body
+entity_type: node
+bundle: gbv_reference_group
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
