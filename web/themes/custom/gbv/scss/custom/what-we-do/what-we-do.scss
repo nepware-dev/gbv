@@ -2,6 +2,8 @@
     background-color: $secondary-shade;
     padding: 50px 100px;
     margin-top: -300px;
+    z-index: 99;
+    position: relative;
     h2{
         text-align: center;
         font-weight: bold;

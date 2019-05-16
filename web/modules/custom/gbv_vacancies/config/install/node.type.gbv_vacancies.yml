@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_vacancies
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Vacancies
+type: gbv_vacancies
+description: 'GBV Vacancy Content'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

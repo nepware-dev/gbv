@@ -3,17 +3,18 @@ status: true
 dependencies:
   enforced:
     module:
-    - gbv_events
+    - gbv_vacancies
   module:
-    - datetime_range
     - node
-id: node.field_event_date
-field_name: field_event_date
+id: node.field_vacancy_organization
+field_name: field_vacancy_organization
 entity_type: node
-type: daterange
+type: string
 settings:
-  datetime_type: date
-module: datetime_range
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

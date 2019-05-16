@@ -3,17 +3,17 @@ status: true
 dependencies:
   enforced:
     module:
-    - gbv_events
+    - gbv_vacancies
   module:
-    - datetime_range
+    - datetime
     - node
-id: node.field_event_date
-field_name: field_event_date
+id: node.field_vacancy_deadline
+field_name: field_vacancy_deadline
 entity_type: node
-type: daterange
+type: datetime
 settings:
   datetime_type: date
-module: datetime_range
+module: datetime
 locked: false
 cardinality: 1
 translatable: true
