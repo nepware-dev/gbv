@@ -4,19 +4,22 @@
     'coordination-field',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'col-sm-10 offset-md-1',
   ]
 %}
-<div{{ attributes.addClass(classes) }} id="coordination-field" data-title="GBV Coordination in the Field">
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
-      <div class="container">
-        {{content}}
+<div class="gbv-coordination">
+  <div{{ attributes.addClass(classes) }} id="coordination-field" data-title="GBV Coordination in the Field">
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      <div{{ content_attributes.addClass('content') }}>
+        <div class="container">
+          {{content}}
+        </div>
       </div>
-    </div>
-  {% endblock %}
+    {% endblock %}
+  </div>
 </div>

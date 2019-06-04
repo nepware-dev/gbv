@@ -56,7 +56,6 @@
 %}
 <div class="introduction">
   <div class="col-6 nopadding">
-
   {% if label_hidden %}
     {% if multiple %}
       <div{{ attributes.addClass(classes, 'field__items') }}>
@@ -84,7 +83,12 @@
     </div>
   {% endif %}
   </div>
+<<<<<<< HEAD:web/themes/custom/gbv/templates/blocks/home/field--block-content--home-introduction.html.twig.bak
   <div class="col-6 nopadding">
     <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" class="events-image" />
+=======
+  <div class="col-6">
+    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" class="hero-image img-responsive">
+>>>>>>> Home page css alter:web/themes/custom/gbv/templates/blocks/home/field--block-content--home-introduction.html.twig
   </div>
 </div>
