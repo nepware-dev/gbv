@@ -1,0 +1,76 @@
+.vacancies-block {
+  padding-bottom: 2em;
+  padding-top: 2em;
+  background-color: $white;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 100px 3px;
+    display: inline-block;
+    padding-bottom: 22px;
+    text-transform: capitalize;
+  }
+
+  .view-header {
+    display: none;
+  }
+
+  .vacancy-single {
+    border-radius: 7px;
+    border: solid 1px $document-color-light;
+    background-color: $white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .vacancy-image {
+      height: 80px;
+    }
+
+    .organization {
+      font-size: $title-font-size;
+      font-weight: bold;
+    }
+
+    h4 {
+      padding-top: 0;
+    }
+
+    .title {
+      font-size: $font-size-normal;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .body {
+      text-align: left;
+
+      p {
+        color: $black;
+        font-size: $font-size-normal;
+        font-weight: $font-weight-normal;
+      }
+    }
+
+    .vacancy-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 21px;
+
+      p {
+        opacity: 0.4;
+        font-family: OpenSans;
+        font-size: $font-size-small;
+      }
+
+      a {
+        color: $line-color;
+        font-size: $font-size-normal;
+      }
+    }
+  }
+}

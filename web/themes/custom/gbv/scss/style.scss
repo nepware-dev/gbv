@@ -1,125 +1,138 @@
-/* 
-Theme Name: Bootstrap 4 Sass
-Description: Bootstrap 4 with Sass
-*/
+/* Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass */
 
 // import files
 @import "import";
 
 /* GENERAL STYLES
--------------------------------------------------*/
+------------------------------------------------- */
 
 body {
-    background: $white;
-    font-family: $font-sans;
+  background: $white;
+  font-family: $font-sans;
 }
 
-
-/* COLORS 
---------------------------------------------------*/
+/* COLORS -------------------------------------------------- */
 
 a {
-    color: $accent-shade;
+  color: $accent-shade;
 }
 
 .bg-inverse {
-    background: $primary-shade !important;
+  background: $primary-shade !important;
 }
 
 .site-footer {
-    background: $accent-shade !important;
-}
-
-.menu--main li a {
-    color: $black;
-}
-
-.menu--account li a {
-    color: $primary-shade;
+  background: $accent-shade !important;
 }
 
 .site-name-slogan a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.menu--main li a {
+  color: $black;
+}
+
+.menu--account li a {
+  color: $primary-shade;
 }
 
 .card-group img {
-    margin: 0;
-    width: 100%;
-    height: auto;
+  margin: 0;
+  width: 100%;
+  height: auto;
 }
 
 .card-group .field--type-image {
-    margin: 0
+  margin: 0;
 }
 
 .slick {
-    width: 100%;
+  width: 100%;
 }
 
-.slick>div {
-    margin: 0 15px;
+.slick > div {
+  margin: 0 15px;
 }
 
-#panels-ipe-tray{
-    z-index: 99999;
+#panels-ipe-tray {
+  z-index: 99999;
 }
 
 h1 {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
-h2{
-    text-align: center;
-    margin-bottom: $title-margin-bottom;
-    font-size: $font-size-heading;
-    font-family: $font-sans;
-    color:$secondary-color;
-    font-weight: bold;
-        
-}
-.nopadding{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-.nomargin{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-.button-outline{
-    align-self: center;
-    padding: 3% 15%;
-    margin-top: 5%;
-    color:$secondary-color;
-    background-color: $white;
-    border: 2px solid $secondary-color;
-    border-radius: 0;
-    font-family: $font-sans;
-    font-size: $font-size-normal;
-    font-weight: $font-weight-bold;
+h2 {
+  text-align: center;
+  margin-bottom: $title-margin-bottom;
+  font-size: $font-size-heading;
+  font-family: $font-sans;
+  color: $secondary-color;
+  font-weight: bold;
 }
 
-.left-auto{
-    margin-left: auto;
+.nopadding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
+.nomargin {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.button-outline {
+  align-self: center;
+  padding: 3% 15%;
+  margin-top: 5%;
+  color: $secondary-color;
+  background-color: $white;
+  border: 2px solid $secondary-color;
+  border-radius: 0;
+  font-family: $font-sans;
+  font-size: $font-size-normal;
+  font-weight: $font-weight-bold;
+}
+
+.left-auto {
+  margin-left: auto;
+}
 
 h3 {
-    font-size: $font-size-heading;
-    font-weight: bold;
-    color: $secondary-color;
-    text-transform: uppercase;
-    text-align: left;
+  font-size: $font-size-heading;
+  font-weight: bold;
+  color: $secondary-color;
+  text-transform: uppercase;
+  text-align: left;
 }
 
 h4 {
-    font-size: $font-size-subheading;
-    font-weight: bold;
-    color: $black;
-    text-align: left;
-    padding-top: 25px;
+  font-size: $font-size-subheading;
+  font-weight: bold;
+  color: $black;
+  text-align: left;
+  padding-top: 25px;
 }
 
-.change-btns{
+.main-content {
+  background-color: $secondary-shade;
+}
+
+#quickedit-entity-toolbar {
+  z-index: 999;
+}
+
+.change-btns {
+  display: none;
+}
+
+@media screen and(max-width: 480px) {
+  .change-btns {
     border: none;
     background-color: transparent;
+    font-size: 24px;
+    display: block;
+  }
 }

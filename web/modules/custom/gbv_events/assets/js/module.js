@@ -5,9 +5,9 @@
                 let calendarEvents = JSON.parse(drupalSettings.calendarEvents);
                 $('#calendar').fullCalendar({
                     header: {
-                        left: 'prev,next',
+                        left: 'prev,next,today',
                         center: 'title',
-                        right: ''
+                        right: 'month,agendaWeek,agendaDay,list'
                     },
                     // defaultDate: '2019-01-12',
                     navLinks: true, // can click day/week names to navigate views

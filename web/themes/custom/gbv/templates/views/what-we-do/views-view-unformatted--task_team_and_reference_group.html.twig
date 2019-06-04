@@ -31,10 +31,11 @@
         default_row_class ? 'views-row',
         ]
     %}
-    <div class="col-sm-4">
+    <div class="col-sm-4 groups">
         <div class="group-single">
             <h4 class="title">{{entity.title[0].value}}</h4>
-            {{entity.field_reference_group_body[0].value|raw}}
+            {% set text = entity.field_reference_group_body[0].value|raw|render|striptags %}
+            {{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}
             <a href="{{file_url(entity.field_reference_group_file.entity.uri.value)}}" download><button class="button-outline">Download</button></a>
         </div>
     </div>

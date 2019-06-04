@@ -1,0 +1,64 @@
+.event-calendar {
+  background-color: $white;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  text-align: center;
+
+  #calendar {
+    h2 {
+      font-size: $font-size-large;
+      background: none;
+      color: $black;
+      text-transform: capitalize;
+    }
+
+    .fc-button {
+      background: $calender-primary;
+      box-shadow: 0 0 0 transparent;
+      border: 0 solid transparent;
+      color: $white;
+      text-shadow: 0 0 0 transparent;
+    }
+
+    .fc-button.fc-state-active {
+      background: $secondary-color;
+    }
+
+    .fc-button.fc-today-button {
+      background: $calender-secondary;
+    }
+
+    .fc-today {
+      background: $calender-today;
+    }
+
+    .fc-event-container {
+      .fc-event {
+        background-color: $secondary-color;
+        border: none;
+      }
+
+      .fc-content {
+        background-color: $secondary-color;
+
+        .fc-title {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 100px 3px;
+    display: inline-block;
+    padding-bottom: 22px;
+  }
+
+  #calender {
+    h2 {
+      font-size: $font-size-heading;
+    }
+  }
+}

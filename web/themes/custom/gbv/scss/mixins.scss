@@ -5,29 +5,29 @@
 //
 @each $color,
 $value in $theme-colors {
-    .btn-#{$color} a {
-        @include button-variant($value, $value);
-    }
+  .btn-#{$color} a {
+    @include button-variant($value, $value);
+  }
 }
 
 @each $color,
 $value in $theme-colors {
-    .btn-outline-#{$color} a {
-        @include button-outline-variant($value);
-    }
+  .btn-outline-#{$color} a {
+    @include button-outline-variant($value);
+  }
 }
 
 @mixin _col-cusom-flex($value) {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 $value;
-    flex: 0 0 $value;
-    max-width: $value;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 $value;
+  flex: 0 0 $value;
+  max-width: $value;
 }
 
 @mixin _col-custom() {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
