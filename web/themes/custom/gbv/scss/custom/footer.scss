@@ -14,12 +14,17 @@
     background-color: $accent-shade !important;
     padding: 50px 30px;
     color: $gray-100;
+    p{
+        font-size: font-size-small;
+    }   
     h2{
         color: $gray-100;
+        text-align: left;
         margin-bottom: 30px;
-        font-family: $font-family-base;
+        font-family: $font-sans;
+        font-weight: $font-weight-bold;
         text-transform: uppercase;
-        font-size: $footer-title-font-size;
+        font-size: $font-size-normal;
     }
     .social-media-links--platforms{
         display: flex;
@@ -30,7 +35,7 @@
         }
         .fa{
             color: $gray-100;
-            font-size: 42px;
+            font-size: $font-size-heading;
         }
     }
     #mc_embed_signup form{

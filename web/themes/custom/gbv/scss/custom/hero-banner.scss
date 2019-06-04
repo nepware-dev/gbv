@@ -1,5 +1,4 @@
 .hero-banner{
-    height: 600px;
     background-color: $secondary-shade;
     .hero-image{
         width: 100%;
@@ -9,22 +8,29 @@
     .hero-content{
         display: flex;
         flex-direction: column;
-        padding-left: 100px;
+        align-self: center;
+        position: absolute;
+        left: 25%;
+        right: 0;
         .hero-title{
             margin-top: 25%;
-            width: 70%;
+            text-align: center;
+            color:$white;
+            font-weight: $font-weight-bold;
             font-size: $hero-font-size;
+            font-family: $font-sans;
         }
-        .read-more-btn{
-            margin-top: 75px;
-            .btn-read-more{
-                background-color: transparent;
-                color: $gray-800;
-                border: 2px solid $gray-800;
-                border-radius: 0;
-                font-weight: bold;
-                padding: 10px 40px;
-            }
+        a{
+            align-self: center;
+        }
+        p{
+            margin-bottom: 0;
+        }
+        .button-outline{
+            background-color: transparent; 
+            border: 2px solid $white;
+            color: white;
+            padding: 9px 26px;
         }
     }
 }
