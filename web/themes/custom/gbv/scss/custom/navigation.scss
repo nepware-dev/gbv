@@ -2,9 +2,10 @@
 .navbar{
     padding: 0;
 }
+
 .bg-secondary{
     background-color: $secondary-shade !important;
-    height: 80px;
+    height: 62px;
     .header-mailing{
         margin-right: 50px;
         .newsletter-block{
@@ -13,69 +14,85 @@
             align-items: center;
         }
         .subscribe-text{
-            font-size: $subscribe-font-size;
-            font-weight: bold;
+            font-size: $font-size-normal;
+            font-weight: $font-weight-bold;
+            font-family: $font-sans;
+            color: $primary-color;
+            text-align: right;
+            text-transform: uppercase;
             margin-right: 10px;
+            padding-right: 10px;
         }
         #mc_embed_signup form{
             padding: 0;
             .email-input{
-                padding: 10px;
+                padding: 5px 35px;
+                color:$primary-color;
+                border: 2px solid $primary-color;
+                font-family: $font-sans;
+                font-size: $font-size-small;
+                font-weight: normal;
+                margin-left: 25px;
             }
             .btn-signup{
-                padding: 10px;
+                padding: 6px 20px;
+                font-size: $font-size-small;
+                background-color:$primary-color;
+                color:$white;
             }
         }
     }
 }
 .bg-primary{
+    height: 115px;
     background-color: $primary-shade !important;
-    padding-top: 1em;
-    padding-bottom: 3em;
-    // padding-top: 20px;
-    // padding-bottom: 80px;
     box-shadow: 0px 3px 5px -6px rgba(0,0,0,0.75);
     .navbar-collapse{
-        justify-content: flex-end;
+        justify-content: flex-start;
+    }
+    #block-gbv-main-menu{
+        display: flex;
+        flex: 1;
     }
     .navbar-nav{
         align-items: center;
-        margin-right: 50px;
+        display: flex;
+        flex: 1;
         .nav-item{
-            margin-right: 10px;
+            display: flex;
+            margin-left: 3%;
             .nav-link{
-                color: $gray-800;
-                font-size: $menu-font-size;
+                color: $black;
+                font-size: $font-size-normal;
                 text-transform: uppercase;
-                font-weight: 500;
-                &:hover{
-                    color: $gray-800
-                }
-                &:focus{
-                    color: $gray-800
-                }
+                font-weight: $font-weight-bold;
+                font-family: $font-sans;
             }
             &:last-child{
-                background-color: $red;
-                padding: 14px;
+                background-color:$secondary-color;
+                padding: 0 22px;
+                align-self: flex-end;
+                margin-left: auto;
+                margin-right: 7%;   
                 .nav-link{
                     color: #fff !important;
-                    font-weight: bold !important;
+                    font-weight: $font-weight-bold !important;
                 }
             }
         }
         .nav-item .active{
             color: $gray-800 !important;
-            border-bottom: 2px solid $primary-dark;
+            font-weight: $font-weight-bold;
+            border-bottom: 2px solid $secondary-color;
         }
     }
     
     .navbar-brand{
         background-color: #ffffff;
-        margin-top: -75px;
-        margin-left: 50px;
+        margin-left: 5%;
+        margin-right: 3%;
         img{
-            width: 200px;
+            width: 130px;
         }
     }
 }
