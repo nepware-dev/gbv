@@ -1,0 +1,52 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div {{ attributes.addClass(classes) }}>
+    <div class="container col-sm-8 offset-md-2">
+        <div class="row community-practise">
+            <h2>Community of Practice</h2>
+            <div class="col-12 community-col">
+                <div class="col-12 col-md-6">
+                    <h3>GBV Coordination at Global Level</h3>
+                    <p>The GBV AoR Coordination Team sits in Geneva. The GBV AoR coordinates and provides global level inter-agency policy advice and guidance on the implementation of the cluster approach to GBV sub-clusters in the field, supports GBV responses in non-refugee humanitarian crises, and leads standard and policy setting relating to GBV in humanitarian emergencies. The GBV AoR Coordinators are provided technical and information management support but are not supervised by the AoR.
+
+                        For our priorities, read the GBV AoR Strategy 2018-2020, which builds on the substantial achievements of the GBV AoR to date and outlines the priorities until 2020.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="./sites/default/files/2019-05/image.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="community-contact row">
+        <div class="container col-sm-8 offset-md-2">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3>Contact the Community of Practice</h3>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="text" name="fullname" class="form-control" placeholder="Full Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        </div>
+                        <div class="input-group mb-3">
+                            <textarea class="form-control" rows="3" cols="50" name="message">Message</textarea>
+                        </div>
+                            <input type="submit" value="Submit" class="btn-contained">
+                    </form>
+                </div>
+                <div class="col-sm-12 community-help">
+                    <p><a>See more information about GBV CoP and Help Desk.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

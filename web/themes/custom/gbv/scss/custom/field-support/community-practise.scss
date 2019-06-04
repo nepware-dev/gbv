@@ -1,0 +1,51 @@
+.community-practise {
+  background-color: $white;
+  justify-content: center;
+  padding-top: 8%;
+  margin-top: 15%;
+
+  img {
+    height: 379px;
+    width: 378px;
+  }
+
+  .community-col {
+    display: flex;
+    padding: 0 5%;
+  }
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 80px 2px;
+    display: inline-block;
+    padding-bottom: 22px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: $font-size-normal;
+    line-height: 1.93;
+    white-space: pre-line;
+  }
+}
+
+.community-contact {
+  padding: 5% 5%;
+  background-color: $primary-color-light;
+
+  .community-help {
+    padding-top: 10%;
+    padding-left: 2%;
+
+    p {
+      a {
+        text-decoration: underline;
+        font-size: $font-size-normal;
+        line-height: 1.43;
+        color: $secondary-color;
+        white-space: pre-line;
+      }
+    }
+  }
+}

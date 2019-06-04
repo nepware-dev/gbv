@@ -1,0 +1,38 @@
+.help-desk-contact {
+  background-color: $primary-color-light;
+  margin-top: 51px;
+  padding: 5% 15% 3%;
+  display: flex;
+  flex-direction: column;
+
+  .desk-col {
+    display: flex;
+    padding-left: 10%;
+    padding-right: 4%;
+
+    p {
+      white-space: pre-line;
+      font-size: $font-size-normal;
+      line-height: 2;
+    }
+  }
+
+  hr {
+    border: 1px solid $secondary-color;
+    width: 96%;
+  }
+
+  .gbv-helpdesk {
+    padding-left: 10%;
+
+    p {
+      a {
+        text-decoration: underline;
+        font-size: $font-size-normal;
+        line-height: 1.43;
+        color: $secondary-color;
+        white-space: pre-line;
+      }
+    }
+  }
+}
