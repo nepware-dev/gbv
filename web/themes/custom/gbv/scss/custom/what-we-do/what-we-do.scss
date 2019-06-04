@@ -22,4 +22,9 @@
     p{
         font-size: $font-size-normal;
     }
+    .what-we-do-image {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
 }

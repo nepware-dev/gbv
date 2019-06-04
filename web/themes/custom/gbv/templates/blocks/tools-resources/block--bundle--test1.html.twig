@@ -1,0 +1,73 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'col-sm-8 offset-md-2',
+    'hpc-guidance',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content',
+        'row',
+    ]
+%}
+<div {{ attributes.addClass(classes) }}>
+    <div class="row">
+        <div class="container hpc-guidance-content">
+            <h2>Strategic Planning & HPC Guidance</h2>
+        {% block content %}
+            <div{{ content_attributes.addClass(contentClasses) }}>
+                <div class="col-sm-12">
+                    <h3>Primary guidance on HPC</h3>
+                    <h4>Guidance and Reference Documents</h4>
+                </div>
+                <hr>
+                <div class="col-sm-6 rectangle">
+                    <div class="rectangle-content row">
+                        <div class="col-sm-8"><h4>Humanitarian programme cycle resource</h4></div>
+                        <div class="col-sm-4"><p>March 18, 2019</p></div>
+                        <div class="col-sm-12 hpc-description">Description, if any</div>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-8">
+                                <a href="/">
+                                    <button class="button-outline">Download</button>
+                                </a>
+                            </div>
+                            <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                <p>PDF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 hpc-guidance-documents"><h3>See more Guidance and References documents</h3> </div>
+                <div class="col-sm-12">
+                    <h4>Tools and Templates</h4>
+                </div>
+                <hr>
+                <div class="col-sm-6 rectangle">
+                    <div class="rectangle-content row">
+                        <div class="col-sm-8"><h4>Tool Title</h4></div>
+                        <div class="col-sm-4"><p>March 18, 2019</p></div>
+                        <div class="col-sm-12 hpc-description">Description, if any</div>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-8">
+                                <a href="/">
+                                    <button class="button-outline">Download</button>
+                                </a>
+                            </div>
+                            <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                <p>PDF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 hpc-guidance-documents"><h3>See more Tools and Templates</h3> </div>
+            </div>
+        {% endblock %}
+        </div>
+    </div>
+</div>
+
+

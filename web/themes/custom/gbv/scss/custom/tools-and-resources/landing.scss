@@ -1,0 +1,38 @@
+.tools-and-resources {
+    padding-bottom: 60px;
+    .coordination-tools-and-resources {
+        background-color: $white;
+        text-align: center;
+        padding: 50px 0 ;
+        .tools-content {
+            padding: 0 65px;
+            .rectangle {
+                border-radius: 7px;
+                border: solid 1px #e1e1e1;
+                background-color: #ffffff;
+                padding: 35px 55px;
+                margin-bottom: 40px;
+                h3{
+                    font-size: $font-size-heading;
+                    font-weight: bold;
+                    color: $secondary-color;
+                    text-transform: uppercase;
+                }
+                .rectangle-content{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-top: 10px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    h2 {
+        font-size: $font-size-heading-large;
+        background: linear-gradient($secondary-color,$secondary-color) bottom  no-repeat;
+        background-size: 100px 3px;
+        display: inline-block;
+        padding-bottom: 22px;
+    }
+}
