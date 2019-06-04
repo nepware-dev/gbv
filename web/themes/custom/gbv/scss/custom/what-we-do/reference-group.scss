@@ -1,33 +1,48 @@
-.task-team-block{
-    .view-header{
+.task-team-block {
+    .view-header {
         font-size: $summary-font-size;
         text-align: center;
         margin-bottom: 50px;
     }
-    .group-single{
-        box-shadow: -1px 1px 5px 4px rgba(184,173,184,1);
-        padding: 50px 30px; 
-        margin-top: 50px;
-        .title{
-            font-size: $document-title-font-size;
+    .task-team {
+        padding-top: 100px;
+        padding-right:50px;
+        line-height: 1.83;
+        font-size: $font-size-large;
+        font-weight: $font-weight-lighter;
+        font-family: $font-sans;
+    }
+    .group-single {
+        border-radius: 7px;
+        box-shadow: 0 2px 6px 0 rgba(107, 107, 107, 0.35);   
+        border: solid 1px #e1e1e1;
+        background: $white;
+        padding: 20px 26px; 
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .title {
+            font-size: $font-size-subheading;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 30px;
-            line-height: 1.5em;
+            line-height: 1.38em;
+            color: $secondary-color;
         }
-        p{
-            font-size: $document-body-font-size;
-            font-weight: 500;
-            margin-bottom: 50px;
+        p {
+            font-size: $font-size-normal;
+            font-weight: $font-weight-lighter;
+            margin-top:17px;
+            line-height: 1.43em;
+            color: $black;
+            padding: 0 10px;
         }
-        .download-btn{
-            font-size: $button-font-size;
-            border: 2px solid $gray-800;
-            padding: 10px 15px;
-            font-weight: bold;
-        }
-        i{
-            padding-left: 10px;
+        .button-outline {
+            margin-top: 60px;
+            margin-bottom: 10px;
+            height: 36px;
+            width: 160px;
         }
     }
 }
