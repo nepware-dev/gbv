@@ -12,7 +12,8 @@
         'content',
     ]
 %}
-<div{{ attributes.addClass(classes) }} id="coordination-level" data-title="GBV COORDINATION AT GLOBAL LEVEL">
+
+<div{{ attributes.addClass(classes) }} id="coordination-level" data-title={{ content.field_what_we_do_heading.0['#context'].value }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -20,7 +21,7 @@
   {{ title_suffix }}
   {% block content %}
     <div{{ content_attributes.addClass(contentClasses) }}>
-        <h2>{{ content.field_what_we_do_heading }} </h2>
+        <h2>{{ content.field_what_we_do_heading.0['#context'].value }} </h2>
         {{content.body}}
     </div>
   {% endblock %}

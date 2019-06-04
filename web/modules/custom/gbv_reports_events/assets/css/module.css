@@ -1,0 +1,73 @@
+.section-timeline-wrapper{
+    position: absolute;
+    width: 15%;
+    left: 2%;
+    z-index: 99;
+}
+.timeline {
+    width: 15%;
+    position: fixed;
+    background-color:#ddd;
+    padding: 2em;
+    top: 35%;
+}
+
+.timeline li{
+    list-style: none;
+    padding-bottom: 50px;
+    position: relative;
+    display: flex;
+}
+
+.timeline li .inner-circle{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    display: none;
+    margin: 0 auto;
+    background-color: black;
+    align-self: center;
+    justify-content: center;
+}
+.timeline li .circle{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    display: inline-flex;
+    margin-right: 10px;
+}
+.timeline li a{
+    color: #000;
+    font-size: 1em;
+}
+.timeline li a:focus, .timeline li a:hover{
+    color: #343a40;
+    font-weight: bold;
+    text-decoration: none;
+}
+.timeline li::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #333;
+    top: 25px;
+    bottom: 5px;
+    left: 6px;
+}
+.timeline li:last-child::after{
+    display: none;
+}
+
+.timeline .active{
+    display: flex;
+}
+
+.timeline .active .inner-circle {
+    display: inline-block !important;
+}
+
+#main-wrapper{
+    position: relative;
+}

@@ -40,7 +40,7 @@
 {% set attributes = attributes.addClass('clearfix', 'text-formatted') %}
 {%
   set classes = [
-      'home-summary',
+    'home-summary',
     'field',
     'field--name-' ~ field_name|clean_class,
     'field--type-' ~ field_type|clean_class,
@@ -84,6 +84,6 @@
   {% endif %}
   </div>
   <div class="col-6 nopadding">
-    <img src="{{directory}}/images/2019-05/Ghaliya-embed_1.jpg" class="events-image" />
+    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" class="events-image" />
   </div>
 </div>
