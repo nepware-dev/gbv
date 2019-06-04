@@ -1,15 +1,25 @@
+.block-region-content{
+    background-color: #f9f9f9;
+    padding-top: 70px;
+}
 .who-are-we{
-        background-color: $secondary-shade;
+        background-color: $white;
         padding: 50px 100px;
-        margin-top: -300px;
         position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     h2{
-        text-align: center;
-        font-weight: bold;
-        font-size: $title-font-size;
-        margin-bottom: $title-margin-bottom;
+        font-size: $font-size-heading-large;
+        background: linear-gradient($secondary-color,$secondary-color) bottom  no-repeat;
+        background-size: 100px 3px;
+        display: inline-block;
+        padding-bottom: 22px;
     }
     p{
-        font-size: $summary-font-size;
+        font-size: $font-size-normal;
+        column-count: 2;
+        column-gap: 66px;
+        width: 830px;
     }
 }

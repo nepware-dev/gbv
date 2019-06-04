@@ -1,18 +1,15 @@
 .about-tor-section{
     background-color: $secondary-shade;
-    .tor-sidebar{
-        background-color: $accent-shade;
-        padding: 50px;
-        color: $white;
-        font-size: $sub-heading-font-size;
-        font-weight: bold;
-        .field__label{
-            display: none;
-        }
-    }
+    margin-bottom: 5%;
     .tor-content{
-        padding:50px;
-        font-size: $sub-heading-font-size;
+        padding: 50px;
+        .field__item{
+            font-size: $font-size-small;
+            font-weight: $font-weight-normal;
+            font-family: $font-sans;
+            font-style: italic;
+            padding: 10px 30px; 
+        }
         .field__label{
             display: none;
         }
