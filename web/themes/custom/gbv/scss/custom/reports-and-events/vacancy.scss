@@ -61,15 +61,37 @@
       justify-content: space-between;
       margin-top: 21px;
 
+      .vacancy {
+        width: 100%;
+        text-align: left;
+      }
+
       p {
         opacity: 0.4;
-        font-family: OpenSans;
+        font-family: $font-sans;
         font-size: $font-size-small;
       }
 
       a {
-        color: $line-color;
         font-size: $font-size-normal;
+        color: $line-color;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .vacancies-block {
+    .vacancy-single {
+      .vacancy-image {
+        display: flex;
+        justify-content: center;
+      }
+
+      .vacancy-footer {
+        .fa {
+          display: inline;
+        }
       }
     }
   }

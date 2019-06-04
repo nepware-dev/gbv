@@ -5,13 +5,14 @@
     'block-' ~ plugin_id|clean_class,
     'what-we-do',
     'container',
-    'col-sm-8 offset-md-2',
+    'col-12 col-sm-8 offset-md-2',
   ]
 %}
 {%
     set contentClasses = [
         'content',
         'row',
+        'what-we-do-row',
     ]
 %}
 <div{{ attributes.addClass(classes) }} id="coordination-level" data-title="{{ content.field_what_we_do_heading.0['#context'].value }}">
@@ -22,11 +23,11 @@
   {{ title_suffix }}
   {% block content %}
     <div{{ content_attributes.addClass(contentClasses) }}>
-      <div class="col-6">
+      <div class="col-sm-6">
         <h2>{{ content.field_what_we_do_heading.0['#context'].value }} </h2>
         {{content.body}}
       </div>
-      <div class="col-6">
+      <div class="col-sm-6">
         <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="what-we-do-image" class="what-we-do-image" />
       </div>
     </div>

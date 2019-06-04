@@ -1,7 +1,7 @@
 .about-members-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
   background-color: $primary-color-light;
+  padding-top: 8%;
+  padding-bottom: 8%;
 
   .field__label {
     font-size: $title-font-size;
@@ -45,6 +45,29 @@
 
     .field__item {
       padding-left: 50px;
+    }
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .about-members-section {
+    padding: 8%;
+
+    .core-members {
+      border-right: none;
+      border-bottom: 1px solid $line-color;
+    }
+
+    .associated-members {
+      margin-top: 7%;
+
+      .field__label {
+        padding-left: 0;
+      }
+
+      .field__item {
+        padding-left: 0;
+      }
     }
   }
 }

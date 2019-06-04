@@ -1,99 +1,137 @@
-.rega-container{
-    position: relative;
+.rega-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $white;
+
+  .view-content {
+    background-color: #f9f9f9;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: $white;
-    .view-content{
-        background-color:#f9f9f9;
-        display: flex;
-    }
-    h2{
-        font-size: $font-size-heading-large;
-        background: linear-gradient($secondary-color,$secondary-color) bottom  no-repeat;
-        background-size: 100px 3px;
-        display: inline-block;
-        padding: 20px 100px;
-    }
-}
-.rega-team{
-    display: flex;
-    margin-top: -14%;
-    justify-content: space-between;
-}
-.rega-team-members{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.rega-team-block{
-    padding-top: 100px;
-    display: flex;
-    flex-direction: column;
-    .view-header {
-        padding-bottom: 120px;
-        p{
-            font-size: $font-size-normal;
-            margin-bottom: 100px;
-            column-count: 2;
-            column-gap: 7.2%;
-            font-weight: 500;
-            font-family: $font-sans;
-            padding: 0 75px;    
-        }
-    }
+  }
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 100px 3px;
+    display: inline-block;
+    padding: 20px 100px;
+  }
 }
 
-.team-single{
-    position: relative;
+.rega-team {
+  display: flex;
+  margin-top: -14%;
+  justify-content: space-between;
+}
+
+.rega-team-members {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rega-team-block {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+
+  .view-header {
+    padding-bottom: 15%;
+
+    p {
+      font-size: $font-size-normal;
+      margin-bottom: 100px;
+      column-count: 2;
+      column-gap: 7.2%;
+      font-weight: 500;
+      font-family: $font-sans;
+      padding: 0 8%;
+    }
+  }
+}
+
+.team-single {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .team-image {
+    height: 180px;
+    width: 180px;
+    object-fit: contain;
+    border-radius: 100px;
+  }
+
+  .team-content-wrapper {
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    .team-image{
-        height: 180px;
-        width: 180px;
-        object-fit: contain;
-        border-radius: 100px; 
+    align-items: center;
+
+    .user-name {
+      font-size: $font-size-normal;
+      font-weight: $font-weight-normal;
+      padding: 0;
     }
-    .team-content-wrapper{
-        padding: 20px;
-        .team-region{
-            font-size: $font-size-normal;
-            font-weight: $font-weight-bold;
-        }
-        .team-title{
-            font-size: $font-size-normal;
-            font-weight: $font-weight-normal;
-            text-align: center;
-        }
-        .team-email{
-            font-size: $font-size-normal;
-            font-weight: $font-weight-normal;
-        }
-        a{
-            color: $secondary-color;
-            text-decoration: underline;
-        }
+
+    .team-title {
+      font-size: $font-size-normal;
+      font-weight: $font-weight-bold;
+      text-align: center;
+      color: $black;
     }
+
+    .team-email {
+      font-size: $font-size-normal;
+      font-weight: $font-weight-normal;
+    }
+
+    a {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
 }
-.rega-contact{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $secondary-color;
-    width: 80%;
-    height: 100%;
-    .rega-contact-text {
-        padding: 0 14.2%;
-        font-size: $font-size-normal;
-        font-family: $font-sans;
-        color: $white;
-        font-weight: $font-weight-bold;
-        a {
-            text-decoration: none;
-            color: white;
-        }
+
+.rega-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-color;
+  width: 80%;
+  height: 100%;
+
+  .rega-contact-text {
+    padding: 0 14.2%;
+    font-size: $font-size-normal;
+    font-family: $font-sans;
+    color: $white;
+    font-weight: $font-weight-bold;
+
+    a {
+      text-decoration: none;
+      color: white;
     }
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .rega-team-block {
+    .view-header {
+      p {
+        column-count: 1;
+      }
+    }
+  }
+
+  .rega-contact {
+    .rega-contact-text {
+      padding: 14.2%;
+    }
+  }
 }

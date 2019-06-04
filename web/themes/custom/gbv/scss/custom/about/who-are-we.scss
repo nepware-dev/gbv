@@ -1,24 +1,36 @@
-.block-region-content{
-    background-color: #f9f9f9;
+.block-region-content {
+  background-color: #f9f9f9;
 }
-.who-are-we{
-        background-color: $white;
-        padding: 50px 100px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    h2{
-        font-size: $font-size-heading-large;
-        background: linear-gradient($secondary-color,$secondary-color) bottom  no-repeat;
-        background-size: 100px 3px;
-        display: inline-block;
-        padding-bottom: 22px;
+
+.who-are-we {
+  background-color: $white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4%;
+  padding-top: 3%;
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 100px 3px;
+    display: inline-block;
+    padding-bottom: 22px;
+  }
+
+  p {
+    font-size: $font-size-normal;
+    column-count: 2;
+    column-gap: 66px;
+    padding: 0 8%;
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .who-are-we {
+    p {
+      column-count: 1;
     }
-    p{
-        font-size: $font-size-normal;
-        column-count: 2;
-        column-gap: 66px;
-        width: 830px;
-    }
+  }
 }

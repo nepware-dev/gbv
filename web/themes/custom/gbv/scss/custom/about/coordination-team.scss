@@ -1,15 +1,17 @@
-.block-views-blockcoordination-team-block-1{
-    padding-top: 100px;
-    h2{
-        font-size: $font-size-heading-large;
-        margin-bottom: 10px;
+.block-views-blockcoordination-team-block-1 {
+  padding-top: 100px;
+
+  h2 {
+    font-size: $font-size-heading-large;
+    margin-bottom: 10px;
+  }
+
+  .view-header {
+    p {
+      text-align: center;
+      margin: 0 auto;
+      font-size: $sub-heading-font-size;
+      margin-bottom: 60px;
     }
-    .view-header{
-        p{
-            text-align: center;
-            margin: 0 auto;
-            font-size: $sub-heading-font-size;
-            margin-bottom: 60px;
-        }
-    }
+  }
 }

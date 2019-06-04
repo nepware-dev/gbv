@@ -32,13 +32,36 @@
         ]
     %}
     <div class="col-sm-4 groups">
+        <button class="change-btns"><i class="fa" onclick="plusGroups(-1)">&#xf104;</i></button>
         <div class="group-single">
             <h4 class="title">{{entity.title[0].value}}</h4>
             {% set text = entity.field_reference_group_body[0].value|raw|render|striptags %}
             {{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}
             <a href="{{file_url(entity.field_reference_group_file.entity.uri.value)}}" download><button class="button-outline">Download</button></a>
         </div>
+        <button class="change-btns"><i class="fa" onclick="plusGroups(+1)">&#xf105;</i></button>
     </div>
     
     
 {% endfor %}
+<script>
+var slideIndex = 1;
+if(window.innerWidth<=480){
+  showGroups(slideIndex);
+}
+
+function plusGroups(n) {
+  showGroups(slideIndex += n);
+}
+
+function showGroups(n) {
+  var i;
+  var changebtns = document.getElementsByClassName("groups");
+  if (n > changebtns.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = changebtns.length} ;
+  for (i = 0; i < changebtns.length; i++) {
+    changebtns[i].style.display = "none";
+  }
+  changebtns[slideIndex-1].style.display = "flex";
+}
+</script>
