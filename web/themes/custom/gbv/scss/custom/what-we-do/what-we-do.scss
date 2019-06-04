@@ -1,41 +1,52 @@
 .what-we-do {
-  background-color: $white;
-  padding: 5%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 5%;
+  background-image: url(../images/BG/what-we-do/BG-WhatWeDo-1.svg);
+  background-repeat: no-repeat;
+  background-position: 0 15%;
+  padding: 5% 0;
 
-  h2 {
-    font-size: $font-size-heading-large;
-    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-    background-size: 100px 3px;
-    display: inline-block;
-    padding-bottom: 22px;
-  }
+  .what-we-do-container {
+    background-color: $white;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-  .content {
     h2 {
-      font-size: $font-size-heading;
-      background: transparent;
-      padding-bottom: 5px;
-      font-weight: bold;
+      font-size: $font-size-heading-large;
+      background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+      background-size: 100px 3px;
+      display: inline-block;
+      padding-bottom: 22px;
     }
-  }
 
-  p {
-    font-size: $font-size-normal;
-  }
+    .content {
+      h2 {
+        font-size: $font-size-heading;
+        background: transparent;
+        padding-bottom: 5px;
+        font-weight: bold;
+      }
+    }
 
-  .what-we-do-image {
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
+    p {
+      font-size: $font-size-normal;
+    }
+
+    .what-we-do-image {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .what-we-do-row {
-    flex-direction: column-reverse;
+  .what-we-do {
+    padding-top: 1%;
+    padding-bottom: 0;
+
+    .what-we-do-row {
+      flex-direction: column-reverse;
+    }
   }
 }

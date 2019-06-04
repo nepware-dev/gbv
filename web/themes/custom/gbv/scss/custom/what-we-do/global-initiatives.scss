@@ -1,52 +1,63 @@
-.global-initiatives-block {
-  padding: 60px 0;
-  background-color: $white;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.global-initiatives {
+  background-image: url(../images/BG/what-we-do/BG-WhatWeDo-2.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 3% 0;
 
-  .global-initiatives-content {
-    padding: 0 50px;
-  }
+  .global-initiatives-block {
+    padding: 60px 0;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-  .view-content {
-    padding: 0 30px;
-  }
+    .global-initiatives-content {
+      padding: 0 50px;
+    }
 
-  h2 {
-    font-size: $font-size-heading-large;
-    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-    background-size: 100px 3px;
-    display: inline-block;
-    padding-bottom: 22px;
-  }
+    .view-content {
+      padding: 0 30px;
+    }
 
-  h4 {
-    font-family: $font-sans;
-    font-size: $font-size-heading;
-    font-weight: 600;
-    color: $secondary-color;
-  }
+    h2 {
+      font-size: $font-size-heading-large;
+      background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+      background-size: 100px 3px;
+      display: inline-block;
+      padding-bottom: 22px;
+    }
 
-  p {
-    font-size: $font-size-normal;
-    font-family: $font-sans;
-    font-weight: 400;
-  }
+    h4 {
+      font-family: $font-sans;
+      font-size: $font-size-heading;
+      font-weight: 600;
+      color: $secondary-color;
+    }
 
-  .global-initiatives-image {
-    height: 270px;
-    width: 100%;
-    object-fit: cover;
+    p {
+      font-size: $font-size-normal;
+      font-family: $font-sans;
+      font-weight: 400;
+    }
+
+    .global-initiatives-image {
+      height: 270px;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .global-initiatives-block {
-    .global-initiatives-content {
-      padding: 0;
-      padding-bottom: 25px;
-      border-bottom: 1px solid #a99bbd;
+  .global-initiatives {
+    padding: 0;
+
+    .global-initiatives-block {
+      .global-initiatives-content {
+        padding: 0;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #a99bbd;
+      }
     }
   }
 }

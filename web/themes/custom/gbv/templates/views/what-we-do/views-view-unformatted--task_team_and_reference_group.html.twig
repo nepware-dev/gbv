@@ -35,8 +35,7 @@
         <button class="change-btns"><i class="fa" onclick="plusGroups(-1)">&#xf104;</i></button>
         <div class="group-single">
             <h4 class="title">{{entity.title[0].value}}</h4>
-            {% set text = entity.field_reference_group_body[0].value|raw|render|striptags %}
-            {{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}
+            {{ entity.field_reference_group_body[0].value|raw }}
             <a href="{{file_url(entity.field_reference_group_file.entity.uri.value)}}" download><button class="button-outline">Download</button></a>
         </div>
         <button class="change-btns"><i class="fa" onclick="plusGroups(+1)">&#xf105;</i></button>

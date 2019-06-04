@@ -1,11 +1,17 @@
+.home-introduction {
+  background-image: url(../images/BG/home/BG-home.svg);
+  background-repeat: no-repeat;
+  background-color: $white;
+  background-position: 0 70%;
+}
+
 .keydocument-container {
   padding-left: 5em;
   padding-right: 5em;
 }
 
 .keydocument-block {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  background-color: $white;
 }
 
 .document {
@@ -62,5 +68,9 @@
     padding: 10% 0;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+  }
+
+  .home-introduction {
+    background-image: none;
   }
 }
