@@ -16,7 +16,7 @@
             text-align: center;
             color:$white;
             font-weight: $font-weight-bold;
-            font-size: $hero-font-size;
+            font-size: $font-size-heading;
             font-family: $font-sans;
             text-transform: none;
         }
@@ -32,5 +32,10 @@
             color: white;
             padding: 9px 26px;
         }
+    }
+}
+@media screen and(max-width: 480px) {
+    .hero-image-bg {
+        max-height: 250px;
     }
 }

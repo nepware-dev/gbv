@@ -9,7 +9,7 @@
     p{
         font-size: $summary-font-size;
         color: $black;
-        padding: 5% 0 5% 0;
+        padding: 5% 0;
         font-family: $font-sans;
         font-weight: $font-weight-lighter;
     }
@@ -19,4 +19,18 @@
     height: 100%;
     object-fit: cover;
     max-height: 540px;
+}
+
+@media only screen and (max-width: 480px) {
+    .home-summary {
+      background-color: $white;
+      padding: 5% 5%;
+    }
+    .home-summary p{
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    .intro-image-container {
+        display: none;
+    }
 }

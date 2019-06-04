@@ -23,7 +23,14 @@
         padding: 3% 25%;
     }
 }
-.document-body{
+
+.document-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.document-body {
     text-align: center;
     font-weight: $font-weight-normal;
     display: flex;
@@ -31,11 +38,20 @@
     font-size: $font-size-normal;
     font-family: $font-sans;
     flex: 1;
-    .document-title{
+    .document-title {
         text-align: center;
         font-weight: $font-weight-bold;
         font-size: $font-size-subheading;
         font-family: $font-sans;
         flex: 9.9;
+    }
+}
+
+@media screen and(max-width: 480px) {
+    .keydocument-block {
+        background-color: $white;
+        padding: 100px 0;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 }

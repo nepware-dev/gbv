@@ -26,7 +26,8 @@
         default_row_class ? 'views-row',
         ]
     %}
-    <div class="col-sm-3">
+    <div class="col-sm-3 document-col">
+      <button class="change-btns"><i class="fa" onclick="plusDocs(-1)">&#xf104;</i></button>
         <div class="document">
             <div class="document-header">
                 <img src="{{directory}}/images/icons/icon-doc.png" class="events-image" />
@@ -40,7 +41,30 @@
                 </a>
             </div>
         </div>
+      <button class="change-btns"><i class="fa" onclick="plusDocs(+1)">&#xf105;</i></button>
     </div>
     
     
 {% endfor %}
+</div>
+<script>
+var slideIndex = 1;
+if(window.innerWidth<=480){
+  showDocs(slideIndex);
+}
+
+function plusDocs(n) {
+  showDocs(slideIndex += n);
+}
+
+function showDocs(n) {
+  var i;
+  var changebtns = document.getElementsByClassName("document-col");
+  if (n > changebtns.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = changebtns.length} ;
+  for (i = 0; i < changebtns.length; i++) {
+    changebtns[i].style.display = "none";
+  }
+  changebtns[slideIndex-1].style.display = "flex";
+}
+</script>
