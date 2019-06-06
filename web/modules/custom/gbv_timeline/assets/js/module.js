@@ -6,7 +6,7 @@
                     var lastId,
                         sideMenu = $("#timeline"),
                         wrapper = $("#main-wrapper"),
-                        topMenuHeight = 80,
+                        topMenuHeight = 400,
 
                         dataTitles = wrapper.find("div[data-title]"),
 

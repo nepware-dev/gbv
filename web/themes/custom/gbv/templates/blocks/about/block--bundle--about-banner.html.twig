@@ -19,7 +19,7 @@
   {% block content %}
     <div{{ content_attributes.addClass(contentClasses) }}>
         <div class="about-banner">
-            <img src="{{file_url(content.field_about_banner_image['#items'].entity.uri.value)}}" class="hero-about-image">
+            {# <img src="{{file_url(content.field_about_banner_image['#items'].entity.uri.value)}}" class="hero-about-image"> #}
         </div>
     </div>
   {% endblock %}

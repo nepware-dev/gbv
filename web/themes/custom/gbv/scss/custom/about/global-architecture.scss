@@ -1,16 +1,30 @@
 .global-architecture-section{
-    background-color: $secondary-shade;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-bottom: 50px;
+    background-color: $white;
+    padding: 80px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .content{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
     h2{
-        text-align: center;
-        font-size: $title-font-size;
-        margin-bottom: $title-margin-bottom;
-        font-weight: bold;
+        font-size: $font-size-heading-large;
+        background: linear-gradient($secondary-color,$secondary-color) bottom  no-repeat;
+        background-size: 100px 3px;
+        display: inline-block;
+        padding-bottom: 22px;
     }
     p{
-        font-size: $sub-heading-font-size;
+        font-size: $font-size-normal;
+        font-weight: $font-weight-normal;
         text-align: center;
     }
+}
+.gpc-architect{
+    display: flex;
+    flex-direction: column;
+    padding-right: 120px;
 }
