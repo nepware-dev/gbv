@@ -1,44 +1,63 @@
 .partner-block{
-    margin-bottom: 20px;
-    h2{
-        text-align: center;
-        margin-bottom: $title-margin-bottom;
-        font-size: $title-font-size;
-    }
+    padding: 3%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-shade;
     .partner-inner-block{
-        background-color: $secondary-shade;
-        padding: 50px 30px;
         width: 100%;
+    }
+    .col-auto{
+        display: flex;
+        align-self: center;
     }
     .partner-single{
         height: 120px;
         width: 120px;
         border: 1px solid $gray-800;
+        margin-top: 15%;
         padding: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: $white;
-        margin-right: 30px;
+        margin-right: 3%;
+        margin-left:3%;
+
         img{
             width: 80px;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
         }
+        img:hover{
+            width: 80px;
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+        }
+        border: solid 1px #f3f3f3;
+        background-color: #ffffff;
     }
     .donor-tab{
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-bottom: 2%;
         .tab-text{
-            font-size: $tab-font-size;
+            font-size: $font-size-subheading;
+            font-family: $font-sans;
+            font-weight: $font-weight-normal;
+        }
+        .tab-text:focus{
+            font-weight: $font-weight-bold;
         }
     }
     .divider{
         display: block;
-        height: 50px;
+        height: 37px;
         width: 2px;
-        background-color: $gray-800;
-        margin-left: 40px;
-        margin-right: 40px;
+        background-color: $divider-shade;
+        margin-left: 32.5px;
+        margin-right: 32.5px;
     }
 }
 

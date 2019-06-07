@@ -20,7 +20,7 @@
   <h3>{{ title }}</h3>
 {% endif %}
 <div{{ content_attributes.addClass('partner-inner-block') }}>
-    <div class="donor-tab"><a href="javascript:void(0)" onclick="togglePartner('core')" class="tab-text"> Core Members and Observers </a> <span class="divider"> </span> <a href="javascript:void(0)" class="tab-text" onclick="togglePartner('donor')"> Donors </a></div>
+    <div class="donor-tab"><a href="javascript:void(0)" onclick="togglePartner('core')" class="tab-text"> Core Members</a> <span class="divider"> </span> <a href="javascript:void(0)" class="tab-text" onclick="togglePartner('donor')"> Donors </a></div>
     <div class="row">
       {% for row in rows %}
           {% set entity = row.content['#row']._entity %}

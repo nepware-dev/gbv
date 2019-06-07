@@ -63,3 +63,28 @@ a {
 #panels-ipe-tray{
     z-index: 99999;
 }
+
+h2{
+    text-align: center;
+    margin-bottom: $title-margin-bottom;
+    font-size: $font-size-heading;
+    font-family: $font-sans;
+    color:$secondary-color;
+    font-weight: bold;
+}
+.nopadding{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.button-outline{
+    align-self: center;
+    padding: 3% 15%;
+    margin-top: 5%;
+    color:$secondary-color;
+    background-color: $white;
+    border: 2px solid $secondary-color;
+    border-radius: 0;
+    font-family: $font-sans;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-bold;
+}
