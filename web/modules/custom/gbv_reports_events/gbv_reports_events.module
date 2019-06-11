@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\gbv_reports_events\Controller\ReportsEventsController;
+
+function gbv_reports_events_theme() {
+  $event = ReportsEventsController::getUpcomingEvent();
+  $reports = ReportsEventsController::getLatestReports();
+  return [
+    'gbv_reports_events-block' => [
+      'variables' => [
+        'reports' => $reports,
+        'event' => $event
+      ]
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function gbv_reports_events_preprocess_block(&$vars) {
+  if($vars['derivative_plugin_id'] == 'core_members_donors-block_1') {
+    $vars['#cache']['max-age'] = 0;
+  }
+}

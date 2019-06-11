@@ -1,0 +1,28 @@
+moment:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js: { type: external }
+
+fullcalendar:
+  version: 1.x
+  css:
+    layout:
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css: { type: external }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js: { type: external }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - gbv_events/moment
+    
+eventcalendar:
+  version: 1.x
+  js:
+    assets/js/module.js: {}
+  css:
+    theme:
+      assets/css/module.css: {}
+  dependencies:
+    - gbv_events/fullcalendar

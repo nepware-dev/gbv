@@ -6,33 +6,41 @@
     background-color: $secondary-shade;
     .partner-inner-block{
         width: 100%;
+        .partner-items-wrapper {
+            justify-content: center;
+        }
     }
     .col-auto{
         display: flex;
         align-self: center;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        .view-id-core_members_donors{
+            width: 100%;
+        }
     }
     .partner-single{
         height: 120px;
         width: 120px;
+        padding: 10px;
         border: 1px solid $gray-800;
-        margin-top: 15%;
-        padding: 20px;
+        margin-top: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: $white;
-        margin-right: 3%;
-        margin-left:3%;
+        margin-right: 1%;
+        margin-left:1%;
 
         img{
-            width: 80px;
+            width: 100%;
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
-        }
-        img:hover{
-            width: 80px;
-            -webkit-filter: grayscale(0%);
-            filter: grayscale(0%);
+            &:hover {
+                -webkit-filter: grayscale(0%);
+                filter: grayscale(0%);
+            }
         }
         border: solid 1px #f3f3f3;
         background-color: #ffffff;
@@ -46,8 +54,9 @@
             font-size: $font-size-subheading;
             font-family: $font-sans;
             font-weight: $font-weight-normal;
+            color: $black;
         }
-        .tab-text:focus{
+        .active {
             font-weight: $font-weight-bold;
         }
     }

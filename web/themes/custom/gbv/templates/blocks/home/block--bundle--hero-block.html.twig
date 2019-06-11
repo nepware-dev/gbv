@@ -19,16 +19,19 @@
   {% block content %}
     <div{{ content_attributes.addClass(contentClasses) }}>
         <div class="hero-banner">
-            <div class="row">
+            <div class="row nomargin">
                 <div class="col-12 nopadding">
-                    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" class="hero-image img-responsive">
+                  <div class="hero-image-bg" style="background-image: url('{{file_url(content.field_image['#items'].entity.uri.value)}}')">
+                    <div class="col-6 hero-content">
+                      <h2 class="hero-title">
+                        {{content.body}}
+                      </h2>
+                      <a href="{{ content.field_button[0]['#url'] }}">
+                        <button class="button-outline">{{ content.field_button[0]['#title'] }}</button>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-            <div class="col-6 hero-content">
-                <h2 class="hero-title">{{content.body}}</h2>
-                <a href="{{ content.field_button[0]['#url'] }}">
-                  <button class="button-outline">{{ content.field_button[0]['#title'] }}</button>
-                </a>
-            </div>
             </div>
         </div>
     </div>

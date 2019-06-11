@@ -1,0 +1,6 @@
+name: Vacancies
+type: module
+description: 'Adds Custom "Vacancies" content type.'
+core: 8.x
+dependencies:
+  - node

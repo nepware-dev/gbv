@@ -1,24 +1,24 @@
 .hero-banner{
     background-color: $secondary-shade;
-    .hero-image{
-        width: 100%;
+    .hero-image-bg{
         height: 600px;
-        object-fit: cover;
+        background-position: cover;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .hero-content{
         display: flex;
         flex-direction: column;
-        align-self: center;
-        position: absolute;
-        left: 25%;
-        right: 0;
         .hero-title{
-            margin-top: 25%;
             text-align: center;
             color:$white;
             font-weight: $font-weight-bold;
             font-size: $hero-font-size;
             font-family: $font-sans;
+            text-transform: none;
         }
         a{
             align-self: center;

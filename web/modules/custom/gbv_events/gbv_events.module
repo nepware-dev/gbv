@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Currently (31/07/2016) , Drupal needs this blank file.
+ */
+ function gbv_events_theme() {
+  return [
+    'gbv_events-events' => [
+      'variables' => ['var1' => 'test'],
+    ],
+  ];
+}

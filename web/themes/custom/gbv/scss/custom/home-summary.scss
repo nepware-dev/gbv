@@ -1,14 +1,18 @@
 .home-summary{
     padding: 5% 10% 5% 10%;
     background-color: #f9f9f9;
+    height: 100%;
     p{
-        font-size: $font-size-large;
+        font-size: $summary-font-size;
         color: $black;
         padding: 5% 0 5% 0;
         font-family: $font-sans;
-        font-weight: $font-weight-normal;
+        font-weight: $font-weight-lighter;
     }
 }
-.introduction{
-    display: flex;
+.intro-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 540px;
 }

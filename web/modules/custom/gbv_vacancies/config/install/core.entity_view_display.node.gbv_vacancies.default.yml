@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - gbv_vacancies
+  config:
+    - field.field.node.gbv_vacancies.field_vacancy_body
+    - field.field.node.gbv_vacancies.field_vacancy_deadline
+    - field.field.node.gbv_vacancies.field_vacancy_job_title
+    - field.field.node.gbv_vacancies.field_vacancy_organization
+    - node.type.gbv_vacancies
+  module:
+    - datetime
+    - text
+    - user
+id: node.gbv_vacancies.default
+targetEntityType: node
+bundle: gbv_vacancies
+mode: default
+content:
+  field_vacancy_body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_vacancy_deadline:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_vacancy_job_title:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vacancy_organization:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
