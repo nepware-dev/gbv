@@ -10,6 +10,7 @@
                     renderWorldCopies: false,
                     bounds: [ [-180, -60], [180, 90] ],
                     attributionControl: false,
+                    interactive: false,
                 });
                 let hoveredStateId =  null;
                 map.scrollZoom.disable();
