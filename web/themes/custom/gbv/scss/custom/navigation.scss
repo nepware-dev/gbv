@@ -12,6 +12,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: right;
+            text-transform: uppercase;
+            color: #8064a3;
+            font-family: PTSans;
+            font-size: 14px;
+            font-weight: bold;
         }
         .subscribe-text{
             font-size: $font-size-normal;

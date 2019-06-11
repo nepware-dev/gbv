@@ -7,7 +7,7 @@
 .timeline {
     width: 15%;
     position: fixed;
-    background-color:#ddd;
+    background-color:transparent;
     padding: 2em;
     top: 35%;
 }
@@ -17,41 +17,39 @@
     padding-bottom: 50px;
     position: relative;
     display: flex;
+    font-size: 12px;
 }
 
 .timeline li .inner-circle{
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 1px solid #333;
-    display: none;
-    margin: 0 auto;
-    background-color: black;
+    border: 1px solid 63337c;
+    margin: 0 3px;
+    background-color:#63337c;
     align-self: center;
     justify-content: center;
 }
 .timeline li .circle{
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid #333;
-    display: inline-flex;
-    margin-right: 10px;
+    display: flex;
 }
 .timeline li a{
-    color: #000;
-    font-size: 1em;
+    color: #000000;
+    font-size: 12px;
+    font-weight: lighter;
+    padding: 0 10px;
 }
-.timeline li a:focus, .timeline li a:hover{
-    color: #343a40;
+.timeline .active a{
+    color: #63337c;
     font-weight: bold;
     text-decoration: none;
+    font-size: 12px;
 }
 .timeline li::after{
     content: '';
     position: absolute;
     width: 3px;
-    background-color: #333;
+    background-color: #63337c;
     top: 25px;
     bottom: 5px;
     left: 6px;
@@ -64,8 +62,12 @@
     display: flex;
 }
 
-.timeline .active .inner-circle {
-    display: inline-block !important;
+.timeline .active .circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid#63337c;
+    display: flex;
 }
 
 #main-wrapper{
