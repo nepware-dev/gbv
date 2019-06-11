@@ -30,3 +30,6 @@ web/themes/custom/gbv/js/*
 
 # docker
 docker-compose.yml
+
+# system
+.DS_Store

@@ -8,15 +8,8 @@ services:
       dockerfile: Dockerfile.local
     volumes:
       - .:/var/www
+    ports:
+      - "8080:8080"
     external_links:
       - redis
       - mysql-5.7:db
-  nginx:
-    image: nginx:alpine
-    volumes:
-      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - .:/var/www
-    ports:
-      - "8080:80"
-    links:
-      - app

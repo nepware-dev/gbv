@@ -25,6 +25,8 @@ RUN apk add --no-cache --virtual .build-deps \
       libpq \
       libxml2 \
       git \
+      # for drush command
+      mysql-client \
     && apk del .build-deps
 
 RUN curl -sS https://getcomposer.org/installer \
