@@ -1,106 +1,120 @@
 
-.navbar{
-    padding: 0;
+.navbar {
+  padding: 0;
 }
 
-.bg-secondary{
-    background-color: $secondary-shade !important;
-    height: 62px;
-    .header-mailing{
-        margin-right: 50px;
-        .newsletter-block{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: right;
-            text-transform: uppercase;
-            color: #8064a3;
-            font-family: PTSans;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .subscribe-text{
-            font-size: $font-size-normal;
-            font-weight: $font-weight-bold;
-            font-family: $font-sans;
-            color: $primary-color;
-            text-align: right;
-            text-transform: uppercase;
-            margin-right: 10px;
-            padding-right: 10px;
-        }
-        #mc_embed_signup form{
-            padding: 0;
-            .email-input{
-                padding: 5px 35px;
-                color:$primary-color;
-                border: 2px solid $primary-color;
-                font-family: $font-sans;
-                font-size: $font-size-small;
-                font-weight: normal;
-                margin-left: 25px;
-            }
-            .btn-signup{
-                padding: 6px 20px;
-                font-size: $font-size-small;
-                background-color:$primary-color;
-                color:$white;
-            }
-        }
+.bg-secondary {
+  background-color: $secondary-shade !important;
+  height: 62px;
+
+  .header-mailing {
+    margin-right: 50px;
+
+    .newsletter-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: right;
+      text-transform: uppercase;
+      color: #8064a3;
+      font-weight: bold;
     }
-}
-.bg-primary{
-    height: 115px;
-    background-color: $primary-shade !important;
-    box-shadow: 0px 3px 5px -6px rgba(0,0,0,0.75);
-    .navbar-collapse{
-        justify-content: flex-start;
+
+    .subscribe-text {
+      font-size: $font-size-normal;
+      font-weight: $font-weight-bold;
+      font-family: $font-pt-sans;
+      color: $primary-color;
+      text-align: right;
+      text-transform: uppercase;
+      margin-right: 10px;
+      padding-right: 10px;
     }
-    #block-gbv-main-menu{
-        display: flex;
-        flex: 1;
+
+    #mc_embed_signup form {
+      display: flex;
+      padding: 0;
+
+      .email-input {
+        padding: 5px 35px;
+        color: $primary-color;
+        border: 2px solid $primary-color;
+        font-size: $font-size-small;
+        font-weight: normal;
+        margin-left: 25px;
+      }
+
+      .btn-signup {
+        padding: 7px 20px;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        background-color: $primary-color;
+        border: none;
+        color: $white;
+      }
     }
-    .navbar-nav{
-        align-items: center;
-        display: flex;
-        flex: 1;
-        .nav-item{
-            display: flex;
-            margin-left: 3%;
-            .nav-link{
-                color: $black;
-                font-size: $font-size-normal;
-                text-transform: uppercase;
-                font-weight: $font-weight-bold;
-                font-family: $font-sans;
-            }
-            &:last-child{
-                background-color:$secondary-color;
-                padding: 0 22px;
-                align-self: flex-end;
-                margin-left: auto;
-                margin-right: 7%;   
-                .nav-link{
-                    color: #fff !important;
-                    font-weight: $font-weight-bold !important;
-                }
-            }
-        }
-        .nav-item .active{
-            color: $gray-800 !important;
-            font-weight: $font-weight-bold;
-            border-bottom: 2px solid $secondary-color;
-        }
-    }
-    
-    .navbar-brand{
-        background-color: #ffffff;
-        margin-left: 5%;
-        margin-right: 3%;
-        img{
-            width: 130px;
-        }
-    }
+  }
 }
 
+.bg-primary {
+  height: 115px;
+  background-color: $primary-shade !important;
+  box-shadow: 0 3px 5px -6px rgba(0, 0, 0, 0.75);
 
+  .navbar-collapse {
+    justify-content: flex-start;
+  }
+
+  #block-gbv-main-menu {
+    display: flex;
+    flex: 1;
+  }
+
+  .navbar-nav {
+    align-items: center;
+    display: flex;
+    flex: 1;
+
+    .nav-item {
+      display: flex;
+      margin-left: 3%;
+      line-height: 0.75em;
+
+      .nav-link {
+        color: $black;
+        font-size: $font-size-normal;
+        text-transform: uppercase;
+        font-family: $font-pt-sans;
+      }
+
+      &:last-child {
+        background-color: $secondary-color;
+        padding: 5px 32px;
+        align-self: flex-end;
+        margin-left: auto;
+        margin-right: 7%;
+
+        .nav-link {
+          color: #fff !important;
+          font-weight: $font-weight-bold !important;
+        }
+      }
+    }
+
+    .nav-item .active {
+      font-weight: $font-weight-bold;
+      border-bottom: 2px solid $secondary-color;
+    }
+  }
+
+  .navbar-brand {
+    background-color: #fff;
+    margin-left: 5%;
+    margin-right: 3%;
+
+    img {
+      width: 130px;
+    }
+  }
+}
