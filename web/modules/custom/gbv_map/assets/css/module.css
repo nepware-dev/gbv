@@ -12,7 +12,7 @@
     align-items: center;
     margin-top: 10px
 }
-.mapboxgl-popup-content .country-header a.country-url{
+.mapboxgl-popup-content .country-header a.country-url {
     background-color: #FF6666;
     padding: 5px 7px;
     color: white;
