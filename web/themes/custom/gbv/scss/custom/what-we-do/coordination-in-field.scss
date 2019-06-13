@@ -1,29 +1,54 @@
+.gbv-coordination {
+    padding: 50px 0;
+    margin-top: 50px;
+    background-color: $lavender;
+}
 .coordination-field {
-    padding-top: 50px;
-    margin-top: 20px;
-    padding-bottom: 50px;
-    background-color: $secondary-shade;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     h2 {
-        text-align: center;
-        font-size: 2em;
-        font-weight: bold;
+        font-size: $font-size-heading-large;
+        background: linear-gradient($secondary-color,$secondary-color) bottom  no-repeat;
+        background-size: 100px 3px;
+        display: inline-block;
+        padding-bottom: 22px;
     }
-    .view-header{
-        font-size: $summary-font-size;
-        text-align: center;
-        margin-bottom: 50px;
+    .coordination-row {
+        padding: 10px 20px;
     }
-    .index {
-        font-size: 2.5em;
-        font-weight: 900;
+    .coordination-index {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .title-wrapper {
+    .view-header {
+        font-size: $font-size-large;
+        margin-bottom: 69px;
+        line-height: 1.83;
+        font-family: $font-sans;
+        font-weight: $font-weight-lighter;
+    }
+    .index  {
+        font-size: $font-size-heading;
+        font-weight: $font-weight-bold;
+        color:$white;
+        font-family: $font-sans;
+    }
+    .title-wrapper  {
         align-items: center;
         display: flex;
-        .title {
-            font-size: 1.5em;
-            text-transform: capitalize;
+        .title  {
+            font-size: $font-size-heading;
+            text-transform: uppercase;
             margin-bottom: 0;
+            font-weight: 600;
+            font-family: $font-sans;
+            color: $secondary-color;
         }
     }
 }
