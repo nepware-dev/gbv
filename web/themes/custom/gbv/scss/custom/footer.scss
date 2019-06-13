@@ -1,55 +1,80 @@
-.site-footer__top {
-    justify-content: center;
-}
+$accent-shade: #1c1c1c;
 
-.site-footer__bottom {
-    display: flex;
-    justify-content: center;
-}
-.region-footer-third, .region-footer-sixth {
-    display: flex;
-    justify-content: center;
-}
-.site-footer{
-    background-color: $accent-shade !important;
-    padding: 50px 30px;
+.site-footer {
+  background-color: $accent-shade !important;
+  padding: 40px 40px 0 40px;
+  color: $gray-100;
+
+  p {
+    font-size: $font-size-small;
+  }
+
+  h2 {
     color: $gray-100;
-    p{
-        font-size: font-size-small;
-    }   
-    h2{
-        color: $gray-100;
-        text-align: left;
-        margin-bottom: 30px;
-        font-family: $font-sans;
-        font-weight: $font-weight-bold;
-        text-transform: uppercase;
-        font-size: $font-size-normal;
-    }
-    .social-media-links--platforms{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        li{
-            margin-right: 10px;
-        }
-        .fa{
-            color: $gray-100;
-            font-size: $font-size-heading;
-        }
-    }
-    #mc_embed_signup form{
-        padding: 0 !important;
-        margin-top: 30px;
-        .email-input{
-            padding: 10px;
-        }
-        .btn-signup{
-            padding: 10px;
-        }
-    }
-    a{
-        color: $white;
-    }
-}
+    text-align: left;
+    margin-bottom: 30px;
+    font-family: $font-sans;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    font-size: $font-size-normal;
+  }
 
+  .site-footer__top {
+    justify-content: center;
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-media-links--platforms {
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin-right: 10px;
+    }
+
+    .fa {
+      color: $gray-100;
+      font-size: 36px;
+    }
+  }
+
+  #mc_embed_signup form {
+    padding: 0 !important;
+    margin-top: 30px;
+
+    .email-input {
+      padding: 10px;
+    }
+
+    .btn-signup {
+      padding: 10px;
+    }
+  }
+
+  .footer-contact {
+    a {
+      color: $white;
+      font-weight: $font-weight-bold;
+
+      &::after {
+        content: '\f178';
+        font-family: 'FontAwesome';
+        margin: 0 0 0 16px;
+      }
+    }
+  }
+
+  .keylink-content {
+    column-count: 2;
+
+    a {
+      color: $white;
+      font-weight: $font-weight-bold;
+      text-decoration: underline;
+    }
+  }
+}
