@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% for row in rows %}
+  {% set object = row.content['#row']._object %}
+  {% set type = object.get('type').getValue()[0].target_id %}
+  {% set title = object.get('title').getValue()[0].value %}
+  {{kint(object)}}
+  {{kint(type)}}
+  {% if type=='gbv_documents' %}
+    {{ kint(object.get('field_document_file').entity.uri.value) }}
+  {% endif %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {% if type=='gbv_documents' %}
+      {% set document_body = object.get('field_document_body').getValue()[0].value %}
+      {% set document_file = object.get('field_document_file').entity.uri.value %}
+      {% set created_date = object.get('created').getValue()[0].value %}
+    {% elseif type=='gbv_events' %}
+      {% set event_body = object.get('field_event_body').getValue()[0].value %}
+      {% set event_start_date = object.get('field_event_date').getValue()[0].value %}
+      {% set event_end_date = object.get('field_event_date').getValue()[0].end_value %}
+      {% set created_date = object.get('created').getValue()[0].value %}
+    
+    {% elseif type=='tools_and_resources' %}
+      {% set tr_document = object.get('field_resource_document').entity.uri.value %}
+      {% set tr_thematic = object.get('field_tools_resources_for_themat').getValue()[0].value %}
+      {% set tr_video = object.get('field_video').getValue()[0].value %}
+      {% set tr_thematic_sec = object.get('field_thematic_resource_type_sec').getValue()[0].value %}
+      {% set tr_section = object.get('field_section').getValue()[0].value %}
+      {% set tr_type = object.get('field_tools_resources_type').getValue()[0].value %}
+      {% set tr_im_cat = object.get('field_im_tools_resources_categor').getValue()[0].value %}
+      {% set tr_co_cat = object.get('field_co_ordination_tools_resour').getValue()[0].value %}
+      {% set tr_body = object.get('body').getValue()[0].value %}
+      
+    {% elseif type=='gbv_reports' %}
+      {% set report_body = object.get('field_report_body').getValue()[0].value %}
+      {% set report_image = object.get('field_report_image').entity.uri.value %}
+      {% set report_date = object.get('field_report_date').getValue()[0].value %}
+      {{report_body}}
+      {{report_image}}
+      {{report_date}}
+
+    {% endif %}
+    {{ row.content }}
+  </div>
+{% endfor %}
