@@ -2,6 +2,7 @@
 
 namespace Drupal\gbv_reports_events\Plugin\Block;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -24,9 +25,37 @@ class ReportEventBlock extends BlockBase {
       '#attached' => [
         'library' => ['gbv_reports_events/gbvreportsevents'],
       ],
-      '#cache' => ['max-age' => 0]
+      '#cache' => [
+        'tags' => $this->getCacheTags(),
+        'contexts' => $this->getCacheContexts(),
+      ],
     ];
     return $build;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    // With this when your node change your block will rebuild.
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      // If there is node add its cachetag.
+      return Cache::mergeTags(parent::getCacheTags(), ['node:' . $node->id()]);
+    }
+    else {
+      // Return default tags instead.
+      return parent::getCacheTags();
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    // If you depends on \Drupal::routeMatch()
+    // you must set context of this block with 'route' context tag.
+    // Every new route this block will rebuild.
+    return Cache::mergeContexts(parent::getCacheContexts(), ['route']);
   }
 
 }
