@@ -1,0 +1,140 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'col-sm-10 offset-md-1',
+    'tools-and-resources',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content',
+        'row',
+    ]
+%}
+<div {{ attributes.addClass(classes) }}>
+    <div class="row">
+        <div class="container coordination-tools-and-resources">
+            <h2>Coordination Tools and Resources</h2>
+        {% block content %}
+            <div{{ content_attributes.addClass(contentClasses) }}>
+                <div class="col-sm-6 tools-content">
+                    <div class="rectangle">
+                        <h3>Starter Kit</h3>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Informing strategic decision making/Needs assessments and analysis</h3>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Key Guidance documents on humanitarian needs assessment</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Secondary data review</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Indicator inventory for needs assessment</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Mainstreaming GBV in assessments</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Resource Mobilization</h3>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Preparedness & Contingency Planning</h3>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Implementing a GBV sub-cluster</h3>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Cluster leadership and co-leadership</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Transition and nexus</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Working with the protection cluster</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div><div class="rectangle-content">
+                            <div class="col-sm-10">Localization</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 tools-content">
+                    <div class="rectangle">
+                        <h3>Supporting Service Delivery</h3>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Service mapping and 3/4/5W</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">SOPs and referral pathways</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Communication materials/constant companions</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Strategic Planning & HPC Guidance</h3>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Primary guidance on HPC</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Estimation on affected population/PIN</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Gender with age marker</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Monitoring & Evaluation</h3>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Monitoring indicator inventory</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Indicator guidance</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Cluster coordination performance monitoring</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Advocacy</h3>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Engaging with the media</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Capacity Development</h3>
+                        <div class="rectangle-content">
+                            <div class="col-sm-10">Core competencies for GBV Coordinators and Specialists</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </div>
+                    </div>
+                    <div class="rectangle">
+                        <h3>Cluster Coordination Guidance & Policies</h3>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        </div>
+    </div>
+</div>
+
+

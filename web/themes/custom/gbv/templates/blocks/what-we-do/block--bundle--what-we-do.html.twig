@@ -14,8 +14,7 @@
         'row',
     ]
 %}
-
-<div{{ attributes.addClass(classes) }} id="coordination-level" data-title={{ content.field_what_we_do_heading.0['#context'].value }}>
+<div{{ attributes.addClass(classes) }} id="coordination-level" data-title="{{ content.field_what_we_do_heading.0['#context'].value }}">
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -28,8 +27,7 @@
         {{content.body}}
       </div>
       <div class="col-6">
-        <h2>{{ content.field_what_we_do_heading.0['#context'].value }} </h2>
-        {{content.body}}
+        <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="what-we-do-image" class="what-we-do-image" />
       </div>
     </div>
   {% endblock %}

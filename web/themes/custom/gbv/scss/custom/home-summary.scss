@@ -1,5 +1,9 @@
-.home-summary{
-    padding: 5% 10% 5% 10%;
+.path-frontpage .block-region-content {
+    padding-top: 0px;
+}
+
+.home-summary {
+    padding: 5% 10%;
     background-color: #f9f9f9;
     height: 100%;
     p{
@@ -10,7 +14,7 @@
         font-weight: $font-weight-lighter;
     }
 }
-.intro-image{
+.intro-image {
     width: 100%;
     height: 100%;
     object-fit: cover;

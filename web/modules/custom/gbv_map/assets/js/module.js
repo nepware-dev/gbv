@@ -87,7 +87,7 @@
                             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                         }
                         let popupContent = '<div class="country-header"><h3>'+name+'</h3>';
-                        popupContent += '<a class="country-url" href="'+uri+'" target="_blank"> Visit Country Page </a></div>';
+                        popupContent += '<a class="country-url" href="'+uri+'" target="_blank"> Visit Country Page <i class="fa fa-external-link"></i></a></div>';
                         popupContent += content;
                         new mapboxgl.Popup()
                             .setLngLat(coordinates)

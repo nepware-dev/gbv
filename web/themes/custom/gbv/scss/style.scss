@@ -101,3 +101,20 @@ h2{
 .left-auto{
     margin-left: auto;
 }
+
+
+h3 {
+    font-size: $font-size-heading;
+    font-weight: bold;
+    color: $secondary-color;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+h4 {
+    font-size: $font-size-subheading;
+    font-weight: bold;
+    color: $black;
+    text-align: left;
+    padding-top: 25px;
+}
