@@ -18,7 +18,7 @@ class EventController extends ControllerBase {
    */
   public function getData() {
     $serializer = Drupal::service('serializer');
-    $nids = Drupal::entityQuery('node')->condition('type', 'gbv_events')->execute();
+    $nids = Drupal::entityQuery('node')->condition('type', 'gbv_events')->condition('status', 1)->execute();
     $nodes = Node::loadMultiple($nids);
     $eventData = [];
     $index = 0;
