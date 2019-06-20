@@ -22,7 +22,8 @@ class ReportsEventsController extends ControllerBase {
     $start = new DateTime('now', new \DateTimezone($timezone));
     $event_query = Drupal::entityQuery('node');
     $event_query
-      ->condition('field_event_date', $start->format(DATETIME_DATETIME_STORAGE_FORMAT), '>=');
+      ->condition('field_event_date', $start->format(DATETIME_DATETIME_STORAGE_FORMAT), '>=')
+      ->condition('status', 1);
     $event_results = $event_query->execute();
     if (count($event_results) > 0) {
       $event = Drupal::entityTypeManager()->getStorage('node')->load(reset($event_results));
@@ -34,9 +35,10 @@ class ReportsEventsController extends ControllerBase {
    * {@inheritdoc}
    */
   public function getLatestReports() {
-    $reports = Drupal::entityTypeManager()->getStorage('node')->getQuery();
     $report_query = Drupal::entityQuery('node');
-    $report_query->condition('type', 'gbv_reports')->sort('created', 'DESC')->range(0, 3);
+    $report_query->condition('type', 'gbv_reports')->sort('created', 'DESC')
+      ->condition('status', 1)
+      ->range(0, 3);
     $nids = $report_query->execute();
     $reports = Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
     return $reports;

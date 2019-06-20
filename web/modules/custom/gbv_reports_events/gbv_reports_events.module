@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\gbv_reports_events\Controller\ReportsEventsController;
+use Drupal\node\NodeInterface;
 
 function gbv_reports_events_theme() {
   $event = ReportsEventsController::getUpcomingEvent();
@@ -21,5 +22,17 @@ function gbv_reports_events_theme() {
 function gbv_reports_events_preprocess_block(&$vars) {
   if($vars['derivative_plugin_id'] == 'core_members_donors-block_1') {
     $vars['#cache']['max-age'] = 0;
+  }
+}
+
+function gbv_reports_events_node_update(NodeInterface $node) {
+  if($node->bundle()==='gbv_reports' || $node->bundle()==='gbv_events') {
+    drupal_flush_all_caches();
+  }
+}
+
+function gbv_reports_node_insert(NodeInterface $node) {
+  if ($node->bundle() == 'gbv_reports' || $node->bundle()==='gbv_events') {
+    drupal_flush_all_caches();
   }
 }
