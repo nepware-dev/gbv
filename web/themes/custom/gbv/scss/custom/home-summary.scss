@@ -1,36 +1,40 @@
 .path-frontpage .block-region-content {
-    padding-top: 0px;
+  padding-top: 0;
 }
 
 .home-summary {
-    padding: 5% 10%;
-    background-color: #f9f9f9;
-    height: 100%;
-    p{
-        font-size: $summary-font-size;
-        color: $black;
-        padding: 5% 0;
-        font-family: $font-sans;
-        font-weight: $font-weight-lighter;
-    }
+  padding: 3% 9%;
+  background-color: #f9f9f9;
+  height: 100%;
+
+  p {
+    font-size: $summary-font-size;
+    color: $black;
+    padding: 5% 0;
+    font-family: $font-sans;
+    font-weight: $font-weight-lighter;
+  }
 }
+
 .intro-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    max-height: 540px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 540px;
 }
 
 @media only screen and (max-width: 480px) {
-    .home-summary {
-      background-color: $white;
-      padding: 5% 5%;
-    }
-    .home-summary p{
-        padding-bottom: 50px;
-        text-align: center;
-    }
-    .intro-image-container {
-        display: none;
-    }
+  .home-summary {
+    background-color: $white;
+    padding: 5% 5%;
+  }
+
+  .home-summary p {
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  .intro-image-container {
+    display: none;
+  }
 }

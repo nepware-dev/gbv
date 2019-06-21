@@ -1,0 +1,75 @@
+.new-report-block {
+  padding-bottom: 2em;
+  padding-top: 2em;
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: $title-font-size;
+    margin-bottom: $title-margin-bottom;
+  }
+
+  .new-reports {
+    display: flex;
+
+    .new-report-single {
+      border-radius: 7px;
+      box-shadow: 0 2px 6px 0 rgba(107, 107, 107, 0.35);
+      border: solid 1px #e1e1e1;
+      margin-top: 10%;
+      background-color: $white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .report-image {
+        width: 100%;
+        border-radius: 7px;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .new-report-inner {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          color: $black;
+          font-size: $font-size-subheading;
+          font-weight: $font-weight-bold;
+          padding: 0;
+        }
+
+        .body {
+          p {
+            color: $black;
+            font-size: $font-size-normal;
+            padding: 18px 0;
+            margin-bottom: 18px;
+            font-weight: $font-weight-lighter;
+          }
+        }
+
+        .date {
+          color: $black;
+          font-size: $font-size-small;
+          opacity: 0.6;
+          font-weight: $font-weight-lighter;
+          bottom: 5px;
+          position: absolute;
+        }
+
+        .access-btn {
+          background-color: transparent;
+          color: $gray-800;
+          border: 2px solid $gray-800;
+          border-radius: 0;
+          font-weight: bold;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+
+}

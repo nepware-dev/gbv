@@ -47,14 +47,13 @@
             <div class="reports">
                 <h2>NEWS & EVENTS</h2>
                 <div class="row">
-                    
                     <div class="col-1dot5 nopadding">
                     </div>
                     {% for report in reports %}
-                        <div class="col-sm-3 news-col">
+                        <div class="col-12 col-md-3 news-report">
                             <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button>
                             <div class="news-single">
-                                <p class="news-title">{{report.title[0].value}}</p>
+                                <h3 class="news-title">{{report.title[0].value}}</h3>
                                 {% set text = report.field_report_body[0].value |render|striptags %}
                                 <span class="news-body">{{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}</span>
                                 <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
@@ -62,6 +61,7 @@
                             <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button>
                         </div>
                     {% endfor %}
+                    </div>
                     <div class="col-1dot5 nopadding">
                     </div>
             </div>
@@ -80,7 +80,7 @@ showNews(slideIndex += n);
 
 function showNews(n) {
 var i;
-var changebtns = document.getElementsByClassName("news-col");
+var changebtns = document.getElementsByClassName("news-report");
 if (n > changebtns.length) {slideIndex = 1}
 if (n < 1) {slideIndex = changebtns.length} ;
 for (i = 0; i < changebtns.length; i++) {

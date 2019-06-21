@@ -26,13 +26,17 @@
         default_row_class ? 'views-row',
         ]
     %}
-    <div class="col-6">
-        <div class="vacancy-single">
-            <h3 class="organization">{{entity.field_vacancy_organization[0].value}}</h3>
-            <h4 class="title">{{entity.field_vacancy_job_title[0].value}}</h4>
-            <span class="body">{{entity.body[0].value|raw}}</span>
-            <h5 class="deadline">Deadline to apply: {{entity.field_vacancy_deadline[0].value}}</h5>
-            <a href="" class="more-btn">Read more </a>
+    <div class="col-4 new-reports">
+        <div class="new-report-single">
+            <img src="{{file_url(entity.field_report_image.entity.uri.value)}}" class="report-image img-responsive"/>
+            <div class="new-report-inner">
+                <h4 class="title">{{entity.title[0].value}}</h4>
+                <span class="body"><p>
+                {% set text = entity.field_report_body[0].value|raw|render|striptags %}
+                {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}
+                </p></span>
+                <p class="date">{{entity.field_report_date[0].value}}</p>
+            </div>
         </div>
     </div>
 {% endfor %}

@@ -1,11 +1,12 @@
 /* VARIABLES */
 
 // colors
+
 $primary-shade: #ffff;
 $secondary-shade: #f9f9f9;
 $footer-border: #969696;
 $primary-light: lighten($secondary-shade, 37%);
-$primary-dark: #E7E7E7;
+$primary-dark: #e7e7e7;
 $accent-shade: #4a4a4a;
 $accent-light: lighten($accent-shade, 37%);
 $accent-dark: darken($accent-shade, 12%);
@@ -17,9 +18,12 @@ $primary-color-light: #eae7ee;
 $document-color-light:#e1e1e1;
 $secondary-color: #63337c;
 $color-grape: #63337c;
-$white: #ffffff;
-$black: #000000;
-$red: #FF6666;
+$calender-primary : #884ba4;
+$calender-secondary: #b18dc3;
+$calender-today: #eae4ee;
+$white: #fff;
+$black: #000;
+$red: #f66;
 $yellow: #ffc107;
 $lavender:#eae7ee;
 $line-color: #a99bbd;
@@ -27,7 +31,7 @@ $green: #28a745;
 $cyan: #17a2b8;
 $gray-100: #f8f9fa !default;
 $gray-800: #343a40 !default;
-$theme-colors: ( primary: $accent-shade, secondary: $primary-shade, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
+$theme-colors: (primary: $accent-shade, secondary: $primary-shade, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
 $brand-primary: $accent-shade;
 //$brand-success: $green;
 //$brand-info: $teal;

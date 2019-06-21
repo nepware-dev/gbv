@@ -2,12 +2,13 @@
 {%
   set classes = [
     'block',
-    'new-report-block',
+    'vacancies-block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'col-sm-8 offset-md-2',
   ]
 %}
-<div{{ attributes.addClass(classes) }} id="new-reports" data-title="New Reports">
+<div{{ attributes.addClass(classes) }} id="vacancies" data-title="Vacancies">
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
