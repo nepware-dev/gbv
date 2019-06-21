@@ -3,12 +3,14 @@
 // colors
 $primary-shade: #ffff;
 $secondary-shade: #f9f9f9;
+$footer-border: #969696;
 $primary-light: lighten($secondary-shade, 37%);
 $primary-dark: #E7E7E7;
 $accent-shade: #4a4a4a;
 $accent-light: lighten($accent-shade, 37%);
 $accent-dark: darken($accent-shade, 12%);
 $divider-shade: #979797;
+$gray-95: #f2f2f2;
 // Reassign color vars to semantic color scheme
 $primary-color: #8064a3;
 $primary-color-light: #eae7ee;

@@ -31,7 +31,7 @@ a {
 }
 
 .menu--main li a {
-    color: $primary-shade;
+    color: $black;
 }
 
 .menu--account li a {
@@ -75,7 +75,7 @@ h2{
     font-family: $font-sans;
     color:$secondary-color;
     font-weight: bold;
-    text-transform: uppercase;
+        
 }
 .nopadding{
     padding-left: 0 !important;
@@ -117,4 +117,9 @@ h4 {
     color: $black;
     text-align: left;
     padding-top: 25px;
+}
+
+.change-btns{
+    border: none;
+    background-color: transparent;
 }

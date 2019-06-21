@@ -17,7 +17,7 @@
 #}
 <div class="report-event-block">
     <div class="row nomargin">
-        <div class="col-4 nopadding">
+        <div class="col-sm-4 nopadding">
             <div class="events">
                 <h2>UPCOMING EVENTS</h2>
                 {% if event is defined %}
@@ -43,7 +43,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="col-8 nopadding">
+        <div class="col-sm-8 nopadding">
             <div class="reports">
                 <h2>NEWS & EVENTS</h2>
                 <div class="row">
@@ -51,19 +51,42 @@
                     <div class="col-1dot5 nopadding">
                     </div>
                     {% for report in reports %}
-                        <div class="col-3">
+                        <div class="col-sm-3 news-col">
+                            <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button>
                             <div class="news-single">
                                 <p class="news-title">{{report.title[0].value}}</p>
                                 {% set text = report.field_report_body[0].value |render|striptags %}
                                 <span class="news-body">{{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}</span>
                                 <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
                             </div>
+                            <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button>
                         </div>
                     {% endfor %}
                     <div class="col-1dot5 nopadding">
                     </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+var slideIndex = 1;
+if(window.innerWidth<480){
+showNews(slideIndex);
+}
+
+function plusNews(n) {
+showNews(slideIndex += n);
+}
+
+function showNews(n) {
+var i;
+var changebtns = document.getElementsByClassName("news-col");
+if (n > changebtns.length) {slideIndex = 1}
+if (n < 1) {slideIndex = changebtns.length} ;
+for (i = 0; i < changebtns.length; i++) {
+    changebtns[i].style.display = "none";
+}
+changebtns[slideIndex-1].style.display = "flex";
+}
+
+</script>
