@@ -1,0 +1,130 @@
+.block-views-blocktools-and-resources-for-thematic-areas-block-1 {
+  position: relative;
+  background-color: $white;
+  padding-top: 5%;
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 100px 3px;
+    display: inline-block;
+    padding-bottom: 22px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.view-tools-and-resources-for-thematic-areas {
+  display: flex;
+  flex-direction: row;
+  padding: 0 4%;
+
+  .resource-type-wrapper {
+    margin-bottom: 5%;
+
+    hr {
+      border: 1px solid rgba(154, 154, 154, 0.5);
+    }
+
+    .rectangle {
+      padding: 25px 30px;
+      display: flex;
+
+      .rectangle-content {
+        border-radius: 7px;
+        border: solid 1px #e1e1e1;
+        background-color: $secondary-shade;
+        padding: 23px 20px;
+        text-align: left;
+        width: 100%;
+
+        h4 {
+          padding: 0;
+        }
+
+        .date {
+          font-size: $font-size-small;
+          text-align: right;
+          opacity: 0.4;
+        }
+
+        .description {
+          margin-bottom: 10%;
+        }
+
+        .pdf {
+          border-radius: 14px;
+          background-color: $primary-color-light;
+          height: 28px;
+          text-align: center;
+          margin-top: 4%;
+
+          p {
+            font-weight: $font-weight-normal;
+            padding-top: 3px;
+            font-size: $font-size-small;
+            font-family: $font-pt-sans;
+          }
+        }
+      }
+    }
+  }
+
+  .form-composite {
+    position: relative;
+    width: 350px;
+    margin-top: 7%;
+  }
+
+  .view-filters {
+    flex-basis: 20%;
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+
+      legend {
+        font-size: 1em;
+
+        .fieldset-legend {
+          font-size: $font-size-sm;
+          color: $color-grape;
+          text-transform: uppercase;
+        }
+      }
+
+      .bef-toggle {
+        position: absolute;
+        right: 0;
+        top: -12%;
+        color: #000;
+        font-size: 0.75em;
+        font-weight: lighter;
+      }
+
+      ul {
+        list-style: none;
+
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+
+      #edit-submit-tools-and-resources-for-thematic-areas {
+        display: none;
+      }
+    }
+  }
+
+  .view-content {
+    flex-basis: 80%;
+    flex-direction: column;
+    margin-left: 8.5%;
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .view-tools-and-resources-for-thematic-areas {
+    flex-direction: column;
+  }
+}

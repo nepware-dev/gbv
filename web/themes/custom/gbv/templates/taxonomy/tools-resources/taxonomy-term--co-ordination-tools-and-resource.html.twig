@@ -1,0 +1,189 @@
+{#
+/**
+ * @file
+ * Theme override to display a taxonomy term.
+ *
+ * Available variables:
+ * - url: URL of the current term.
+ * - name: Name of the current term.
+ * - content: Items for the content of the term (fields and description).
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.description'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('description') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - page: Flag for the full page state.
+ * - term: The taxonomy term entity, including:
+ *   - id: The ID of the taxonomy term.
+ *   - bundle: Machine name of the current vocabulary.
+ * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+ *
+ * @see template_preprocess_taxonomy_term()
+ */
+#}
+{%
+  set classes = [
+    'taxonomy-term',
+    'vocabulary-' ~ term.bundle|clean_class,
+    'col-sm-8 offset-md-2',
+    'hpc-guidance',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content',
+        'row',
+    ]
+%}
+{% set tname = term.name[0].value %}
+{% set section_vid = 'tools_and_resources_sections' %}
+{% set sections = load_vocabulary_term(section_vid) %}
+{% set tid = term.id %}
+<div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ tid).addClass(classes) }}>
+    <div class="row">
+        <div class="container hpc-guidance-content">
+            <h2>{{tname}}</h2>
+            <div{{ content_attributes.addClass(contentClasses) }}>
+                {% set child_terms = load_tax_children(tid) %}
+                {% for child_term in child_terms %}
+                    {% set child_taxonomy_name = child_term.name[0].value %}
+                    {% set child_tid = child_term.tid[0].value %}
+                    {% if check_taxonomy_has_items(child_tid, sections) %}
+                        {% set section_id = child_term.path[0].value.alias|split('/')|last %}
+                        <div class="col-sm-12" id="{{section_id}}">
+                            <h3>{{child_taxonomy_name}}</h3>
+                        </div>
+                    {% endif %}
+                    {% for section in sections %}
+                        {% set section_tools_resources = get_nodes_by_taxonomy_term_ids([section.id, child_tid]) %}
+                        {% if section_tools_resources is not null %}
+                            <div class="col-sm-12">
+                                <h4>{{section.name}}</h4>
+                            </div>
+                            <hr>
+                            {% set has_more_section_items = false %}
+                            {% if section_tools_resources|length > 4 %}
+                                {% set has_more_section_items = true %}
+                            {% endif %}
+                            {% if not has_more_section_items %}
+                                {% set displayed_section_tools_resources = section_tools_resources %}
+                            {% else %}
+                                {% set displayed_section_tools_resources = section_tools_resources|slice(0,4) %}
+                            {% endif %}
+                            {% if (section.name=='E-learnings, Podcasts, Videos') or (section.id==27) %}
+                                {% for section_tools_resource in displayed_section_tools_resources %}
+                                    {% set resource_text = section_tools_resource.body[0].value|striptags %}
+                                    <div class="col-sm-6 rectangle">
+                                        <div class="rectangle-content row">
+                                            <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                            <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
+                                            <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                            <div class="col-sm-12 row">
+                                                <div class="col-sm-8">
+                                                    <a href="{{section_tools_resource.field_media_url[0].uri}}" target="_blank">
+                                                        <button class="button-outline">{{section_tools_resource.field_media_url[0].title}}</button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                    <p>PDF</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                {% for section_tools_resource in displayed_section_tools_resources %}
+                                    <div class="col-sm-6 rectangle">
+                                        <div class="rectangle-content row">
+                                            <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                            <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
+                                            <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                            <div class="col-sm-12 row">
+                                                <div class="col-sm-8">
+                                                    <a href="{{file_url(section_tools_resource.field_resource_document.entity.uri.value)}}" download>
+                                                        <button class="button-outline">Download</button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                    <p>PDF</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if has_more_section_items %}
+                                <div class="col-sm-12 hpc-guidance-documents"><h3>See more {{section.name}} documents</h3></div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                {% for section in sections %}
+                    {% set section_tools_resources = get_nodes_by_taxonomy_term_ids([section.id, tid]) %}
+                    {% if section_tools_resources is not null %}
+                        <div class="col-sm-12">
+                            <h4>{{section.name}}</h4>
+                        </div>
+                        <hr>
+                        {% set has_more_section_items = false %}
+                        {% if section_tools_resources|length > 4 %}
+                            {% set has_more_section_items = true %}
+                        {% endif %}
+                        {% if not has_more_section_items %}
+                            {% set displayed_section_tools_resources = section_tools_resources %}
+                        {% else %}
+                            {% set displayed_section_tools_resources = section_tools_resources|slice(0,4) %}
+                        {% endif %}
+                        {% if (section.name=='E-learnings, Podcasts, Videos') or (section.id==27) %}
+                            {% for section_tools_resource in displayed_section_tools_resources %}
+                                {% set resource_text = section_tools_resource.body[0].value|striptags %}
+                                <div class="col-sm-6 rectangle">
+                                    <div class="rectangle-content row">
+                                        <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                        <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
+                                        <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                        <div class="col-sm-12 row">
+                                            <div class="col-sm-8">
+                                                <a href="{{section_tools_resource.field_media_url[0].uri}}" target="_blank">
+                                                    <button class="button-outline">{{section_tools_resource.field_media_url[0].title}}</button>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                <p>PDF</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            {% for section_tools_resource in displayed_section_tools_resources %}
+                                <div class="col-sm-6 rectangle">
+                                    <div class="rectangle-content row">
+                                        <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                        <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
+                                        <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                        <div class="col-sm-12 row">
+                                            <div class="col-sm-8">
+                                                <a href="{{file_url(section_tools_resource.field_resource_document.entity.uri.value)}}" download>
+                                                    <button class="button-outline">Download</button>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                <p>PDF</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% if has_more_section_items %}
+                            <div class="col-sm-12 hpc-guidance-documents"><h3>See more {{section.name}} documents</h3></div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
