@@ -1,0 +1,25 @@
+.field-support {
+  padding: 61px 0;
+
+  .support {
+    padding: 6% 20% 6%;
+    background-color: $white;
+    text-align: center;
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 80px 2px;
+    display: inline-block;
+    padding-bottom: 22px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: $font-size-normal;
+    line-height: 1.93;
+    white-space: pre-line;
+  }
+}

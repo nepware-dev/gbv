@@ -1,41 +1,48 @@
-.hero-banner{
-    background-color: $secondary-shade;
-    .hero-image-bg{
-        height: 600px;
-        background-position: cover;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.hero-banner {
+  background-color: $secondary-shade;
+
+  .hero-image-bg {
+    height: 600px;
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+
+    .hero-title {
+      text-align: center;
+      color: $white;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-heading;
+      font-family: $font-sans;
+      text-transform: none;
     }
-    .hero-content{
-        display: flex;
-        flex-direction: column;
-        .hero-title{
-            text-align: center;
-            color:$white;
-            font-weight: $font-weight-bold;
-            font-size: $font-size-heading;
-            font-family: $font-sans;
-            text-transform: none;
-        }
-        a{
-            align-self: center;
-        }
-        p{
-            margin-bottom: 0;
-        }
-        .button-outline{
-            background-color: transparent; 
-            border: 2px solid $white;
-            color: white;
-            padding: 9px 26px;
-        }
+
+    a {
+      align-self: center;
     }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .button-outline {
+      background-color: transparent;
+      border: 2px solid $white;
+      color: white;
+      padding: 9px 26px;
+    }
+  }
 }
+
 @media screen and(max-width: 480px) {
-    .hero-image-bg {
-        max-height: 250px;
-    }
+  .hero-image-bg {
+    max-height: 250px;
+  }
 }

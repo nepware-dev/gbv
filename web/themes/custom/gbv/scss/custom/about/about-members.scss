@@ -1,42 +1,50 @@
-.about-members-section{
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-color:$lavender;
-    .field__label{
-        font-size: $title-font-size;
-        font-weight: bold;
-        margin-bottom: $title-margin-bottom;
-        text-transform: uppercase;
-        color: $secondary-color;
+.about-members-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $primary-color-light;
+
+  .field__label {
+    font-size: $title-font-size;
+    font-weight: bold;
+    margin-bottom: $title-margin-bottom;
+    text-transform: uppercase;
+    color: $secondary-color;
+  }
+
+  .field__item {
+    font-size: $font-size-normal;
+    font-family: $font-sans;
+  }
+
+  .core-members {
+    border-right: 1px solid $line-color;
+
+    .field__item {
+      padding-right: 50px;
     }
-    .field__item{
-        font-size: $font-size-normal;
-        font-family: $font-sans;
+
+    p {
+      font-size: $font-size-small;
+      padding-right: 60px;
+      padding-top: 40px;
+      font-weight: 300;
+      font-family: $font-sans;
+      color: $accent-shade;
     }
-    .core-members{
-        border-right: 1px solid $line-color;
-        .field__item{
-            padding-right: 50px;
-        }
-        p{
-            font-size: $font-size-small;
-            padding-right: 60px;
-            padding-top: 40px;
-            font-weight: 300;
-            font-family: $font-sans;
-            color: $accent-shade;
-        }
-        a{
-            text-decoration: underline;
-            font-weight: $font-weight-bold;
-        }
+
+    a {
+      text-decoration: underline;
+      font-weight: $font-weight-bold;
     }
-    .associated-members{
-        .field__label{
-            padding-left: 50px;
-        }
-        .field__item{
-            padding-left: 50px;
-        }
+  }
+
+  .associated-members {
+    .field__label {
+      padding-left: 50px;
     }
+
+    .field__item {
+      padding-left: 50px;
+    }
+  }
 }

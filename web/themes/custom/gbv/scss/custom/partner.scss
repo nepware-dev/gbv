@@ -1,72 +1,79 @@
-.partner-block{
-    padding: 3%;
-    margin-top: 3%;
+.partner-block {
+  padding: 3%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-shade;
+
+  .partner-inner-block {
+    width: 100%;
+
+    .partner-items-wrapper {
+      justify-content: center;
+    }
+  }
+
+  .col-auto {
     display: flex;
-    flex-direction: column;
-    background-color: $secondary-shade;
-    .partner-inner-block{
-        width: 100%;
-        .partner-items-wrapper {
-            justify-content: center;
-        }
-    }
-    .col-auto{
-        display: flex;
-        align-self: center;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        .view-id-core_members_donors{
-            width: 100%;
-        }
-    }
-    .partner-single{
-        height: 120px;
-        width: 120px;
-        padding: 10px;
-        border: 1px solid $gray-800;
-        margin-top: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $white;
-        margin-right: 1%;
-        margin-left:1%;
+    align-self: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 
-        img{
-            width: 100%;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-            &:hover {
-                -webkit-filter: grayscale(0%);
-                filter: grayscale(0%);
-            }
-        }
-        border: solid 1px #f3f3f3;
-        background-color: #ffffff;
+    .view-id-core_members_donors {
+      width: 100%;
     }
-    .donor-tab{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 2%;
-        .tab-text{
-            font-size: $font-size-subheading;
-            font-family: $font-sans;
-            font-weight: $font-weight-normal;
-            color: $black;
-        }
-        .active {
-            font-weight: $font-weight-bold;
-        }
+  }
+
+  .partner-single {
+    height: 120px;
+    width: 120px;
+    padding: 10px;
+    border: 1px solid $gray-800;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    margin-right: 1%;
+    margin-left: 1%;
+
+    img {
+      width: 100%;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+
+      &:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
     }
-    .divider{
-        display: block;
-        height: 37px;
-        width: 2px;
-        background-color: $divider-shade;
-        margin-left: 32.5px;
-        margin-right: 32.5px;
+  }
+
+  .donor-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2%;
+
+    .tab-text {
+      font-size: $font-size-subheading;
+      font-family: $font-sans;
+      font-weight: $font-weight-normal;
+      color: $black;
     }
+
+    .active {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .divider {
+    display: block;
+    height: 37px;
+    width: 2px;
+    background-color: $divider-shade;
+    margin-left: 32.5px;
+    margin-right: 32.5px;
+  }
 }
-

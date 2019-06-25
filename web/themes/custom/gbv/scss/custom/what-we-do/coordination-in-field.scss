@@ -1,55 +1,67 @@
 .gbv-coordination {
-    padding: 50px 0;
-    margin-top: 50px;
-    background-color: $lavender;
+  padding: 50px 0;
+  margin-top: 50px;
+  background-color: $primary-color-light;
 }
+
+.groups {
+  display: flex;
+}
+
 .coordination-field {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 100px 3px;
+    display: inline-block;
+    padding-bottom: 22px;
+  }
+
+  .coordination-row {
+    padding: 10px 20px;
+  }
+
+  .coordination-index {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: $secondary-color;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    h2 {
-        font-size: $font-size-heading-large;
-        background: linear-gradient($secondary-color,$secondary-color) bottom  no-repeat;
-        background-size: 100px 3px;
-        display: inline-block;
-        padding-bottom: 22px;
+    justify-content: center;
+  }
+
+  .view-header {
+    font-size: $font-size-large;
+    margin-bottom: 69px;
+    line-height: 1.83;
+    font-family: $font-sans;
+    font-weight: $font-weight-lighter;
+  }
+
+  .index {
+    font-size: $font-size-heading;
+    font-weight: $font-weight-bold;
+    color: $white;
+    font-family: $font-sans;
+  }
+
+  .title-wrapper {
+    align-items: center;
+    display: flex;
+
+    .title {
+      font-size: $font-size-heading;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      font-weight: 600;
+      font-family: $font-sans;
+      color: $secondary-color;
+      padding-top: 0;
     }
-    .coordination-row {
-        padding: 10px 20px;
-    }
-    .coordination-index {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        background-color: $secondary-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .view-header {
-        font-size: $font-size-large;
-        margin-bottom: 69px;
-        line-height: 1.83;
-        font-family: $font-sans;
-        font-weight: $font-weight-lighter;
-    }
-    .index  {
-        font-size: $font-size-heading;
-        font-weight: $font-weight-bold;
-        color:$white;
-        font-family: $font-sans;
-    }
-    .title-wrapper  {
-        align-items: center;
-        display: flex;
-        .title  {
-            font-size: $font-size-heading;
-            text-transform: uppercase;
-            margin-bottom: 0;
-            font-weight: 600;
-            font-family: $font-sans;
-            color: $secondary-color;
-            padding-top: 0;
-        }
-    }
+  }
 }

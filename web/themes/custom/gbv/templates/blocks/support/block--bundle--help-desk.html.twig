@@ -1,0 +1,38 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'col-sm-8 offset-md-2'
+  ]
+%}
+<div {{ attributes.addClass(classes) }}>
+     <div class="container">
+        <div class="row help-desk">
+                <h2>Help Desk</h2>
+            <div class="col-12 desk-col">
+                <div class="col-12 col-md-6">
+                    <p>The Help Desk offers expertise on a wide variety of GBViE issues. Technical support focuses on questions you may have about existing or prospective GBV response and service delivery linked to: 1) coordination efforts in line with the GBV in Emergencies Coordination Handbook; and 2) undertaking GBV-specialist prevention and response programming.
+                        
+       
+                    The Helpdesk delivers in a number of ways:</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="./sites/default/files/2019-05/image.jpg">
+                </div>
+            </div>
+            <div class="col-12 desk-col">
+                <div class="col-12 col-md-6">
+                    <h3>Rapid programme support</h3>
+                    <p>Guidance on how to collect information on GBV issues in emergencies and develop effective GBV prevention and response programmes that adhere to international standards and are capable of securing funding from institutional donors. Support can be delivered through Skype/ WhatsApp and email.</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>Research, Analysis and Advice</h3>
+                    <p>Research, analysis and advice to enhance yours and your organization’s knowledge, understanding and approach to GBV in emergencies. Support takes the form of written reports, such as briefing papers, literature reviews, and/or annotated bibliographies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

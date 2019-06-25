@@ -1,0 +1,35 @@
+.child-survivor {
+  background-color: $white;
+  justify-content: center;
+  padding-top: 5%;
+  margin-top: 10%;
+
+  .survivor-col {
+    padding: 0 6%;
+    display: flex;
+  }
+
+  img {
+    height: 250px;
+  }
+
+  h2 {
+    font-size: $font-size-heading-large;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 80px 2px;
+    display: inline-block;
+    padding-bottom: 22px;
+    margin-bottom: 65px;
+  }
+
+  p {
+    font-size: $font-size-normal;
+    line-height: 1.93;
+    white-space: pre-line;
+  }
+
+  h4 {
+    font-size: $font-size-subheading;
+    color: $secondary-color;
+  }
+}
