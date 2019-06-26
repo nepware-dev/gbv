@@ -1,17 +1,21 @@
-.about-tor-section{
-    background-color: $secondary-shade;
-    margin-bottom: 5%;
-    .tor-content{
-        padding: 50px;
-        .field__item{
-            font-size: $font-size-small;
-            font-weight: $font-weight-normal;
-            font-family: $font-sans;
-            font-style: italic;
-            padding: 10px 30px; 
-        }
-        .field__label{
-            display: none;
-        }
+.about-tor-section {
+  background-color: $secondary-shade;
+  margin-bottom: 5%;
+
+  .tor-content {
+    padding: 50px;
+
+    .field__item {
+      font-size: $font-size-small;
+      font-weight: $font-weight-normal;
+      font-family: $font-sans;
+      font-style: italic;
+      padding: 10px 30px;
+      text-align: center;
     }
+
+    .field__label {
+      display: none;
+    }
+  }
 }

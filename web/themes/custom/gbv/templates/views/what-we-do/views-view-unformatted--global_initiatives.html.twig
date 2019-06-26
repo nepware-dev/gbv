@@ -28,7 +28,15 @@
         ]
     %}
     {% set count = count + 1 %}
-    {% if count < 3 %}
+    {% if count == 1 %}
+    <div class="col-lg-12 global-initiatives-content">
+            <h4 class="title">{{entity.title[0].value}}</h4>
+            {{entity.field_global_initiatives_body[0].value|raw}}
+            {% if entity.field_global_initiatives_image.entity.uri.value %}
+                <img src="{{file_url(entity.field_global_initiatives_image.entity.uri.value)}}" class="global-initiatives-image img-responsive"/>
+            {% endif %}
+        </div>
+    {% elseif count < 4 %}
         <div class="col-sm-6 global-initiatives-content">
             <h4 class="title">{{entity.title[0].value}}</h4>
             {{entity.field_global_initiatives_body[0].value|raw}}
@@ -37,7 +45,7 @@
             {% endif %}
         </div>
     {% else %}
-        <div class="col-lg-12">
+        <div class="col-lg-12 global-initiatives-content">
             <h4 class="title">{{entity.title[0].value}}</h4>
             {{entity.field_global_initiatives_body[0].value|raw}}
             {% if entity.field_global_initiatives_image.entity.uri.value %}

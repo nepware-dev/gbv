@@ -26,18 +26,18 @@
         default_row_class ? 'views-row',
         ]
     %}
-    <div class="col-4 rega-team-members">
+    <div class="col-sm-4 rega-team-members">
         <div class="team-single">
             <img src="{{file_url(entity.field_rega_team_image.entity.uri.value)}}" class="team-image"/>
             <div class="team-content-wrapper">
-                <h3 class="team-region">{{entity.field_rega_team_area[0].value}}</h3>
-                <h4 class="team-title">{{entity.title[0].value}} </h4>
+                <h3 class="team-title">{{entity.title[0].value}}</h3>
+                <h4 class="user-name">{{entity.field_rega_team_area[0].value}}</h4>
                 <h5 class="team-email"><a href="mailto:{{entity.field_coor_team_email[0].value}}">{{entity.field_rega_team_email[0].value}}</a></h5>
             </div>
         </div>
     </div>
 {% endfor %}
-<div class="col-4 rega-team-members left-auto">
+<div class="col-sm-4 rega-team-members left-auto">
     <div class="rega-contact">
         <p class="rega-contact-text">
             Contact the <a href="mailto:gbvaor@unfpa.org">gbvaor@unfpa.org</a> to receive a REGA request package; including a standard request form and mission criteria.

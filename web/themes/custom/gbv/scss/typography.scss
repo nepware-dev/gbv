@@ -8,38 +8,38 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 // font families
 $font-sans: 'Open Sans',
-  sans-serif;
+sans-serif;
 $font-pt-sans: 'PT Sans',
-  sans-serif;
+sans-serif;
 $font-lato: 'Lato',
-  Arial,
-  Verdana,
-  sans-serif;
+Arial,
+Verdana,
+sans-serif;
 $font-raleway: 'Raleway',
-  Arial,
-  Verdana,
-  sans-serif;
+Arial,
+Verdana,
+sans-serif;
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
 $font-family-sans-serif: -apple-system,
-  system-ui,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  "Helvetica Neue",
-  Arial,
-  sans-serif !default;
+system-ui,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+sans-serif !default;
 $font-family-serif: Georgia,
-  "Times New Roman",
-  Times,
-  serif !default;
+"Times New Roman",
+Times,
+serif !default;
 $font-family-monospace: Menlo,
-  Monaco,
-  Consolas,
-  "Liberation Mono",
-  "Courier New",
-  monospace;
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace;
 $font-family-base: $font-family-sans-serif;
 
 @media screen and (min-width: 320px) {
@@ -103,36 +103,6 @@ $font-size-h6: em(16);
 
 $title-margin-bottom: em(24);
 $button-font-size: em(16);
-
-@media screen and (min-width: 320px) {
-  html {
-    font-size: calc(12px + 4 * ((100vw - 320px) / 680));
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  html {
-    font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1024 - 320)));
-  }
-}
-
-@media screen and (min-width: 2560px) {
-  html {
-    font-size: calc(14px + (16 - 14) * ((100vw - 1024px) / (2560 - 1024)));
-  }
-}
-
-@media screen and (min-width: 2880px) {
-  html {
-    font-size: calc(16px + (18 - 16) * ((100vw - 2560px) / (2880 - 2560)));
-  }
-}
-
-@media screen and (min-width: 3840px) {
-  html {
-    font-size: calc(18px + (22 - 18) * ((100vw - 2880px) / (3840 - 2880)));
-  }
-}
 
 $font-size-small: em(12);
 $font-size-normal: em(14);

@@ -153,9 +153,18 @@
   line-height: 1;
 }
 
+.dropdown-item:active {
+  background-color: $gray-100;
+}
+
 @media screen and(max-width: 480px) {
   .bg-secondary {
     display: none;
+  }
+
+  .dropdown-menu {
+    box-shadow: none;
+    border-radius: none;
   }
 
   .bg-primary {
@@ -163,13 +172,19 @@
       align-items: left !important;
       display: flex;
 
+      .menu-item--expanded.show {
+        border-radius: 7px;
+      }
+
       .nav-item {
         flex-direction: column;
+        margin-top: 4%;
       }
 
       .nav-item:last-child {
-        margin: 0;
         margin-right: auto;
+        margin-top: 4%;
+        margin-left: 3%;
       }
     }
   }

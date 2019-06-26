@@ -1,75 +1,82 @@
-.section-timeline-wrapper{
-    position: absolute;
-    width: 15%;
-    left: 2%;
-    z-index: 99;
+.section-timeline-wrapper {
+  position: absolute;
+  width: 15%;
+  left: 2%;
+  z-index: 99;
 }
+
 .timeline {
-    width: 15%;
-    position: fixed;
-    background-color:transparent;
-    padding: 2em;
-    top: 35%;
+  width: 15%;
+  position: fixed;
+  background-color: transparent;
+  padding: 2em;
+  top: 35%;
 }
 
-.timeline li{
-    list-style: none;
-    padding-bottom: 50px;
-    position: relative;
-    display: flex;
-    font-size: 12px;
+.timeline li {
+  list-style: none;
+  padding-bottom: 50px;
+  position: relative;
+  display: flex;
+  font-size: 12px;
 }
 
-.timeline li .inner-circle{
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid 63337c;
-    margin: 0 3px;
-    background-color:#63337c;
-    align-self: center;
-    justify-content: center;
-}
-.timeline li .circle{
-    display: flex;
-}
-.timeline li a{
-    color: #000000;
-    font-size: 12px;
-    font-weight: lighter;
-    padding: 0 10px;
-}
-.timeline .active a{
-    color: #63337c;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 12px;
-}
-.timeline li::after{
-    content: '';
-    position: absolute;
-    width: 3px;
-    background-color: #63337c;
-    top: 25px;
-    bottom: 5px;
-    left: 6px;
-}
-.timeline li:last-child::after{
-    display: none;
+.timeline li .inner-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #63337c;
+  margin: 0 3px;
+  background-color: #63337c;
+  align-self: center;
+  justify-content: center;
 }
 
-.timeline .active{
-    display: flex;
+.timeline li .circle {
+  display: flex;
+}
+
+.timeline li a {
+  color: #000;
+  font-size: 12px;
+  font-weight: lighter;
+  padding: 0 10px;
+}
+
+.timeline .active a {
+  color: #63337c;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.timeline li::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: #63337c;
+  top: 25px;
+  bottom: 5px;
+  left: 6px;
+}
+
+.timeline li:last-child::after {
+  display: none;
+}
+
+.timeline .active {
+  display: flex;
 }
 
 .timeline .active .circle {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid#63337c;
-    display: flex;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid#63337c;
+  display: flex;
 }
 
-#main-wrapper{
-    position: relative;
+#main-wrapper {
+  position: relative;
 }
+

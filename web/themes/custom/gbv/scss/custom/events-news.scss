@@ -68,7 +68,7 @@
 
 .reports {
   background-color: $secondary-shade;
-  padding: 40px 50px;
+  padding: 4% 5%;
   height: 100%;
 
   .news-report {
@@ -133,6 +133,7 @@
   }
 
   .reports {
+    padding: 10% 5%;
     background-color: $gray-95;
     display: flex;
     flex-direction: column;
