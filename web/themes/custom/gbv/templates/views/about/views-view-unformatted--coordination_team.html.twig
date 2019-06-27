@@ -28,7 +28,11 @@
     %}
     <div class="col-sm-4">
     <div class="team-single">
-        <img src="{{file_url(entity.field_coor_team_image.entity.uri.value)}}" class="team-image"/>
+      {% set image_url = file_url(entity.field_coor_team_image.entity.uri.value) %}
+      {% if image_url == '/' %}
+        {% set image_url = '/themes/custom/gbv/images/team.png' %}
+      {% endif %}
+      <img src="{{image_url}}" class="team-image"/>
         <div class="team-content-wrapper">
             <h3 class="team-title">{{entity.title[0].value}}</h3>
             <h4 class="user-name">{{entity.field_coor_team_position[0].value}}</h4>

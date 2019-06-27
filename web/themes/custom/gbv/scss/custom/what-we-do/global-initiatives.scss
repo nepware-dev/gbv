@@ -13,10 +13,28 @@
 
     .global-initiatives-content {
       padding: 0 50px;
-    }
 
-    .view-content {
-      padding: 0 30px;
+      .sub-title {
+        font-size: $font-size-subheading;
+        font-family: $font-pt-sans;
+        font-weight: 600;
+        color: $secondary-color;
+      }
+
+      .title {
+        font-size: $font-size-heading;
+        font-family: $font-pt-sans;
+        font-weight: 600;
+        color: $secondary-color;
+      }
+
+      p {
+        font-family: $font-sans;
+        font-size: 14px;
+        font-weight: $font-weight-normal;
+        line-height: 1.93;
+        color: $black;
+      }
     }
 
     h2 {
@@ -25,13 +43,7 @@
       background-size: 100px 3px;
       display: inline-block;
       padding-bottom: 22px;
-    }
-
-    h4 {
-      font-family: $font-sans;
-      font-size: $font-size-heading;
-      font-weight: 600;
-      color: $secondary-color;
+      margin-bottom: 0.5em;
     }
 
     p {
