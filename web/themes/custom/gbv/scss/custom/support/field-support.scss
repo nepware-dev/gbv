@@ -1,16 +1,11 @@
-.child-survivor {
-  background-color: $white;
-  justify-content: center;
-  padding-top: 5%;
-  margin-top: 10%;
+.field-support {
+  padding: 3% 0;
 
-  .survivor-col {
-    padding: 0 6%;
-    display: flex;
-  }
-
-  img {
-    height: 250px;
+  .support {
+    padding: 6% 19% 6%;
+    background-color: $white;
+    text-align: center;
+    justify-content: center;
   }
 
   h2 {
@@ -19,17 +14,13 @@
     background-size: 80px 2px;
     display: inline-block;
     padding-bottom: 22px;
-    margin-bottom: 65px;
+    margin-bottom: 10px;
   }
 
   p {
     font-size: $font-size-normal;
     line-height: 1.93;
     white-space: pre-line;
-  }
-
-  h4 {
-    font-size: $font-size-subheading;
-    color: $secondary-color;
+    font-family: $font-sans;
   }
 }

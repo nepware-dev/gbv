@@ -2,7 +2,7 @@
   background-color: $white;
   justify-content: center;
   padding-top: 8%;
-  margin-top: 15%;
+  margin-top: 10%;
 
   img {
     height: 379px;
@@ -12,6 +12,14 @@
   .community-col {
     display: flex;
     padding: 0 5%;
+    margin-top: 3%;
+
+    p {
+      font-size: $font-size-normal;
+      line-height: 1.93;
+      white-space: pre-line;
+      padding-right: 10%;
+    }
   }
 
   h2 {
@@ -22,17 +30,35 @@
     padding-bottom: 22px;
     margin-bottom: 10px;
   }
-
-  p {
-    font-size: $font-size-normal;
-    line-height: 1.93;
-    white-space: pre-line;
-  }
 }
 
 .community-contact {
   padding: 5% 5%;
   background-color: $primary-color-light;
+
+  .form-group {
+    padding: 0;
+  }
+
+  input {
+    border-radius: 0;
+  }
+
+  textarea {
+    border-radius: 0;
+  }
+
+  .btn-primary {
+    background-color: $color-grape;
+    border-radius: 0;
+    color: $white;
+    font-family: $font-pt-sans;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-bold;
+    padding: 2% 10%;
+    border: none;
+    float: right;
+  }
 
   .community-help {
     padding-top: 10%;

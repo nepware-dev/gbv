@@ -13,6 +13,14 @@
   align-items: center;
   flex-direction: column;
 
+  .coordination-field-bullets {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 30px;
+    margin-bottom: 30px;
+  }
+
   h2 {
     font-size: $font-size-heading-large;
     background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
@@ -37,7 +45,7 @@
 
   .view-header {
     font-size: $font-size-large;
-    margin-bottom: 69px;
+    margin-bottom: 30px;
     line-height: 1.83;
     font-family: $font-sans;
     font-weight: $font-weight-lighter;

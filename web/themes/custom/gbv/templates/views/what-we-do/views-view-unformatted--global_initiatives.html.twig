@@ -46,11 +46,17 @@
         </div>
     {% else %}
         <div class="col-lg-12 global-initiatives-content">
-            <h4 class="title">{{entity.title[0].value}}</h4>
-            <p>{{entity.field_global_initiatives_body[0].value|raw}}</p>
-            {% if entity.field_global_initiatives_image.entity.uri.value %}
-                <img src="{{file_url(entity.field_global_initiatives_image.entity.uri.value)}}" class="global-initiatives-image img-responsive"/>
-            {% endif %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h4 class="title">{{entity.title[0].value}}</h4>
+                    <p>{{entity.field_global_initiatives_body[0].value|raw}}</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    {% if entity.field_global_initiatives_image.entity.uri.value %}
+                        <img src="{{file_url(entity.field_global_initiatives_image.entity.uri.value)}}" class="global-initiatives-image img-responsive"/>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     {% endif %}
 {% endfor %}

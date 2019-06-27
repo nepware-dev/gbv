@@ -1,0 +1,39 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'col-sm-8 offset-md-2',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
+%}
+<div{{ attributes.addClass(classes) }} id="child-survivor" data-title="{{ label }}">
+  <div class="container">
+    <div class="row child-survivor">
+        {{ title_prefix }}
+        {% if label %}
+          <h2{{ title_attributes }}>{{ label }}</h2>
+        {% endif %}
+        {{ title_suffix }}
+        {% block content %}
+            <div class="col-12 survivor-col">
+                <div class="col-12 col-md-6">
+                    <h4>{{content.field_heading_left}}</h4>
+                    {{content.field__body_lefty}}
+                </div>
+                <div class="col-12 col-md-6">
+                    <h4>{{content.field_heading_rightt}}</h4>
+                    {{content.field_body_}}
+                </div>
+            </div>
+          
+        {% endblock %}
+    </div>
+  </div>
+</div>
+
+

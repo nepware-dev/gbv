@@ -98,14 +98,15 @@
 
       &:last-child {
         background-color: $secondary-color;
-        padding: 5px 32px;
-        align-self: flex-end;
         margin-left: auto;
         margin-right: 7%;
+        max-height: 38px;
 
         .nav-link {
           color: #fff !important;
           font-weight: $font-weight-bold !important;
+          background-color: #63337c;
+          padding: 9% 32px;
         }
       }
     }
