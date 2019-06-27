@@ -20,7 +20,7 @@
         <div class="col-sm-4 upcoming-events nopadding">
             <div class="events">
                 <h2>UPCOMING EVENTS</h2>
-                {% if event is defined %}
+                {% if event is defined and event is not null %}
                     <div class="event-single">
                         <div class="event-date-wrapper">
                             {% if event.field_event_date[0].value|date('d') == event.field_event_date[0].end_value|date('d') %}

@@ -11,8 +11,15 @@
     align-items: center;
     flex-direction: column;
 
+    p {
+      font-size: $font-size-normal;
+      font-family: $font-sans;
+      font-weight: 400;
+    }
+
     .global-initiatives-content {
       padding: 0 50px;
+      margin-top: 3%;
 
       .sub-title {
         font-size: $font-size-subheading;
@@ -34,6 +41,13 @@
         font-weight: $font-weight-normal;
         line-height: 1.93;
         color: $black;
+        padding-right: 8%;
+      }
+
+      h4 {
+        padding-top: 0;
+        text-transform: uppercase;
+        margin-bottom: 24px;
       }
     }
 
@@ -46,16 +60,11 @@
       margin-bottom: 0.5em;
     }
 
-    p {
-      font-size: $font-size-normal;
-      font-family: $font-sans;
-      font-weight: 400;
-    }
-
     .global-initiatives-image {
       height: 270px;
       width: 100%;
       object-fit: cover;
+      padding-top: 25px;
     }
   }
 }

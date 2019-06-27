@@ -37,7 +37,6 @@
     'view-id-' ~ id,
     'view-display-id-' ~ display_id,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'row',
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
@@ -47,7 +46,7 @@
   {% endif %}
   {{ title_suffix }}
   {% if header %}
-    <div class="view-header col-sm-6">
+    <div class="view-header">
       {{ header }}
     </div>
   {% endif %}
@@ -63,8 +62,10 @@
   {% endif %}
 
   {% if rows %}
-    <div class="view-content col-sm-6 coordination-field-bullets">
-     {{rows}}
+    <div class="view-content row">
+        <div class="col-12 desk-col">
+            {{rows}}
+        </div>
     </div>
   {% elseif empty %}
     <div class="view-empty">

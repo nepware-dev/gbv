@@ -7,6 +7,8 @@ use Twig_ExtensionInterface;
 use Drupal;
 use Twig_Extension;
 use Drupal\node\Entity\Node;
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
 
 /**
  * Extend Drupal's Twig_Extension class.
@@ -24,12 +26,14 @@ class CustomTwigExtension extends Twig_Extension {
    * Return your custom twig function to Drupal.
    */
   public function getFunctions() {
-    return [
+    $functions = [
       new Twig_SimpleFunction('load_tax_children', [$this, 'loadTaxChildren']),
       new Twig_SimpleFunction('get_nodes_by_taxonomy_term_ids', [$this, 'getNodesByTaxonomyTermIds']),
       new Twig_SimpleFunction('load_vocabulary_term', [$this, 'loadVocabularyTerm']),
       new Twig_SimpleFunction('check_taxonomy_has_items', [$this, 'checkTaxonomyHasItems']),
+      new Twig_SimpleFunction('media_file_url', [$this, 'mediaFileUrl']),
     ];
+    return $functions;
   }
 
   /**
@@ -130,6 +134,21 @@ class CustomTwigExtension extends Twig_Extension {
       }
     }
     return $has_item;
+  }
+
+  /**
+   * Returns the file URL from a media entity.
+   *
+   * @param string $fid
+   *   The media entity taret id.
+   *
+   * @return string
+   *   The file url.
+   */
+  public function mediaFileUrl($fid) {
+    $file = File::load($fid);
+    $url = $file->url();
+    return $url;
   }
 
 }

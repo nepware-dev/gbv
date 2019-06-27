@@ -16,11 +16,15 @@
   }
 }
 
-.intro-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  max-height: 545px;
+.intro-image-container {
+  background-color: $white;
+
+  .intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 545px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
