@@ -1,0 +1,5 @@
+services:
+  gbv_custom_twig.CustomTwigExtension:
+    class: Drupal\gbv_custom_twig\CustomTwigExtension
+    tags:
+      - { name: twig.extension }

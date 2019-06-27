@@ -140,6 +140,10 @@ button:focus {
   padding: 8px 37px;
 }
 
+.dropdown-item.active{
+  background-color: #f9f9f9;
+}
+
 @media screen and(max-width: 480px) {
   .change-btns {
     border: none;

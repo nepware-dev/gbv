@@ -96,7 +96,7 @@
             {% elseif type=='tools_and_resources' %}
               {% set tr_document = object.get('field_resource_document').entity.uri.value %}
               {% set tr_thematic = object.get('field_tools_resources_for_themat').getValue()[0].value %}
-              {% set tr_video = object.get('field_video').getValue()[0].value %}
+              {% set tr_media_url = object.get('field_media_url').getValue()[0].value %}
               {% set tr_thematic_sec = object.get('field_thematic_resource_type_sec').getValue()[0].value %}
               {% set tr_section = object.get('field_section').getValue()[0].value %}
               {% set tr_type = object.get('field_tools_resources_type').getValue()[0].value %}
@@ -149,8 +149,6 @@
     var url_string = window.location.href;
     var url = new URL(url_string);
     var term = url.searchParams.get("search_api_fulltext");
-    console.log('term');
-    console.log(term);
     document.getElementById('search-term').innerHTML = '“'+term+'”';
   }
   loadTerm();

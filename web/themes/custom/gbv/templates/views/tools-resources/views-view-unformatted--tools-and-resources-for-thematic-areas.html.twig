@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="resource-type-wrapper">
+    {% if title %}
+    <div class="col-sm-12 nopadding">
+        <h4>{{ title }}</h4>
+    </div>
+    <hr>
+    {% endif %}
+    <div class="row">
+    {% for row in rows %}
+    {% set entity = row.content['#row']._entity %}
+    {% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ body }}'] |render|striptags %}
+    <div class="col-12 col-md-6 rectangle">
+        <div class="rectangle-content row">
+            <div class="col-sm-8"><h4>{{entity.title[0].value}}</h4></div>
+            <div class="col-sm-4"><p class="date">{{entity.created[0].value|date('M d, Y')}}</p></div>
+            <div class="col-sm-12"><p class="description">{{ text|length > 50 ? text|slice(0, 50) ~ '...' : text }}</p></div>
+            
+            <div class="col-sm-12 row">
+                <div class="col-sm-8">
+                    <a href="{{file_url(entity.field_resource_document.entity.uri.value)}}" download>
+                        <button class="button-outline">Download</button>
+                    </a>
+                </div>
+                <div class="col-sm-2 offset-md-2 pdf">
+                    <p>PDF</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
