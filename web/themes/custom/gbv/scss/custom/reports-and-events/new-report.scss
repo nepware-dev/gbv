@@ -1,12 +1,13 @@
 .new-report-block {
   padding-bottom: 2em;
   padding-top: 2em;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
 
   h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: $title-font-size;
-    margin-bottom: $title-margin-bottom;
+    font-size: $font-size-heading-large;
+    margin-bottom: 0;
   }
 
   .new-reports {
@@ -71,5 +72,4 @@
       }
     }
   }
-
 }
