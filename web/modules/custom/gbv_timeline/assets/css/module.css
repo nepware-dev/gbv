@@ -10,11 +10,11 @@
   position: fixed;
   background-color: transparent;
   padding: 2em;
-  top: 35%;
+  top: 40%;
 }
 
-@media (max-width: 576px) {
-  .timeline {
+@media screen and(max-width: 576px) {
+  .section-timeline-wrapper {
     display: none;
   }
 }

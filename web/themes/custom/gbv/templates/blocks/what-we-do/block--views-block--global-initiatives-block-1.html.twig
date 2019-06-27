@@ -7,17 +7,19 @@
     'col-sm-8 offset-md-2',
   ]
 %}
-<div{{ attributes.addClass(classes) }} id="global-initiative" data-title="GLOBAL INITIATIVES">
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
-      <div class="container">
-        {{content}}
+<div class="global-initiatives">
+  <div{{ attributes.addClass(classes) }} id="global-initiative" data-title="GLOBAL INITIATIVES">
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      <div{{ content_attributes.addClass('content') }}>
+        <div class="container">
+          {{content}}
+        </div>
       </div>
-    </div>
-  {% endblock %}
+    {% endblock %}
+  </div>
 </div>
