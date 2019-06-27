@@ -1,0 +1,54 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'offset-md-3 col-sm-6',
+  ]
+%}
+{%
+    set contentClasses = [
+        'content',
+    ]
+%}
+<div{{ attributes.addClass(classes) }} id="featured-item" data-title="Featured News">
+    <div class="container featured-report-event">
+        {{ title_prefix }}
+        {% if label %}
+            <h2{{ title_attributes }}>{{ label }}</h2>
+        {% endif %}
+        {{ title_suffix }}
+        {% block content %}
+            {{content.body}}
+            {% set item = get_node(content.field_featured_item['#items'][0].target_id) %}
+            {% set item_type = item.type.value[0].target_id %}
+            <div class="item-wrapper col-12">
+                <div class="rectangle">
+                    <div class="rectangle-content">
+                        {% if item_type == 'gbv_events' %}
+                            
+                                <h4>{{item.title[0].value}}</h4>
+                                {{item.field_event_body[0].value|raw}}
+                                <div class="events-footer">
+                                    <div class="date">{{item.created[0].value|date('F d, Y')}}</div>
+                                    <button class="button-outline"> READ MORE</button>
+                                </div>
+                            </div>
+                        {% else %}
+                        <div>
+                            <h4>{{item.title[0].value}}</h4>
+                            {{item.field_document_body[0].value|raw}}
+                            <div class="events-footer">
+                                <div class="date">{{item.created[0].value|date('F d, Y')}}</div>
+                                <a href="{{file_url(entity.field_document_file.entity.uri.value)}}" download>
+                                    <button class="button-outline">Download</button>
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</div>

@@ -32,6 +32,7 @@ class CustomTwigExtension extends Twig_Extension {
       new Twig_SimpleFunction('load_vocabulary_term', [$this, 'loadVocabularyTerm']),
       new Twig_SimpleFunction('check_taxonomy_has_items', [$this, 'checkTaxonomyHasItems']),
       new Twig_SimpleFunction('media_file_url', [$this, 'mediaFileUrl']),
+      new Twig_SimpleFunction('get_node', [$this, 'getNode']),
     ];
     return $functions;
   }
@@ -140,7 +141,7 @@ class CustomTwigExtension extends Twig_Extension {
    * Returns the file URL from a media entity.
    *
    * @param string $fid
-   *   The media entity taret id.
+   *   The media entity target id.
    *
    * @return string
    *   The file url.
@@ -149,6 +150,20 @@ class CustomTwigExtension extends Twig_Extension {
     $file = File::load($fid);
     $url = $file->url();
     return $url;
+  }
+
+  /**
+   * Returns the node objectfrom a target id.
+   *
+   * @param string $nid
+   *   The tagret node id.
+   *
+   * @return string
+   *   The file url.
+   */
+  public function getNode($nid) {
+    $object = Node::load($nid);
+    return $object;
   }
 
 }
