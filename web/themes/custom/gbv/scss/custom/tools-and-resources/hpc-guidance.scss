@@ -77,3 +77,26 @@
     }
   }
 }
+
+.go-back {
+  position: fixed;
+  left: 0;
+  padding: 2em;
+  top: 35%;
+  z-index: 999;
+  width: 200px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  p {
+    font-family: $font-pt-sans;
+    font-size: $font-size-small;
+
+    .fa {
+      font-size: $font-size-large;
+      margin-right: 10px;
+    }
+  }
+}
