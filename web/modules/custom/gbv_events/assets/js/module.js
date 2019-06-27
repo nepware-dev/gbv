@@ -1,21 +1,23 @@
 (function ($, Drupal, drupalSettings) {
     Drupal.behaviors.loadCalendar = {
         attach: function (context, settings) {
-            $('#calendar', context).once('loadCalendar').each( async function () {
-                let calendarEvents = JSON.parse(drupalSettings.calendarEvents);
-                $('#calendar').fullCalendar({
-                    header: {
-                        left: 'prev,next,today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay,list'
-                    },
-                    // defaultDate: '2019-01-12',
-                    navLinks: true, // can click day/week names to navigate views
-                    editable: true,
-                    eventLimit: true, // allow "more" link when too many events
-                    events: calendarEvents
-                });
+            $('#calendar', context).once('loadCalendar').each( function () {
+                if(!document.getElementById('calendar').hasChildNodes()) {
+                    let calendarEvents = JSON.parse(drupalSettings.calendarEvents);
+                    $('#calendar').fullCalendar({
+                        header: {
+                            left: 'prev,next,today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay,list'
+                        },
+                        // defaultDate: '2019-01-12',
+                        navLinks: true, // can click day/week names to navigate views
+                        editable: true,
+                        eventLimit: true, // allow "more" link when too many events
+                        events: calendarEvents
+                    });
+                }
             });
         }
-    }
+    };
 })(jQuery, Drupal, drupalSettings);
