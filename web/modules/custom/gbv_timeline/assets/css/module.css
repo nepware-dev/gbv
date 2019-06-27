@@ -13,34 +13,48 @@
   top: 35%;
 }
 
+@media (max-width: 576px) {
+  .timeline {
+    display: none;
+  }
+}
+
 .timeline li {
   list-style: none;
-  padding-bottom: 50px;
+  padding-bottom: 72px;
   position: relative;
   display: flex;
   font-size: 12px;
 }
 
 .timeline li .inner-circle {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   border: 1px solid #63337c;
-  margin: 0 3px;
   background-color: #63337c;
-  align-self: center;
-  justify-content: center;
+  transition-duration: 0.5s;
 }
 
 .timeline li .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid transparent;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.5s;
 }
 
 .timeline li a {
+  position: absolute;
+  left: 20px;
   color: #000;
   font-size: 12px;
   font-weight: lighter;
   padding: 0 10px;
+  transition-duration: 0.5s;
 }
 
 .timeline .active a {
@@ -53,11 +67,11 @@
 .timeline li::after {
   content: '';
   position: absolute;
-  width: 3px;
+  width: 1px;
   background-color: #63337c;
-  top: 25px;
+  top: 21px;
   bottom: 5px;
-  left: 6px;
+  left: 7.5px;
 }
 
 .timeline li:last-child::after {
@@ -69,14 +83,9 @@
 }
 
 .timeline .active .circle {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1px solid#63337c;
-  display: flex;
+  border: 2px solid #63337c;
 }
 
 #main-wrapper {
   position: relative;
 }
-
