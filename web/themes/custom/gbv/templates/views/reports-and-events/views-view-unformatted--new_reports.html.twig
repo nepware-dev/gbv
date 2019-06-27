@@ -33,7 +33,7 @@
                 <h4 class="title">{{entity.title[0].value}}</h4>
                 <span class="body"><p>
                 {% set text = entity.field_report_body[0].value|raw|render|striptags %}
-                {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}
+                {{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}
                 </p></span>
                 <p class="date">{{entity.field_report_date[0].value}}</p>
             </div>

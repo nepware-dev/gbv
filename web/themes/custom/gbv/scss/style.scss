@@ -10,6 +10,7 @@ Description: Bootstrap 4 with Sass */
 body {
   background: $white;
   font-family: $font-sans;
+  overflow-x: hidden;
 }
 
 /* COLORS -------------------------------------------------- */
