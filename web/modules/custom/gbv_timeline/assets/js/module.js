@@ -43,8 +43,19 @@
                     e.preventDefault();
                 });
 
-                // Bind to scroll
-                $(window).scroll(function () {
+                // call in first load
+                onScroll();
+
+                function hideIfFooterVisible() {
+                    let footer = $('.site-footer')[0];
+                    if(footer.offsetTop - window.innerHeight < $(window).scrollTop()) {
+                        $('#timeline').hide();
+                    } else {
+                        $('#timeline').show();
+                    }
+                }
+
+                function onScroll() {
                     // Get container scroll position
                     let fromTop = $(this).scrollTop() + topMenuHeight;
 
@@ -63,7 +74,13 @@
                             .parent().removeClass('active')
                             .end().filter(`[href='#${id}']`).parent().addClass('active');
                     }
-                });
+                    if(!id) {
+                        menuItems.filter(`[href='#${lastId}']`).parent().removeClass('active');
+                    }
+                    hideIfFooterVisible();
+                }
+                // Bind to scroll
+                $(window).scroll(onScroll);
             });
         }
     };
