@@ -29,6 +29,14 @@
 
     .vacancy-image {
       height: 80px;
+      display: flex;
+
+      img {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        border: solid 1px #f3f3f3;
+      }
     }
 
     .organization {
@@ -70,11 +78,19 @@
         opacity: 0.4;
         font-family: $font-sans;
         font-size: $font-size-small;
+        margin-top: 0.5em;
       }
 
-      a {
+      a.more-btn {
         font-size: $font-size-normal;
         color: $line-color;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        i {
+          font-size: 16px;
+          margin-left: 2.9%;
+        }
       }
     }
   }

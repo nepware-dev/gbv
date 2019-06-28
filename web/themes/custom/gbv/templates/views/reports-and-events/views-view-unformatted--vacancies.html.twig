@@ -26,20 +26,22 @@
         default_row_class ? 'views-row',
         ]
     %}
+    {% set image_url = media_file_url(entity.field_vacancy_image[0].target_id) %}
     <div class="col-sm-6">
         <div class="vacancy-single">
             <div class="row">
                 <div class="col-sm-4 vacancy-image">
-                <h3 class="organization">{{entity.field_vacancy_organization[0].value}}</h3>
+                    {# <h3 class="organization">{{entity.field_vacancy_organization[0].value}}</h3> #}
+                    <img src="{{image_url}}" alt="vacancy"/>
                 </div>
                 <div class="col-sm-8">
-                <h4 class="title">{{entity.field_vacancy_job_title[0].value}}</h4>
-                <span class="body">
-                    <p>
-                        {% set text = entity.field_vacancy_body[0].value|raw|striptags %}
-                        {{ text|length > 30 ? text|slice(0, 30) ~ '...' : text }}
-                    </p>
-                </span>
+                    <h4 class="title">{{entity.field_vacancy_job_title[0].value}}</h4>
+                    <span class="body">
+                        <p>
+                            {% set text = entity.field_vacancy_body[0].value|raw|striptags %}
+                            {{ text|length > 30 ? text|slice(0, 30) ~ '...' : text }}
+                        </p>
+                    </span>
                 </div>
             </div>
             <div class="vacancy-footer">
@@ -48,7 +50,7 @@
                         <p>Deadline to apply: {{entity.field_vacancy_deadline[0].value}}</p>
                     </div>
                     <div class="col-12 col-md-4">
-                        <a href="" class="more-btn">Read more <i style="font-size:16px" class="fa">&#xf061;</i></a>
+                        <a href="{{ entity.field_vacancy_url[0].uri }}" target="_blank" class="more-btn">{{ entity.field_vacancy_url[0].title }} <i style="font-size:16px" class="fa fa-external-link"></i></a>
                     </div>
                 </div>
             </div>
