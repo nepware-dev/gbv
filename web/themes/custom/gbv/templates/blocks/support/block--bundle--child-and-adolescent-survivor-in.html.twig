@@ -21,6 +21,7 @@
         {{ title_suffix }}
         {% block content %}
             <div class="col-12 survivor-col">
+              <div class="row">
                 <div class="col-12 col-md-6">
                     <h4>{{content.field_heading_left}}</h4>
                     {{content.field__body_lefty}}
@@ -29,6 +30,7 @@
                     <h4>{{content.field_heading_rightt}}</h4>
                     {{content.field_body_}}
                 </div>
+              </div>
             </div>
           
         {% endblock %}

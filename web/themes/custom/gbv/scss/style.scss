@@ -92,7 +92,7 @@ h2 {
   background-color: $white;
   border: 2px solid $secondary-color;
   border-radius: 0;
-  font-family: $font-sans;
+  font-family: $font-pt-sans;
   font-size: $font-size-normal;
   font-weight: $font-weight-bold;
 }
@@ -141,6 +141,7 @@ button:focus {
   color: $white;
   float: right;
   padding: 8px 37px;
+  font-family: $font-pt-sans;
 }
 
 .dropdown-item.active {
@@ -157,5 +158,17 @@ p {
     background-color: transparent;
     font-size: 24px;
     display: block;
+    font-family: $font-pt-sans;
+  }
+
+  .navbar-toggler-icon {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  .navbar-dark {
+    .navbar-toggler {
+      padding: 0.75em;
+    }
   }
 }

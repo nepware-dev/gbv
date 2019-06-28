@@ -1,3 +1,12 @@
+.path-support {
+  .main-content {
+    background-image: url(../images/BG/support/support-1.svg);
+    background-repeat: no-repeat;
+    background-position: 100% -12%;
+    background-color: #f9f9f9;
+  }
+}
+
 .field-support {
   padding: 3% 0;
 
@@ -22,5 +31,17 @@
     line-height: 1.93;
     white-space: pre-line;
     font-family: $font-sans;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .field-support {
+    padding: 0;
+    padding-top: 0.25%;
+
+    .support {
+      padding: 10% 6%;
+      text-align: left;
+    }
   }
 }

@@ -4,10 +4,9 @@
   .help-desk {
     background-color: $white;
     justify-content: center;
-    padding-top: 4%;
+    padding: 4% 6%;
 
     .desk-col {
-      padding: 2% 6% 2% 7%;
       display: flex;
     }
 
@@ -33,5 +32,20 @@
 
   [id^='edit-message-wrapper'] {
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .help {
+    padding: 0;
+    padding-top: 0.25%;
+
+    .help-desk {
+      padding: 10% 6%;
+
+      .desk-col {
+        margin: 5% 2.5%;
+      }
+    }
   }
 }

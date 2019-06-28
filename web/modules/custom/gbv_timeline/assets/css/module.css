@@ -13,7 +13,7 @@
   top: 40%;
 }
 
-@media screen and(max-width: 576px) {
+@media (max-width: 576px) {
   .section-timeline-wrapper {
     display: none;
   }

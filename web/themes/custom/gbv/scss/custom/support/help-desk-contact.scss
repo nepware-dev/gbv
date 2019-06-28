@@ -60,3 +60,14 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .help-desk-contact {
+    margin: 0;
+    padding: 10% 6%;
+
+    .desk-col {
+      padding: 0;
+    }
+  }
+}

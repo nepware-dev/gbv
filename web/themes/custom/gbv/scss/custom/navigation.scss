@@ -157,11 +157,13 @@
 
 .navbar-dark {
   .navbar-toggler-icon {
-    background-image: url(../images/icons/menu.png);
+    background-image: url(../images/icons/menu.svg);
+    opacity: 0.7;
   }
 
   .navbar-toggler {
     padding: 0.25em 1.75em;
+    z-index: 999;
     font-size: $font-size-large;
   }
 }
@@ -198,6 +200,12 @@
 
       .dropdown-menu {
         box-shadow: none;
+      }
+    }
+
+    .navbar-brand {
+      img {
+        width: 110px;
       }
     }
   }
