@@ -55,7 +55,7 @@
                     {% set child_tid = child_term.tid[0].value %}
                     {% if check_taxonomy_has_items(child_tid, sections) %}
                         {% set section_id = child_term.path[0].value.alias|split('/')|last %}
-                        <div class="col-sm-12" id="{{section_id}}">
+                        <div class="col-sm-12" data-title="{{child_taxonomy_name}}" id="{{section_id}}">
                             <h3>{{child_taxonomy_name}}</h3>
                         </div>
                     {% endif %}
@@ -105,7 +105,8 @@
                                             <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
                                             <div class="col-sm-12 row">
                                                 <div class="col-sm-8">
-                                                    <a href="{{file_url(section_tools_resource.field_resource_document.entity.uri.value)}}" download>
+                                                    {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
+                                                    <a href="{{document_url}}" download>
                                                         <button class="button-outline">Download</button>
                                                     </a>
                                                 </div>
@@ -169,7 +170,8 @@
                                         <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
                                         <div class="col-sm-12 row">
                                             <div class="col-sm-8">
-                                                <a href="{{file_url(section_tools_resource.field_resource_document.entity.uri.value)}}" download>
+                                                {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
+                                                <a href="{{document_url}}" download>
                                                     <button class="button-outline">Download</button>
                                                 </a>
                                             </div>

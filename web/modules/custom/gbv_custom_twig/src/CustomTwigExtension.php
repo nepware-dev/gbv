@@ -140,20 +140,27 @@ class CustomTwigExtension extends Twig_Extension {
   /**
    * Returns the file URL from a media entity.
    *
-   * @param string $fid
+   * @param string $mid
    *   The media entity target id.
+   * @param string $field
+   *   The media field.
    *
    * @return string
    *   The file url.
    */
-  public function mediaFileUrl($fid) {
+  public function mediaFileUrl($mid, $field = 'field_media_image') {
+    if (!$mid) {
+      return NULL;
+    }
+    $media = Media::load($mid);
+    $fid = $media->$field->target_id;
     $file = File::load($fid);
     $url = $file->url();
     return $url;
   }
 
   /**
-   * Returns the node objectfrom a target id.
+   * Returns the node object from a target id.
    *
    * @param string $nid
    *   The tagret node id.

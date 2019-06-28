@@ -34,7 +34,8 @@
             
             <div class="col-sm-12 row">
                 <div class="col-sm-8">
-                    <a href="{{file_url(entity.field_resource_document.entity.uri.value)}}" download>
+                    {% set tr_document_url = media_file_url(entity.field_resource_document[0].target_id, 'field_media_file') %}
+                    <a href="{{tr_document_url}}" download>
                         <button class="button-outline">Download</button>
                     </a>
                 </div>

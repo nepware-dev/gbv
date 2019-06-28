@@ -8,6 +8,10 @@
   h2 {
     font-size: $font-size-heading-large;
     margin-bottom: 0;
+    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+    background-size: 100px 3px;
+    display: inline-block;
+    padding-bottom: 22px;
   }
 
   .new-reports {
@@ -46,8 +50,8 @@
           p {
             color: $black;
             font-size: $font-size-normal;
-            padding: 18px 0;
-            margin-bottom: 18px;
+            padding-bottom: 32px;
+            margin-bottom: 32px;
             font-weight: $font-weight-lighter;
           }
         }
@@ -57,8 +61,6 @@
           font-size: $font-size-small;
           opacity: 0.6;
           font-weight: $font-weight-lighter;
-          bottom: 5px;
-          position: absolute;
         }
 
         .access-btn {
@@ -68,6 +70,15 @@
           border-radius: 0;
           font-weight: bold;
           padding: 10px 20px;
+        }
+
+        .download-link {
+          position: absolute;
+          bottom: 16px;
+
+          .button-outline {
+            padding: 4% 20%;
+          }
         }
       }
     }
