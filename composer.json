@@ -38,6 +38,7 @@
         "drupal/search_api": "^1.13",
         "drupal/social_media_links": "^2.6",
         "drupal/token": "^1.5",
+        "drupal/twig_tweak": "^2.3",
         "drupal/video": "^1.4",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
