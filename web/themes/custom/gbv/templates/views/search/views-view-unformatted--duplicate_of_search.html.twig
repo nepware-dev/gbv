@@ -51,10 +51,12 @@
                     <h4>{{main_title}}</h4>
                     <p>{{ document_body_text|length > 100 ? document_body_text|slice(0, 100) ~ '...' : document_body_text }}</p>
                   </div>
-                  <div class="col-sm-12 row">
-                    <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                    <div class="col-sm-2 offset-md-6 search-documents">
-                        <p>DOCUMENTS</p>
+                  <div class="col-sm-12">
+                    <div class="row search-footer">
+                      <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                      <div class="col-2 offset-md-6 search-documents">
+                          <p>DOCUMENTS</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -84,10 +86,12 @@
                       <p>{{ event_body_text|length > 100 ? event_body_text|slice(0, 100) ~ '...' : event_body_text }}</p>
                     </div>
                   </div>
-                  <div class="col-sm-12 row">
-                    <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                    <div class="col-sm-2 offset-md-6 search-documents">
-                      <p>EVENT</p>
+                  <div class="col-sm-12">
+                    <div class="row search-footer">
+                      <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                      <div class="col-2 offset-md-6 search-documents">
+                        <p>EVENT</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -109,10 +113,12 @@
                     <h4>{{main_title}}</h4>
                     {# <p>{{ report_body_text|length > 100 ? report_body_text|slice(0, 100) ~ '...' : report_body_text }}</p> #}
                   </div>
-                  <div class="col-sm-12 row">
-                    <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                    <div class="col-sm-2 offset-md-6 search-documents">
-                        <p>TOOLS & RESOURCES</p>
+                  <div class="col-sm-12">
+                    <div class="row search-footer">
+                      <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                      <div class="col-sm-2 offset-md-6 search-documents">
+                          <p>TOOLS & RESOURCES</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -128,10 +134,12 @@
                     <h4>{{main_title}}</h4>
                     <p>{{ report_body_text|length > 100 ? report_body_text|slice(0, 100) ~ '...' : report_body_text }}</p>
                   </div>
-                  <div class="col-sm-12 row">
-                    <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                    <div class="col-sm-2 offset-md-6 search-documents">
-                        <p>REPORT</p>
+                  <div class="col-sm-12">
+                    <div class="row search-footer">
+                      <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                      <div class="col-sm-2 offset-md-6 search-documents">
+                          <p>REPORT</p>
+                      </div>
                     </div>
                   </div>
                 </div>

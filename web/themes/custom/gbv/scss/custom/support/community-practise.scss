@@ -75,3 +75,27 @@
     }
   }
 }
+
+.community {
+  background-image: url(../images/BG/support/support-2.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: #f9f9f9;
+  background-size: 100%;
+  margin-bottom: -3px;
+}
+
+@media screen and (max-width: 480px) {
+  .community-practise {
+    margin-top: 0;
+
+    .community-col {
+      display: flex;
+      flex-direction: column-reverse;
+
+      p {
+        padding: 0;
+      }
+    }
+  }
+}
