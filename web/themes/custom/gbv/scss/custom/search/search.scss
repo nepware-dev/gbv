@@ -157,6 +157,10 @@
         font-weight: $font-weight-lighter;
       }
     }
+
+    #edit-type {
+      position: relative;
+    }
   }
 
   .pagination {

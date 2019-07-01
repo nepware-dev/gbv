@@ -29,7 +29,9 @@
           {{content.body}}
         </div>
         <div class="col-sm-6">
-          <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="what-we-do-image" class="what-we-do-image" />
+          {% set alt_text = content.field_image_media[0]['#media'].thumbnail[0].alt %}
+          {% set image_url = media_file_url(content.field_image_media[0]['#media'].mid[0].value) %}
+          <img src="{{image_url}}" alt="{{alt_text}}" class="what-we-do-image" />
         </div>
       </div>
     {% endblock %}

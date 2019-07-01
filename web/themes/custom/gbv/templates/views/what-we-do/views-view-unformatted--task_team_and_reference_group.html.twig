@@ -19,11 +19,6 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-<div class="col-sm-4">
-    <div class="task-team">
-        To carry out all its activities, the GBV AoR has Task Teams and Reference Groups, that are coordinated by the GBV AoR Coordination Team and the Core Members.
-    </div>
-</div>      
 {% for row in rows %}
     {% set entity = row.content['#row']._entity %}
     {%
@@ -36,7 +31,8 @@
         <div class="group-single">
             <h4 class="title">{{entity.title[0].value}}</h4>
             {{ entity.field_reference_group_body[0].value|raw }}
-            <a href="{{file_url(entity.field_reference_group_file.entity.uri.value)}}" download><button class="button-outline">Download</button></a>
+            {% set document_url = media_file_url(entity.field_reference_group_file[0].target_id, 'field_media_file') %}
+            <a href="{{document_url}}" download><button class="button-outline">Download</button></a>
         </div>
         <button class="change-btns"><i class="fa" onclick="plusGroups(+1)">&#xf105;</i></button>
     </div>

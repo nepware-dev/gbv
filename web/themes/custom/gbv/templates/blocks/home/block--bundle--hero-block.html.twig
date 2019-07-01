@@ -21,7 +21,9 @@
         <div class="hero-banner">
             <div class="row nomargin">
                 <div class="col-12 nopadding">
-                  <div class="hero-image-bg" style="background-image: url('{{file_url(content.field_image['#items'].entity.uri.value)}}')">
+                  {% set alt_text = content.field_image_media[0]['#media'].thumbnail[0].alt %}
+                  {% set image_url = media_file_url(content.field_image_media[0]['#media'].mid[0].value) %}
+                  <div class="hero-image-bg" title="{{alt_text}}" style="background-image: url('{{image_url}}')">
                     <div class="col-sm-6 hero-content">
                       <h2 class="hero-title">
                         {{content.body}}

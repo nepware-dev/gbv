@@ -28,8 +28,8 @@
     %}
     <div class="col-sm-4">
     <div class="team-single">
-      {% set image_url = file_url(entity.field_coor_team_image.entity.uri.value) %}
-      {% if image_url == '/' %}
+      {% set image_url = media_file_url(entity.field_coor_team_image[0].target_id) %}
+      {% if image_url == '/' or image_url is null %}
         {% set image_url = '/themes/custom/gbv/images/team.png' %}
       {% endif %}
       <img src="{{image_url}}" class="team-image"/>
