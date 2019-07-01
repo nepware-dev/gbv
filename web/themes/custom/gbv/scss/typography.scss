@@ -8,39 +8,39 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 // font families
 $font-sans: 'Open Sans',
-sans-serif;
+  sans-serif;
 $font-pt-sans: 'PT Sans',
-sans-serif;
+  sans-serif;
 $font-lato: 'Lato',
-Arial,
-Verdana,
-sans-serif;
+  Arial,
+  Verdana,
+  sans-serif;
 $font-raleway: 'Raleway',
-Arial,
-Verdana,
-sans-serif;
+  Arial,
+  Verdana,
+  sans-serif;
 $font-fontawsome: 'FontAwesome';
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
 $font-family-sans-serif: -apple-system,
-system-ui,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-sans-serif !default;
+  system-ui,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif !default;
 $font-family-serif: Georgia,
-"Times New Roman",
-Times,
-serif !default;
+  "Times New Roman",
+  Times,
+  serif !default;
 $font-family-monospace: Menlo,
-Monaco,
-Consolas,
-"Liberation Mono",
-"Courier New",
-monospace;
+  Monaco,
+  Consolas,
+  "Liberation Mono",
+  "Courier New",
+  monospace;
 $font-family-base: $font-family-sans-serif;
 
 @media screen and (min-width: 320px) {

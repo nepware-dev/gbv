@@ -48,7 +48,7 @@
 
                 function hideIfFooterVisible() {
                     let footer = $('.site-footer')[0];
-                    if(footer.offsetTop - window.innerHeight < $(window).scrollTop()) {
+                    if(footer.offsetTop - window.innerHeight + 150 < $(window).scrollTop()) { // 150 to slowdown
                         $('#timeline').hide();
                     } else {
                         $('#timeline').show();
