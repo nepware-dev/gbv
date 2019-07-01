@@ -26,8 +26,10 @@
             {% endblock %}
             </div>
         </div>
+        {% set alt_text = content.field_image_media[0]['#media'].thumbnail[0].alt %}
+        {% set image_url = media_file_url(content.field_image_media[0]['#media'].mid[0].value) %}
         <div class="col-sm-6 intro-image-container nopadding">
-            <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="intro-image" class="intro-image" />
+            <img src="{{image_url}}" alt="{{alt_text}}" class="intro-image" />
         </div>
     </div>
 </div>

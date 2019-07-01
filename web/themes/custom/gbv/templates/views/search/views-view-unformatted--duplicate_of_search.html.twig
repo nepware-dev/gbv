@@ -43,13 +43,14 @@
             {% if type=='gbv_documents' %}
               {% set document_body = object.get('field_document_body').getValue()[0].value %}
               {% set document_file = object.get('field_document_file').entity.uri.value %}
+              {{kint(document_file)}}
               {% set created_date = object.get('created').getValue()[0].value %}
               {% set document_body_text = document_body|striptags %}
               <div class="col-sm-12 rectangle">
                 <div class="rectangle-content row">
                   <div class="col-sm-12 search-description">
                     <h4>{{main_title}}</h4>
-                    <p>{{ document_body_text|length > 100 ? document_body_text|slice(0, 100) ~ '...' : document_body_text }}</p>
+                    <p>{{ document_body_text|length > 1000 ? document_body_text|slice(0, 1000) ~ '...' : document_body_text }}</p>
                   </div>
                   <div class="col-sm-12">
                     <div class="row search-footer">
@@ -83,7 +84,7 @@
                     </div>
                     <div class="col-sm-10">
                       <h4>{{main_title}}</h4>
-                      <p>{{ event_body_text|length > 100 ? event_body_text|slice(0, 100) ~ '...' : event_body_text }}</p>
+                      <p>{{ event_body_text|length > 1000 ? event_body_text|slice(0, 1000) ~ '...' : event_body_text }}</p>
                     </div>
                   </div>
                   <div class="col-sm-12">
@@ -111,7 +112,7 @@
                 <div class="rectangle-content row">
                   <div class="col-sm-12 search-description">
                     <h4>{{main_title}}</h4>
-                    {# <p>{{ report_body_text|length > 100 ? report_body_text|slice(0, 100) ~ '...' : report_body_text }}</p> #}
+                    {# <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p> #}
                   </div>
                   <div class="col-sm-12">
                     <div class="row search-footer">
@@ -132,7 +133,7 @@
                 <div class="rectangle-content row">
                   <div class="col-sm-12 search-description">
                     <h4>{{main_title}}</h4>
-                    <p>{{ report_body_text|length > 100 ? report_body_text|slice(0, 100) ~ '...' : report_body_text }}</p>
+                    <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
                   </div>
                   <div class="col-sm-12">
                     <div class="row search-footer">
@@ -144,7 +145,25 @@
                   </div>
                 </div>
               </div>
-
+            {% elseif type=='gbv_help_desk' %}
+              {% set help_body = object.get('field_help_desk_body').getValue()[0].value %}
+              {% set help_body = help_body|striptags %}
+              <div class="col-sm-12 rectangle">
+                <div class="rectangle-content row">
+                  <div class="col-sm-12 search-description">
+                    <h4>{{main_title}}</h4>
+                    <p>{{ help_body|length > 1000 ? help_body|slice(0, 1000) ~ '...' : help_body }}</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row search-footer">
+                      <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                      <div class="col-sm-2 offset-md-6 search-documents">
+                          <p>HELP DESK</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             {% endif %}
           </div>
         {% endfor %}

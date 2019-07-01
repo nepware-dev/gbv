@@ -34,7 +34,8 @@
               ]
           %}
           <div class="partner-single type-{{entity.field_donor_type[0].value}}">
-            <a target="_blank" href="{{entity.field_donor_url[0].uri}}"> <img src="{{file_url(entity.field_donor_image.entity.uri.value)}}"/> </a>
+            {% set image_url = media_file_url(entity.field_donor_image[0].target_id) %}
+            <a target="_blank" href="{{entity.field_donor_url[0].uri}}"> <img src="{{image_url}}" alt="donor-image"/> </a>
           </div>
       {% endfor %}
     </div>

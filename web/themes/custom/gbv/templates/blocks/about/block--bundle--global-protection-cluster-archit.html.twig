@@ -23,7 +23,9 @@
           <div class="container">
               {{content.body}}
           </div>
-          <img src="{{directory}}/images/gpca.png">
+          {% set alt_text = content.field_image_media[0]['#media'].thumbnail[0].alt %}
+          {% set image_url = media_file_url(content.field_image_media[0]['#media'].mid[0].value) %}
+          <img src="{{image_url}}" alt={{alt_text}} />
       </div>
     {% endblock %}
   </div>

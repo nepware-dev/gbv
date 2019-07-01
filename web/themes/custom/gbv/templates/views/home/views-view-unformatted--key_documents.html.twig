@@ -36,8 +36,9 @@
             <h4 class="document-title">{{entity.title[0].value}}</h4>
             {% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_document_body }}'] |render|striptags %}
                 {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}
-                <a href="{{file_url(entity.field_document_file.entity.uri.value)}}" download>
-                    <button class="button-outline">Download</button>
+                {% set document_url = media_file_url(entity.field_document_file[0].target_id, 'field_media_file') %}
+                <a class="download-link" href="{{document_url}}" download>
+                  <button class="button-outline">Download</button>
                 </a>
             </div>
         </div>
