@@ -27,23 +27,46 @@
         ]
     %}
     <div class="col-sm-4 new-reports">
-        <div class="new-report-single">
-            {% set image_url = media_file_url(entity.field_report_image[0].target_id) %}
-            <img src="{{image_url}}" class="report-image img-responsive"/>
-            <div class="new-report-inner">
-                <h4 class="title">{{entity.title[0].value}}</h4>
-                <p class="date">{{entity.created[0].value|date('M d, Y')}}</p>
-                <span class="body">
-                    <p>
-                        {% set text = entity.field_report_body[0].value|raw|render|striptags %}
-                        {{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}
-                    </p>
-                </span>
-                {% set document_url = media_file_url(entity.field_report_document[0].target_id, 'field_media_file') %}
-                <a class="download-link" href="{{document_url}}" download>
-                    <button class="button-outline">DOWNLOAD</button>
-                </a>
+        <button class="change-btns"><i class="fa" onclick="plusDocs(-1)">&#xf104;</i></button>
+            <div class="new-report-single">
+                {% set image_url = media_file_url(entity.field_report_image[0].target_id) %}
+                <img src="{{image_url}}" class="report-image img-responsive"/>
+                <div class="new-report-inner">
+                    <h4 class="title">{{entity.title[0].value}}</h4>
+                    <p class="date">{{entity.created[0].value|date('M d, Y')}}</p>
+                    <span class="body">
+                        <p>
+                            {% set text = entity.field_report_body[0].value|raw|render|striptags %}
+                            {{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}
+                        </p>
+                    </span>
+                    {% set document_url = media_file_url(entity.field_report_document[0].target_id, 'field_media_file') %}
+                    <a class="download-link" href="{{document_url}}" download>
+                        <button class="button-outline">DOWNLOAD</button>
+                    </a>
+                </div>
             </div>
-        </div>
+        <button class="change-btns"><i class="fa" onclick="plusDocs(+1)">&#xf105;</i></button>
     </div>
 {% endfor %}
+<script>
+var slideIndex = 1;
+if(window.innerWidth<=480){
+  showDocs(slideIndex);
+}
+
+function plusDocs(n) {
+  showDocs(slideIndex += n);
+}
+
+function showDocs(n) {
+  var i;
+  var changebtns = document.getElementsByClassName("new-reports");
+  if (n > changebtns.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = changebtns.length} ;
+  for (i = 0; i < changebtns.length; i++) {
+    changebtns[i].style.display = "none";
+  }
+  changebtns[slideIndex-1].style.display = "flex";
+}
+</script>
