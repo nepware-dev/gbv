@@ -11,6 +11,7 @@
     position: absolute;
     bottom: -42%;
     padding: 0 10%;
+    margin-left: -5%;
   }
 
   h2 {
@@ -54,7 +55,6 @@
 
         .date {
           font-size: $font-size-small;
-          text-align: right;
           opacity: 0.4;
           padding-top: 10px;
         }
@@ -68,6 +68,44 @@
 
             i {
               margin-left: 2.9%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .events-footer {
+    flex-direction: column;
+  }
+
+  .item-wrapper {
+    bottom: -50% !important;
+  }
+
+  .featured-report-event {
+    .rectangle {
+      .rectangle-content {
+        .events-footer {
+          .download {
+            display: flex;
+            justify-content: center;
+
+            a {
+              min-width: 50%;
+              margin-top: 7%;
+
+              .button-outline {
+                width: auto;
+                padding: 3% 8%;
+              }
+
+              i {
+                margin-left: 10px !important;
+                display: inline-block;
+              }
             }
           }
         }
