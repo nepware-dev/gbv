@@ -10,11 +10,28 @@
                             center: 'title',
                             right: 'month,agendaWeek,agendaDay,list'
                         },
-                        // defaultDate: '2019-01-12',
                         navLinks: true, // can click day/week names to navigate views
                         editable: true,
                         eventLimit: true, // allow "more" link when too many events
-                        events: calendarEvents
+                        events: calendarEvents,
+                        eventRender: function(event, element){
+                            let title = event.title,
+                                body = event.body,
+                                dateContent = event.dateContent,
+                                uri = event.uri.uri,
+                                buttonTitle = event.uri.title;
+                            let innerContent = '<h5>'+title+'</h5>';
+                            innerContent += '<p class="event-date">'+dateContent+'</p>';
+                            innerContent += '<div class="event-body">'+body+'</div>';
+                            innerContent += '<div class="event-footer"><div class="content-left"><p class="contact-header">Contact for more information</p><p class="contact-email">contact@unfpa.org</p></div><div class="content-right"><a href="' + uri + '" target="_blank">'+buttonTitle+'<i style="font-size:16px" class="fa fa-external-link"></i></a></div></div>';
+                            element.popover({
+                                animation:true,
+                                content: innerContent,
+                                trigger: 'click',
+                                placement: 'top',
+                                html: true,
+                            });
+                        },
                     });
                 }
             });

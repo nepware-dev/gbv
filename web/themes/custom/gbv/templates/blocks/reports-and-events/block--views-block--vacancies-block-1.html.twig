@@ -8,7 +8,7 @@
     'col-sm-8 offset-md-2',
   ]
 %}
-<div{{ attributes.addClass(classes) }} id="vacancies" data-title="Vacancies">
+<div{{ attributes.addClass(classes) }} id="vacancies" data-title="{{label}}">
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
