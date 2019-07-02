@@ -1,0 +1,52 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'global-initiatives-section'
+  ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
+%}
+<div class="gbv-coordination">
+  <div class="row">
+    <div class="col-sm-10 offset-md-1 coordination-field">
+      <div{{ attributes.addClass(classes) }} id="coordination-field" data-title="{{ label }}">
+        {{ title_prefix }}
+        {% if label %}
+          <h2{{ title_attributes }}>{{ label }}</h2>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="container">
+          <div class="row">
+            {% block content %}
+              <div class="col-sm-6 content-left">
+                {{content.body}}
+              </div>
+              {% set fields = content.field_coordination_fields['#items'] %}
+              <div class="col-sm-6 coordination-field-bullets">
+                {% for field in fields %}
+                  <div class="row coordination-row">
+                    <div class="coordination-index">
+                      <span class="index">{{loop.index}}</span>
+                    </div>
+                    <div class= "col-10 title-wrapper">
+                      <h4 class="title"> 
+                        {{field.value}}
+                      </h4>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

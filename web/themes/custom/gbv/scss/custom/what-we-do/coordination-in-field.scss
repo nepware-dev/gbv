@@ -25,7 +25,6 @@
     font-size: $font-size-heading-large;
     background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
     background-size: 100px 3px;
-    display: inline-block;
     padding-bottom: 22px;
   }
 
@@ -43,7 +42,7 @@
     justify-content: center;
   }
 
-  .view-header {
+  .content-left {
     font-size: $font-size-large;
     margin-bottom: 30px;
     line-height: 1.83;
