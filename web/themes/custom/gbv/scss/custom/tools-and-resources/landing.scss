@@ -20,12 +20,17 @@
         padding: 35px 55px;
         margin-bottom: 40px;
 
+        &:hover {
+          box-shadow: 0 2px 6px 0 rgba(107, 107, 107, 0.35);
+        }
+
         h3 {
           font-size: $font-size-heading;
           font-weight: bold;
           color: $secondary-color;
           text-transform: uppercase;
           text-align: center;
+          margin-bottom: 0;
 
           a {
             text-decoration: none;
@@ -44,10 +49,6 @@
             align-items: center;
             width: 100%;
             font-size: $font-size-normal;
-
-            &:hover {
-              text-decoration: none;
-            }
           }
         }
       }

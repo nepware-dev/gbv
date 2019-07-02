@@ -37,7 +37,7 @@
                     {% set tr_document_ext = media_file_type(entity.field_resource_document[0].target_id) %}
                     {% set tr_document_url = media_file_url(entity.field_resource_document[0].target_id, 'field_media_file') %}
                     <a href="{{tr_document_url}}" download>
-                        <button class="button-outline">Download</button>
+                        <button class="button-outline-violet">Download</button>
                     </a>
                 </div>
                 <div class="col-sm-2 offset-md-2 pdf">
@@ -49,3 +49,18 @@
     {% endfor %}
     </div>
 </div>
+<script>
+    var activeText = document.querySelectorAll('.dropdown-item.active a')[0].innerText;
+    document.getElementsByClassName('menu-item--expanded')[0].getElementsByClassName('nav-link')[0].innerHTML= activeText;
+    var checkboxes = document.querySelectorAll("input[type='checkbox']");
+    for(var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('change', (event) => {
+            var checked = event.target.checked;
+            var nodeLists = event.target.parentNode.parentNode.lastChild.childNodes;
+            for(var i=0, n=nodeLists.length;i<n;i++) {
+                nodeLists[i].getElementsByTagName('input')[0].checked = checked;
+            }
+        });
+    }
+    
+</script>

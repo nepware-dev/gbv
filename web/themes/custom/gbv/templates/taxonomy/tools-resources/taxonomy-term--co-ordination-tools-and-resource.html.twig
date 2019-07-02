@@ -87,7 +87,7 @@
                                             <div class="col-sm-12 row">
                                                 <div class="col-sm-8">
                                                     <a href="{{section_tools_resource.field_media_url[0].uri}}" target="_blank">
-                                                        <button class="button-outline">{{section_tools_resource.field_media_url[0].title}}</button>
+                                                        <button class="button-outline-violet">{{section_tools_resource.field_media_url[0].title}}</button>
                                                     </a>
                                                 </div>
                                             </div>
@@ -106,7 +106,7 @@
                                                     {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
                                                     {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
                                                     <a href="{{document_url}}" download>
-                                                        <button class="button-outline">Download</button>
+                                                        <button class="button-outline-violet">Download</button>
                                                     </a>
                                                 </div>
                                                 <div class="col-sm-2 offset-md-2 hpc-pdf">
@@ -150,7 +150,7 @@
                                         <div class="col-sm-12 row">
                                             <div class="col-sm-8">
                                                 <a href="{{section_tools_resource.field_media_url[0].uri}}" target="_blank">
-                                                    <button class="button-outline">{{section_tools_resource.field_media_url[0].title}}</button>
+                                                    <button class="button-outline-violet">{{section_tools_resource.field_media_url[0].title}}</button>
                                                 </a>
                                             </div>
                                         </div>
@@ -169,7 +169,7 @@
                                                 {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
                                                 {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
                                                 <a href="{{document_url}}" download>
-                                                    <button class="button-outline">Download</button>
+                                                    <button class="button-outline-violet">Download</button>
                                                 </a>
                                             </div>
                                             <div class="col-sm-2 offset-md-2 hpc-pdf">
@@ -190,7 +190,20 @@
     </div>
 </div>
 <script>
-function goBack(){
-    window.location.href = "/co-ordination-tools-resources";
-}
+    function goBack(){
+        window.location.href = "/co-ordination-tools-resources";
+    }
+    document.querySelectorAll('.menu-item--expanded a')[0].classList.add("active");
+    var aTags = document.querySelectorAll('.dropdown-item a');
+    var searchText = "Co-ordination Tools & Resources";
+    var found;
+
+    for (var i = 0; i < aTags.length; i++) {
+        if (aTags[i].textContent == searchText) {
+            found = aTags[i];
+            found.classList.add("active");
+            break;
+        }
+    }
+    document.getElementsByClassName('menu-item--expanded')[0].getElementsByClassName('nav-link')[0].innerHTML= searchText;
 </script>

@@ -27,10 +27,13 @@
 {% set odd_rows = [] %}
 {% set even_rows = [] %}
 {% for row in rows %}
-    {% if loop.index is odd %}
-        {% set odd_rows = odd_rows|merge([row]) %}
-    {% elseif loop.index is even %}
-        {% set even_rows = even_rows|merge([row]) %}
+    {% set is_depth_1 = row.content['#taxonomy_term'].parent[0].target_id=="0" %}
+    {% if is_depth_1 %}
+        {% if loop.index is odd %}
+            {% set odd_rows = odd_rows|merge([row]) %}
+        {% elseif loop.index is even %}
+            {% set even_rows = even_rows|merge([row]) %}
+        {% endif %}
     {% endif %}
 {% endfor %}
 <div class="col-sm-6 tools-content">
@@ -77,3 +80,8 @@
         
     {% endfor %}
 </div>
+
+<script>
+    let activeText = document.querySelectorAll('.dropdown-item.active a')[0].innerText;
+    document.getElementsByClassName('menu-item--expanded')[0].getElementsByClassName('nav-link')[0].innerHTML= activeText;
+</script>

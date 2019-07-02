@@ -72,12 +72,20 @@
   .navbar-nav {
     display: flex;
     padding: 30px;
+    align-items: center;
     flex: 1;
 
     .menu-item--expanded.show {
       box-shadow: 0 2px 6px 0 rgba(107, 107, 107, 0.35);
       border-radius: 7px 7px 0 0;
+    }
+
+    .menu-item--expanded {
       padding: 8px 25px;
+
+      .nav-link {
+        min-width: 152px;
+      }
     }
 
     .nav-item {
@@ -90,6 +98,11 @@
         font-size: $font-size-normal;
         text-transform: uppercase;
         font-family: $font-pt-sans;
+
+        &:hover {
+          font-weight: 700;
+          transition-duration: 0.2s;
+        }
 
         a {
           color: $black;
@@ -135,6 +148,17 @@
       &:active {
         background-color: $gray-100;
       }
+
+      &:hover {
+        background-color: $white;
+      }
+
+      a {
+        &:hover {
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
     }
 
     .dropdown-item .active {
@@ -156,15 +180,27 @@
 }
 
 .navbar-dark {
-  .navbar-toggler-icon {
-    background-image: url(../images/icons/menu.svg);
-    opacity: 0.7;
-  }
-
-  .navbar-toggler {
+  .navbar-toggler[aria-expanded=false] {
     padding: 0.25em 1.75em;
     z-index: 999;
     font-size: $font-size-large;
+
+    .navbar-toggler-icon {
+      background-image: url(../images/icons/menu.svg);
+      opacity: 0.7;
+    }
+  }
+
+  .navbar-toggler[aria-expanded=true] {
+    padding: 0.25em 1.75em;
+    z-index: 999;
+    font-size: $font-size-large;
+
+    .navbar-toggler-icon {
+      background-image: url(../images/icons/icon-close.svg);
+      opacity: 0.7;
+      background-size: 60%;
+    }
   }
 }
 
@@ -173,33 +209,41 @@
     display: none;
   }
 
-  .dropdown-menu {
-    box-shadow: none;
-    border-radius: none;
-  }
-
   .bg-primary {
     .navbar-nav {
-      align-items: left !important;
-      display: flex;
+      align-items: flex-start !important;
 
       .menu-item--expanded.show {
-        border-radius: 7px;
+        box-shadow: none;
+      }
+
+      .menu-item--expanded {
+        padding: 0;
       }
 
       .nav-item {
         flex-direction: column;
         margin-top: 4%;
+
+        .nav-link {
+          font-size: $font-size-subheading;
+        }
       }
 
       .nav-item:last-child {
         margin-right: auto;
-        margin-top: 4%;
+        margin-top: 8%;
         margin-left: 3%;
       }
 
       .dropdown-menu {
         box-shadow: none;
+        border-radius: none;
+
+        .dropdown-item {
+          width: 60%;
+          text-transform: uppercase;
+        }
       }
     }
 

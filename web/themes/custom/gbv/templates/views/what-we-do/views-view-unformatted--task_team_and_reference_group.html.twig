@@ -32,7 +32,7 @@
             <h4 class="title">{{entity.title[0].value}}</h4>
             {{ entity.field_reference_group_body[0].value|raw }}
             {% set document_url = media_file_url(entity.field_reference_group_file[0].target_id, 'field_media_file') %}
-            <a href="{{document_url}}" download><button class="button-outline">Download</button></a>
+            <a href="{{document_url}}" download><button class="button-outline-violet">Download</button></a>
         </div>
         <button class="change-btns"><i class="fa" onclick="plusGroups(+1)">&#xf105;</i></button>
     </div>

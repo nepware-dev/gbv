@@ -58,13 +58,16 @@
           height: 28px;
           text-align: center;
           margin-top: 4%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           p {
             font-weight: $font-weight-normal;
-            padding-top: 3px;
             font-size: $font-size-small;
             font-family: $font-pt-sans;
             text-transform: uppercase;
+            margin-bottom: 0;
           }
         }
       }
@@ -91,13 +94,46 @@
           font-size: $font-size-sm;
           color: $color-grape;
           text-transform: uppercase;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      #edit-term-node-tid-depth-1 {
+        position: relative;
+
+        ul li {
+          .js-form-item {
+            margin-bottom: 10px;
+          }
+
+          label {
+            color: black;
+          }
+
+          ul li {
+            label {
+              font-weight: $font-weight-lighter;
+            }
+          }
+        }
+      }
+
+      #edit-field-thematic-resource-type-sec-target-id {
+        position: relative;
+
+        .js-form-item {
+          margin-bottom: 10px;
+        }
+
+        label {
+          color: black;
         }
       }
 
       .bef-toggle {
         position: absolute;
         right: 0;
-        top: -12%;
+        top: -52px;
         color: #000;
         font-size: 0.75em;
         font-weight: lighter;

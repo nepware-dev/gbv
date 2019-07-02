@@ -34,7 +34,6 @@
 
     .button-outline {
       background-color: transparent;
-      border: 2px solid $white;
       color: white;
       padding: 9px 26px;
     }
@@ -45,5 +44,13 @@
   .hero-image-bg {
     max-height: 450px;
     background-size: cover !important;
+  }
+
+  .hero-banner {
+    .hero-content {
+      .hero-title {
+        font-size: $hero-font-mobile;
+      }
+    }
   }
 }

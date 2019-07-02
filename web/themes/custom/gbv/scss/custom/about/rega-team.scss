@@ -47,6 +47,7 @@
       font-weight: 500;
       font-family: $font-sans;
       padding: 0 8%;
+      line-height: 2;
     }
   }
 }
@@ -95,6 +96,10 @@
     a {
       color: $secondary-color;
       text-decoration: underline;
+
+      &:hover {
+        color: #1F082C;
+      }
     }
   }
 }

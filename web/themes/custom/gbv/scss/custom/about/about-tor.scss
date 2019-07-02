@@ -10,7 +10,11 @@
       font-family: $font-sans;
       font-style: italic;
       padding: 10px 30px;
-      text-align: center;
+      text-align: left;
+
+      p {
+        line-height: 1.83;
+      }
     }
 
     .field__label {
