@@ -33,6 +33,7 @@ class CustomTwigExtension extends Twig_Extension {
       new Twig_SimpleFunction('check_taxonomy_has_items', [$this, 'checkTaxonomyHasItems']),
       new Twig_SimpleFunction('media_file_url', [$this, 'mediaFileUrl']),
       new Twig_SimpleFunction('get_node', [$this, 'getNode']),
+      new Twig_SimpleFunction('media_file_type', [$this, 'mediaFileType']),
     ];
     return $functions;
   }
@@ -171,6 +172,29 @@ class CustomTwigExtension extends Twig_Extension {
   public function getNode($nid) {
     $object = Node::load($nid);
     return $object;
+  }
+
+  /**
+   * Returns the file URL from a media entity.
+   *
+   * @param string $mid
+   *   The media entity target id.
+   * @param string $field
+   *   The media field.
+   *
+   * @return string
+   *   The file type.
+   */
+  public function mediaFileType($mid, $field = 'field_media_file') {
+    if (!$mid) {
+      return NULL;
+    }
+    $media = Media::load($mid);
+    $fid = $media->$field->target_id;
+    $file = File::load($fid);
+    $type = $file->getFilename();
+    $ext = pathinfo($type, PATHINFO_EXTENSION);
+    return $ext;
   }
 
 }

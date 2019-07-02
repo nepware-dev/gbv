@@ -72,12 +72,30 @@
           padding: 10px 20px;
         }
 
-        .download-link {
+        .footer-wrap {
           position: absolute;
           bottom: 16px;
 
-          .button-outline {
-            padding: 4% 20%;
+          .pdf {
+            border-radius: 14px;
+            background-color: $primary-color-light;
+            height: 28px;
+            text-align: center;
+            margin-top: 4%;
+
+            p {
+              font-weight: $font-weight-normal;
+              padding-top: 3px;
+              font-size: $font-size-small;
+              font-family: $font-pt-sans;
+              text-transform: uppercase;
+            }
+          }
+
+          .download-link {
+            .button-outline {
+              padding: 4% 20%;
+            }
           }
         }
       }
