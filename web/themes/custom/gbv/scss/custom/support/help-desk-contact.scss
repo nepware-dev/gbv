@@ -63,10 +63,22 @@
 
 @media screen and (max-width: 480px) {
   .help-desk-contact {
-    margin: 0;
-    padding: 10% 6%;
+    margin-top: 40px;
+    padding: 10% 13%;
+
+    h3 {
+      font-size: 20px;
+    }
 
     .desk-col {
+      padding: 0;
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .gbv-helpdesk {
       padding: 0;
     }
   }

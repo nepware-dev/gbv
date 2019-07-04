@@ -33,14 +33,14 @@
             <div class="col-sm-12"><p class="description">{{ text|length > 50 ? text|slice(0, 50) ~ '...' : text }}</p></div>
             
             <div class="col-sm-12 row">
-                <div class="col-sm-8">
+                <div class="col-10">
                     {% set tr_document_ext = media_file_type(entity.field_resource_document[0].target_id) %}
                     {% set tr_document_url = media_file_url(entity.field_resource_document[0].target_id, 'field_media_file') %}
                     <a href="{{tr_document_url}}" download>
                         <button class="button-outline-violet">Download</button>
                     </a>
                 </div>
-                <div class="col-sm-2 offset-md-2 pdf">
+                <div class="col-2 pdf">
                     <p>{{tr_document_ext}}</p>
                 </div>
             </div>

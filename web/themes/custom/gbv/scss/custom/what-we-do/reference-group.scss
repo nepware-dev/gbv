@@ -61,3 +61,28 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .task-team-block {
+    .task-team {
+      padding: 6%;
+      padding-top: 15%;
+    }
+
+    .group-single {
+      .title {
+        padding: 0;
+        font-size: 1.15em;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 1em;
+      }
+
+      .button-outline {
+        width: 90%;
+      }
+    }
+  }
+}

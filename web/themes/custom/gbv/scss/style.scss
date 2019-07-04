@@ -53,7 +53,7 @@ a {
   width: 100%;
 }
 
-.slick>div {
+.slick > div {
   margin: 0 15px;
 }
 
@@ -228,6 +228,14 @@ p {
   font-family: $font-sans;
 }
 
+.underline-h2-tag {
+  font-size: $font-size-heading-large;
+  background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
+  background-size: 100px 3px;
+  display: inline-block;
+  padding-bottom: 22px;
+}
+
 @media screen and(max-width: 480px) {
   .change-btns {
     border: none;
@@ -235,6 +243,12 @@ p {
     font-size: 24px;
     display: block;
     font-family: $font-pt-sans;
+  }
+
+  .underline-h2-tag {
+    font-size: 20px;
+    padding-bottom: 19px;
+    text-transform: uppercase;
   }
 
   .navbar-toggler-icon {
@@ -247,4 +261,17 @@ p {
       padding: 0.75em;
     }
   }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  code {
+    color: $white;
+    font-size: 100%;
+  }
+}
+
+.fa {
+  font-size: 48px;
 }

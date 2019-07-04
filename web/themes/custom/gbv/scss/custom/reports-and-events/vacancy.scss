@@ -6,15 +6,6 @@
   margin-bottom: 100px;
   text-align: center;
 
-  h2 {
-    font-size: $font-size-heading-large;
-    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-    background-size: 100px 3px;
-    display: inline-block;
-    padding-bottom: 22px;
-    text-transform: capitalize;
-  }
-
   .view-header {
     display: none;
   }
@@ -98,6 +89,16 @@
 
 @media screen and(max-width: 480px) {
   .vacancies-block {
+    margin-top: 40px;
+
+    .view-vacancies {
+      margin-top: 15%;
+    }
+
+    h2 {
+      margin: 0 15%;
+    }
+
     .vacancy-single {
       .vacancy-image {
         display: flex;

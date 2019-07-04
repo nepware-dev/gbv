@@ -11,20 +11,14 @@
     align-items: center;
     flex-direction: column;
 
-    h2 {
-      font-size: $font-size-heading-large;
-      background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-      background-size: 100px 3px;
-      display: inline-block;
-      padding-bottom: 22px;
-    }
-
     .content {
       h2 {
         font-size: $font-size-heading;
         background: transparent;
         padding-bottom: 5px;
         font-weight: bold;
+        text-transform: uppercase;
+        text-align: left;
       }
     }
 
@@ -42,9 +36,24 @@
 
 @media only screen and (max-width: 480px) {
   .what-we-do {
-    margin-top: 0.25%;
+    margin-top: 5%;
     padding-top: 0;
     padding-bottom: 0;
+
+    .what-we-do-container {
+      padding: 10%;
+
+      p {
+        font-size: $font-size-subheading;
+      }
+
+      .content {
+        h2 {
+          margin-top: 20px;
+          text-align: left;
+        }
+      }
+    }
 
     .what-we-do-row {
       flex-direction: column-reverse;

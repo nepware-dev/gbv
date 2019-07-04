@@ -24,11 +24,6 @@
   }
 
   h2 {
-    font-size: $font-size-heading-large;
-    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-    background-size: 80px 2px;
-    display: inline-block;
-    padding-bottom: 22px;
     margin-bottom: 10px;
   }
 }
@@ -36,6 +31,10 @@
 .community-contact {
   padding: 5% 5%;
   background-color: $primary-color-light;
+
+  hr {
+    width: 96%;
+  }
 
   .form-group {
     padding: 0;
@@ -74,7 +73,7 @@
         white-space: pre-line;
 
         &:hover {
-          color: #1F082C;
+          color: #1f082c;
         }
       }
     }
@@ -92,15 +91,34 @@
 
 @media screen and (max-width: 480px) {
   .community-practise {
-    margin-top: 0;
+    margin-top: 40px;
 
     .community-col {
       display: flex;
       flex-direction: column-reverse;
+      padding: 0 10%;
+
+      .field--name-field-sub-heading {
+        font-size: 20px;
+      }
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
 
       p {
         padding: 0;
+        font-size: 14px;
       }
+    }
+  }
+
+  .community-contact {
+    padding: 5% 13%;
+
+    h3 {
+      font-size: 20px;
     }
   }
 }
