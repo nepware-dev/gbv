@@ -48,6 +48,8 @@
     line-height: 1.83;
     font-family: $font-sans;
     font-weight: $font-weight-lighter;
+    padding-left: 2.5%;
+    padding-right: 1%;
   }
 
   .index {
@@ -65,8 +67,8 @@
       font-size: $font-size-heading;
       text-transform: uppercase;
       margin-bottom: 0;
-      font-weight: 600;
-      font-family: $font-sans;
+      font-weight: bold;
+      font-family: $font-pt-sans;
       color: $secondary-color;
       padding-top: 0;
     }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>icon-close</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Visual-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Header---Searching" transform="translate(-865.000000, -205.000000)" fill="#1C1C1C">
+            <g id="header" transform="translate(0.000000, 61.000000)">
+                <path d="M872,149.666667 L877.666667,144 L879,145.333333 L873.333333,151 L879,156.666667 L877.666667,158 L872,152.333333 L866.333333,158 L865,156.666667 L870.666667,151 L865,145.333333 L866.333333,144 L872,149.666667 Z" id="icon-close"></path>
+            </g>
+        </g>
+    </g>
+</svg>

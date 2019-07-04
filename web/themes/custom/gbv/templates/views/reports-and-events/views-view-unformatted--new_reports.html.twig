@@ -42,10 +42,10 @@
                   </span>
                   {% set document_url = media_file_url(entity.field_report_document[0].target_id, 'field_media_file') %}
                   {% set document_ext = media_file_type(entity.field_report_document[0].target_id) %}
-                  <div class="footer-wrap row">
-                    <div class="col-sm-8">
+                  <div class="col-12 nopadding footer-wrap row">
+                    <div class="col-sm-6">
                       <a class="download-link" href="{{document_url}}" download>
-                          <button class="button-outline">DOWNLOAD</button>
+                          <button class="button-outline-violet">DOWNLOAD</button>
                       </a>
                     </div>
                     <div class="col-sm-2 offset-md-2 pdf">

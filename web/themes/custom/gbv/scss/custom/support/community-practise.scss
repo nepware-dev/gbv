@@ -72,6 +72,10 @@
         line-height: 1.43;
         color: $secondary-color;
         white-space: pre-line;
+
+        &:hover {
+          color: #1F082C;
+        }
       }
     }
   }

@@ -38,7 +38,7 @@
                 {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}
                 {% set document_url = media_file_url(entity.field_document_file[0].target_id, 'field_media_file') %}
                 <a class="download-link" href="{{document_url}}" download>
-                  <button class="button-outline">Download</button>
+                  <button class="button-outline-violet">Download</button>
                 </a>
             </div>
         </div>

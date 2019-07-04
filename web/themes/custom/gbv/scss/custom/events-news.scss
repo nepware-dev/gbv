@@ -39,6 +39,11 @@
     flex-direction: column;
     align-items: center;
 
+    &:hover {
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.8);
+      cursor: pointer;
+    }
+
     .event-date-wrapper {
       color: $color-grape;
       font-weight: bold;
@@ -100,6 +105,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    transition-duration: 0.4s;
+
+    &:hover {
+      box-shadow: 0 6px 8px 0 rgba(107, 107, 107, 0.35);
+      cursor: pointer;
+    }
 
     .news-date {
       color: $gray-800;
