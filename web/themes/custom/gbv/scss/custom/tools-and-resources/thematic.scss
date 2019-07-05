@@ -38,6 +38,11 @@
         text-align: left;
         width: 100%;
 
+        .row {
+          padding-right: 0 !important;
+          align-items: center;
+        }
+
         h4 {
           padding: 0;
         }
@@ -61,6 +66,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          width: 50px;
 
           p {
             font-weight: $font-weight-normal;
@@ -163,5 +169,15 @@
 @media screen and(max-width: 480px) {
   .view-tools-and-resources-for-thematic-areas {
     flex-direction: column;
+
+    .resource-type-wrapper {
+      .rectangle {
+        .rectangle-content {
+          .date {
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }

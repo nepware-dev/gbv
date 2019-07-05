@@ -9,14 +9,6 @@
     background-color: #f9f9f9;
     display: flex;
   }
-
-  h2 {
-    font-size: $font-size-heading-large;
-    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-    background-size: 100px 3px;
-    display: inline-block;
-    padding: 20px 100px;
-  }
 }
 
 .rega-team {
@@ -98,7 +90,7 @@
       text-decoration: underline;
 
       &:hover {
-        color: #1F082C;
+        color: #1f082c;
       }
     }
   }
@@ -127,17 +119,49 @@
 }
 
 @media screen and(max-width: 480px) {
+  .rega-container {
+    .view-content {
+      background-color: $white;
+    }
+  }
+
   .rega-team-block {
+    background-color: $white;
+    margin-top: 10%;
+    padding-top: 10%;
+
     .view-header {
       p {
         column-count: 1;
+        font-size: 14px;
       }
     }
   }
 
   .rega-contact {
+    margin-top: 10%;
+
     .rega-contact-text {
-      padding: 14.2%;
+      padding: 20% 14.2%;
+      line-height: 1.57;
+      letter-spacing: 0.58px;
+      font-size: 14px;
+    }
+  }
+
+  .team-single {
+    .team-content-wrapper {
+      .team-title {
+        font-size: 14px;
+      }
+
+      .user-name {
+        font-size: 14px;
+      }
+
+      .team-email {
+        font-size: 14px;
+      }
     }
   }
 }

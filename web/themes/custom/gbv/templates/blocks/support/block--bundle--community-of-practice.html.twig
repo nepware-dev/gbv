@@ -11,7 +11,7 @@
             <div class="row community-practise">
                 {{ title_prefix }}
                 {% if label %}
-                    <h2{{ title_attributes }}>{{ label }}</h2>
+                    <h2{{ title_attributes }} class="underline-h2-tag">{{ label }}</h2>
                 {% endif %}
                 {{ title_suffix }}
                 <div class="col-12">
@@ -37,6 +37,7 @@
                     <h3>Contact the Community of Practice</h3>
                     {{content.field_contact_the_community_of_p}}
                 </div>
+                <hr>
                 <div class="col-sm-12 community-help">
                     {{content.field_extra_links}}
                 </div>

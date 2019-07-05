@@ -22,3 +22,20 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .about-tor-section {
+    margin-bottom: 0;
+    background-color: $white;
+
+    .tor-content {
+      .field__item {
+        padding: 0;
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

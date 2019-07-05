@@ -15,3 +15,15 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .block-views-blockcoordination-team-block-1 {
+    padding-top: 77px;
+
+    .view-header {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

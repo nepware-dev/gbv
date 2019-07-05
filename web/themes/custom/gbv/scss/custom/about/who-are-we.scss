@@ -1,3 +1,12 @@
+.path-about-us {
+  .main-content {
+    background-image: url(../images/BG/about/BG-About.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-color: #f9f9f9;
+  }
+}
+
 .who-are-we {
   background-color: $white;
   position: relative;
@@ -6,14 +15,6 @@
   flex-direction: column;
   margin-top: 4%;
   padding-top: 3%;
-
-  h2 {
-    font-size: $font-size-heading-large;
-    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-    background-size: 100px 3px;
-    display: inline-block;
-    padding-bottom: 22px;
-  }
 
   p {
     font-size: $font-size-normal;
@@ -26,19 +27,22 @@
 
 @media screen and(max-width: 480px) {
   .who-are-we {
-    margin-top: 0.25%;
+    margin-top: 5%;
+
+    h2 {
+      margin-top: 5%;
+    }
 
     p {
       column-count: 1;
+      font-size: 14px;
+      padding: 0 10%;
     }
   }
-}
 
-.path-about-us {
-  .main-content {
-    background-image: url(../images/BG/about/BG-About.svg);
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-    background-color: #f9f9f9;
+  .path-about-us {
+    .main-content {
+      background-image: none;
+    }
   }
 }

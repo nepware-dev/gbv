@@ -2,6 +2,13 @@
   padding-top: 0;
 }
 
+.home-introduction {
+  background-image: url(../images/BG/home/BG-home.svg);
+  background-repeat: no-repeat;
+  background-color: $white;
+  background-position: 0 70%;
+}
+
 .home-summary {
   padding: 5% 0;
   padding: 3% 9%;
@@ -29,16 +36,24 @@
 
 @media only screen and (max-width: 480px) {
   .home-summary {
-    background-color: $white;
-    padding: 5% 5%;
+    padding: 5% 11%;
   }
 
   .home-summary p {
     padding-bottom: 50px;
     text-align: center;
+    font-size: $summary-font-size-mobile;
+  }
+
+  .intro-content {
+    order: 2;
   }
 
   .intro-image-container {
-    display: none;
+    order: 1;
+  }
+
+  .home-introduction {
+    background-position: 37%;
   }
 }

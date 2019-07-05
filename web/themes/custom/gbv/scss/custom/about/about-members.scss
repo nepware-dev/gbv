@@ -9,6 +9,7 @@
     margin-bottom: $title-margin-bottom;
     text-transform: uppercase;
     color: $secondary-color;
+    font-family: $font-pt-sans;
   }
 
   .field__item {
@@ -52,11 +53,23 @@
 
 @media screen and(max-width: 480px) {
   .about-members-section {
-    padding: 8%;
+    padding: 8% 10%;
 
     .core-members {
       border-right: none;
       border-bottom: 1px solid $line-color;
+
+      .field__label {
+        font-size: 20px;
+      }
+
+      .field__item {
+        padding-right: 0;
+      }
+
+      p {
+        padding-right: 0;
+      }
     }
 
     .associated-members {
@@ -64,6 +77,7 @@
 
       .field__label {
         padding-left: 0;
+        font-size: 20px;
       }
 
       .field__item {

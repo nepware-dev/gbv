@@ -14,7 +14,7 @@
                         editable: true,
                         eventLimit: true, // allow "more" link when too many events
                         events: calendarEvents,
-                        eventRender: function(event, element){
+                        eventRender: function(event, element) {
                             let title = event.title,
                                 body = event.body,
                                 dateContent = event.dateContent,
@@ -23,9 +23,9 @@
                             let innerContent = '<h5>'+title+'</h5>';
                             innerContent += '<p class="event-date">'+dateContent+'</p>';
                             innerContent += '<div class="event-body">'+body+'</div>';
-                            innerContent += '<div class="event-footer"><div class="content-left"><p class="contact-header">Contact for more information</p><p class="contact-email">contact@unfpa.org</p></div><div class="content-right"><a href="' + uri + '" target="_blank">'+buttonTitle+'<i style="font-size:16px" class="fa fa-external-link"></i></a></div></div>';
+                            innerContent += '<div class="col-12 nopadding event-footer"><div class="row"><div class="col-8 content-left"><h5 class="contact-header">Contact for more information</h5><p class="contact-email">contact@unfpa.org</p></div><div class="col-4 nopadding content-right"><div class="btn-contained"><a href="' + uri + '" target="_blank">'+buttonTitle+'<i style="font-size:16px" class="fa fa-external-link"></i></a></div></div></div></div>';
                             element.popover({
-                                animation:true,
+                                animation: true,
                                 content: innerContent,
                                 trigger: 'click',
                                 placement: 'top',

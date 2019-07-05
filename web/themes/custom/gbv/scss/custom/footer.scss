@@ -114,6 +114,11 @@ $accent-shade: #1c1c1c;
 
     .keylink-content {
       column-count: 1;
+      font-family: $font-sans;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }

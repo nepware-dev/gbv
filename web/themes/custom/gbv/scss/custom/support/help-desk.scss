@@ -19,11 +19,6 @@
     }
 
     h2 {
-      font-size: $font-size-heading-large;
-      background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-      background-size: 80px 2px;
-      display: inline-block;
-      padding-bottom: 22px;
       margin-bottom: 37px;
     }
 
@@ -47,8 +42,31 @@
     .help-desk {
       padding: 10% 6%;
 
-      .desk-col {
-        margin: 5% 2.5%;
+      p {
+        font-size: 14px;
+      }
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .view-header {
+        .desk-col {
+          margin: 5% 0.5%;
+
+          .row {
+            flex-direction: column-reverse;
+          }
+
+          .help-row {
+            flex-direction: column-reverse;
+          }
+
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
       }
     }
   }

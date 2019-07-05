@@ -50,17 +50,79 @@
     }
   }
 
-  h2 {
-    font-size: $font-size-heading-large;
-    background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-    background-size: 100px 3px;
-    display: inline-block;
-    padding-bottom: 22px;
-  }
-
   #calender {
     h2 {
       font-size: $font-size-heading;
+    }
+  }
+}
+
+.popover {
+  width: 341px;
+
+  .popover-body {
+    padding: 1em 2em;
+
+    h5 {
+      font-size: $font-size-normal;
+      font-family: $font-pt-sans;
+      font-weight: $font-weight-bold;
+      color: $black;
+      text-transform: capitalize;
+    }
+
+    .event-date {
+      font-size: $font-size-small;
+      font-family: $font-sans;
+      opacity: 0.4;
+    }
+
+    .event-body {
+      p {
+        font-size: $font-size-small;
+        font-family: $font-sans;
+      }
+    }
+
+    .event-footer {
+      .row {
+        justify-content: center;
+        align-items: center;
+      }
+
+      h5 {
+        font-size: 10px;
+      }
+
+      .btn-contained {
+        padding: 1% 10%;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      a {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: $white;
+
+        .fa {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popover {
+    .event-footer {
+      a {
+        .fa {
+          display: inline-block;
+        }
+      }
     }
   }
 }

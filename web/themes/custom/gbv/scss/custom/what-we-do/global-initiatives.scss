@@ -53,11 +53,6 @@
     }
 
     h2 {
-      font-size: $font-size-heading-large;
-      background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
-      background-size: 100px 3px;
-      display: inline-block;
-      padding-bottom: 22px;
       margin-bottom: 0.5em;
     }
 
@@ -81,10 +76,27 @@
     padding: 0;
 
     .global-initiatives-block {
+      padding: 10%;
+
+      .global-initiatives-image {
+        height: 182.9px;
+      }
+
       .global-initiatives-content {
         padding: 0;
-        padding-bottom: 25px;
-        border-bottom: 1px solid #a99bbd;
+        margin-top: 10%;
+
+        &:last-child {
+          display: flex;
+        }
+
+        p {
+          padding: 0;
+        }
+
+        .title {
+          font-size: 16px;
+        }
       }
     }
   }
