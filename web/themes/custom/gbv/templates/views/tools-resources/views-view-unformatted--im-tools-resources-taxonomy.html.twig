@@ -24,37 +24,47 @@
     default_row_class ? 'views-row',
     ]
 %}
+
+
+{% set filtered_rows = [] %}
 {% set odd_rows = [] %}
 {% set even_rows = [] %}
+
 {% for row in rows %}
     {% set is_depth_1 = row.content['#taxonomy_term'].parent[0].target_id=="0" %}
     {% if is_depth_1 %}
-        {% if loop.index is odd %}
-            {% set odd_rows = odd_rows|merge([row]) %}
-        {% elseif loop.index is even %}
-            {% set even_rows = even_rows|merge([row]) %}
-        {% endif %}
+        {% set filtered_rows = filtered_rows|merge([row]) %}
     {% endif %}
 {% endfor %}
+{% for filtered_row in filtered_rows %}
+    {% if loop.index is odd %}
+        {% set odd_rows = odd_rows|merge([filtered_row]) %}
+    {% elseif loop.index is even %}
+        {% set even_rows = even_rows|merge([filtered_row]) %}
+    {% endif %}
+{% endfor %}
+
 <div class="col-sm-6 tools-content">
     {% for row in odd_rows %}
         {% set taxonomy_name = row.content['#taxonomy_term'].name[0].value %}
         {% set tid = row.content['#taxonomy_term'].tid[0].value %}
         {% set taxonomy_path  = row.content['#taxonomy_term'].path[0].value.alias %}
         {% set child_terms = load_tax_children(tid) %}
-        <div class="rectangle">
-            <h3><a href="{{taxonomy_path}}">{{taxonomy_name}}</a></h3>
-            {% for child_term in child_terms %}
-                <div class="rectangle-content">
-                    {% set child_taxonomy_name = child_term.name[0].value %}
-                    {% set section_url = child_term.path[0].value.alias|split('/')|last %}
-                    <a href="{{taxonomy_path}}#{{section_url}}">
-                        <div class="col-sm-10">{{child_taxonomy_name}}</div>
-                        <i class="fa fa-angle-right" style="font-size:24px"></i>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
+        <a href="{{taxonomy_path}}">
+            <div class="rectangle">
+                <h3>{{taxonomy_name}}</h3>
+                {% for child_term in child_terms %}
+                    <div class="rectangle-content">
+                        {% set child_taxonomy_name = child_term.name[0].value %}
+                        {% set section_url = child_term.path[0].value.alias|split('/')|last %}
+                        <a href="{{taxonomy_path}}#{{section_url}}">
+                            <div class="col-sm-10">{{child_taxonomy_name}}</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </a>
         
     {% endfor %}
 </div>
@@ -64,23 +74,24 @@
         {% set tid = row.content['#taxonomy_term'].tid[0].value %}
         {% set taxonomy_path  = row.content['#taxonomy_term'].path[0].value.alias %}
         {% set child_terms = load_tax_children(tid) %}
-        <div class="rectangle">
-            <h3><a href="{{taxonomy_path}}">{{taxonomy_name}}</a></h3>
-            {% for child_term in child_terms %}
-                <div class="rectangle-content">
-                    {% set child_taxonomy_name = child_term.name[0].value %}
-                    {% set section_url = child_term.path[0].value.alias|split('/')|last %}
-                    <a href="{{taxonomy_path}}#{{section_url}}">
-                        <div class="col-sm-10">{{child_taxonomy_name}}</div>
-                        <i class="fa fa-angle-right" style="font-size:24px"></i>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
+        <a href="{{taxonomy_path}}">
+            <div class="rectangle">
+                <h3>{{taxonomy_name}}</h3>
+                {% for child_term in child_terms %}
+                    <div class="rectangle-content">
+                        {% set child_taxonomy_name = child_term.name[0].value %}
+                        {% set section_url = child_term.path[0].value.alias|split('/')|last %}
+                        <a href="{{taxonomy_path}}#{{section_url}}">
+                            <div class="col-sm-10 child-content">{{child_taxonomy_name}}</div>
+                            <i class="fa fa-angle-right" style="font-size:24px"></i>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </a>
         
     {% endfor %}
 </div>
-
 <script>
     let activeText = document.querySelectorAll('.dropdown-item.active a')[0].innerText;
     document.getElementsByClassName('menu-item--expanded')[0].getElementsByClassName('nav-link')[0].innerHTML= activeText;

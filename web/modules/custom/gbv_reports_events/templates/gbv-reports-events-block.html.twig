@@ -21,21 +21,23 @@
             <div class="events">
                 <h2>UPCOMING EVENTS</h2>
                 {% if event is defined and event is not null %}
-                    <div class="event-single">
-                        <div class="event-date-wrapper">
-                            {% if event.field_event_date[0].value|date('d') == event.field_event_date[0].end_value|date('d') %}
-                                <span class="event-date">{{event.field_event_date[0].end_value|date('d')}} </span>
-                                <span class="event-month">{{event.field_event_date[0].value|date('M')}}</span>
-                            {% elseif event.field_event_date[0].value|date('M') == event.field_event_date[0].end_value|date('M') %}
-                                <span class="event-date">{{event.field_event_date[0].value|date('d')}} - {{event.field_event_date[0].end_value|date('d')}} </span>
-                                <span class="event-month">{{event.field_event_date[0].value|date('M')}}</span>
-                            {% else %}
-                                <span class="event-date">{{event.field_event_date[0].value|date('d M')}} - {{event.field_event_date[0].end_value|date('d M')}} </span>
-                            {% endif %}
+                    <a href={{event.field_event_url[0].value.uri}} target="_blank" class="plain-anchor">
+                        <div class="event-single">
+                            <div class="event-date-wrapper">
+                                {% if event.field_event_date[0].value|date('d') == event.field_event_date[0].end_value|date('d') %}
+                                    <span class="event-date">{{event.field_event_date[0].end_value|date('d')}} </span>
+                                    <span class="event-month">{{event.field_event_date[0].value|date('M')}}</span>
+                                {% elseif event.field_event_date[0].value|date('M') == event.field_event_date[0].end_value|date('M') %}
+                                    <span class="event-date">{{event.field_event_date[0].value|date('d')}} - {{event.field_event_date[0].end_value|date('d')}} </span>
+                                    <span class="event-month">{{event.field_event_date[0].value|date('M')}}</span>
+                                {% else %}
+                                    <span class="event-date">{{event.field_event_date[0].value|date('d M')}} - {{event.field_event_date[0].end_value|date('d M')}} </span>
+                                {% endif %}
+                            </div>
+                            <p class="event-title">{{event.title[0].value}}</p>
+                            <span class="event-desc">{{event.field_event_body[0].value|raw}}</span>
                         </div>
-                        <p class="event-title">{{event.title[0].value}}</p>
-                        <span class="event-desc">{{event.field_event_body[0].value|raw}}</span>
-                    </div>
+                    </a>    
                 {% else %}
                     <div class="event-single">
                         <p>No upcoming events</p>
@@ -53,16 +55,20 @@
                 </div>
                 <div class=" row report-content">
                     {% for report in reports %}
-                        <div class="col-12 col-md-4 news-report">
-                            <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button>
-                            <div class="news-single">
-                                <h3 class="news-title">{{report.title[0].value}}</h3>
-                                {% set text = report.field_report_body[0].value |render|striptags %}
-                                <span class="news-body">{{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}</span>
-                                <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
-                            </div>
-                            <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button>
-                        </div>
+                        {% set document_url = media_file_url(report.field_report_document[0].target_id, 'field_media_file') %}
+                        {% set document_ext = media_file_type(report.field_report_document[0].target_id) %}
+                        <a href={{document_url}} download class="plain-anchor news-report col-12 col-md-4">
+                            {# <div class="col-12 col-md-4"> #}
+                                <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button>
+                                    <div class="news-single">
+                                        <h3 class="news-title">{{report.title[0].value}}</h3>
+                                        {% set text = report.field_report_body[0].value |render|striptags %}
+                                        <span class="news-body">{{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}</span>
+                                        <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
+                                    </div>       
+                                <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button>
+                            {# </div> #}
+                        </a>
                     {% endfor %}
                 </div>
                 <a href="/reports-events" class='see-all-mobile'>SEE ALL</a>
