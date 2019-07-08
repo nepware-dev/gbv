@@ -59,15 +59,17 @@
 
 .popover {
   width: 341px;
+  max-width: none;
+  font-size: $font-size-base;
 
   .popover-body {
-    padding: 1em 2em;
+    padding: 1em 1.5em;
 
     h5 {
+      color: $black;
       font-size: $font-size-normal;
       font-family: $font-pt-sans;
       font-weight: $font-weight-bold;
-      color: $black;
       text-transform: capitalize;
     }
 
@@ -91,7 +93,10 @@
       }
 
       h5 {
-        font-size: 10px;
+        font-size: $font-size-xs;
+        font-family: $font-pt-sans;
+        font-weight: $font-weight-bold;
+        margin-bottom: 0;
       }
 
       .btn-contained {
@@ -99,16 +104,29 @@
       }
 
       p {
-        font-size: 10px;
+        font-size: em(12);
       }
 
-      a {
-        font-size: 10px;
-        text-transform: uppercase;
-        color: $white;
+      .content-right {
+        align-self: start;
 
-        .fa {
+        a {
           font-size: 10px;
+          font-weight: $font-weight-bold;
+          text-transform: uppercase;
+          color: $white;
+          vertical-align: middle;
+          font-family: $font-pt-sans;
+
+          .fa {
+            margin-left: 3px;
+          }
+        }
+      }
+
+      .contact-email {
+        &:blank {
+          display: none;
         }
       }
     }
