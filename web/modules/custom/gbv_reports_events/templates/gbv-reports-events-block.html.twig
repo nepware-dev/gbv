@@ -62,7 +62,7 @@
                             <div class="news-single">
                                 <h3 class="news-title">{{report.title[0].value}}</h3>
                                 {% set text = report.field_report_body[0].value |render|striptags %}
-                                <span class="news-body">{{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}</span>
+                                <span class="news-body">{{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}</span>
                                 <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
                             </div>       
                         </a>
