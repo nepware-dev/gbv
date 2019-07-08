@@ -8,10 +8,14 @@
 
     .desk-col {
       display: flex;
+
+      .desk-single {
+        margin-top: 25px;
+      }
     }
 
     .view-header {
-      margin-bottom: 8.2%;
+      margin-bottom: 6.2%;
     }
 
     img {

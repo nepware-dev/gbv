@@ -1,3 +1,15 @@
+$background-image-vertical: linear-gradient(to top, #7f7f7f 70%, rgba(255, 255, 255, 0) 0%);
+$background-image-horizontal: linear-gradient(to right, #7f7f7f 71%, rgba(255, 255, 255, 0) 0%);
+$background-position-horizontal: bottom;
+$background-position-vertical: right;
+$repeat-vertical: repeat-y;
+$repeat-horizontal: repeat-x;
+$border-width: 1px;
+$border-gap: 3px;
+$bg-size-vertical: $border-width $border-gap;
+$bg-size-horizontal: $border-gap $border-width;
+$reverse: false;
+
 .global-architecture-section {
   background-color: $white;
   padding: 5% 10%;
@@ -10,6 +22,111 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+
+    body {
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    .tree {
+      @if $reverse {
+        transform: rotate(180deg);
+        transform-origin: 50%;
+      }
+    }
+
+    .tree ul {
+      position: relative;
+      padding: 1em 0;
+      white-space: nowrap;
+      margin: 0 auto;
+      text-align: center;
+
+      &::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+
+    .tree li {
+      display: inline-block; // need white-space fix
+      vertical-align: top;
+      text-align: center;
+      list-style-type: none;
+      position: relative;
+      padding: 1em .5em 0 .5em;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 50%;
+        width: 50%;
+        height: 1em;
+        background-image: $background-image-horizontal;
+        background-position: top;
+        background-size: $bg-size-horizontal;
+        background-repeat: repeat-x;
+      }
+
+      &::after {
+        right: auto;
+        left: 50%;
+      }
+
+      &:only-child::after,
+      &:only-child::before {
+        display: none;
+      }
+
+      &:only-child {
+        padding-top: 0;
+      }
+
+      &:first-child::before,
+      &:last-child::after {
+        background: none;
+      }
+    }
+
+    .tree ul ul::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      background-image: $background-image-vertical;
+      background-position: bottom;
+      background-size: $bg-size-vertical;
+      background-repeat: repeat-y;
+      width: 1px;
+      height: 1em;
+    }
+
+    .only-right {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: -1em;
+        right: 2px;
+        height: 1em;
+        width: 1px;
+        background-image: $background-image-vertical;
+        background-position: bottom;
+        background-size: $bg-size-vertical;
+        background-repeat: repeat-y;
+
+        /* background-color:red; */
+      }
+    }
   }
 
   img {

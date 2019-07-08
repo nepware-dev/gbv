@@ -7,6 +7,10 @@
     padding-top: 20px;
     text-transform: uppercase;
   }
+
+  .mapboxgl-popup {
+    max-width: none !important;
+  }
 }
 
 @media screen and (max-width: 480px) {

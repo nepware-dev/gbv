@@ -45,57 +45,61 @@
               {% set document_file = media_file_url(object.get('field_document_file').getValue()[0].target_id, 'field_media_file') %}
               {% set created_date = object.get('created').getValue()[0].value %}
               {% set document_body_text = document_body|striptags %}
-              {{kint(document_file)}}
               <div class="col-sm-12 rectangle">
-                <div class="rectangle-content row">
-                  <div class="col-sm-12 search-description">
-                    <h4>{{main_title}}</h4>
-                    <p>{{ document_body_text|length > 1000 ? document_body_text|slice(0, 1000) ~ '...' : document_body_text }}</p>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="row search-footer">
-                      <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                      <div class="col-3 offset-md-5 search-documents">
-                          <p>DOCUMENTS</p>
+                <a href="{{document_file}}" download class="plain-anchor">
+                  <div class="rectangle-content row hover-shadow">
+                    <div class="col-sm-12 search-description">
+                      <h4>{{main_title}}</h4>
+                      <p>{{ document_body_text|length > 1000 ? document_body_text|slice(0, 1000) ~ '...' : document_body_text }}</p>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="row search-footer">
+                        <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                        <div class="col-3 offset-md-5 search-documents">
+                            <p>DOCUMENTS</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             {% elseif type=='gbv_events' %}
               {% set event_body = object.get('field_event_body').getValue()[0].value %}
               {% set event_start_date = object.get('field_event_date').getValue()[0].value %}
               {% set event_end_date = object.get('field_event_date').getValue()[0].end_value %}
+              {% set event_url = object.get('field_event_url').getValue()[0].uri %}
               {% set created_date = object.get('created').getValue()[0].value %}
               {% set event_body_text = event_body|striptags %}
               <div class="col-sm-12 rectangle">
-                <div class="rectangle-content row">
-                  <div class="col-sm-12 search-description row">
-                    <div class="search-date event-date-wrapper">
-                      {% if event_start_date|date('d') == event_end_date|date('d') %}
-                          <span class="event-date">{{event_end_date|date('d')}} </span>
-                          <span class="event-month">{{event_start_date|date('M')}}</span>
-                      {% elseif event_start_date|date('M') == event_end_date|date('M') %}
-                          <span class="event-date">{{event_start_date|date('d')}} - {{event_end_date|date('d')}} </span>
-                          <span class="event-month">{{event_start_date|date('M')}}</span>
-                      {% else %}
-                          <span class="event-date">{{event_start_date|date('d M')}} - {{event_end_date|date('d M')}} </span>
-                      {% endif %}
+                <a href={{event_url}} target="_blank" class="plain-anchor">
+                  <div class="rectangle-content row hover-shadow">
+                    <div class="col-sm-12 search-description row">
+                      <div class="search-date event-date-wrapper">
+                        {% if event_start_date|date('d') == event_end_date|date('d') %}
+                            <span class="event-date">{{event_end_date|date('d')}} </span>
+                            <span class="event-month">{{event_start_date|date('M')}}</span>
+                        {% elseif event_start_date|date('M') == event_end_date|date('M') %}
+                            <span class="event-date">{{event_start_date|date('d')}} - {{event_end_date|date('d')}} </span>
+                            <span class="event-month">{{event_start_date|date('M')}}</span>
+                        {% else %}
+                            <span class="event-date">{{event_start_date|date('d M')}} - {{event_end_date|date('d M')}} </span>
+                        {% endif %}
+                      </div>
+                      <div class="col-sm-10">
+                        <h4>{{main_title}}</h4>
+                        <p>{{ event_body_text|length > 1000 ? event_body_text|slice(0, 1000) ~ '...' : event_body_text }}</p>
+                      </div>
                     </div>
-                    <div class="col-sm-10">
-                      <h4>{{main_title}}</h4>
-                      <p>{{ event_body_text|length > 1000 ? event_body_text|slice(0, 1000) ~ '...' : event_body_text }}</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="row search-footer">
-                      <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                      <div class="col-3 offset-md-5 search-documents">
-                        <p>EVENT</p>
+                    <div class="col-sm-12">
+                      <div class="row search-footer">
+                        <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                        <div class="col-3 offset-md-5 search-documents">
+                          <p>EVENT</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             
             {% elseif type=='tools_and_resources' %}
@@ -109,41 +113,46 @@
               {% set tr_co_cat = object.get('field_co_ordination_tools_resour').getValue()[0].value %}
               {% set tr_body = object.get('body').getValue()[0].value %}
               <div class="col-sm-12 rectangle">
-                <div class="rectangle-content row">
-                  <div class="col-sm-12 search-description">
-                    <h4>{{main_title}}</h4>
-                    {# <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p> #}
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="row search-footer">
-                      <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                      <div class="col-3 offset-md-5 search-documents">
-                          <p>TOOLS & RESOURCES</p>
+                <a href="{{tr_document_url}}" download class="plain-anchor">
+                  <div class="rectangle-content row hover-shadow">
+                    <div class="col-sm-12 search-description">
+                      <h4>{{main_title}}</h4>
+                      {# <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p> #}
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="row search-footer">
+                        <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                        <div class="col-3 offset-md-5 search-documents">
+                            <p>TOOLS & RESOURCES</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             {% elseif type=='gbv_reports' %}
               {% set report_body = object.get('field_report_body').getValue()[0].value %}
-              {% set report_image = object.get('field_report_image').entity.uri.value %}
+              {% set report_image =  media_file_url(object.get('field_report_image').getValue()[0].target_id) %}
               {% set report_date = object.get('field_report_date').getValue()[0].value %}
+              {% set report_document = media_file_url(object.get('field_report_document').getValue()[0].target_id, 'field_media_file') %}
               {% set report_body_text = report_body|striptags %}
               <div class="col-sm-12 rectangle">
-                <div class="rectangle-content row">
-                  <div class="col-sm-12 search-description">
-                    <h4>{{main_title}}</h4>
-                    <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="row search-footer">
-                      <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                      <div class="col-3 offset-md-5 search-documents">
-                          <p>REPORT</p>
+                <a href="{{report_document}}" download class="plain-anchor">
+                  <div class="rectangle-content row hover-shadow">
+                    <div class="col-sm-12 search-description">
+                      <h4>{{main_title}}</h4>
+                      <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="row search-footer">
+                        <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                        <div class="col-3 offset-md-5 search-documents">
+                            <p>REPORT</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             {% elseif type=='gbv_help_desk' %}
               {% set help_body = object.get('field_help_desk_body').getValue()[0].value %}
