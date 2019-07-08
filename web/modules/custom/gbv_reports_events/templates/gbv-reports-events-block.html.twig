@@ -53,22 +53,20 @@
                     </h2>
                     <a href="/reports-events" class='see-all'>SEE ALL</a>
                 </div>
-                <div class=" row report-content">
+                <div class=" row report-content" id="swipe-report">
                     {% for report in reports %}
                         {% set document_url = media_file_url(report.field_report_document[0].target_id, 'field_media_file') %}
                         {% set document_ext = media_file_type(report.field_report_document[0].target_id) %}
+                        {# <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button> #}
                         <a href={{document_url}} download class="plain-anchor news-report col-12 col-md-4">
-                            {# <div class="col-12 col-md-4"> #}
-                                <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button>
-                                    <div class="news-single">
-                                        <h3 class="news-title">{{report.title[0].value}}</h3>
-                                        {% set text = report.field_report_body[0].value |render|striptags %}
-                                        <span class="news-body">{{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}</span>
-                                        <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
-                                    </div>       
-                                <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button>
-                            {# </div> #}
+                            <div class="news-single">
+                                <h3 class="news-title">{{report.title[0].value}}</h3>
+                                {% set text = report.field_report_body[0].value |render|striptags %}
+                                <span class="news-body">{{ text|length > 80 ? text|slice(0, 80) ~ '...' : text }}</span>
+                                <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
+                            </div>       
                         </a>
+                        {# <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button> #}
                     {% endfor %}
                 </div>
                 <a href="/reports-events" class='see-all-mobile'>SEE ALL</a>
@@ -78,25 +76,48 @@
         </div>
     </div>
 </div>
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
 <script>
 var slideIndex = 1;
 if(window.innerWidth<480){
-showNews(slideIndex);
+    showNews(slideIndex);
 }
 
 function plusNews(n) {
-showNews(slideIndex += n);
+    showNews(slideIndex += n);
 }
 
 function showNews(n) {
-var i;
-var changebtns = document.getElementsByClassName("news-report");
-if (n > changebtns.length) {slideIndex = 1}
-if (n < 1) {slideIndex = changebtns.length} ;
-for (i = 0; i < changebtns.length; i++) {
-    changebtns[i].style.display = "none";
-}
-changebtns[slideIndex-1].style.display = "flex";
+    
+    var i;
+    var changebtns = document.getElementsByClassName("news-report");
+    if (n > changebtns.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = changebtns.length} ;
+    for (i = 0; i < changebtns.length; i++) {
+        changebtns[i].style.display = "none";
+    }
+    changebtns[slideIndex-1].style.display = "flex";
+    console.log(slideIndex);
 }
 
+var reportEl = document.getElementById('swipe-report');
+
+// create a simple instance
+// by default, it only adds horizontal recognizers
+var mc = new Hammer(reportEl);
+
+if(window.innerWidth<480){
+    mc.on("swipeleft swiperight", function(ev) {
+        switch(ev.type){
+            case 'swipeleft':
+                plusNews(+1);
+                break;
+            case 'swiperight':
+                plusNews(-1);
+                break;
+            default:
+                break;
+        }
+    });
+}
 </script>

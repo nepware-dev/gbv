@@ -64,8 +64,14 @@
   {% if rows %}
     <div class="view-content row">
       <div class="row rega-team">
-        {{ rows }}
-        {% if footer %}
+        {% for row in rows[0]['#rows'] %}
+          {% set entity = row['#row']._entity %}
+          {%
+          set row_classes = [
+          default_row_class ? 'views-row',
+          ]
+          %}
+          {% if loop.index == 3 and footer %}
           <div class="col-sm-4 rega-team-members left-auto">
             <div class="rega-contact">
               <p class="rega-contact-text">
@@ -74,6 +80,21 @@
             </div>
           </div>
         {% endif %}
+          <div class="col-sm-4 rega-team-members">
+            <div class="team-single">
+              {% set image_url = media_file_url(entity.field_rega_team_image[0].target_id) %}
+              {% if image_url == '/' or image_url is null %}
+                {% set image_url = '/themes/custom/gbv/images/team.png' %}
+              {% endif %}
+              <img src="{{image_url}}" class="team-image"/>
+              <div class="team-content-wrapper">
+                <h3 class="team-title">{{entity.title[0].value}}</h3>
+                <h4 class="user-name">{{entity.field_rega_team_area[0].value}}</h4>
+                <h5 class="team-email"><a href="mailto:{{entity.field_rega_team_email[0].value}}">{{entity.field_rega_team_email[0].value}}</a></h5>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   {% elseif empty %}

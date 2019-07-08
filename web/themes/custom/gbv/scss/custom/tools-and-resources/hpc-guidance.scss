@@ -6,53 +6,56 @@
     text-align: center;
     padding: 50px 50px;
 
-    .rectangle {
-      padding: 25px 30px;
+    .section-single {
+      width: 100%;
 
-      .rectangle-content {
-        border-radius: 7px;
-        border: solid 1px #e1e1e1;
-        background-color: $white;
-        padding: 23px 20px;
-        text-align: left;
+      .rectangle {
+        padding: 25px 30px;
 
-        .hpc-description {
-          font-size: $font-size-normal;
-          font-family: $font-sans;
-          line-height: 1.29;
-          font-weight: $font-weight-normal;
-          padding-bottom: 50px;
-        }
+        .rectangle-content {
+          border-radius: 7px;
+          border: solid 1px #e1e1e1;
+          background-color: $white;
+          padding: 23px 20px;
+          text-align: left;
 
-        .hpc-pdf {
-          border-radius: 14px;
-          background-color: $primary-color-light;
-          height: 28px;
-          display: flex;
-          justify-content: center;
-          margin-top: 4%;
+          .hpc-description {
+            font-size: $font-size-normal;
+            font-family: $font-sans;
+            line-height: 1.29;
+            font-weight: $font-weight-normal;
+            padding-bottom: 50px;
+          }
+
+          .hpc-pdf {
+            border-radius: 14px;
+            background-color: $primary-color-light;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            margin-top: 4%;
+
+            p {
+              font-weight: $font-weight-normal;
+              padding-top: 3px;
+              text-transform: uppercase;
+            }
+          }
+
+          h4 {
+            padding-top: 0;
+            line-height: 1.29;
+          }
 
           p {
-            font-weight: $font-weight-normal;
-            padding-top: 3px;
-            text-transform: uppercase;
+            font-size: $font-size-small;
+            font-weight: $font-weight-lighter;
+            color: $black;
+            float: right;
           }
-        }
-
-        h4 {
-          padding-top: 0;
-          line-height: 1.29;
-        }
-
-        p {
-          font-size: $font-size-small;
-          font-weight: $font-weight-lighter;
-          color: $black;
-          float: right;
         }
       }
     }
-
     .hpc-guidance-documents {
       padding-bottom: 20px;
 
@@ -68,6 +71,7 @@
       border: 1px solid rgba(154, 154, 154, 0.5);
       width: 96%;
     }
+    
   }
 }
 

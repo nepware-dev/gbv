@@ -67,19 +67,10 @@
                                 <h4>{{section.name}}</h4>
                             </div>
                             <hr>
-                            {% set has_more_section_items = false %}
-                            {% if section_tools_resources|length > 4 %}
-                                {% set has_more_section_items = true %}
-                            {% endif %}
-                            {% if not has_more_section_items %}
-                                {% set displayed_section_tools_resources = section_tools_resources %}
-                            {% else %}
-                                {% set displayed_section_tools_resources = section_tools_resources|slice(0,4) %}
-                            {% endif %}
                             {% if (section.name=='E-learnings, Podcasts, Videos') or (section.id==27) %}
                                 {% for section_tools_resource in displayed_section_tools_resources %}
                                     {% set resource_text = section_tools_resource.body[0].value|striptags %}
-                                    <div class="col-sm-6 rectangle">
+                                    <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : '' }}">
                                         <div class="rectangle-content row">
                                             <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                             <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
@@ -96,7 +87,7 @@
                                 {% endfor %}
                             {% else %}
                                 {% for section_tools_resource in displayed_section_tools_resources %}
-                                    <div class="col-sm-6 rectangle">
+                                    <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : '' }}">
                                         <div class="rectangle-content row">
                                             <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                             <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
@@ -126,23 +117,14 @@
                 {% for section in sections %}
                     {% set section_tools_resources = get_nodes_by_taxonomy_term_ids([section.id, tid]) %}
                     {% if section_tools_resources is not null %}
-                        <div class="col-sm-12" id="{{section.name}}" data-title="{{section.name}}">
+                        <div class="col-sm-12" id="{{section.name|split(' ')|first}}" data-title="{{section.name}}">
                             <h4>{{section.name}}</h4>
                         </div>
                         <hr>
-                        {% set has_more_section_items = false %}
-                        {% if section_tools_resources|length > 4 %}
-                            {% set has_more_section_items = true %}
-                        {% endif %}
-                        {% if not has_more_section_items %}
-                            {% set displayed_section_tools_resources = section_tools_resources %}
-                        {% else %}
-                            {% set displayed_section_tools_resources = section_tools_resources|slice(0,4) %}
-                        {% endif %}
                         {% if (section.name=='E-learnings, Podcasts, Videos') or (section.id==27) %}
-                            {% for section_tools_resource in displayed_section_tools_resources %}
+                            {% for section_tools_resource in section_tools_resources %}
                                 {% set resource_text = section_tools_resource.body[0].value|striptags %}
-                                <div class="col-sm-6 rectangle">
+                                <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : '' }}">
                                     <div class="rectangle-content row">
                                         <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                         <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
@@ -158,8 +140,8 @@
                                 </div>
                             {% endfor %}
                         {% else %}
-                            {% for section_tools_resource in displayed_section_tools_resources %}
-                                <div class="col-sm-6 rectangle">
+                            {% for section_tools_resource in section_tools_resources %}
+                                <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : '' }}">
                                     <div class="rectangle-content row">
                                         <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                         <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>

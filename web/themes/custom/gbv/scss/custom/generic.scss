@@ -5,3 +5,10 @@
     text-decoration: none !important;
   }
 }
+
+.hover-shadow {
+  &:hover {
+    box-shadow: 0 6px 8px 0 rgba(107, 107, 107, 0.35);
+    cursor: pointer;
+  }
+}
