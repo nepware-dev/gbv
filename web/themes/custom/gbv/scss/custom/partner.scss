@@ -26,8 +26,8 @@
   }
 
   .partner-single {
-    height: 120px;
-    width: 120px;
+    height: 11vw;
+    width: 11vw;
     padding: 10px;
     margin-top: 50px;
     display: flex;
@@ -52,6 +52,13 @@
           filter: grayscale(0%);
         }
       }
+    }
+
+    @media screen and (max-width: 560px) {
+      height: 30vw;
+      width: 30vw;
+      margin-right: 2%;
+      margin-left: 2%;
     }
   }
 
