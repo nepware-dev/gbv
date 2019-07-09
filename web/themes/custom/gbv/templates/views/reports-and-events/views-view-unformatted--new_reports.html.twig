@@ -39,18 +39,27 @@
                   {{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}
               </p>
           </span>
-          {% set document_url = media_file_url(entity.field_report_document[0].target_id, 'field_media_file') %}
-          {% set document_ext = media_file_type(entity.field_report_document[0].target_id) %}
-          <div class="col-12 footer-wrap row">
-            <div class="col-8 nopadding">
-              <a class="download-link" href="{{document_url}}" download>
-                  <button class="button-outline-violet">DOWNLOAD</button>
+          {% set attatchment_type = entity.field_attatchment_type[0].value %}
+          {% if attatchment_type=='Link' %}
+            <div class="col-12 footer-wrap row">
+              <a href="{{ entity.field_report_link[0].uri }}" target="_blank">
+                  <button class="button-outline-violet">{{ entity.field_report_link[0].title }}<i style="font-size:16px; margin-left: 4px;" class="fa fa-external-link"></i></button>
               </a>
             </div>
-            <div class="pdf">
-              <p>{{document_ext}}</p>
+          {% elseif attatchment_type=='Document' %}
+            {% set document_url = media_file_url(entity.field_report_document[0].target_id, 'field_media_file') %}
+            {% set document_ext = media_file_type(entity.field_report_document[0].target_id) %}
+            <div class="col-12 footer-wrap row">
+              <div class="col-8 nopadding">
+                <a class="download-link" href="{{document_url}}" download>
+                    <button class="button-outline-violet">DOWNLOAD</button>
+                </a>
+              </div>
+              <div class="pdf">
+                <p>{{document_ext}}</p>
+              </div>
             </div>
-          </div>
+          {% endif %}
         </div>
       </div>
     </div>

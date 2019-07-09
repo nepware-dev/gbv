@@ -15,6 +15,8 @@
       opacity: 0;
       max-height: 0;
       overflow: hidden;
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
     .show {
@@ -36,6 +38,10 @@
 
         a {
           font-size: $font-size-normal;
+
+          .button-outline-violet {
+            width: auto;
+          }
         }
 
         .hpc-description {

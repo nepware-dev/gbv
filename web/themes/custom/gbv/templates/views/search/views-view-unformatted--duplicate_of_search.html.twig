@@ -134,26 +134,49 @@
               {% set report_body = object.get('field_report_body').getValue()[0].value %}
               {% set report_image =  media_file_url(object.get('field_report_image').getValue()[0].target_id) %}
               {% set report_date = object.get('field_report_date').getValue()[0].value %}
+              {% set report_link = object.get('field_report_link').getValue()[0].uri %}
+              {% set report_attatchment_type = object.get('field_attatchment_type').getValue()[0].value %}
               {% set report_document = media_file_url(object.get('field_report_document').getValue()[0].target_id, 'field_media_file') %}
               {% set report_body_text = report_body|striptags %}
-              <div class="col-sm-12 rectangle">
-                <a href="{{report_document}}" download class="plain-anchor">
-                  <div class="rectangle-content row hover-shadow">
-                    <div class="col-sm-12 search-description">
-                      <h4>{{main_title}}</h4>
-                      <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
-                    </div>
-                    <div class="col-sm-12">
-                      <div class="row search-footer">
-                        <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                        <div class="col-3 offset-md-5 search-documents">
-                            <p>REPORT</p>
+              {% if report_attatchment_type=='Link' %}
+                  <div class="col-sm-12 rectangle">
+                    <a href="{{report_link}}" target="_blank" class="plain-anchor">
+                      <div class="rectangle-content row hover-shadow">
+                        <div class="col-sm-12 search-description">
+                          <h4>{{main_title}}</h4>
+                          <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
+                        </div>
+                        <div class="col-sm-12">
+                          <div class="row search-footer">
+                            <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                            <div class="col-3 offset-md-5 search-documents">
+                                <p>REPORT</p>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
-                </a>
-              </div>
+              {% elseif report_attatchment_type=='Document' %}
+                  <div class="col-sm-12 rectangle">
+                    <a href="{{report_document}}" download class="plain-anchor">
+                      <div class="rectangle-content row hover-shadow">
+                        <div class="col-sm-12 search-description">
+                          <h4>{{main_title}}</h4>
+                          <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
+                        </div>
+                        <div class="col-sm-12">
+                          <div class="row search-footer">
+                            <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                            <div class="col-3 offset-md-5 search-documents">
+                                <p>REPORT</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+              {% endif %}
             {% elseif type=='gbv_help_desk' %}
               {% set help_body = object.get('field_help_desk_body').getValue()[0].value %}
               {% set help_body = help_body|striptags %}
