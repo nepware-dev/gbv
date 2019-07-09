@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 3%;
 }
 
 .rega-team-block {
@@ -164,5 +165,9 @@
         font-size: 14px;
       }
     }
+  }
+
+  .left-auto {
+    order: 99;
   }
 }

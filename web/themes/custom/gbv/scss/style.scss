@@ -53,7 +53,7 @@ a {
   width: 100%;
 }
 
-.slick > div {
+.slick>div {
   margin: 0 15px;
 }
 
@@ -244,6 +244,10 @@ p {
     font-size: 24px;
     display: block;
     font-family: $font-pt-sans;
+
+    .fa {
+      font-size: 48px;
+    }
   }
 
   .underline-h2-tag {
@@ -271,8 +275,4 @@ p {
     color: $white;
     font-size: 100%;
   }
-}
-
-.fa {
-  // font-size: 48px;
 }

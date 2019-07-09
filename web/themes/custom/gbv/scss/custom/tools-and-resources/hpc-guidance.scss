@@ -1,4 +1,5 @@
 .hpc-guidance {
+  margin-top: $content-spacing-top;
   padding-bottom: 60px;
 
   .hpc-guidance-content {
@@ -38,6 +39,7 @@
 
         a {
           font-size: $font-size-normal;
+          float: right;
 
           .button-outline-violet {
             width: auto;
@@ -115,12 +117,10 @@
   }
 
   .go-back {
-    position: fixed;
+    position: absolute;
     left: 0;
-    padding: 2em;
-    top: 30%;
+    top: -40px;
     z-index: 0;
-    width: 200px;
 
     &:hover {
       cursor: pointer;

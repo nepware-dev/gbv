@@ -5,8 +5,10 @@
                 let lastId,
                     sideMenu = $('#timeline'),
                     wrapper = $('#main-wrapper'),
-                    topMenuHeight = 400,
+                    thresholdHeight= screen.height/2,
                     dataTitles = wrapper.find('div[data-title]'),
+                    maxoffsetTop = $('#content').offset().top + 24,
+                    minoffsetTop = screen.height*0.08,
                     dataItems = dataTitles.map(function () {
                         let title = $(this).attr('data-title');
                         let id = $(this).attr('id');
@@ -15,6 +17,11 @@
                             id,
                         };
                     });
+
+                if(dataItems.length <= 1) {
+                    return;
+                }
+
                 let i, content = [];
                 for (i = 0; i < dataItems.length; i++) {
                     let sectionContent = '<li> <span class="circle"><span class="inner-circle"></span></span>';
@@ -36,7 +43,7 @@
                 // so we can get a fancy scroll animation
                 menuItems.click(function (e) {
                     let href = $(this).attr('href'),
-                        offsetTop = href === '#' ? 0 : $(href).offset().top - topMenuHeight + 1;
+                        offsetTop = href === '#' ? 0 : $(href).offset().top;
                     $('html, body').stop().animate({
                         scrollTop: offsetTop
                     }, 850);
@@ -47,23 +54,37 @@
                 onScroll();
 
                 function hideIfFooterVisible() {
-                    let footer = $('.site-footer')[0];
-                    if(footer.offsetTop - window.innerHeight + 150 < $(window).scrollTop()) { // 150 to slowdown
-                        $('#timeline').hide();
+                    let footer = $('.site-footer');
+
+                    //if(footer.offsetTop - window.innerHeight + 150 < $(window).scrollTop()) { // 150 to slowdown
+                    if(footer.offset().top < sideMenu.offset().top + sideMenu.height()) {
+                        $('#timeline').css({
+                            visibility: 'hidden',
+                            opacity: 0,
+                        });
                     } else {
-                        $('#timeline').show();
+                        $('#timeline').css({
+                            visibility: 'visible',
+                            opacity: 1,
+                        });
                     }
                 }
 
                 function onScroll() {
+                    let offsetTop = maxoffsetTop - window.scrollY;
+                    if(offsetTop >= minoffsetTop & offsetTop <= maxoffsetTop) {
+                        $('#timeline').css({ top: offsetTop });
+                    }
+
                     // Get container scroll position
-                    let fromTop = $(this).scrollTop() + topMenuHeight;
+                    let fromTop = $(this).scrollTop() + thresholdHeight;
 
                     // Get id of current scroll item
                     let cur = scrollItems.map(function () {
                         if ($(this).offset().top < fromTop)
                             return this;
                     });
+
                     // Get the id of the current element
                     cur = cur[cur.length - 1];
                     let id = cur && cur.length ? cur[0].id : '';
