@@ -10,6 +10,10 @@
     display: none;
   }
 
+  .vacancy-wrapper {
+    margin-top: 2%;
+  }
+
   .vacancy-single {
     border-radius: 7px;
     border: solid 1px $document-color-light;
@@ -17,7 +21,6 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
 
     .vacancy-image {
       height: 80px;
@@ -26,7 +29,7 @@
       img {
         height: 80px;
         width: 80px;
-        object-fit: cover;
+        object-fit: contain;
         border: solid 1px #f3f3f3;
       }
     }
@@ -67,10 +70,18 @@
 
         .vacancy-date {
           padding-right: 0;
+          align-items: center;
+          display: flex;
+
+          p {
+            margin: 0;
+          }
         }
 
         .vacancy-read {
-          text-align: center;
+          display: flex;
+          justify-content: flex-end;
+          padding-right: 20px !important;
         }
       }
 
@@ -117,6 +128,15 @@
       .vacancy-footer {
         .fa {
           display: inline;
+        }
+
+        .vacancy {
+          .vacancy-read {
+            display: flex;
+            justify-content: center;
+            padding-right: 0 !important;
+            margin-top: 20px;
+          }
         }
       }
     }
