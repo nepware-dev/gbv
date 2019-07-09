@@ -19,15 +19,11 @@
 
   .core-members {
     border-right: 1px solid $line-color;
-
-    .field__item {
-      padding-right: 50px;
-      line-height: 2;
-    }
+    padding: 0 4% 0 6%;
+    line-height: 2;
 
     p {
       font-size: $font-size-small;
-      padding-right: 60px;
       padding-top: 40px;
       font-weight: 300;
       font-family: $font-sans;
@@ -41,13 +37,8 @@
   }
 
   .associated-members {
-    .field__label {
-      padding-left: 50px;
-    }
-
-    .field__item {
-      padding-left: 50px;
-    }
+    padding-left: 8.5%;
+    line-height: 2;
   }
 }
 

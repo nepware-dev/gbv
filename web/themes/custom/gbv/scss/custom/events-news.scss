@@ -21,12 +21,12 @@
 
 .events {
   background-color: $primary-color-light;
-  padding: 40px 50px;
+  padding: 30px 60px 60px;
   width: 100%;
 
   .event-single {
     background-color: $white;
-    padding: 30px 50px 50px;
+    padding: 24px;
     box-shadow: 0 2px 6px 0 rgba(107, 107, 107, 0.35);
     border-radius: 7px;
     display: flex;
@@ -42,7 +42,7 @@
       color: $color-grape;
       font-weight: bold;
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: em(12);
       background-color: $primary-color-light;
       width: 98px;
       height: 98px;
@@ -52,15 +52,27 @@
       flex-direction: column;
       justify-content: center;
 
+      .event-date {
+        font-size: 25px;
+      }
+
       .event-month {
         text-transform: uppercase;
+        font-size: 20px;
       }
     }
 
     .event-title {
       color: $gray-800;
-      font-size: $font-size-lg;
+      font-size: $font-size-base;
       font-weight: bold;
+      text-align: center;
+      margin-bottom: em(8);
+    }
+
+    .event-desc {
+      font-size: $font-size-normal;
+      font-weight: $font-weight-lighter;
       text-align: center;
     }
 
@@ -92,6 +104,8 @@
       content: '\f178';
       font-family: $font-fontawsome;
       margin-left: 12px;
+      text-decoration: none;
+      display: inline-block;
     }
   }
 

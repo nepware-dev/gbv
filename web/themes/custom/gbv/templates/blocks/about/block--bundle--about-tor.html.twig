@@ -3,6 +3,7 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'col-12 col-md-8 offset-md-2',
   ]
 %}
 {%
@@ -20,11 +21,9 @@
     <div{{ content_attributes.addClass(contentClasses) }}>
         <div class="about-tor-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-12 tor-content">
-                        {{content.field_tor_body}}
-                    </div>
-                </div>
+                  <div class="tor-content">
+                      {{content.field_tor_body}}
+                  </div>
             </div>
         </div>
     </div>
