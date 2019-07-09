@@ -10,8 +10,21 @@
       width: 100%;
     }
 
+    .hidden {
+      display: block;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .show {
+      opacity: 1;
+      max-height: none;
+    }
+
     .rectangle {
       padding: 25px 30px;
+      transition: opacity 1s ease-out;
 
       .rectangle-content {
         border-radius: 7px;
@@ -19,6 +32,11 @@
         background-color: $white;
         padding: 23px 20px;
         text-align: left;
+        height: 100%;
+
+        a {
+          font-size: $font-size-normal;
+        }
 
         .hpc-description {
           font-size: $font-size-normal;
@@ -38,12 +56,13 @@
 
           p {
             font-weight: $font-weight-normal;
-            padding-top: 3px;
+            padding-top: 5px;
             text-transform: uppercase;
           }
         }
 
         h4 {
+          font-size: $font-size-normal;
           padding-top: 0;
           line-height: 1.29;
         }
@@ -56,14 +75,19 @@
         }
       }
     }
+
     .hpc-guidance-documents {
-      padding-bottom: 20px;
+      padding: 0 0 30px 0;
 
       h3 {
         background-color: $secondary-shade;
         text-align: center;
         font-size: $font-size-normal;
         padding: 18px 0;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
@@ -71,7 +95,6 @@
       border: 1px solid rgba(154, 154, 154, 0.5);
       width: 96%;
     }
-
   }
 }
 
