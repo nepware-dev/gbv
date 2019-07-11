@@ -5,6 +5,11 @@
     width: 100%;
   }
 
+  .fa-angle-right::before {
+    display: inline-block;
+    text-decoration: none;
+  }
+
   .coordination-tools-and-resources {
     background-color: $white;
     text-align: center;

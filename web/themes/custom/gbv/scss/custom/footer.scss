@@ -61,9 +61,10 @@ $accent-shade: #1c1c1c;
       font-weight: $font-weight-bold;
 
       &::after {
+        display: inline-block;
         content: '\f178';
-        font-family: 'FontAwesome';
-        margin: 0 0 0 16px;
+        font-family: $font-fontawsome;
+        margin-left: 16px;
       }
     }
   }

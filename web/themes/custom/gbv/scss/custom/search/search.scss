@@ -148,9 +148,13 @@
     border: none;
 
     #edit-type--wrapper {
-      .fieldset-legend {
-        font-size: $font-size-sm;
-        color: $color-grape;
+      legend {
+        font-size: 16px;
+
+        .fieldset-legend {
+          font-size: $font-size-sm;
+          color: $color-grape;
+        }
       }
 
       .bef-toggle {

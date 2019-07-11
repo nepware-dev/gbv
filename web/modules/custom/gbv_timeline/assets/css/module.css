@@ -10,7 +10,6 @@
   position: fixed;
   background-color: transparent;
   padding: 2em;
-  top: 40%;
 }
 
 @media (max-width: 800px) {
@@ -65,7 +64,7 @@
   -webkit-text-stroke: none;
 }
 
-.timeline li a:hover {
+.timeline li:not(.active) a:hover {
   -webkit-text-stroke: 0.8px black;
   text-decoration: none;
 }

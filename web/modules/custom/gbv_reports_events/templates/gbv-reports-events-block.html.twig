@@ -55,31 +55,32 @@
                 </div>
                 <div class=" row report-content" id="swipe-report">
                     {% for report in reports %}
-                        
                         {% set attatchment_type = report.field_attatchment_type[0].value %}
-                        {# <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button> #}
-                        {% if attatchment_type=='Link' %}
-                            <a href="{{ report.field_report_link[0].uri }}" target="_blank" class="plain-anchor news-report col-12 col-md-4">
-                                <div class="news-single">
-                                    <h3 class="news-title">{{report.title[0].value}}</h3>
-                                    {% set text = report.field_report_body[0].value |render|striptags %}
-                                    <span class="news-body">{{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}</span>
-                                    <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
-                                </div>
-                            </a>
-                        {% elseif attatchment_type=='Document' %}
-                            {% set document_url = media_file_url(report.field_report_document[0].target_id, 'field_media_file') %}
-                            {% set document_ext = media_file_type(report.field_report_document[0].target_id) %}
-                            <a href="{{document_url}}" download class="plain-anchor news-report col-12 col-md-4">
-                                <div class="news-single">
-                                    <h3 class="news-title">{{report.title[0].value}}</h3>
-                                    {% set text = report.field_report_body[0].value |render|striptags %}
-                                    <span class="news-body">{{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}</span>
-                                    <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
-                                </div>
-                            </a>
-                        {% endif %}
-                        {# <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button> #}
+                        <div class="col-12 col-md-4 news-report">
+                            <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button>
+                                {% if attatchment_type=='Link' %}
+                                    <a href="{{ report.field_report_link[0].uri }}" target="_blank" class="plain-anchor">
+                                        <div class="news-single">
+                                            <h3 class="news-title">{{report.title[0].value}}</h3>
+                                            {% set text = report.field_report_body[0].value |render|striptags %}
+                                            <span class="news-body">{{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}</span>
+                                            <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
+                                        </div>
+                                    </a>
+                                {% elseif attatchment_type=='Document' %}
+                                    {% set document_url = media_file_url(report.field_report_document[0].target_id, 'field_media_file') %}
+                                    {% set document_ext = media_file_type(report.field_report_document[0].target_id) %}
+                                    <a href="{{document_url}}" download class="plain-anchor">
+                                        <div class="news-single">
+                                            <h3 class="news-title">{{report.title[0].value}}</h3>
+                                            {% set text = report.field_report_body[0].value |render|striptags %}
+                                            <span class="news-body">{{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}</span>
+                                            <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
+                                        </div>
+                                    </a>
+                                {% endif %}
+                            <button class="change-btns"><i class="fa" onclick="plusNews(+1)">&#xf105;</i></button>
+                        </div>
                     {% endfor %}
                 </div>
                 <a href="/reports-events" class='see-all see-all-mobile'>SEE ALL</a>
@@ -101,7 +102,6 @@ function plusNews(n) {
 }
 
 function showNews(n) {
-
     var i;
     var changebtns = document.getElementsByClassName("news-report");
     if (n > changebtns.length) {slideIndex = 1}

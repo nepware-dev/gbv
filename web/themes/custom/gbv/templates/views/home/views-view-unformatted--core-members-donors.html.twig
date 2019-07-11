@@ -25,7 +25,7 @@
       <span class="divider"> </span>
       <a href="javascript:void(0)" class="tab-text" onclick="togglePartner('donor')" id="donor-text"> Donors </a>
     </div>
-    <div class="row partner-items-wrapper">
+    <div class="row partner-items-wrapper col-md-8 offset-md-2">
       {% for row in rows %}
           {% set entity = row.content['#row']._entity %}
           {%

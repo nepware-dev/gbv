@@ -93,6 +93,10 @@
 
   .news-report {
     display: flex;
+
+    .plain-anchor {
+      width: 100%;
+    }
   }
 
   .see-all {
@@ -120,7 +124,7 @@
     border-radius: 7px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    height: 100%;
     transition-duration: 0.4s;
 
     &:hover {
@@ -176,6 +180,10 @@
   .reports {
     display: flex;
     flex-direction: column;
+
+    // .news-report {
+    //   flex: 0.8;
+    // }
 
     .see-all {
       display: none;

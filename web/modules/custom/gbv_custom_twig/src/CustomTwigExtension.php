@@ -156,8 +156,11 @@ class CustomTwigExtension extends Twig_Extension {
     $media = Media::load($mid);
     $fid = $media->$field->target_id;
     $file = File::load($fid);
-    $url = $file->url();
-    return $url;
+    if ($file) {
+      $url = $file->url();
+      return $url;
+    }
+    return NULL;
   }
 
   /**
@@ -192,9 +195,12 @@ class CustomTwigExtension extends Twig_Extension {
     $media = Media::load($mid);
     $fid = $media->$field->target_id;
     $file = File::load($fid);
-    $type = $file->getFilename();
-    $ext = pathinfo($type, PATHINFO_EXTENSION);
-    return $ext;
+    if ($file) {
+      $type = $file->getFilename();
+      $ext = pathinfo($type, PATHINFO_EXTENSION);
+      return $ext;
+    }
+    return NULL;
   }
 
 }
