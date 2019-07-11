@@ -18,30 +18,31 @@
                             let title = event.title,
                                 body = event.body,
                                 dateContent = event.dateContent,
-                                uri = event.uri.uri,
-                                buttonTitle = event.uri.title;
+                                uri = (event.uri)?event.uri.uri:null,
+                                buttonTitle = (event.uri)?event.uri.title:null;
                             let innerContent = '<h5>'+title+'</h5>';
                             innerContent += '<p class="event-date">'+dateContent+'</p>';
                             innerContent += '<div class="event-body">'+body+'</div>';
-                            innerContent += `<div class="col-12 nopadding event-footer">
-                                              <div class="row">
-                                                  <div class="col-8 content-left">
-                                                      <h5 class="contact-header">Contact for more information</h5>
-                                                      <p class="contact-email">
-                                                          <a href="mailto:contact@unfpa.org">contact@unfpa.org
-                                                          <a/>
-                                                      </p>
-                                                  </div>
-                                                  <div class="col-4 nopadding content-right">
-                                                  <div class="btn-contained">
-                                                  <a href="${uri}" target="_blank">${buttonTitle}
-                                                  <i style="font-size:16px" class="fa fa-external-link"></i>
-                                                  </a>
-                                                  </div>
-                                                  </div>
-                                              </div>
-                                          </div>`;
-
+                            if (uri){
+                                innerContent += `<div class="col-12 nopadding event-footer">
+                                                <div class="row">
+                                                    <div class="col-8 content-left">
+                                                        <h5 class="contact-header">Contact for more information</h5>
+                                                        <p class="contact-email">
+                                                            <a href="mailto:contact@unfpa.org">contact@unfpa.org
+                                                            <a/>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-4 nopadding content-right">
+                                                    <div class="btn-contained">
+                                                    <a href="${uri}" target="_blank">${buttonTitle}
+                                                    <i style="font-size:16px" class="fa fa-external-link"></i>
+                                                    </a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                            }
                             element.popover({
                                 animation: true,
                                 trigger: 'click focus',
