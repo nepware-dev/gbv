@@ -27,11 +27,6 @@
                                 innerContent += `<div class="col-12 nopadding event-footer">
                                                 <div class="row">
                                                     <div class="col-8 content-left">
-                                                        <h5 class="contact-header">Contact for more information</h5>
-                                                        <p class="contact-email">
-                                                            <a href="mailto:contact@unfpa.org">contact@unfpa.org
-                                                            <a/>
-                                                        </p>
                                                     </div>
                                                     <div class="col-4 nopadding content-right">
                                                     <div class="btn-contained">

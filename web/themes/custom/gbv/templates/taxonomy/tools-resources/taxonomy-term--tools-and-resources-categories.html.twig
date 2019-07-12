@@ -94,16 +94,27 @@
                                                 <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
                                                 <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
                                                 <div class="col-sm-12 row">
-                                                    <div class="col-sm-8">
-                                                        {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
-                                                        {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
-                                                        <a href="{{document_url}}" download>
-                                                            <button class="button-outline-violet">Download</button>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-sm-2 offset-md-2 hpc-pdf">
-                                                        <p>{{document_ext}}</p>
-                                                    </div>
+                                                    {% set resource_type = section_tools_resource.field_resource_type[0].value %}
+                                                    {% if resource_type=='Document' %}
+                                                        <div class="col-sm-8">
+                                                            {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
+                                                            {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
+                                                            <a href="{{document_url}}" download>
+                                                                <button class="button-outline-violet">Download</button>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                            <p>{{document_ext}}</p>
+                                                        </div>
+                                                    {% elseif resource_type=='Link' %}
+                                                        {% set resource_url = section_tools_resource.field_resource_url[0].uri %}
+                                                        {% set resource_button_title = section_tools_resource.field_resource_url[0].title %}
+                                                        <div class="col-sm-8">
+                                                            <a href="{{resource_url}}" target="_blank">
+                                                                <button class="button-outline-violet">{{resource_button_title}} <i style="font-size:16px" class="fa fa-external-link"></i></button>
+                                                            </a>
+                                                        </div>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -151,16 +162,27 @@
                                             <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
                                             <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
                                             <div class="col-sm-12 row">
-                                                <div class="col-sm-8">
-                                                    {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
-                                                    {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
-                                                    <a href="{{document_url}}" download>
-                                                        <button class="button-outline-violet">Download</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-sm-2 offset-md-2 hpc-pdf">
-                                                    <p>{{document_ext}}</p>
-                                                </div>
+                                                {% set resource_type = section_tools_resource.field_resource_type[0].value %}
+                                                {% if resource_type=='Document' %}
+                                                    <div class="col-sm-8">
+                                                        {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
+                                                        {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
+                                                        <a href="{{document_url}}" download>
+                                                            <button class="button-outline-violet">Download</button>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                        <p>{{document_ext}}</p>
+                                                    </div>
+                                                {% elseif resource_type=='Link' %}
+                                                    {% set resource_url = section_tools_resource.field_resource_url[0].uri %}
+                                                    {% set resource_button_title = section_tools_resource.field_resource_url[0].title %}
+                                                    <div class="col-sm-8">
+                                                        <a href="{{resource_url}}" target="_blank">
+                                                            <button class="button-outline-violet">{{resource_button_title}} <i style="font-size:16px" class="fa fa-external-link"></i></button>
+                                                        </a>
+                                                    </div>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -196,18 +218,19 @@
 
     function expandSection (e) {
         let collapsedElements  = e.target.parentNode.previousElementSibling.getElementsByClassName("hidden");
-        for(let i = 0; i < collapsedElements.length; i) {
+        for(let i = 0; i < collapsedElements.length; i++) {
             toggleDisplay(collapsedElements[i].classList);
+            toggleButtons ();
+            
         }
-        toggleButtons ();
     }
 
     function collapseSection (e) {
         let expandedElements  = e.target.parentNode.previousElementSibling.previousElementSibling.getElementsByClassName("show");
-        for(let i = 0; i < expandedElements.length; i) {
+        for(let i = 0; i < expandedElements.length; i++) {
             toggleDisplay(expandedElements[i].classList);
+            toggleButtons ();
         }
-        toggleButtons ();
     }
 
     function toggleButtons () {

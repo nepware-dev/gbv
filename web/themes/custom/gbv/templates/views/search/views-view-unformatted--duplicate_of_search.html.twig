@@ -111,9 +111,16 @@
               {% set tr_type = object.get('field_tools_resources_type').getValue()[0].value %}
               {% set tr_im_cat = object.get('field_im_tools_resources_categor').getValue()[0].value %}
               {% set tr_co_cat = object.get('field_co_ordination_tools_resour').getValue()[0].value %}
+              {% set tr_resource_type = object.get('field_resource_type').getValue()[0].value %}
               {% set tr_body = object.get('body').getValue()[0].value %}
+              {% set tr_url = object.get('field_resource_url').getValue()[0].uri %}
+              {% set tr_button_title = object.get('field_resource_url').getValue()[0].title %}
               <div class="col-sm-12 rectangle">
-                <a href="{{tr_document_url}}" download class="plain-anchor">
+                {% if tr_resource_type=='Document' %}
+                  <a href="{{tr_document_url}}" download class="plain-anchor">
+                {% else %}
+                  <a href="{{tr_document_url}}" target="_blank" class="plain-anchor">
+                {% endif %}
                   <div class="rectangle-content row hover-shadow">
                     <div class="col-sm-12 search-description">
                       <h4>{{main_title}}</h4>
@@ -138,9 +145,12 @@
               {% set report_attatchment_type = object.get('field_attatchment_type').getValue()[0].value %}
               {% set report_document = media_file_url(object.get('field_report_document').getValue()[0].target_id, 'field_media_file') %}
               {% set report_body_text = report_body|striptags %}
-              {% if report_attatchment_type=='Link' %}
                   <div class="col-sm-12 rectangle">
-                    <a href="{{report_link}}" target="_blank" class="plain-anchor">
+                    {% if report_attatchment_type=='Link' %}
+                      <a href="{{report_link}}" target="_blank" class="plain-anchor">
+                    {% elseif report_attatchment_type=='Document' %}
+                      <a href="{{report_document}}" download class="plain-anchor">
+                    {% endif %}
                       <div class="rectangle-content row hover-shadow">
                         <div class="col-sm-12 search-description">
                           <h4>{{main_title}}</h4>
@@ -157,26 +167,6 @@
                       </div>
                     </a>
                   </div>
-              {% elseif report_attatchment_type=='Document' %}
-                  <div class="col-sm-12 rectangle">
-                    <a href="{{report_document}}" download class="plain-anchor">
-                      <div class="rectangle-content row hover-shadow">
-                        <div class="col-sm-12 search-description">
-                          <h4>{{main_title}}</h4>
-                          <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
-                        </div>
-                        <div class="col-sm-12">
-                          <div class="row search-footer">
-                            <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                            <div class="col-3 offset-md-5 search-documents">
-                                <p>REPORT</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-              {% endif %}
             {% elseif type=='gbv_help_desk' %}
               {% set help_body = object.get('field_help_desk_body').getValue()[0].value %}
               {% set help_body = help_body|striptags %}
