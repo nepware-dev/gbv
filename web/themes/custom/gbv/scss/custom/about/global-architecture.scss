@@ -27,106 +27,6 @@ $reverse: false;
       font-family: sans-serif;
       font-size: 15px;
     }
-
-    .tree {
-      @if $reverse {
-        transform: rotate(180deg);
-        transform-origin: 50%;
-      }
-    }
-
-    .tree ul {
-      position: relative;
-      padding: 1em 0;
-      white-space: nowrap;
-      margin: 0 auto;
-      text-align: center;
-
-      &::after {
-        content: '';
-        display: table;
-        clear: both;
-      }
-    }
-
-    .tree li {
-      display: inline-block; // need white-space fix
-      vertical-align: top;
-      text-align: center;
-      list-style-type: none;
-      position: relative;
-      padding: 1em .5em 0 .5em;
-
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 50%;
-        width: 50%;
-        height: 1em;
-        background-image: $background-image-horizontal;
-        background-position: top;
-        background-size: $bg-size-horizontal;
-        background-repeat: repeat-x;
-      }
-
-      &::after {
-        right: auto;
-        left: 50%;
-      }
-
-      &:only-child::after,
-      &:only-child::before {
-        display: none;
-      }
-
-      &:only-child {
-        padding-top: 0;
-      }
-
-      &:first-child::before,
-      &:last-child::after {
-        background: none;
-      }
-    }
-
-    .tree ul ul::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      background-image: $background-image-vertical;
-      background-position: bottom;
-      background-size: $bg-size-vertical;
-      background-repeat: repeat-y;
-      width: 1px;
-      height: 1em;
-    }
-
-    .only-right {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 50%;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        top: -1em;
-        right: 2px;
-        height: 1em;
-        width: 1px;
-        background-image: $background-image-vertical;
-        background-position: bottom;
-        background-size: $bg-size-vertical;
-        background-repeat: repeat-y;
-
-        /* background-color:red; */
-      }
-    }
   }
 
   img {
@@ -140,18 +40,35 @@ $reverse: false;
     padding: 0 4%;
     line-height: 2;
   }
+
+  #svg-big {
+    width: 100%;
+  }
+
+  #svg-small {
+    width: 100%;
+    display: none;
+  }
 }
 
 .gpc-architect {
   display: flex;
   flex-direction: column;
-  padding-right: 120px;
+  padding: 0 5%;
   align-items: center;
 }
 
 @media screen and(max-width: 480px) {
   .global-architecture-section {
     padding: 5% 3%;
+
+    #svg-small {
+      display: block;
+    }
+
+    #svg-big {
+      display: none;
+    }
 
     p {
       padding: 0 5%;
