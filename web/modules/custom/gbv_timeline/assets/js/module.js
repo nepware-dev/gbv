@@ -56,7 +56,6 @@
                 function hideIfFooterVisible() {
                     let footer = $('.site-footer');
 
-                    //if(footer.offsetTop - window.innerHeight + 150 < $(window).scrollTop()) { // 150 to slowdown
                     if(footer.offset().top < sideMenu.offset().top + sideMenu.height()) {
                         $('#timeline').css({
                             visibility: 'hidden',
@@ -74,6 +73,8 @@
                     let offsetTop = maxoffsetTop - window.scrollY;
                     if(offsetTop >= minoffsetTop & offsetTop <= maxoffsetTop) {
                         $('#timeline').css({ top: offsetTop });
+                    } else if(offsetTop < minoffsetTop) { // when scroll page is refreshed
+                        $('#timeline').css({ top: minoffsetTop });
                     }
 
                     // Get container scroll position

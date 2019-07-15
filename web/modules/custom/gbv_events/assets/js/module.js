@@ -8,7 +8,7 @@
                         header: {
                             left: 'prev,next,today',
                             center: 'title',
-                            right: 'month,agendaWeek,agendaDay,list'
+                            right: 'month,agendaWeek,agendaDay,listWeek'
                         },
                         navLinks: true, // can click day/week names to navigate views
                         editable: true,
@@ -23,7 +23,7 @@
                             let innerContent = '<h5>'+title+'</h5>';
                             innerContent += '<p class="event-date">'+dateContent+'</p>';
                             innerContent += '<div class="event-body">'+body+'</div>';
-                            if (uri){
+                            if (uri) {
                                 innerContent += `<div class="col-12 nopadding event-footer">
                                                 <div class="row">
                                                     <div class="col-8 content-left">

@@ -31,7 +31,7 @@
                                 {{item.field_event_body[0].value|raw}}
                                 <div class="events-footer">
                                     <div class="date">{{item.created[0].value|date('F d, Y')}}</div>
-                                    <div class="col-12 col-md-4 offset-md-4 nopadding download">
+                                    <div class="download">
                                         <a href="{{ item.field_event_url[0].uri }}" target="_blank">
                                             <button class="button-outline-violet">{{ item.field_event_url[0].title }}<i style="font-size:16px" class="fa fa-external-link"></i></button>
                                         </a>
@@ -45,7 +45,7 @@
                             <div class="events-footer">
                                 <div class="date">{{item.created[0].value|date('F d, Y')}}</div>
                                 {% set document_url = media_file_url(item.field_report_document[0].target_id, 'field_media_file') %}
-                                <div class="col-12 col-md-4 offset-md-4 nopadding download">
+                                <div class="download">
                                     <a href="{{document_url}}" download>
                                         <button class="button-outline-violet">Download</button>
                                     </a>
