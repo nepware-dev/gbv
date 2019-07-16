@@ -20,9 +20,9 @@
                                 dateContent = event.dateContent,
                                 uri = (event.uri)?event.uri.uri:null,
                                 buttonTitle = (event.uri)?event.uri.title:null;
-                            let innerContent = '<h5>'+title+'</h5>';
-                            innerContent += '<p class="event-date">'+dateContent+'</p>';
-                            innerContent += '<div class="event-body">'+body+'</div>';
+                            let innerContent = `<div class="event-header"><h5>${title}</h5><a class="close-popover" href="javascript:onclick=alert('test')");">&times;</a></div>`;
+                            innerContent += `<p class="event-date">${dateContent}</p>`;
+                            innerContent += `<div class="event-body">${body}</div>`;
                             if (uri) {
                                 innerContent += `<div class="col-12 nopadding event-footer">
                                                 <div class="row">
@@ -40,14 +40,34 @@
                             }
                             element.popover({
                                 animation: true,
-                                trigger: 'click focus',
+                                trigger: 'click',
                                 content: innerContent,
                                 placement: 'top',
                                 html: true,
                             });
+                            element.addClass('event-popover');
                         },
                     });
                 }
+                
+                $(document).click(function (e) {
+                    if (($('.popover').has(e.target).length == 0) || !$(e.target).is('.close-popover')) {
+                        $('.event-popover').popover('hide');
+                    }
+                });
+
+                $(document).on("click", ".event-popover", function(e) {
+                    e.stopPropagation();
+                    var btns = document.getElementsByClassName("close-popover");
+                    for (var i=0; i < btns.length; i++) {
+                        btns[i].onclick = function() { $(".event-popover").popover('hide'); };
+                    }
+                
+                });
+
+                $('#calendar').on("click", "button", function(e) {
+                    $('.popover').hide();
+                });
             });
         }
     };
