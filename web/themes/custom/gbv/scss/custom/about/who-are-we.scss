@@ -16,12 +16,20 @@
   margin-top: $content-spacing-top;
   padding-top: 3%;
 
-  p {
-    font-size: $font-size-normal;
-    column-count: 2;
-    column-gap: 66px;
-    padding: 0 8%;
-    line-height: 1.93;
+  .content {
+    padding: 8%;
+
+    p {
+      font-size: $font-size-normal;
+      line-height: 1.93;
+    }
+
+    img {
+      max-height: 200px;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 2em;
+    }
   }
 }
 
