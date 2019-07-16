@@ -93,3 +93,34 @@
     </div>
   {% endif %}
 </div>
+<script>
+  function reOrderElements() {
+    let arr = [1, 4, 0, 3, 2];
+    let wrapper = document.getElementsByClassName("bef-select-all-none");
+    let items = wrapper[0].children;
+    let elements = document.createDocumentFragment();
+
+    arr.forEach(function(idx) {
+        elements.appendChild(items[idx].cloneNode(true));
+    });
+
+    wrapper[0].innerHTML = null;
+    wrapper[0].appendChild(elements);
+
+    let labelMap = {
+      'GBV Documents': 'Key Documents',
+      'Help Desk': 'Others',
+      'GBV Reports': 'New Reports',
+    }
+
+    let labels = document.getElementsByClassName("form-check-label");
+    for (let label of labels) {
+      if(labelMap[label.innerText])
+          label.innerText=labelMap[label.innerText];
+      }
+  }
+
+  window.addEventListener("DOMContentLoaded", function() {
+      reOrderElements();
+  });
+</script>
