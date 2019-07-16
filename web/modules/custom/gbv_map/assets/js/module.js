@@ -4,6 +4,9 @@
         attach: function (context, settings) {
             $('#gbv-map', context).once('loadMap').each( function () {
 
+                let countryPopup, hoveredStateId, popupStateId;
+                let isMobile = $(window).width() < 560;
+
                 mapboxgl.accessToken = drupalSettings.accessToken;
                 let map = new mapboxgl.Map({
                     container: 'gbv-map',
@@ -13,7 +16,7 @@
                     attributionControl: false,
                     interactive: false,
                 });
-                let hoveredStateId =  null;
+
                 map.scrollZoom.disable();
                 map.boxZoom.disable();
                 map.doubleClickZoom.disable();
@@ -60,7 +63,7 @@
                         }
                     });
 
-                    map.on('mousemove', 'country-fill', function(e) {
+                    function showHighlight(e) {
                         if (e.features.length > 0) {
                             if (hoveredStateId) {
                                 map.setFeatureState({ source: 'countries', id: hoveredStateId }, { hover: false });
@@ -68,16 +71,16 @@
                             hoveredStateId = e.features[0].id;
                             map.setFeatureState({ source: 'countries', id: hoveredStateId }, { hover: true });
                         }
-                    });
+                    }
 
-                    map.on('mouseleave', 'country-fill', function() {
+                    function removeHighlight() {
                         if (hoveredStateId) {
                             map.setFeatureState({ source: 'countries', id: hoveredStateId }, { hover: false });
                         }
                         hoveredStateId =  null;
-                    });
+                    }
 
-                    map.on('click', 'country-fill', function (e) {
+                    function showPopup(e) {
                         let centroid = $.parseJSON(e.features[0].properties.centroid);
                         let coordinates = centroid.slice();
                         let name = e.features[0].properties.name;
@@ -87,16 +90,39 @@
                         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                         }
-                        let popupContent = '<div class="country-header"><h3>'+name+'</h3>';
-                        if (uri!='null') {
+                        let popupContent = '<div style="pointer-events: none" class="country-header"><h3>'+name+'</h3>';
+                        if (uri) {
                             popupContent += '<a class="country-url" href="'+uri+'" target="_blank"> Visit Country Page <i class="fa fa-external-link"></i></a>';
                         }
                         popupContent += '</div>';
                         popupContent += content;
-                        new mapboxgl.Popup()
+                        countryPopup = new mapboxgl.Popup({ closeButton: isMobile })
                             .setLngLat(coordinates)
                             .setHTML(popupContent)
                             .addTo(map);
+                        popupStateId = e.features[0].id;
+                    }
+
+                    function hidePopup() {
+                        countryPopup && countryPopup.remove();
+                        popupStateId = null;
+                    }
+
+                    map.on('mousemove', 'country-fill', function(e) {
+                        if(popupStateId !== e.features[0].id) {
+                            hidePopup();
+                            showPopup(e);
+                            showHighlight(e);
+                        }
+                    });
+
+                    map.on('mouseleave', 'country-fill', function() {
+                        hidePopup();
+                        removeHighlight();
+                    });
+
+                    map.on('click', 'country-fill', function (e) {
+                        showPopup(e);
                     });
 
                     map.on('mouseenter', 'country-fill', function () {
@@ -107,7 +133,7 @@
                         map.getCanvas().style.cursor = '';
                     });
                 });
-                if($(window).width() < 560) {
+                if(isMobile) {
                     map.addControl(new mapboxgl.NavigationControl({
                         showCompass: false,
                     }));
