@@ -23,7 +23,7 @@
                     'features': []
                 };
                 let postResult = $.ajax({
-                    url: '/modules/custom/gbv_map/assets/json/country_centroids_az8.geojson',
+                    url: 'https://gistcdn.githack.com/timilsinabishal/1df12bb0ce3afe5dbdd6081f89513cae/raw/a7e02fc8e59cebdd3181d29abffa245970b89c1b/world-admin-0.geojson',
                     dataType: 'json',
                 });
                 postResult.then(function(countries) {
@@ -88,7 +88,7 @@
                             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                         }
                         let popupContent = '<div class="country-header"><h3>'+name+'</h3>';
-                        if (uri!='null') {
+                        if (uri!=='null') {
                             popupContent += '<a class="country-url" href="'+uri+'" target="_blank"> Visit Country Page <i class="fa fa-external-link"></i></a>';
                         }
                         popupContent += '</div>';
