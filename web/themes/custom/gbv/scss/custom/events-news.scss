@@ -159,8 +159,11 @@
       margin-bottom: 25px;
     }
 
-    .button-outline-violet {
+    .download-link {
+      display: flex;
+      justify-content: center;
       font-size: $font-size-normal;
+      text-decoration: none;
     }
   }
 }
@@ -196,13 +199,5 @@
         margin-left: 12px;
       }
     }
-  }
-
-  .fa {
-    display: block;
-  }
-
-  .col-1dot5 {
-    display: none;
   }
 }

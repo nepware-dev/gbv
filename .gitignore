@@ -27,6 +27,7 @@ yarn-error.log
 web/themes/custom/gbv/css/*
 web/themes/custom/gbv/js/*
 !web/themes/custom/gbv/js/global.js
+!web/themes/custom/gbv/js/bef_select_all_none_override.js
 
 # docker
 docker-compose.yml

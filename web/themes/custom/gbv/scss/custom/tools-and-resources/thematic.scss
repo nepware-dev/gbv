@@ -23,7 +23,7 @@
     margin-bottom: 5%;
 
     hr {
-      border: 1px solid rgba(154, 154, 154, 0.5);
+      border: 0.5px solid rgba(154, 154, 154, 0.5);
     }
 
     .rectangle {
@@ -55,6 +55,10 @@
 
         .description {
           margin-bottom: 10%;
+        }
+
+        .button-outline-violet {
+          font-size: $font-size-normal;
         }
 
         .pdf {

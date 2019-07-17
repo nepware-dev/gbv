@@ -176,7 +176,7 @@
                       <div class="col-sm-12 search-description">
                         <h4>{{main_title}}</h4>
                         <p class='created-date'>{{created_date|date('d M, Y')}}</p>
-                        <p>{% endautoescape %}{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}{% endautoescape %}</p>
+                        <p>{% autoescape false %}{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}{% endautoescape %}</p>
                       </div>
                       <div class="col-sm-12">
                         <div class="row search-footer">

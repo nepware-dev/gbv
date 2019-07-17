@@ -7,6 +7,11 @@
   flex-direction: column;
   margin-top: $content-spacing-top;
 
+  a {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
+
   .item-wrapper {
     position: absolute;
     bottom: -42%;
@@ -80,7 +85,7 @@
   }
 
   .item-wrapper {
-    bottom: -68% !important;
+    bottom: -84% !important;
   }
 
   .featured-report-event {
