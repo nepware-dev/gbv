@@ -29,8 +29,14 @@
     <div class="col-sm-3 document-col">
       <button class="change-btns"><i class="fa" onclick="plusDocs(-1)">&#xf104;</i></button>
         <div class="document">
-            <div class="document-header">
-                <img src="{{directory}}/images/icons/icon-doc.png" class="events-image" />
+            {% set image_url = media_file_url(entity.field_document_image[0].target_id) %}
+            {% set image_class = 'document-has-image' %}
+            {% if image_url == '/' or image_url is null %}
+              {% set image_url = directory ~ '/images/icons/icon-doc.png' %}
+              {% set image_class = '' %}
+            {% endif %}
+            <div class="document-header {{image_class}}">
+              <img src="{{image_url}}"/>
             </div>
             <div class="document-body">
             <h4 class="document-title">{{entity.title[0].value}}</h4>
