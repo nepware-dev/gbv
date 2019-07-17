@@ -1,0 +1,7 @@
+name: GBV Hooks
+type: module
+description: 'Adds Hooks to GBV'
+core: 8.x
+dependencies:
+  - node
+  - block
