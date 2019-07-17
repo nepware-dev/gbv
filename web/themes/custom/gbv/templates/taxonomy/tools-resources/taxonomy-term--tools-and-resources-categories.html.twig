@@ -48,7 +48,7 @@
         </div>
         <dd>{{ drupal_block('timeline_block') }}</dd>
         <div class="container hpc-guidance-content">
-            <h2>{{tname}}</h2>
+            <h2 class="underline-h2-tag">{{tname}}</h2>
             <div{{ content_attributes.addClass(contentClasses) }}>
                 {% if check_taxonomy_has_items(tid, sections) %}
                     {% set section_id = term.path[0].value.alias|split('/')|last %}
@@ -93,14 +93,14 @@
                                             <div class="col-sm-12 row">
                                                 {% set resource_type = section_tools_resource.field_resource_type[0].value %}
                                                 {% if resource_type=='Document' %}
-                                                    <div class="col-sm-8">
+                                                    <div class="col-8">
                                                         {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
                                                         {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
                                                         <a href="{{document_url}}" download>
                                                             <button class="button-outline-violet">Download</button>
                                                         </a>
                                                     </div>
-                                                    <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                    <div class="col-2 offset-2 hpc-pdf">
                                                         <p>{{document_ext}}</p>
                                                     </div>
                                                 {% elseif resource_type=='Link' %}
@@ -170,14 +170,14 @@
                                                 <div class="col-sm-12 row">
                                                     {% set resource_type = section_tools_resource.field_resource_type[0].value %}
                                                     {% if resource_type=='Document' %}
-                                                        <div class="col-sm-8">
+                                                        <div class="col-8">
                                                             {% set document_ext = media_file_type(section_tools_resource.field_resource_document[0].target_id) %}
                                                             {% set document_url = media_file_url(section_tools_resource.field_resource_document[0].target_id, 'field_media_file') %}
                                                             <a href="{{document_url}}" download>
                                                                 <button class="button-outline-violet">Download</button>
                                                             </a>
                                                         </div>
-                                                        <div class="col-sm-2 offset-md-2 hpc-pdf">
+                                                        <div class="col-2 offset-2 hpc-pdf">
                                                             <p>{{document_ext}}</p>
                                                         </div>
                                                     {% elseif resource_type=='Link' %}
@@ -228,7 +228,7 @@
         for(let i = 0; i < collapsedElements.length; i++) {
             toggleDisplay(collapsedElements[i].classList);
             toggleButtons ();
-            
+
         }
     }
 

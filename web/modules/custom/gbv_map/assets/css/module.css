@@ -37,6 +37,10 @@
   font-size: 14px;
 }
 
+.mapboxgl-popup-content .mapboxgl-popup-close-button {
+  font-size: 18px;
+}
+
 @media screen and (max-width: 560px) {
   #gbv-map {
     height: 400px;

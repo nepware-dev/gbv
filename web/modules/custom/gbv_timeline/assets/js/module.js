@@ -7,7 +7,7 @@
                     wrapper = $('#main-wrapper'),
                     thresholdHeight= screen.height/2,
                     dataTitles = wrapper.find('div[data-title]'),
-                    maxoffsetTop = $('#content').offset().top + 24,
+                    maxoffsetTop = $('#content').offset().top + 36,
                     minoffsetTop = screen.height*0.08,
                     dataItems = dataTitles.map(function () {
                         let title = $(this).attr('data-title');
