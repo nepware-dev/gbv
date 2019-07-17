@@ -10,3 +10,10 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+select_all_none_override:
+  version: 3.x
+  js:
+    js/bef_select_all_none_override.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

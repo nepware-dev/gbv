@@ -24,7 +24,7 @@
                     <a href={{event.field_event_url[0].value.uri}} target="_blank" class="plain-anchor">
                         <div class="event-single">
                             <div class="event-date-wrapper">
-                                {% if event.field_event_date[0].value|date('d') == event.field_event_date[0].end_value|date('d') %}
+                                {% if event.field_event_date[0].value|date('d') == event.field_event_date[0].end_value|date('d') and event.field_event_date[0].value|date('M') == event.field_event_date[0].end_value|date('M') %}
                                     <span class="event-date">{{event.field_event_date[0].end_value|date('d')}} </span>
                                     <span class="event-month">{{event.field_event_date[0].value|date('M')}}</span>
                                 {% elseif event.field_event_date[0].value|date('M') == event.field_event_date[0].end_value|date('M') %}
