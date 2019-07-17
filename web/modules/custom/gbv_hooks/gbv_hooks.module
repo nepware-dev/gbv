@@ -1,0 +1,14 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function gbv_hooks_form_node_tools_and_resources_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    $form['#attached']['library'][] = 'gbv_hooks/tools_resources';
+}
+
+function gbv_hooks_form_node_tools_and_resources_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    $form['#attached']['library'][] = 'gbv_hooks/tools_resources';
+}
