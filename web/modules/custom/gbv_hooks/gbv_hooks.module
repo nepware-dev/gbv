@@ -3,12 +3,24 @@
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_alter()or tools and resource create form.
  */
 function gbv_hooks_form_node_tools_and_resources_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['#attached']['library'][] = 'gbv_hooks/tools_resources';
 }
 
+/**
+ * Implements hook_form_alter() for tools and resource edit form.
+ */
 function gbv_hooks_form_node_tools_and_resources_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['#attached']['library'][] = 'gbv_hooks/tools_resources';
+}
+
+/**
+ * Implements hook_form_alter() for thematic area filter.
+ */
+function gbv_hooks_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    if ($form['field_thematic_resource_type_sec_target_id']) {
+        $form['#attached']['library'][] = 'gbv_hooks/thematic_filter';
+    }
 }

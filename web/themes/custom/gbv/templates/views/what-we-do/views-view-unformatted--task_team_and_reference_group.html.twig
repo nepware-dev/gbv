@@ -59,4 +59,23 @@ function showGroups(n) {
   }
   changebtns[slideIndex-1].style.display = "flex";
 }
+
+var reportEl = document.getElementById('swipe-group');
+
+var mc = new Hammer(reportEl);
+
+if(window.innerWidth<480){
+    mc.on("swipeleft swiperight", function(ev) {
+        switch(ev.type){
+            case 'swipeleft':
+                plusGroups(+1);
+                break;
+            case 'swiperight':
+                plusGroups(-1);
+                break;
+            default:
+                break;
+        }
+    });
+}
 </script>
