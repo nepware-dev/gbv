@@ -2,3 +2,7 @@ tools_resources:
   version: 1.x
   js:
     assets/js/toolsAndResources.js: {}
+thematic_filter:
+  version: 1.x
+  js:
+    assets/js/thematicFilter.js: {}

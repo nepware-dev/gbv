@@ -46,68 +46,80 @@
               {% set created_date = object.get('created').getValue()[0].value %}
               {% set document_body_text = document_body|striptags %}
               <div class="col-sm-12 rectangle">
-                <a href="{{document_file}}" download class="plain-anchor">
-                  <div class="rectangle-content row hover-shadow">
-                    <div class="col-sm-12 search-description">
-                      <h4>{{main_title}}</h4>
-                      <p>{{ document_body_text|length > 1000 ? document_body_text|slice(0, 1000) ~ '...' : document_body_text }}</p>
-                    </div>
-                    <div class="col-sm-12">
-                      <div class="row search-footer">
-                        <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                        <div class="col-3 offset-md-5 search-documents">
-                            <p>DOCUMENTS</p>
-                        </div>
+                <div class="rectangle-content row">
+                  <div class="col-sm-12 search-description">
+                    <h4>{{main_title}}</h4>
+                    <p class='created-date'>{{created_date|date('d M, Y')}}</p>
+                    <p class='search-desc'>{% autoescape false %}{{ document_body_text|length > 1000 ? document_body_text|slice(0, 1000) ~ '...' : document_body_text }}{% endautoescape %}</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row search-footer">
+                      <div class="col-4">
+                        <a class="download-link" href="{{document_file}}" download>
+                          <button class="button-outline-violet">Download</button>
+                        </a>
+                      </div>
+                      <div class="col-3 offset-md-5 search-documents">
+                          <p>DOCUMENTS</p>
                       </div>
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
             {% elseif type=='gbv_events' %}
               {% set event_body = object.get('field_event_body').getValue()[0].value %}
               {% set event_start_date = object.get('field_event_date').getValue()[0].value %}
               {% set event_end_date = object.get('field_event_date').getValue()[0].end_value %}
               {% set event_url = object.get('field_event_url').getValue()[0].uri %}
+              {% set event_url_title = object.get('field_event_url').getValue()[0].title %}
               {% set created_date = object.get('created').getValue()[0].value %}
               {% set event_body_text = event_body|striptags %}
               <div class="col-sm-12 rectangle">
-                <a href={{event_url}} target="_blank" class="plain-anchor">
-                  <div class="rectangle-content row hover-shadow">
-                    <div class="col-sm-12 search-description row">
-                      <div class="search-date event-date-wrapper">
-                        {% if event_start_date|date('d') == event_end_date|date('d') %}
-                            <span class="event-date">{{event_end_date|date('d')}} </span>
-                            <span class="event-month">{{event_start_date|date('M')}}</span>
-                        {% elseif event_start_date|date('M') == event_end_date|date('M') %}
-                            <span class="event-date">{{event_start_date|date('d')}} - {{event_end_date|date('d')}} </span>
-                            <span class="event-month">{{event_start_date|date('M')}}</span>
-                        {% else %}
-                            <span class="event-date">{{event_start_date|date('d M')}} - {{event_end_date|date('d M')}} </span>
+                <div class="rectangle-content row">
+                  <div class="col-sm-12 search-description row">
+                    <div class="search-date event-date-wrapper">
+                      {% if event_start_date|date('d') == event_end_date|date('d') %}
+                          <span class="event-date">{{event_end_date|date('d')}} </span>
+                          <span class="event-month">{{event_start_date|date('M')}}</span>
+                      {% elseif event_start_date|date('M') == event_end_date|date('M') %}
+                          <span class="event-date">{{event_start_date|date('d')}} - {{event_end_date|date('d')}} </span>
+                          <span class="event-month">{{event_start_date|date('M')}}</span>
+                      {% else %}
+                          <span class="event-date">{{event_start_date|date('d M')}} - {{event_end_date|date('d M')}} </span>
+                      {% endif %}
+                    </div>
+                    <div class="col-sm-10">
+                      <h4>{{main_title}}</h4>
+                      <p>{% autoescape false %}{{ event_body_text|length > 1000 ? event_body_text|slice(0, 1000) ~ '...' : event_body_text }}{% endautoescape %}</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row search-footer">
+                      <div class="col-4">
+                        {% if event_url %}
+                          {% if event_url == 'internal:/' %}
+                            {% set event_url = '/' %}
+                          {% endif %}
+                          <a class="download-link" href="{{event_url}}" target="_blank">
+                            <button class="button-outline-violet">{{event_url_title}}  <i style="font-size:16px" class="fa fa-external-link"></i></button>
+                          </a>
                         {% endif %}
                       </div>
-                      <div class="col-sm-10">
-                        <h4>{{main_title}}</h4>
-                        <p>{{ event_body_text|length > 1000 ? event_body_text|slice(0, 1000) ~ '...' : event_body_text }}</p>
-                      </div>
-                    </div>
-                    <div class="col-sm-12">
-                      <div class="row search-footer">
-                        <div class="col-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                        <div class="col-3 offset-md-5 search-documents">
-                          <p>EVENT</p>
-                        </div>
+                      <div class="col-3 offset-md-5 search-documents">
+                        <p>EVENT</p>
                       </div>
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
             
             {% elseif type=='tools_and_resources' %}
               {% set tr_document_url = media_file_url(object.get('field_resource_document').getValue()[0].target_id, 'field_media_file') %}
               {% set tr_thematic = object.get('field_tools_resources_for_themat').getValue()[0].value %}
-              {% set tr_media_url = object.get('field_media_url').getValue()[0].value %}
+              {% set tr_media_url = object.get('field_media_url').getValue()[0].uri %}
+              {% set tr_media_url_text = object.get('field_media_url').getValue()[0].title %}
               {% set tr_thematic_sec = object.get('field_thematic_resource_type_sec').getValue()[0].value %}
-              {% set tr_section = object.get('field_section').getValue()[0].value %}
+              {% set tr_section = object.get('field_section').getValue()[0].target_id %}
               {% set tr_type = object.get('field_tools_resources_type').getValue()[0].value %}
               {% set tr_im_cat = object.get('field_im_tools_resources_categor').getValue()[0].value %}
               {% set tr_co_cat = object.get('field_co_ordination_tools_resour').getValue()[0].value %}
@@ -115,20 +127,33 @@
               {% set tr_body = object.get('body').getValue()[0].value %}
               {% set tr_url = object.get('field_resource_url').getValue()[0].uri %}
               {% set tr_button_title = object.get('field_resource_url').getValue()[0].title %}
+              {% set tr_body = tr_body|striptags %}
               <div class="col-sm-12 rectangle">
-                {% if tr_resource_type=='Document' %}
-                  <a href="{{tr_document_url}}" download class="plain-anchor">
-                {% else %}
-                  <a href="{{tr_document_url}}" target="_blank" class="plain-anchor">
-                {% endif %}
-                  <div class="rectangle-content row hover-shadow">
+                  <div class="rectangle-content row">
                     <div class="col-sm-12 search-description">
                       <h4>{{main_title}}</h4>
-                      {# <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p> #}
+                      <p class='created-date'>{{created_date|date('d M, Y')}}</p>
+                      <p>{% autoescape false %}{{ tr_body|length > 1000 ? tr_body|slice(0, 1000) ~ '...' : tr_body }}{% endautoescape %}</p>
                     </div>
                     <div class="col-sm-12">
                       <div class="row search-footer">
-                        <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
+                        <div class="col-sm-4">
+                            {% if tr_section=='27' %}
+                              <a class="download-link" href="{{tr_media_url}}" target="_blank">
+                                <button class="button-outline-violet">{{tr_media_url_text}}  <i style="font-size:16px" class="fa fa-external-link"></i></button>
+                              </a>
+                            {% else %}
+                              {% if tr_resource_type=='Link' %}
+                                <a class="download-link" href="{{tr_url}}" target="_blank">
+                                  <button class="button-outline-violet">{{tr_button_title}}  <i style="font-size:16px" class="fa fa-external-link"></i></button>
+                                </a>
+                              {% elseif tr_resource_type=='Document' %}
+                                <a class="download-link" href="{{tr_document_url}}" download>
+                                  <button class="button-outline-violet">Download</button>
+                                </a>
+                              {% endif %}
+                            {% endif %}
+                        </div>
                         <div class="col-3 offset-md-5 search-documents">
                             <p>TOOLS & RESOURCES</p>
                         </div>
@@ -142,30 +167,36 @@
               {% set report_image =  media_file_url(object.get('field_report_image').getValue()[0].target_id) %}
               {% set report_date = object.get('field_report_date').getValue()[0].value %}
               {% set report_link = object.get('field_report_link').getValue()[0].uri %}
+              {% set report_link_text = object.get('field_report_link').getValue()[0].title %}
               {% set report_attatchment_type = object.get('field_attatchment_type').getValue()[0].value %}
               {% set report_document = media_file_url(object.get('field_report_document').getValue()[0].target_id, 'field_media_file') %}
               {% set report_body_text = report_body|striptags %}
                   <div class="col-sm-12 rectangle">
-                    {% if report_attatchment_type=='Link' %}
-                      <a href="{{report_link}}" target="_blank" class="plain-anchor">
-                    {% elseif report_attatchment_type=='Document' %}
-                      <a href="{{report_document}}" download class="plain-anchor">
-                    {% endif %}
-                      <div class="rectangle-content row hover-shadow">
-                        <div class="col-sm-12 search-description">
-                          <h4>{{main_title}}</h4>
-                          <p>{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}</p>
-                        </div>
-                        <div class="col-sm-12">
-                          <div class="row search-footer">
-                            <div class="col-sm-4"><p>{{created_date|date('d M, Y')}}</p></div>
-                            <div class="col-3 offset-md-5 search-documents">
-                                <p>REPORT</p>
-                            </div>
+                    <div class="rectangle-content row">
+                      <div class="col-sm-12 search-description">
+                        <h4>{{main_title}}</h4>
+                        <p class='created-date'>{{created_date|date('d M, Y')}}</p>
+                        <p>{% endautoescape %}{{ report_body_text|length > 1000 ? report_body_text|slice(0, 1000) ~ '...' : report_body_text }}{% endautoescape %}</p>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="row search-footer">
+                          <div class="col-sm-4">
+                            {% if report_attatchment_type=='Link' %}
+                              <a class="download-link" href="{{report_link}}" target="_blank">
+                                <button class="button-outline-violet">{{report_link_text}}  <i style="font-size:16px" class="fa fa-external-link"></i></button>
+                              </a>
+                            {% elseif report_attatchment_type=='Document' %}
+                              <a class="download-link" href="{{report_document}}" download>
+                                <button class="button-outline-violet">Download</button>
+                              </a>
+                            {% endif %}
+                          </div>
+                          <div class="col-3 offset-md-5 search-documents">
+                              <p>REPORT</p>
                           </div>
                         </div>
                       </div>
-                    </a>
+                    </div>
                   </div>
             {% elseif type=='gbv_help_desk' %}
               {% set help_body = object.get('field_help_desk_body').getValue()[0].value %}
@@ -174,7 +205,7 @@
                 <div class="rectangle-content row">
                   <div class="col-sm-12 search-description">
                     <h4>{{main_title}}</h4>
-                    <p>{{ help_body|length > 1000 ? help_body|slice(0, 1000) ~ '...' : help_body }}</p>
+                    <p>{% autoescape false %}{{ help_body|length > 1000 ? help_body|slice(0, 1000) ~ '...' : help_body }}{% endautoescape %}</p>
                   </div>
                   <div class="col-sm-12">
                     <div class="row search-footer">

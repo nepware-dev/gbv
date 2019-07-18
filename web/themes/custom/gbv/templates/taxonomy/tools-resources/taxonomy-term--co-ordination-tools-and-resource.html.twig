@@ -72,7 +72,7 @@
                                         <div class="rectangle-content row">
                                             <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                             <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
-                                            <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                            <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                             <div class="col-sm-12 row">
                                                 <div class="col-sm-8">
                                                     <a href="{{section_tools_resource.field_media_url[0].uri}}" target="_blank">
@@ -89,7 +89,7 @@
                                         <div class="rectangle-content row">
                                             <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                             <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
-                                            <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                            <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                             <div class="col-sm-12 row">
                                                 {% set resource_type = section_tools_resource.field_resource_type[0].value %}
                                                 {% if resource_type=='Document' %}
@@ -149,7 +149,7 @@
                                             <div class="rectangle-content row">
                                                 <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                                 <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
-                                                <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                                <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                                 <div class="col-sm-12 row">
                                                     <div class="col-sm-8">
                                                         <a href="{{section_tools_resource.field_media_url[0].uri}}" target="_blank">
@@ -166,7 +166,7 @@
                                             <div class="rectangle-content row">
                                                 <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
                                                 <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
-                                                <div class="col-sm-12 hpc-description">{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}</div>
+                                                <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                                 <div class="col-sm-12 row">
                                                     {% set resource_type = section_tools_resource.field_resource_type[0].value %}
                                                     {% if resource_type=='Document' %}
