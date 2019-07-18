@@ -39,7 +39,7 @@
                     <span class="body">
                         <p>
                             {% set text = entity.field_vacancy_body[0].value|raw|striptags %}
-                            {{ text|length > 60 ? text|slice(0, 80) ~ '...' : text }}
+                            {% autoescape false %}{{ text|length > 60 ? text|slice(0, 80) ~ '...' : text }}{% endautoescape %}
                         </p>
                     </span>
                 </div>

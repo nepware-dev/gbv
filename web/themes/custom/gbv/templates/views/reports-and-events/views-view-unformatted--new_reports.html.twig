@@ -36,7 +36,7 @@
           <span class="body">
               <p>
                   {% set text = entity.field_report_body[0].value|raw|render|striptags %}
-                  {{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}
+                  {% autoescape false %}{{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}{% endautoescape %}
               </p>
           </span>
           {% set attatchment_type = entity.field_attatchment_type[0].value %}
