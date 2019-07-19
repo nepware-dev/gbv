@@ -19,40 +19,40 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-{% for row in rows %}
-    {% set entity = row.content['#row']._entity %}
-    {%
-        set row_classes = [
-        default_row_class ? 'views-row',
-        ]
-    %}
-    <div class="col-sm-3 document-col">
-      <button class="change-btns"><i class="fa" onclick="plusDocs(-1)">&#xf104;</i></button>
-        <div class="document">
-            {% set image_url = media_file_url(entity.field_document_image[0].target_id) %}
-            {% set image_class = 'document-has-image' %}
-            {% if image_url == '/' or image_url is null %}
-              {% set image_url = directory ~ '/images/icons/icon-doc.png' %}
-              {% set image_class = '' %}
-            {% endif %}
-            <div class="document-header {{image_class}}">
-              <img src="{{image_url}}"/>
-            </div>
-            <div class="document-body">
-            <h4 class="document-title">{{entity.title[0].value}}</h4>
-            {% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_document_body }}'] |render|striptags %}
-            <p class="document-content">{{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}</p>
-                {% set document_url = media_file_url(entity.field_document_file[0].target_id, 'field_media_file') %}
-                <a class="download-link" href="{{document_url}}" download>
-                  <button class="button-outline-violet">Download</button>
-                </a>
-            </div>
-        </div>
-      <button class="change-btns"><i class="fa" onclick="plusDocs(+1)">&#xf105;</i></button>
-    </div>
-
-
-{% endfor %}
+<div id="swipe-doc" class="row">
+  {% for row in rows %}
+      {% set entity = row.content['#row']._entity %}
+      {%
+          set row_classes = [
+          default_row_class ? 'views-row',
+          ]
+      %}
+      <div class="col-sm-3 document-col">
+        <button class="change-btns"><i class="fa" onclick="plusDocs(-1)">&#xf104;</i></button>
+          <div class="document">
+              {% set image_url = media_file_url(entity.field_document_image[0].target_id) %}
+              {% set image_class = 'document-has-image' %}
+              {% if image_url == '/' or image_url is null %}
+                {% set image_url = directory ~ '/images/icons/icon-doc.png' %}
+                {% set image_class = '' %}
+              {% endif %}
+              <div class="document-header {{image_class}}">
+                <img src="{{image_url}}"/>
+              </div>
+              <div class="document-body">
+              <h4 class="document-title">{{entity.title[0].value}}</h4>
+              {% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_document_body }}'] |render|striptags %}
+              <p class="document-content">{% autoescape false %}{{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}{% endautoescape %}</p>
+                  {% set document_url = media_file_url(entity.field_document_file[0].target_id, 'field_media_file') %}
+                  <a class="download-link" href="{{document_url}}" download>
+                    <button class="button-outline-violet">Download</button>
+                  </a>
+              </div>
+          </div>
+        <button class="change-btns"><i class="fa" onclick="plusDocs(+1)">&#xf105;</i></button>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 <script>
 var slideIndex = 1;
@@ -73,5 +73,24 @@ function showDocs(n) {
     changebtns[i].style.display = "none";
   }
   changebtns[slideIndex-1].style.display = "flex";
+}
+
+var reportEl = document.getElementById('swipe-doc');
+
+var mc = new Hammer(reportEl);
+
+if(window.innerWidth<480){
+    mc.on("swipeleft swiperight", function(ev) {
+        switch(ev.type){
+            case 'swipeleft':
+                plusDocs(+1);
+                break;
+            case 'swiperight':
+                plusDocs(-1);
+                break;
+            default:
+                break;
+        }
+    });
 }
 </script>

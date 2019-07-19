@@ -37,7 +37,6 @@
     'view-id-' ~ id,
     'view-display-id-' ~ display_id,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'row',
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
@@ -46,6 +45,11 @@
     {{ title }}
   {% endif %}
   {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
   {% if exposed %}
     <div class="view-filters">
       {{ exposed }}
@@ -59,16 +63,7 @@
 
   {% if rows %}
     <div class="view-content">
-      <div class="row" id="swipe-group">
-        {% if header %}
-          <div class="col-sm-4">
-            <div class="task-team">
-              {{ header }}
-            </div>
-          </div>
-        {% endif %}
-        {{rows}}
-      </div>
+      {{ rows }}
     </div>
   {% elseif empty %}
     <div class="view-empty">

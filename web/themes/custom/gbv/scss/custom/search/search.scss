@@ -19,13 +19,20 @@
         border: solid 1px #e1e1e1;
         background-color: $white;
         padding: 0 10px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
         text-align: left;
 
         .search-footer {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           padding-right: 25px;
+
+          .button-outline-violet {
+            margin-top: 0;
+            padding: 0.4em 2em;
+            font-size: $font-size-normal;
+          }
         }
 
         .search-documents {
@@ -76,12 +83,17 @@
             }
           }
 
+          p.created-date {
+            opacity: 0.4;
+            font-family: $font-sans;
+            font-size: $font-size-small;
+            font-weight: normal;
+            color: $black;
+          }
+
           p {
             font-size: $font-size-normal;
-            line-height: 1.29;
             font-weight: $font-weight-normal;
-            padding-bottom: 30px;
-            padding-top: 10px;
           }
         }
       }

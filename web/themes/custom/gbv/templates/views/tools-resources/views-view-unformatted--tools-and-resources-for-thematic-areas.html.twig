@@ -30,7 +30,7 @@
         <div class="rectangle-content row">
             <div class="col-sm-8"><h4>{{entity.title[0].value}}</h4></div>
             <div class="col-sm-4"><p class="date">{{entity.created[0].value|date('M d, Y')}}</p></div>
-            <div class="col-sm-12"><p class="description">{{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}</p></div>
+            <div class="col-sm-12"><p class="description">{% autoescape false %}{{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}{% endautoescape %}</p></div>
             
             <div class="col-sm-12 row">
                 {% set tr_resource_type = entity.field_resource_type[0].value %}
