@@ -225,19 +225,18 @@
 
     function expandSection (e) {
         let collapsedElements  = e.target.parentNode.previousElementSibling.getElementsByClassName("hidden");
-        for(let i = 0; i < collapsedElements.length; i++) {
+        for(let i = 0; i < collapsedElements.length; i) {
             toggleDisplay(collapsedElements[i].classList);
-            toggleButtons ();
-            
         }
+        toggleButtons ();
     }
 
     function collapseSection (e) {
         let expandedElements  = e.target.parentNode.previousElementSibling.previousElementSibling.getElementsByClassName("show");
-        for(let i = 0; i < expandedElements.length; i++) {
+        for(let i = 0; i < expandedElements.length; i) {
             toggleDisplay(expandedElements[i].classList);
-            toggleButtons ();
         }
+        toggleButtons ();
     }
 
     function toggleButtons () {
