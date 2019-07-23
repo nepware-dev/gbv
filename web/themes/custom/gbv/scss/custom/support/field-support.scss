@@ -27,6 +27,11 @@
     white-space: pre-line;
     font-family: $font-sans;
   }
+
+  a {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
 }
 
 @media screen and (max-width: 480px) {

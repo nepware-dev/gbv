@@ -122,8 +122,11 @@
         .nav-link {
           color: #fff !important;
           font-weight: $font-weight-bold !important;
-          background-color: #63337c;
           padding: 9% 32px;
+        }
+
+        &:hover {
+          box-shadow: 0 3.5px 6px -1px rgba(107, 107, 107, 0.35);
         }
       }
     }

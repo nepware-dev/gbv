@@ -1,6 +1,6 @@
 global-styling:
   version: VERSION
-  js: 
+  js:
     js/popper.min.js: {}
     js/bootstrap.min.js: {}
     js/global.js: {}
@@ -10,6 +10,7 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+    - social_media_links/fontawesome.component
 select_all_none_override:
   version: 3.x
   js:
