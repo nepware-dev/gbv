@@ -1,11 +1,14 @@
 .featured-report-event {
-  background-color: white;
-  min-height: 281px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   margin-top: $content-spacing-top;
+
+  .header {
+    background-color: white;
+    min-height: 281px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 
   a {
     color: $secondary-color;
@@ -13,8 +16,7 @@
   }
 
   .item-wrapper {
-    position: absolute;
-    bottom: -42%;
+    margin-top: -48px;
     padding: 0 10%;
   }
 
@@ -84,15 +86,10 @@
     flex-direction: column;
   }
 
-  .item-wrapper {
-    bottom: -84% !important;
-  }
-
   .featured-report-event {
     margin-top: 20px;
-    display: flex;
     align-items: center;
-    min-height: 200px;
+    min-height: 160px;
 
     p {
       margin-left: 15%;
