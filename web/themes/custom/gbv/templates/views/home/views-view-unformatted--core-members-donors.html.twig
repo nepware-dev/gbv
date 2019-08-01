@@ -41,7 +41,6 @@
     </div>
 </div>
 <script>
-  togglePartner('core');
   function togglePartner(showType){
     if (document.querySelector('.donor-tab a.active') !== null) {
       document.querySelector('.donor-tab a.active').classList.remove('active');
@@ -50,11 +49,12 @@
     let hideType = (showType==='core')?'donor':'core';
     let showPartners = document.getElementsByClassName("type-"+showType);
     let hidePartners = document.getElementsByClassName("type-"+hideType);
-    for (let partner of showPartners) {
+    [].forEach.call(showPartners, function(partner) {
       partner.style.display = "flex";
-    }
-    for (let partner of hidePartners) {
+    });
+    [].forEach.call(hidePartners, function(partner) {
       partner.style.display = "none";
-    }
+    });
   }
+  togglePartner('core');
 </script>

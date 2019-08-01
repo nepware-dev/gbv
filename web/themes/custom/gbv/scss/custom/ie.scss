@@ -1,0 +1,37 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  .document-body .document-title,
+  .task-team-block .group-single p {
+    flex: none !important;
+  }
+
+  .who-are-we .content,
+  .rega-team,
+  .team-single,
+  .team-single .team-content-wrapper .user-name,
+  .what-we-do-row,
+  .view-task-team-and-reference-group .view-content,
+  .view-task-team-and-reference-group .view-content .row,
+  .task-team-block .group-single,
+  .gbv-coordination #coordination-field,
+  #global-initiative .content,
+  .new-report-block .content,
+  .keydocument-container .document,
+  .block-gbv-reports-events .event-desc,
+  #who-we-are .underline-h2-tag,
+  #coordination-level .underline-h2-tag,
+  #coordination-field .underline-h2-tag,
+  #global-initiative .underline-h2-tag,
+  #new-reports .underline-h2-tag,
+  .help-desk .content,
+  .help-desk .row,
+  .desk-col .row,
+  .survivor-col .row
+  {
+    width: 100% !important;
+  }
+
+  .document, .block {
+    display: block !important;
+  }
+}

@@ -13,8 +13,8 @@
                         let title = $(this).attr('data-title');
                         let id = $(this).attr('id');
                         return {
-                            title,
-                            id,
+                            title: title,
+                            id: id,
                         };
                     });
 
@@ -70,7 +70,7 @@
                 }
 
                 function onScroll() {
-                    let offsetTop = maxoffsetTop - window.scrollY;
+                    let offsetTop = maxoffsetTop - window.pageYOffset;
                     if(offsetTop >= minoffsetTop & offsetTop <= maxoffsetTop) {
                         $('#timeline').css({ top: offsetTop });
                     } else if(offsetTop < minoffsetTop) { // when scroll page is refreshed
@@ -94,10 +94,10 @@
                         // Set/remove active class
                         menuItems
                             .parent().removeClass('active')
-                            .end().filter(`[href='#${id}']`).parent().addClass('active');
+                            .end().filter('[href=\'#'+id+'\']').parent().addClass('active');
                     }
                     if(!id) {
-                        menuItems.filter(`[href='#${lastId}']`).parent().removeClass('active');
+                        menuItems.filter('[href=\'#'+lastId+'\']').parent().removeClass('active');
                     }
                     hideIfFooterVisible();
                 }
