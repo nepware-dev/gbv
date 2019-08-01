@@ -12,7 +12,8 @@
     ]
 %}
 <div{{ attributes.addClass(classes) }} id="featured-item" data-title="Featured News">
-    <div class="container featured-report-event">
+  <div class="container featured-report-event">
+      <div class="header">
         {{ title_prefix }}
         {% if label %}
             <h2{{ title_attributes }} class="underline-h2-tag">{{ label }}</h2>
@@ -20,51 +21,52 @@
         {{ title_suffix }}
         {% block content %}
             {{content.body}}
-            {% set item = get_node(content.field_featured_item['#items'][0].target_id) %}
-            {% set item_type = item.type.value[0].target_id %}
-            <div class="item-wrapper col-12">
-                <div class="rectangle">
-                    <div class="rectangle-content">
-                        {% if item_type == 'gbv_events' %}
-                                <h4>{{item.title[0].value}}</h4>
-                                {{item.field_event_body[0].value|raw}}
-                                <div class="events-footer">
-                                    <div class="date">
-                                        {% set event_date = item.field_event_date[0] %}
-                                        {% if event_date.value|date('d') == event_date.end_value|date('d') and event_date.value|date('M') == event_date.end_value|date('M') %}
-                                            {% set event_date_string = event_date.value|date('F d, Y') %}
-                                        {% elseif event_date.value|date('M') == event_date.end_value|date('M') %}
-                                            {% set event_date_string = event_date.value|date('F d') ~ '-' ~ event_date.end_value|date('d, Y') %}
-                                        {% else %}
-                                            {% set event_date_string = event_date.value|date('F d') ~ '-' ~ event_date.end_value|date('F d, Y') %}
-                                        {% endif %}
-                                        {{event_date_string}}
-                                    </div>
-                                    <div class="download">
-                                        <a href="{{ item.field_event_url[0].uri }}" target="_blank">
-                                            <button class="button-outline-violet">{{ item.field_event_url[0].title }}<i style="font-size:16px" class="fa fa-external-link"></i></button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% else %}
-                        <div>
-                            <h4>{{item.title[0].value}}</h4>
-                            {{item.field_document_body[0].value|raw}}
-                            <div class="events-footer">
-                                <div class="date">{{item.created[0].value|date('F d, Y')}}</div>
-                                {% set document_url = media_file_url(item.field_report_document[0].target_id, 'field_media_file') %}
-                                <div class="download">
-                                    <a href="{{document_url}}" download>
-                                        <button class="button-outline-violet">Download</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
         {% endblock %}
+      </div>
+      {% set item = get_node(content.field_featured_item['#items'][0].target_id) %}
+      {% set item_type = item.type.value[0].target_id %}
+      <div class="item-wrapper col-12">
+          <div class="rectangle">
+              <div class="rectangle-content">
+                  {% if item_type == 'gbv_events' %}
+                          <h4>{{item.title[0].value}}</h4>
+                          {{item.field_event_body[0].value|raw}}
+                          <div class="events-footer">
+                              <div class="date">
+                                  {% set event_date = item.field_event_date[0] %}
+                                  {% if event_date.value|date('d') == event_date.end_value|date('d') and event_date.value|date('M') == event_date.end_value|date('M') %}
+                                      {% set event_date_string = event_date.value|date('F d, Y') %}
+                                  {% elseif event_date.value|date('M') == event_date.end_value|date('M') %}
+                                      {% set event_date_string = event_date.value|date('F d') ~ '-' ~ event_date.end_value|date('d, Y') %}
+                                  {% else %}
+                                      {% set event_date_string = event_date.value|date('F d') ~ '-' ~ event_date.end_value|date('F d, Y') %}
+                                  {% endif %}
+                                  {{event_date_string}}
+                              </div>
+                              <div class="download">
+                                  <a href="{{ item.field_event_url[0].uri }}" target="_blank">
+                                      <button class="button-outline-violet">{{ item.field_event_url[0].title }}<i style="font-size:16px" class="fa fa-external-link"></i></button>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  {% else %}
+                  <div>
+                      <h4>{{item.title[0].value}}</h4>
+                      {{item.field_document_body[0].value|raw}}
+                      <div class="events-footer">
+                          <div class="date">{{item.created[0].value|date('F d, Y')}}</div>
+                          {% set document_url = media_file_url(item.field_report_document[0].target_id, 'field_media_file') %}
+                          <div class="download">
+                              <a href="{{document_url}}" download>
+                                  <button class="button-outline-violet">Download</button>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  {% endif %}
+              </div>
+          </div>
+      </div>
     </div>
 </div>
