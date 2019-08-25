@@ -23,7 +23,7 @@
                     'features': []
                 };
                 let postResult = $.ajax({
-                    url: 'https://gistcdn.githack.com/timilsinabishal/1df12bb0ce3afe5dbdd6081f89513cae/raw/a7e02fc8e59cebdd3181d29abffa245970b89c1b/world-admin-0.geojson',
+                    url: 'https://gistcdn.githack.com/timilsinabishal/1df12bb0ce3afe5dbdd6081f89513cae/raw/ece2a05253c7e86a43d8f3e5ea4841cd79b59299/world-admin-0.geojson',
                     dataType: 'json',
                 });
                 postResult.then(function(countries) {
