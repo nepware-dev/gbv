@@ -33,7 +33,7 @@
     width: 150px;
     border-radius: 50%;
     margin-bottom: 5%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
@@ -41,7 +41,6 @@
   margin: -12px;
 
   img {
-    width: 100%;
     border-radius: 0;
   }
 }
