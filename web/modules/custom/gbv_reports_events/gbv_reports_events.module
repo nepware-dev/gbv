@@ -36,3 +36,9 @@ function gbv_reports_node_insert(NodeInterface $node) {
     drupal_flush_all_caches();
   }
 }
+
+function gbv_reports_node_delete(NodeInterface $node) {
+  if ($node->bundle() == 'gbv_reports' || $node->bundle()==='gbv_events') {
+    drupal_flush_all_caches();
+  }
+}

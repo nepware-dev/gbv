@@ -20,10 +20,14 @@ class ReportsEventsController extends ControllerBase {
     $event = NULL;
     $timezone = drupal_get_user_timezone();
     $start = new DateTime('now', new \DateTimezone($timezone));
+    // To fix not fetching todays event.
+    $start->modify('-1 day');
+    $start->setTime(00, 00);
     $event_query = Drupal::entityQuery('node');
     $event_query
       ->condition('field_event_date', $start->format(DATETIME_DATETIME_STORAGE_FORMAT), '>=')
-      ->condition('status', 1);
+      ->condition('status', 1)
+      ->sort('field_event_date', 'ASC');
     $event_results = $event_query->execute();
     if (count($event_results) > 0) {
       $event = Drupal::entityTypeManager()->getStorage('node')->load(reset($event_results));
