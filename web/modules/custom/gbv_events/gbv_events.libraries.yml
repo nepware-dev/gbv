@@ -4,12 +4,12 @@ moment:
     https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js: { type: external }
 
 fullcalendar:
-  version: 1.x
+  version: 1.1.1
   css:
     layout:
-      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css: { type: external }
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css: { type: external }
   js:
-    https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js: { type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js: { type: external }
   dependencies:
     - core/jquery
     - core/jquery.once

@@ -31,4 +31,15 @@
         }
     };
 
+    $('.dropdown-toggle').prop('disabled', true);
+
+    $('.dropdown').hover( 
+        function () {
+            $(".dropdown-menu", this).css("display", "block");
+        },
+        function () {
+            $(".dropdown-menu", this).css("display", "none");
+        }
+    );
+
 })(jQuery, Drupal);
