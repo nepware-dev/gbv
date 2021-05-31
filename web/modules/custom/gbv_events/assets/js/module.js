@@ -5,10 +5,11 @@
                 if(!document.getElementById('calendar').hasChildNodes()) {
                     let calendarEvents = JSON.parse(drupalSettings.calendarEvents);
                     $('#calendar').fullCalendar({
+                        defaultView: 'listMonth',
                         header: {
                             left: 'prev,next,today',
                             center: 'title',
-                            right: 'month,agendaWeek,agendaDay,listWeek'
+                            right: 'listMonth,month,agendaWeek,agendaDay'
                         },
                         navLinks: true, // can click day/week names to navigate views
                         editable: true,
