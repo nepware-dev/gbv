@@ -34,6 +34,7 @@
         padding: 10px 20px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
 
         .title {
           color: $black;
@@ -66,6 +67,11 @@
           border-radius: 0;
           font-weight: bold;
           padding: 10px 20px;
+        }
+
+        a {
+          text-decoration: none;
+          font-size: $font-size-sm;
         }
 
         .footer-wrap {

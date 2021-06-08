@@ -36,7 +36,7 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes) }} id="new-report-event">
   {% block content %}
     <div{{ content_attributes.addClass('content') }}>
       {{ content }}

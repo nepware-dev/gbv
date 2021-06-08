@@ -168,6 +168,45 @@ p {
   padding-bottom: 22px;
 }
 
+.single-news-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @media screen and(max-width: 767px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .article-title {
+    h2 {
+      font-family: $font-pt-sans;
+      font-size: $hero-font-size;
+      line-height: 1.29;
+      text-align: left;
+      color: $secondary-color;
+    }
+  }
+
+  .article-social-media-wrapper {
+    .date {
+      float: left;
+      line-height: 2.25;
+      margin-right: 15px;
+    }
+
+    .news-desc {
+      margin: 27px 0 0;
+      padding: 46px 30px 48px;
+      border-radius: 8px;
+      background-color: #ffffff;
+    }
+
+    .download-link {
+      display: none;
+    }
+  }
+}
+
 @media screen and(max-width: 480px) {
   .change-btns {
     border: none;
