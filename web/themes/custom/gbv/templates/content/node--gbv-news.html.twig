@@ -95,16 +95,16 @@
         {{ content.addtoany }}
       </div>
       <div{{ content_attributes.addClass('node__content', 'clearfix', 'news-desc') }}>
-        {{ content.field_report_body }}
+        {{ content.field_news_body }}
         {% set attatchment_type = node.field_attatchment_type.value %}
         {% if attatchment_type=='Link' %}
           <div class="col-12 footer-wrap row">
-            <a href="{{ node.field_report_link.uri }}" target="_blank">
-                <button class="button-outline-violet">{{ node.field_report_link.title }}<i style="font-size:16px; margin-left: 4px;" class="fa fa-external-link"></i></button>
+            <a href="{{ node.field_news_link.uri }}" target="_blank">
+                <button class="button-outline-violet">{{ node.field_news_link.title }}<i style="font-size:16px; margin-left: 4px;" class="fa fa-external-link"></i></button>
             </a>
           </div>
         {% elseif attatchment_type=='Document' %}
-          {% set document_url = media_file_url(node.field_report_document.target_id, 'field_media_file') %}
+          {% set document_url = media_file_url(node.field_news_document.target_id, 'field_media_file') %}
           <div class="col-12 footer-wrap row">
             <div class="col-8 nopadding">
               <a class="download-link" href="{{document_url}}" download>

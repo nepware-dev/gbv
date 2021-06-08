@@ -28,14 +28,14 @@
     %}
     <div class="col-sm-4 new-reports">
       <div class="new-report-single">
-        {% set image_url = media_file_url(entity.field_report_image[0].target_id) %}
+        {% set image_url = media_file_url(entity.field_news_image[0].target_id) %}
         <img src="{{image_url}}" class="report-image img-responsive"/>
         <div class="new-report-inner">
             <h4 class="title">{{entity.title[0].value}}</h4>
             <p class="date">{{entity.created[0].value|date('M d, Y')}}</p>
             <span class="body">
                 <p>
-                    {% set text = entity.field_report_body[0].value|raw|render|striptags %}
+                    {% set text = entity.field_news_body[0].value|raw|render|striptags %}
                     {% autoescape false %}{{ text|length > 150 ? text|slice(0, 150) ~ '...' : text }}{% endautoescape %}
                 </p>
             </span>
