@@ -16,15 +16,13 @@
                 {{ title_suffix }}
                 <div class="col-12">
                     <div class="row community-col">
-                        <div class="col-12 col-md-6">
-                            <h3>{{content.field_sub_heading}}</h3>
-                            {{content.body}}
-                        </div>
-                        <div class="col-12 col-md-6">
-                            {% set alt_text = content.field_media_image[0]['#media'].thumbnail[0].alt %}
-                            {% set image_url = media_file_url(content.field_media_image[0]['#media'].mid[0].value) %}
-                            <img src="{{image_url}}" alt="{{alt_text}}">
-                        </div>
+                    <div>
+                        {% set alt_text = content.field_media_image[0]['#media'].thumbnail[0].alt %}
+                        {% set image_url = media_file_url(content.field_media_image[0]['#media'].mid[0].value) %}
+                        <img class="community-img" src="{{image_url}}" alt="{{alt_text}}">
+                        <h3>{{content.field_sub_heading}}</h3>
+                        {{content.body}}
+                    </div>
                     </div>
                 </div>
             </div>
