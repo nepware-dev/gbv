@@ -5,9 +5,14 @@
   padding-bottom: 6%;
   margin-top: 10%;
 
-  img {
+  .community-img {
     height: 379px;
     width: 378px;
+    float: right;
+    object-fit: cover;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
   }
 
   .community-col {
@@ -100,9 +105,10 @@
         font-size: 20px;
       }
 
-      img {
+      .community-img {
         width: 100%;
-        object-fit: contain;
+        margin-left: 0;
+        margin-bottom: 30px;
       }
 
       p {
