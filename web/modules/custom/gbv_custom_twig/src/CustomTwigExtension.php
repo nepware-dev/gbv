@@ -27,15 +27,41 @@ class CustomTwigExtension extends Twig_Extension {
    */
   public function getFunctions() {
     $functions = [
+      new Twig_SimpleFunction('load_tax_term', [$this, 'loadTaxTerm']),
       new Twig_SimpleFunction('load_tax_children', [$this, 'loadTaxChildren']),
-      new Twig_SimpleFunction('get_nodes_by_taxonomy_term_ids', [$this, 'getNodesByTaxonomyTermIds']),
-      new Twig_SimpleFunction('load_vocabulary_term', [$this, 'loadVocabularyTerm']),
-      new Twig_SimpleFunction('check_taxonomy_has_items', [$this, 'checkTaxonomyHasItems']),
+      new Twig_SimpleFunction('get_nodes_by_taxonomy_term_ids', [
+        $this,
+        'getNodesByTaxonomyTermIds',
+      ]),
+      new Twig_SimpleFunction('load_vocabulary_term', [
+        $this,
+        'loadVocabularyTerm',
+      ]),
+      new Twig_SimpleFunction('check_taxonomy_has_items', [
+        $this,
+        'checkTaxonomyHasItems',
+      ]),
       new Twig_SimpleFunction('media_file_url', [$this, 'mediaFileUrl']),
       new Twig_SimpleFunction('get_node', [$this, 'getNode']),
       new Twig_SimpleFunction('media_file_type', [$this, 'mediaFileType']),
     ];
     return $functions;
+  }
+
+  /**
+   * Returns taxonomy term.
+   *
+   * @param string $tid
+   *   Tid of the taxonomy.
+   *
+   * @return array
+   *   Taxonomy term.
+   */
+  public static function loadTaxTerm($tid) {
+    $taxonomy_term = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->load($tid);
+    return $taxonomy_term;
   }
 
   /**
@@ -48,7 +74,9 @@ class CustomTwigExtension extends Twig_Extension {
    *   Tree of taxonomy.
    */
   public static function loadTaxChildren($tid) {
-    $children = Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadChildren($tid);
+    $children = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadChildren($tid);
     // FIXME: sort by id or weight?
     return $children;
   }
@@ -100,16 +128,20 @@ class CustomTwigExtension extends Twig_Extension {
    *
    * @param string $vid
    *   Vid of the vocabulary.
+   * @param string $depth
+   *   Number of levels of the tree to return.
    *
    * @return array
    *   Tree of vocabulary.
    */
-  public static function loadVocabularyTerm($vid) {
-    $terms = Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+  public static function loadVocabularyTerm($vid, $depth = NULL) {
+    $terms = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadTree($vid, 0, $depth);
     foreach ($terms as $term) {
       $term_data[] = [
-       'id' => $term->tid,
-       'name' => $term->name
+        'id' => $term->tid,
+        'name' => $term->name,
       ];
     }
     return $term_data;
@@ -129,7 +161,10 @@ class CustomTwigExtension extends Twig_Extension {
   public function checkTaxonomyHasItems($termId, array $sections) {
     $has_item = FALSE;
     for ($i = 0; $i < count($sections); $i++) {
-      $section_item_count = $this->getNodesByTaxonomyTermIds([$termId, $sections[$i]["id"]], TRUE);
+      $section_item_count = $this->getNodesByTaxonomyTermIds([
+        $termId,
+        $sections[$i]["id"],
+      ], TRUE);
       if ($section_item_count > 0) {
         $has_item = TRUE;
         break;

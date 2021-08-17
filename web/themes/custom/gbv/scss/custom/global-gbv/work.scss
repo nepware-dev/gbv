@@ -1,0 +1,31 @@
+.global-work-container {
+    background-color: $primary-shade;
+    padding: 120px 0 0;
+
+    .global-work-wrapper {
+        max-width: 1180px;
+        padding: 0 30px;
+        margin: auto;
+
+        .global-work-title {
+            font-family: $font-pt-sans;
+            font-size: $font-size-lg;
+            font-weight: bold;
+            line-height: 2.5;
+            text-align: center;
+            color: $secondary-color;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .global-work-desc {
+            max-width: 800px;
+            text-align: center;
+            font-family: $font-sans;
+            font-size: $font-size-base;
+            line-height: 1.88;
+            color: #212529;
+            margin: 0 auto;
+        }
+    }
+}

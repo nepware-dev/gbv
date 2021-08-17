@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Currently (31/07/2016) , Drupal needs this blank file.
+ */
+function gbv_global_map_theme() {
+  return [
+    'gbv_global_map-map' => [
+      'variables' => ['var1' => 'test'],
+    ],
+  ];
+}
