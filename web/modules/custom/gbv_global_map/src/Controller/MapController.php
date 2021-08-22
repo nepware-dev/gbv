@@ -41,4 +41,31 @@ class MapController extends ControllerBase {
     return $data;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getRegionalData($tid) {
+    $serializer = Drupal::service('serializer');
+    $countries = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadChildren($tid);
+    $region = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->load($tid);
+    foreach ($countries as $country) {
+      $countries_data[] = [
+        'id' => $country->tid->value,
+        'name' => $country->name->value,
+        'iso-2' => $country->field_country->value,
+      ];
+    }
+    $mapData['region'] = $region_data = [
+      'name' => $region->name->value,
+      'description' => $region->description->value,
+    ];
+    $mapData['countries'] = $countries_data;
+    $data['mapData'] = $serializer->serialize($mapData, 'json', ['plugin_id' => 'entity']);
+    return $data;
+  }
+
 }

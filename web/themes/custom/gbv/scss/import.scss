@@ -1,5 +1,4 @@
 /* IMPORTS */
-
 //@import url(font-awesome.min.css);
 // variables
 @import "variables";
@@ -51,3 +50,6 @@
 @import "custom/global-gbv/key-figures.scss";
 @import "custom/global-gbv/regions.scss";
 @import "custom/global-gbv/work.scss";
+@import "custom/global-gbv-regional/countries.scss";
+@import "custom/global-gbv-regional/key-resource.scss";
+@import "custom/global-gbv-regional/team.scss";
