@@ -1,0 +1,43 @@
+{# Countries block #}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
+%}
+{{ attach_library('flags/flags') }}
+
+{% set active_regions = load_vocabulary_term('global_gbv', 1) %}
+
+<div class="global-country-container">
+  <div class="global-country-wrapper" {{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+      <h2 class="global-country-title" {{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      <div{{ content_attributes.addClass(contentClasses) }}>
+        <div class="global-country-desc">
+          {{ content }}
+        </div>
+        <div class="country-card-wrapper">
+          {% for region in active_regions %}
+            {% set countries = load_tax_children(region.id) %}
+            {% for country in countries %}
+              <a href="#" class="global-country-card">
+                {{ country.name.value}}
+                <span class="flag-before flag flag-{{country.field_country.value | lower}} country-flag"></span>
+              </a>
+            {% endfor %}
+          {% endfor %}
+        </div>
+    {% endblock %}
+  </div>
+</div>

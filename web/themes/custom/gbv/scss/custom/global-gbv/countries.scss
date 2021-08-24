@@ -1,0 +1,58 @@
+.global-country-container {
+    background-color: $primary-shade;
+    padding: 80px 0 120px;
+
+    .global-country-wrapper {
+        max-width: 1180px;
+        padding: 0 30px;
+        margin: auto;
+
+        .global-country-title {
+            font-family: $font-sans;
+            font-size: $font-size-lg;
+            font-weight: bold;
+            line-height: 2.5;
+            text-align: left;
+            color: #212529;
+        }
+
+        .global-country-desc {
+            font-family: $font-sans;
+            font-size: $font-size-sm;
+            line-height: 1.93;
+            color: #212529;
+            margin-bottom: 40px;
+        }
+
+        .country-card-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+
+            .global-country-card {
+                cursor: pointer;
+                height: fit-content;
+                background-color: $primary-color-light;
+                border-radius: 4px;
+                padding: 15px 28px;
+                display: flex;
+                align-items: center;
+                font-size: $font-size-base;
+                font-weight: 600;
+                font-family: $font-sans;
+                transition: 0.4s;
+
+                .flag {
+                    margin-right: 8px;
+                }
+
+                &:hover {
+                    background-color: $secondary-color;
+                    color: $primary-shade;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{# Region Block #}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{%
+    set contentClasses = [
+        'content'
+    ]
+%}
+{% set active_regions = load_vocabulary_term('global_gbv', 1) %}
+
+<div class="global-region-container">
+  <div class="global-region-wrapper" {{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+      <h2 class="global-region-title" {{ title_attributes }}>{{ label }}</h2>
+      <hr class="global-region-hr" />
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      <div {{ content_attributes.addClass(contentClasses) }}>
+        <div class="global-region-desc">
+          {{ content }}
+        </div>
+      </div>
+      <div class="region-card-wrapper">
+        {% for region in active_regions %}
+          <a href="#" class="global-region-card">{{region.name}}</a>
+        {% endfor %}
+      </div>
+    {% endblock %}
+</div>
+</div>
