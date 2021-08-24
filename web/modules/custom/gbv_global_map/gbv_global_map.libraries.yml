@@ -30,3 +30,11 @@ gbvregionalmap:
   css:
     theme:
       assets/css/module-regional.css: {}
+
+gbvcountrymap:
+  version: 1.0.0
+  js:
+    assets/js/module-country.js: {}
+  css:
+    theme:
+      assets/css/module-country.css: {}

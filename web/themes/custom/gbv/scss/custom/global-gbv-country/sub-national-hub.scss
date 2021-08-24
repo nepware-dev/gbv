@@ -1,0 +1,119 @@
+.block-views-blocksub-national-hubs-sub-national-hubs {
+    padding: 7.5em 0;
+    background-color: $primary-shade;
+
+    @media screen and (max-width: 767px) {
+        padding: 5em 0;
+    }
+
+    .view-content {
+        max-width: 1198px;
+        margin: auto;
+    }
+
+    h2 {
+        margin-bottom: 55px;
+    }
+
+    .hub-card {
+        width: 100%;
+        padding: 25px;
+        border: solid 1px #ddd;
+        border-radius: 8px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media screen and (max-width: 767px) {
+            width: 90%;
+            margin: 0 auto 40px;
+        }
+
+        .hub-title {
+            margin-bottom: 25px;
+            line-height: 1.88;
+            text-align: left;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .hub-info {
+            h3 {
+                font-size: $font-size-lg;
+                font-weight: bold;
+                line-height: 2.5;
+                color: #212529;
+                text-transform: capitalize;
+                margin-bottom: 0;
+            }
+
+            p {
+                margin: 20px 0 35px;
+                line-height: 1.88;
+                font-size: $font-size-base;
+            }
+        }
+
+        .hub-key-contacts {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .contact-card {
+                width: calc(33.33% - 15px);
+                border-radius: 8px;
+                background-color: #f8f8f8;
+                border: 1px solid #ddd;
+                padding: 30px 25px;
+                margin-right: 20px;
+        
+                &:last-child {
+                    margin-right: 0;
+                }
+        
+                @media screen and (max-width: 767px) {
+                    width: 100%;
+                    margin-right: unset;
+                    margin-bottom: 15px;
+        
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+        
+                .views-field-title {
+                    font-size: $font-size-lg;
+                    font-weight: bold;
+                    color: #212529;
+                    font-family: $font-sans;
+                }
+        
+                .views-field-field-regional-team-organization {
+                    font-size: $font-size-base;
+                    color: #212529;
+                    margin: 15px 0 30px;
+                }
+        
+                .views-field-field-regional-team-email {
+                    display: flex;
+                    align-items: center;
+                    font-size: $font-size-base;
+                    color: $secondary-color;
+            
+                    i {
+                        margin-right: 0.5em;
+                        color: $secondary-color;
+                    }
+            
+                    .field-content {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}

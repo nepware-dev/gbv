@@ -67,5 +67,18 @@ class MapController extends ControllerBase {
     $data['mapData'] = $serializer->serialize($mapData, 'json', ['plugin_id' => 'entity']);
     return $data;
   }
-
+  
+  public function getCountryData($tid) {
+    $serializer = Drupal::service('serializer');
+    $country = Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->load($tid);
+    $mapData = [
+      'name' => $country->name->value,
+      'description' => $country->description->value,
+      'iso-2' => $country->field_country->value,
+    ];
+    $data['mapData'] = $serializer->serialize($mapData, 'json', ['plugin_id' => 'entity']);
+    return $data;
+  }
 }

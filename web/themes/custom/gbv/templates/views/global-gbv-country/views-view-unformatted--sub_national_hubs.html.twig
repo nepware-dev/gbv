@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="hub-card">
+  <div>
+    {% set entity = '' %}
+    <p class="hub-title">KEY CONTACTS</p>
+    <div class="hub-key-contacts">
+      {% for row in rows %}
+        {% set entity = row.content['#row']._entity %}
+        {% set row_classes = [
+          default_row_class ? 'views-row',
+        ] %}
+        <div class="contact-card" {{ row.attributes.addClass(row_classes) }}>
+          {{ row.content }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <div class="hub-info">
+      {% if title %}
+        <h3>{{ title }}</h3>
+      {% endif %}
+      {% set hubs = load_tax_term(entity.field_sub_national_hubs_contact[0].value.target_id) %}
+      {% autoescape false %}
+        {{ hubs.field_sub_national_hubs_desc.value }}
+      {% endautoescape %}
+    </div>
+  </div>
+</div>
