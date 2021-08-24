@@ -1,0 +1,105 @@
+.block-views-blockcountry-overview-block-1 {
+    padding: 7.5em 0;
+
+    .content {
+        max-width: 1180px;
+        margin: auto;
+
+        .row {
+            margin: unset;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 5em 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: $font-size-lg;
+        font-family: $font-pt-sans;
+        font-weight: bold;
+        line-height: 2.5;
+        color: $secondary-color; 
+        margin-bottom: 55px;
+    }
+
+    .overview-accrodion-body {
+        flex: 1;
+        border-radius: 8px;
+        background-color: $primary-shade;
+        margin: auto;
+        margin-bottom: 1em;
+        padding: 1.5em;
+        border: solid 1px #ddd;
+
+        @media screen and (max-width: 767px) {
+            width: 90%;
+        }
+
+        .overview-accordion {
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.7s;
+
+            .overview-topic {
+                flex: 1;
+                text-align: left;
+                font-size: $font-size-base;
+                font-weight: 600;
+                color: #212529;
+            }
+            
+            .overview-arrow {
+                cursor: pointer;
+                position: relative;
+                height: 10px;
+                width: 10px;
+            
+                &::before, &::after {
+                    content: '';
+                    background-color: #212529;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    height: 10px;
+                    width: 2px;
+                    transition: 0.3s;
+                }
+            
+                &::after {
+                    transform-origin: center;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        .active-accordion {
+            .overview-topic {
+                color: $secondary-color;
+            }
+
+            .overview-arrow::before {
+                transform: rotate(90deg);
+            }            
+        }
+
+        .overview-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s ease-out;
+            
+            .overview-panel-content {
+                font-size: 14px;
+                color: #212529;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
