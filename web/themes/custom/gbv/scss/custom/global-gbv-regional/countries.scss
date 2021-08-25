@@ -1,0 +1,57 @@
+.regional-country-container {
+  background-color: $primary-shade;
+  padding: 7.5em 0;
+
+  @media screen and (max-width: 767px) {
+    padding: 5em 0;
+  }
+
+  .regional-country-wrapper {
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: auto;
+
+    .regional-country-title {
+      line-height: 2.5;
+      margin-bottom: 55px;
+    }
+
+    .global-country-desc {
+      font-size: $font-size-sm;
+      line-height: 1.93;
+      color: #212529;
+      margin-bottom: 40px;
+    }
+
+    .regional-country {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 20px;
+
+      .regional-country-card {
+        cursor: pointer;
+        height: fit-content;
+        background-color: $primary-color-light;
+        border-radius: 4px;
+        padding: 15px 28px;
+        display: flex;
+        align-items: center;
+        font-size: $font-size-base;
+        font-weight: 600;
+        transition: 0.4s;
+
+        .flag {
+          margin-right: 8px;
+        }
+
+        &:hover {
+          background-color: $secondary-color;
+          color: $primary-shade;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

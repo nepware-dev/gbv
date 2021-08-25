@@ -22,3 +22,11 @@ gbvglobalmap:
       assets/css/module.css: {}
   dependencies:
     - gbv_global_map/mapboxgl
+
+gbvregionalmap:
+  version: 1.0.0
+  js:
+    assets/js/module-regional.js: {}
+  css:
+    theme:
+      assets/css/module-regional.css: {}

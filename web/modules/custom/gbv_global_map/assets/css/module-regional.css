@@ -1,0 +1,40 @@
+#gbv-regional-map {
+  width: 50%;
+  height: 600px;
+  background-color: white;
+}
+
+.gbv-regional-content-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 600px;
+  padding: 30px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: #eae7ee;
+}
+
+.gbv-regional-content-cont::-webkit-scrollbar {
+  display: none;
+}
+
+.gbv-regional-content h3 {
+  font-size: 25px;
+  color: #63337c;
+}
+
+@media screen and (max-width: 560px) {
+  .gbv-regional-content-cont  {
+    display: unset;
+    padding: 15px;
+  }
+
+  .gbv-regional-content h3 {
+    margin-top: 15px;
+  }
+}
