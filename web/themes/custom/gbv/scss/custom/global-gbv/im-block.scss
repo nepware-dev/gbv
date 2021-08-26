@@ -1,6 +1,10 @@
 .global-im-container {
     background-color: $primary-shade;
-    padding: 120px 0;
+    padding: 7.5em 0;
+
+    @media screen and (max-width: 767px) {
+        padding: 5em 0;
+    }
 
     .global-im-wrapper {
         width: 100%;

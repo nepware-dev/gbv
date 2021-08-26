@@ -1,6 +1,10 @@
 .global-country-container {
     background-color: $primary-shade;
-    padding: 80px 0 120px;
+    padding: 5em 0 7.5em;
+
+    @media screen and (max-width: 767px) {
+        padding: 3em 0 5em;
+    }
 
     .global-country-wrapper {
         max-width: 1180px;

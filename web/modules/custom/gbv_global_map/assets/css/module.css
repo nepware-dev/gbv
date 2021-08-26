@@ -3,6 +3,11 @@
   width: 100%;
   background-color: white;
 }
+@media screen and (max-width: 767px) {
+  #gbv-global-map {
+    height: 400px;
+  }
+}
 
 .mapboxgl-popup-content {
   width: max-content;
