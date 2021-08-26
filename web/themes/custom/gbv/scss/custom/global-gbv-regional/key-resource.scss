@@ -11,82 +11,103 @@
         margin-bottom: 55px;
     }
 
-    .key-resource-section {
-        max-width: 1180px;
+    .view-content{
+        max-width: 1198px;
         margin: auto;
 
-        .key-resource-wrapper {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
+        .key-resource-section {
+            max-width: 1180px;
+            margin: auto;
 
-            .key-resource-card {
+            .key-resource-wrapper {
+                width: 100%;
+                padding: 25px;
                 display: flex;
-                flex-direction: column;
-                position: relative;
-                max-width: 320px;
-                box-shadow: rgba(107, 107, 107, 0.35) 0px 2px 6px 0px;
-                background-color: $primary-shade;
-                border-radius: 0.5em;
-                overflow: hidden;
+                justify-content: center;
+                flex-wrap: wrap;
 
-                .image-wrapper {
-                    height: 10em;
-                    background-color: $secondary-color;
-                    
-                    .key-image {
-                        height: 10em;
-                        width: 100%;
-                        object-fit: cover;
-                    }
-                }
-
-                .text-wrapper {
-                    flex: 1;
+                .key-resource-card {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
-                    padding: 25px;
+                    position: relative;
+                    width: calc(33.33% - 15px);
+                    box-shadow: rgba(107, 107, 107, 0.35) 0px 2px 6px 0px;
+                    background-color: $primary-shade;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    margin-right: 20px;
 
-                    .title {
-                        padding: 0;
-                        font-size: $font-size-base;
-                        font-weight: bold;
-                        line-height: 1.5;
-                        color: #212529;
+                    &:last-child {
+                        margin-right: 0;
                     }
 
-                    .desc {
-                        font-size: $font-size-sm;
-                        font-weight: normal;
-                        line-height: 1.5;
-                        color: #212529;
-                        margin: 15px 0 25px;
+                    @media screen and (max-width: 767px) {
+                        width: 100%;
+                        margin-right: unset;
+                        margin-bottom: 15px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
                     }
 
-                    .button-wrapper {
+                    .image-wrapper {
+                        height: 10em;
+                        background-color: $secondary-color;
+                        
+                        .key-image {
+                            height: 10em;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .text-wrapper {
+                        flex: 1;
                         display: flex;
-                        align-items: center;
+                        flex-direction: column;
                         justify-content: space-between;
-                        margin-bottom: 10px;
+                        padding: 25px;
 
-                        .action-button {
-                            font-family: $font-sans;
-                            display: flex;
-                            padding: 3px 8px;
-                            font-size: $font-size-xs;
-                            border-radius: 12px;
-                            background-color: $primary-color-light;
-                            border: none;
+                        .title {
+                            padding: 0;
+                            font-size: $font-size-base;
+                            font-weight: bold;
+                            line-height: 1.5;
                             color: #212529;
-                            height: fit-content;
-                            text-transform: uppercase;
                         }
 
-                        .button-outline-violet {
-                            margin-top: 0;
+                        .desc {
                             font-size: $font-size-sm;
+                            font-weight: normal;
+                            line-height: 1.5;
+                            color: #212529;
+                            margin: 15px 0 25px;
+                        }
+
+                        .button-wrapper {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+
+                            .action-button {
+                                font-family: $font-sans;
+                                display: flex;
+                                padding: 3px 8px;
+                                font-size: $font-size-xs;
+                                border-radius: 12px;
+                                background-color: $primary-color-light;
+                                border: none;
+                                color: #212529;
+                                height: fit-content;
+                                text-transform: uppercase;
+                            }
+
+                            .button-outline-violet {
+                                margin-top: 0;
+                                font-size: $font-size-sm;
+                            }
                         }
                     }
                 }

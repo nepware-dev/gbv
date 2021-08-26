@@ -1,7 +1,6 @@
 .regional-team-container {
   padding: 7.5em 0;
-  max-width: 1180px;
-  margin: auto;
+  background-color: $primary-shade;
 
   @media screen and (max-width: 767px) {
     padding: 5em 0;
@@ -14,11 +13,12 @@
   .view-content {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    max-width: 1180px;
+    margin: auto;
     justify-content: center;
 
     .views-row {
-      min-width: 320px;
+      width: calc(33.33% - 15px);
       border-radius: 8px;
       border: 1px solid #ddd;
       background-color: $primary-shade;
@@ -30,6 +30,7 @@
       }
 
       @media screen and (max-width: 767px) {
+        width: 90%;
         margin-right: unset;
         margin-bottom: 15px;
 
@@ -57,14 +58,19 @@
         font-size: $font-size-base;
         color: $secondary-color;
 
-        i {
-          margin-right: 0.5em;
-          color: $secondary-color;
-        }
-
         .field-content {
           display: flex;
           align-items: center;
+
+          i {
+            margin-right: 0.5em;
+            color: $secondary-color;
+        }
+
+        a {
+            text-decoration: underline;
+            color: $secondary-color;
+        }
         }
       }
     }

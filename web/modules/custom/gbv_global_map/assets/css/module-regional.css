@@ -7,12 +7,11 @@
 .gbv-regional-content-cont {
   display: flex;
   align-items: center;
-  justify-content: center;
   position: absolute;
   right: 0;
   width: 50%;
   height: 600px;
-  padding: 30px;
+  padding-left: 9em;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -24,19 +23,35 @@
 }
 
 .gbv-regional-content h3 {
-  font-size: 25px;
+  font-size: 42px;
+  line-height: 1.19;
+  text-transform: none;
   color: #63337c;
 }
 
-@media screen and (max-width: 560px) {
-  .gbv-regional-content-cont {
-    display: unset;
-    padding: 15px;
+.gbv-regional-content p {
+  max-width: 36em;
+}
+
+@media screen and (max-width: 767px) {
+  #gbv-global-map {
+    height: 400px;
+  }
+  
+  #gbv-regional-map {
+    width: 100%;
+    height: 400px;
+  }
+
+  .gbv-regional-content-cont  {
+    padding: 20px;
+    width: 100%;
+    height: 400px;
   }
 
   .gbv-regional-content h3 {
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .gbv-country-content p {

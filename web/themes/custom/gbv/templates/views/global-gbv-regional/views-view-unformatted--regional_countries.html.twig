@@ -27,10 +27,12 @@
   <div class="regional-country" {{ row.attributes.addClass(row_classes) }}>
     {% set countries = load_tax_children(row.content["#row"].tid) %}
     {% for country in countries %}
-      <div class="regional-country-card">
-        {{ country.name.value }}
-        <span class="flag-before flag flag-{{ country.field_country.value | lower }} country-flag"></span>
-      </div>
+      <a href="{{ '/global-gbv/country/' ~ country.tid.value }}">
+        <div class="regional-country-card">
+          {{ country.name.value }}
+          <span class="flag-before flag flag-{{ country.field_country.value | lower }} country-flag"></span>
+        </div>
+      </a>
     {% endfor %}
   </div>
 {% endfor %}

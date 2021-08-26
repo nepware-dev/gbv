@@ -1,9 +1,9 @@
 .regional-country-container {
   background-color: $primary-shade;
-  padding: 7.5em 0;
+  padding-top: 7.5em;
 
   @media screen and (max-width: 767px) {
-    padding: 5em 0;
+    padding-top: 5em;
   }
 
   .regional-country-wrapper {
@@ -29,6 +29,10 @@
       flex-wrap: wrap;
       width: 100%;
       gap: 20px;
+
+      a {
+        text-decoration: none;
+      }
 
       .regional-country-card {
         cursor: pointer;
