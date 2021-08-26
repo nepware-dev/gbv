@@ -42,4 +42,21 @@
         }
     );
 
+    var accordion = document.getElementsByClassName("overview-accordion");
+    var accordionItem;
+        for (accordionItem = 0; accordionItem < accordion.length; accordionItem++) {
+            accordion[accordionItem].addEventListener("click", function () {
+            this.classList.toggle("active-accordion");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                panel.style.marginTop = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                panel.style.marginTop = '16px';
+
+            }
+        });
+    }
+
 })(jQuery, Drupal);

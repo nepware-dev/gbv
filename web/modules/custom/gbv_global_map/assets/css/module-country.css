@@ -1,10 +1,10 @@
-#gbv-regional-map {
+#gbv-country-map {
   width: 50%;
   height: 600px;
   background-color: white;
 }
 
-.gbv-regional-content-cont {
+.gbv-country-content-cont {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,22 +19,35 @@
   background-color: #eae7ee;
 }
 
-.gbv-regional-content-cont::-webkit-scrollbar {
+.gbv-country-content-cont::-webkit-scrollbar {
   display: none;
 }
 
-.gbv-regional-content h3 {
+.gbv-country-content h3 {
   font-size: 25px;
   color: #63337c;
 }
 
+.gbv-country-content a {
+  padding: 5px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: #63337c;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.gbv-country-content a:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 560px) {
-  .gbv-regional-content-cont {
+  .gbv-country-content-cont {
     display: unset;
     padding: 15px;
   }
 
-  .gbv-regional-content h3 {
+  .gbv-country-content h3 {
     margin-top: 15px;
     font-size: 18px;
   }

@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="key-resource-section">
+  {% if title %}
+    <h2>{{ title }}</h2>
+  {% endif %}
+  <div class="key-resource-wrapper">
+    {% for row in rows %}
+      {% set entity = row.content['#row']._entity %}
+      {% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_key_resources_description }}'] |render|striptags %}
+      <div class="key-resource-card">
+        <div class="image-wrapper">
+          {% set image_url = media_file_url(entity.field_key_resources_image[0].target_id) %}
+          <img src="{{ image_url }}" class="key-image"/>
+        </div>
+        <div class="text-wrapper">
+          <h4 class="title">{{ entity.title[0].value }}</h4>
+          <p class="desc">
+            {% autoescape false %}
+              {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}
+            {% endautoescape %}
+          </p>
+          <div class="button-wrapper">
+            {% set tr_resource_type = entity.field_attatchment_type[0].value %}
+            {% if tr_resource_type=='Document' %}
+              {% set tr_document_ext = media_file_type(entity.field_key_resources_document[0].target_id) %}
+              {% set tr_document_url = media_file_url(entity.field_key_resources_document[0].target_id, 'field_media_file') %}
+              <a href="{{ tr_document_url }}" download>
+                <button class="button-outline-violet">view</button>
+              </a>
+              <div class="action-button">
+                {{ tr_document_ext }}
+              </div>
+            {% elseif tr_resource_type=='Link' %}
+              {% set tr_resource_url = entity.field_key_resources_link[0].uri %}
+              {% set tr_resource_button_title = entity.field_key_resources_link[0].title %}
+              <a href="{{ tr_resource_url }}" target="_blank">
+                <button class="button-outline-violet">
+                  {{ tr_resource_button_title }}
+                  view
+                </button>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
