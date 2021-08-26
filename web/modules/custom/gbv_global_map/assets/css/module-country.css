@@ -1,5 +1,58 @@
-#gbv-global-map {
+#gbv-country-map {
+  width: 50%;
   height: 600px;
-  width: 100%;
   background-color: white;
+}
+
+.gbv-country-content-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 600px;
+  padding: 30px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: #eae7ee;
+}
+
+.gbv-country-content-cont::-webkit-scrollbar {
+  display: none;
+}
+
+.gbv-country-content h3 {
+  font-size: 25px;
+  color: #63337c;
+}
+
+.gbv-country-content a {
+  padding: 5px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: #63337c;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.gbv-country-content a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 560px) {
+  .gbv-country-content-cont {
+    display: unset;
+    padding: 15px;
+  }
+
+  .gbv-country-content h3 {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .gbv-country-content p {
+    font-size: 14px;
+  }
 }

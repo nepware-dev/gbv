@@ -29,12 +29,17 @@
 }
 
 @media screen and (max-width: 560px) {
-  .gbv-regional-content-cont  {
+  .gbv-regional-content-cont {
     display: unset;
     padding: 15px;
   }
 
   .gbv-regional-content h3 {
     margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .gbv-country-content p {
+    font-size: 14px;
   }
 }
