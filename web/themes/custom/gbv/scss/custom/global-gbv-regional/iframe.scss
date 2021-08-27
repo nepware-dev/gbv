@@ -1,0 +1,33 @@
+.view-global-gbv-regional-iframe {
+    padding: 7.5em 0;
+
+    @media screen and (max-width: 767px) {
+        padding: 5em 0;
+    }
+
+    .row {
+        padding: 0;
+        margin: 0 auto;
+        max-width: 1180px;
+
+        .views-field-field-global-gbv-regional-iframe {
+            padding: 25px;
+
+            iframe {
+                width: 100%;
+
+                @media screen and (max-width: 767px) {
+                    height: 400px;
+                }
+
+                @media screen and (max-width: 480px) {
+                    height: 250px;
+                }
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
