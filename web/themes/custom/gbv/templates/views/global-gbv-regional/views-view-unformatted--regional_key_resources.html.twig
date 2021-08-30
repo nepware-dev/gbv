@@ -29,7 +29,11 @@
           <img src="{{ image_url }}" class="key-image"/>
         </div>
         <div class="text-wrapper">
-          <h4 class="title">{{ entity.title[0].value }}</h4>
+          <h4 class="title">
+            <a href="{{ path('entity.node.canonical', {'node': entity.nid[0].value}) }}">
+              {{ entity.title[0].value }}
+            </a>
+          </h4>
           <p class="desc">
             {% autoescape false %}
               {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}
