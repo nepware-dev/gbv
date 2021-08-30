@@ -35,7 +35,7 @@
 
                 filteredCountries.features.push(filteredCountry[0]);
                 filteredCountries.features[index].properties.content = data.body;
-                filteredCountries.features[index].properties.hrp_country = data.hrp_country;
+                filteredCountries.features[index].properties.hrp_country = data.hrp_country ? 'Yes' : 'No' ;
                 filteredCountries.features[index].properties.uri = data.uri;
             });
 
