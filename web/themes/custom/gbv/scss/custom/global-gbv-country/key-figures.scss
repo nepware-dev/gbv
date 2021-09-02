@@ -1,54 +1,54 @@
 .block-views-blockcountry-key-figures-global-key-figures {
-    padding: 7.5em 0;
-    background-color: $primary-shade;
+  padding: 7.5em 0;
+  background-color: $primary-shade;
 
-    @media screen and (max-width: 767px) {
-        padding: 5em 0;
-    }
+  @media screen and (max-width: 767px) {
+    padding: 5em 0;
+  }
 
-    h2 {
-        text-transform: uppercase;
-        font-size: $font-size-lg;
-        font-family: $font-pt-sans;
-        font-weight: bold;
-        line-height: 2.5;
-        color: $secondary-color; 
-        margin-bottom: 55px;
-     }
+  h2 {
+    text-transform: uppercase;
+    font-size: $font-size-lg;
+    font-family: $font-pt-sans;
+    font-weight: bold;
+    line-height: 2.5;
+    color: $secondary-color;
+    margin-bottom: 55px;
+  }
 
-    .view-content{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        max-width: 1180px;
-        padding: 0 30px;
-        margin: auto;
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: auto;
 
-        .views-row {
-            width: 350px;
-            border-radius: 8px;
-            border: solid 1px #ddd;
-            background-color: #fff;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    .views-row {
+      width: 350px;
+      border-radius: 8px;
+      border: solid 1px #ddd;
+      background-color: #fff;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-            .views-field-field-key-figures-description {
-                p {
-                    font-size: 60px;
-                    color: #63337c;
-                    text-transform: uppercase;
-                    font-weight: bold;
-                }
-            }
-
-            .views-field-title {
-                text-align: center;
-                font-size: 16px;
-                font-weight: bold;
-            }
+      .views-field-description__value {
+        p {
+          font-size: 60px;
+          color: #63337c;
+          text-transform: uppercase;
+          font-weight: bold;
         }
+      }
+
+      .views-field-name {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+      }
     }
+  }
 }
