@@ -57,8 +57,8 @@
                 "source-layer": "country_boundaries",
                 type: "fill",
                 paint: {
-                  "fill-color": "#63337c",
-                  "fill-opacity": 0.5,
+                  "fill-color": mapData["color-code"]["color"],
+                  "fill-opacity": mapData["color-code"]["opacity"],
                 },
               });
 

@@ -28,8 +28,15 @@
             dataType: 'json',
         });
         postResult.then(function(countries) {
+            let filteredCountryColor = [];
             mapData.forEach(function(data, index) {
                 let filteredCountry = countries.features.filter(function(feature) {
+                if(feature.iso_2 === data.country){
+                  feature.properties.color = data.color_code;
+                  if(feature.properties.color){
+                    filteredCountryColor.push(feature.properties.name, feature.properties.color);
+                  }
+                }
                     return feature.iso_2===data.country;
                 });
 
@@ -50,7 +57,12 @@
                     'source': 'countries',
                     'layout': {},
                     'paint': {
-                        'fill-color': '#63337c',
+                        "fill-color": [
+                          'match',
+                          ['get', 'name'],
+                          ...filteredCountryColor,
+                          '#63337c'
+                        ],
                         'fill-opacity': ['case',
                             ['boolean', ['feature-state', 'hover'], false],
                             1,
