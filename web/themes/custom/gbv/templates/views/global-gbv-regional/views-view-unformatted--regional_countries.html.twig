@@ -25,6 +25,7 @@
     default_row_class ? 'views-row',
   ] %}
   <div class="regional-country" {{ row.attributes.addClass(row_classes) }}>
+    {{ row.content }}
     {% set countries = load_tax_children(row.content["#row"].tid) %}
     {% for country in countries %}
       <a href="{{ '/global-gbv/country/' ~ country.tid.value }}">
