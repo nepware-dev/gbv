@@ -22,6 +22,7 @@
           map.scrollZoom.disable();
           map.boxZoom.disable();
           map.doubleClickZoom.disable();
+          map.addControl(new mapboxgl.NavigationControl());
           let mapData = JSON.parse(drupalSettings.mapData);
           $(document).ready(function () {
             $(
