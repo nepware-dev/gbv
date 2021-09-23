@@ -1,7 +1,7 @@
 #gbv-regional-map {
   width: 50%;
   height: 600px;
-  background-color: white;
+  background-color: #a8c5eb;
 }
 
 .gbv-regional-content-cont {
@@ -42,7 +42,7 @@
   #gbv-global-map {
     height: 400px;
   }
-  
+
   #gbv-regional-map {
     width: 100%;
     height: 400px;

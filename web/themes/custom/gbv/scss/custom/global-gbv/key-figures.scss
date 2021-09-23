@@ -1,4 +1,5 @@
 .global-key-figures-container {
+  position: relative;
   padding: 7.5em 0;
 
   @media screen and (max-width: 767px) {
@@ -17,6 +18,14 @@
     @media screen and (max-width: 767px) {
       margin-bottom: 40px;
     }
+  }
+
+  .global-key-figures-last-updated {
+    position: absolute;
+    bottom: 1em;
+    right: 2em;
+    font-size: $font-size-xs;
+    font-style: italic;
   }
 
   .view-content {

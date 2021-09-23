@@ -14,5 +14,7 @@
     {% block content %}
       {{ content }}
     {% endblock %}
+    {%set last_updated_date = load_tax_term(144) %}
+    <div class="global-key-figures-last-updated">Last Updated: {{ last_updated_date.field_last_updated.value }}</div>
   </div>
 </div>

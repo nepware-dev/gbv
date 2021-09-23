@@ -1,7 +1,7 @@
 #gbv-map {
   height: 600px;
   width: 100%;
-  background-color: white;
+  background-color: #a8c5eb;
 }
 
 .mapboxgl-popup-content p {

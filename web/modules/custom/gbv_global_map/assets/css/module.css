@@ -1,7 +1,7 @@
 #gbv-global-map {
   height: 600px;
   width: 100%;
-  background-color: white;
+  background-color: #a8c5eb;
 }
 @media screen and (max-width: 767px) {
   #gbv-global-map {
