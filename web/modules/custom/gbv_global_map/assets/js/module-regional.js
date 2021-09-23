@@ -78,6 +78,30 @@
                 },
               });
 
+              const hoverPopup = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: false
+                });
+
+            map.on('mouseenter', 'country-fill', function (e) {
+                map.getCanvas().style.cursor = 'pointer';
+                let centroid = $.parseJSON(e.features[0].properties.centroid);
+                let coordinates = centroid.slice();
+                let name = e.features[0].properties.name;
+                let content = '<h3 class="country-name">'+name+'</h3>'
+
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                hoverPopup.setLngLat(coordinates).setHTML(content).addTo(map);
+            });
+
+            map.on('mouseleave', 'country-fill', function () {
+                map.getCanvas().style.cursor = '';
+                hoverPopup.remove()
+            });
+
               let bbox = turf.bbox(filteredCountries);
               map.fitBounds(bbox, { padding: 20 });
 
