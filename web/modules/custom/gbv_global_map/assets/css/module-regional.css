@@ -33,6 +33,11 @@
   max-width: 36em;
 }
 
+.mapboxgl-popup-content .country-name {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 767px) {
   #gbv-global-map {
     height: 400px;

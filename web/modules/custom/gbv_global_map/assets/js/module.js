@@ -58,11 +58,11 @@
                     'layout': {},
                     'paint': {
                         "fill-color": [
-                          'match',
-                          ['get', 'name'],
-                          ...filteredCountryColor,
-                          '#63337c'
-                        ],
+                            'match',
+                            ['get', 'name'],
+                            ...filteredCountryColor,
+                            '#63337c'
+                          ],
                         'fill-opacity': ['case',
                             ['boolean', ['feature-state', 'hover'], false],
                             1,
@@ -88,6 +88,8 @@
                     hoveredStateId =  null;
                 });
 
+                const clickPopup = new mapboxgl.Popup();
+
                 map.on('click', 'country-fill', function (e) {
                     let centroid = $.parseJSON(e.features[0].properties.centroid);
                     let coordinates = centroid.slice();
@@ -108,18 +110,33 @@
                         popupContent += '<div class="global-country-header-hrp"><strong>HRP Country:</strong> '+ hrp +'</div>';
                     }
                     popupContent += content;
-                    new mapboxgl.Popup()
-                        .setLngLat(coordinates)
-                        .setHTML(popupContent)
-                        .addTo(map);
+
+                    clickPopup.setLngLat(coordinates).setHTML(popupContent).addTo(map);
                 });
 
-                map.on('mouseenter', 'country-fill', function () {
+                const hoverPopup = new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false
+                    });
+
+                map.on('mouseenter', 'country-fill', function (e) {
                     map.getCanvas().style.cursor = 'pointer';
+                    if (clickPopup.isOpen()) return;
+                    let centroid = $.parseJSON(e.features[0].properties.centroid);
+                    let coordinates = centroid.slice();
+                    let name = e.features[0].properties.name;
+                    let content = '<h3 class="country-name">'+name+'</h3>'
+
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                        }
+
+                    hoverPopup.setLngLat(coordinates).setHTML(content).addTo(map);
                 });
 
                 map.on('mouseleave', 'country-fill', function () {
                     map.getCanvas().style.cursor = '';
+                    hoverPopup.remove()
                 });
             });
         });
