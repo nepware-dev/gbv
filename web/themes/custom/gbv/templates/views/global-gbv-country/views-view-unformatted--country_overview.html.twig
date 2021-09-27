@@ -23,17 +23,16 @@
     default_row_class ? 'views-row',
   ] %}
   <div class="country" {{ row.attributes.addClass(row_classes) }}>
-    {% set entity = row.content['#row']._entity %}
     <div class="overview-accrodion-body">
       <div class="overview-accordion">
         {% set entity = row.content['#row']._entity %}
-        <span class="overview-topic">{{ entity.title[0].value }}</span>
+        <span class="overview-topic">{{ entity.name[0].value }}</span>
         <div class="overview-arrow"></div>
       </div>
       <div class="overview-panel"}>
         <div class="overview-panel-content">
           {% autoescape false %}
-            {{ entity.field_country_overview[0].value }}
+            {{ entity.description[0].value }}
           {% endautoescape %}
         </div>
       </div>
