@@ -28,6 +28,14 @@
     font-style: italic;
   }
 
+  .global-key-figures-disclaimer {
+    position: absolute;
+    bottom: 1em;
+    left: 2em;
+    font-size: $font-size-xs;
+    font-style: italic;
+  }
+
   .view-content {
     display: flex;
     flex-wrap: wrap;
