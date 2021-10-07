@@ -125,13 +125,13 @@
                     let centroid = $.parseJSON(e.features[0].properties.centroid);
                     let coordinates = centroid.slice();
                     let name = e.features[0].properties.name;
-                    let content = '<h3 class="country-name">'+name+'</h3>'
+                    let content = '<p class="country-name">'+name+'</p>'
 
                     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                         }
 
-                    hoverPopup.setLngLat(coordinates).setHTML(content).addTo(map);
+                    //hoverPopup.setLngLat(coordinates).setHTML(content).addTo(map); //disable hover effect
                 });
 
                 map.on('mouseleave', 'country-fill', function () {

@@ -36,6 +36,10 @@ a {
   color: $black;
 }
 
+.menu--account h2 {
+  display: none;
+}
+
 .menu--account li a {
   color: $primary-shade;
 }
