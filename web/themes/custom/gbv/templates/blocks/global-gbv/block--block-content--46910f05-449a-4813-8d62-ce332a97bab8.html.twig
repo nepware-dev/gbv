@@ -32,7 +32,7 @@
           {% for region in active_regions %}
             {% set countries = load_tax_children(region.id) %}
             {% for country in countries %}
-              <a href="{{ 'global-gbv/country/' ~ country.tid.value }}" class="global-country-card">
+              <a href="{{ path('page_manager.page_view_global_gbv_global_gbv-panels_variant-0') ~ '/country/' ~ country.tid.value }}" class="global-country-card">
                 {{ country.name.value}}
                 <span class="flag-before flag flag-{{country.field_country.value | lower}} country-flag"></span>
               </a>

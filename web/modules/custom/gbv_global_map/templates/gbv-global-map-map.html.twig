@@ -1,3 +1,10 @@
-<div id='gbv-global-map'></div>
+{% set url = url('<current>')['#markup']|split('/')|last %}
+<div id='gbv-global-map'>
+  {% if (url is defined) and (url == 'global-gbv')%}
+  <div class="info">
+    Please click in the country to view it's details...
+  </div>
+  {% endif %}
+</div>
 <div id='gbv-regional-map'></div>
 <div id='gbv-country-map'></div>
