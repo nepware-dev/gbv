@@ -29,7 +29,7 @@
       </div>
       <div class="region-card-wrapper">
         {% for region in active_regions %}
-          <a href="{{  'global-gbv/regional/' ~ region.id }}" class="global-region-card">{{region.name}}</a>
+          <a href="{{ path('page_manager.page_view_global_gbv_global_gbv-panels_variant-0') ~ '/regional/' ~ region.id }}" class="global-region-card">{{region.name}}</a>
         {% endfor %}
       </div>
     {% endblock %}
