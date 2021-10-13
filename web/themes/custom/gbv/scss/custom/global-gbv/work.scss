@@ -12,14 +12,13 @@
         margin: auto;
 
         .global-work-title {
+            text-align: left;
             line-height: 2.5;
             text-transform: uppercase;
             margin-bottom: 40px;
         }
 
         .global-work-desc {
-            max-width: 800px;
-            text-align: center;
             font-family: $font-sans;
             font-size: $font-size-base;
             line-height: 1.88;

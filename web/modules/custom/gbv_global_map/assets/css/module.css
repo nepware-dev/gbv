@@ -3,6 +3,17 @@
   width: 100%;
   background-color: #a8c5eb;
 }
+
+#gbv-global-map .info {
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+  z-index: 1;
+  padding: 0 0.5em;
+  background-color: #8064a3;
+  color: white;
+}
+
 @media screen and (max-width: 767px) {
   #gbv-global-map {
     height: 400px;

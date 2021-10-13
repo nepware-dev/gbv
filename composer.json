@@ -47,6 +47,8 @@
         "drupal/google_analytics": "^2.4",
         "drupal/google_analytics_reports": "^3.0",
         "drupal/honeypot": "^2.0",
+        "drupal/image_resize_filter": "^1.1",
+        "drupal/inline_responsive_images": "^2.2",
         "drupal/mailchimp": "^1.8",
         "drupal/page_manager": "^4.0",
         "drupal/panels": "^4.4",
