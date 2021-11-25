@@ -38,59 +38,22 @@
         }
 
         .overview-accordion {
-            cursor: pointer;
             flex: 1;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: 0.7s;
 
             .overview-topic {
                 flex: 1;
                 text-align: left;
                 font-size: $font-size-base;
                 font-weight: 600;
-                color: #212529;
-            }
-            
-            .overview-arrow {
-                cursor: pointer;
-                position: relative;
-                height: 10px;
-                width: 10px;
-            
-                &::before, &::after {
-                    content: '';
-                    background-color: #212529;
-                    left: 0;
-                    position: absolute;
-                    top: 0;
-                    height: 10px;
-                    width: 2px;
-                    transition: 0.3s;
-                }
-            
-                &::after {
-                    transform-origin: center;
-                    transform: rotate(90deg);
-                }
-            }
-        }
-
-        .active-accordion {
-            .overview-topic {
                 color: $secondary-color;
             }
-
-            .overview-arrow::before {
-                transform: rotate(90deg);
-            }            
         }
 
         .overview-panel {
-            max-height: 0;
-            overflow: hidden;
-            transition: 0.3s ease-out;
+            margin-top: 16px;
             
             .overview-panel-content {
                 font-size: 14px;
