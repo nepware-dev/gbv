@@ -29,6 +29,8 @@
                     url: 'https://gistcdn.githack.com/timilsinabishal/1df12bb0ce3afe5dbdd6081f89513cae/raw/ece2a05253c7e86a43d8f3e5ea4841cd79b59299/world-admin-0.geojson',
                     dataType: 'json',
                 });
+
+                    map.on('load', function () {
                 postResult.then(function(countries) {
                     mapData.forEach(function(data, index) {
                         let filteredCountry = countries.features.filter(function(feature) {
@@ -40,8 +42,6 @@
                         filteredCountries.features[index].properties.content = data.body;
                         filteredCountries.features[index].properties.uri = data.uri;
                     });
-
-                    map.on('load', function () {
                     //let layers = map.getStyle().layers;
                         map.addSource('countries', {
                             'type': 'geojson',

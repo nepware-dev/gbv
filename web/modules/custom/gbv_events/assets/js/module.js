@@ -40,14 +40,16 @@
                                                 '</div>'+
                                             '</div>';
                             }
-                            element.popover({
+                            setTimeout(function() {
+                              jQuery(element).popover({
                                 animation: true,
                                 trigger: 'click',
                                 content: innerContent,
                                 placement: 'top',
                                 html: true,
-                            });
-                            element.addClass('event-popover');
+                              });
+                              element.addClass('event-popover');
+                            }, 5000);
                         },
                     });
                 }

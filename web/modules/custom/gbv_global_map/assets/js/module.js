@@ -27,6 +27,8 @@
             url: 'https://gistcdn.githack.com/timilsinabishal/1df12bb0ce3afe5dbdd6081f89513cae/raw/ece2a05253c7e86a43d8f3e5ea4841cd79b59299/world-admin-0.geojson',
             dataType: 'json',
         });
+
+            map.on('load', function () {
         postResult.then(function(countries) {
             let filteredCountryColor = [];
             mapData.forEach(function(data, index) {
@@ -45,8 +47,6 @@
                 filteredCountries.features[index].properties.hrp_country = data.hrp_country ? 'Yes' : 'No' ;
                 filteredCountries.features[index].properties.uri = data.uri;
             });
-
-            map.on('load', function () {
                 map.addSource('countries', {
                     'type': 'geojson',
                     'data': filteredCountries
@@ -70,6 +70,9 @@
                         ]
                     }
                 });
+
+                let bbox = turf.bbox(filteredCountries);
+                map.fitBounds(bbox, { padding: 20 });
 
                 map.on('mousemove', 'country-fill', function(e) {
                     if (e.features.length > 0) {
@@ -140,11 +143,11 @@
                 });
             });
         });
-        if($(window).width() < 560) {
             map.addControl(new mapboxgl.NavigationControl({
                 showCompass: false,
             }));
             map.dragPan.enable();
+        if($(window).width() < 560) {
             map.scrollZoom.enable();
         }
         if($(window).width() > 1200) {
