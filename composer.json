@@ -27,6 +27,7 @@
         "drupal/ckeditor_balloonpanel": "^1.1",
         "drupal/ckeditor_font": "^1.2",
         "drupal/ckeditor_iframe": "^2.1",
+        "drupal/ckeditor_inserthtml": "^1.0",
         "drupal/ckeditor_smiley": "^1.0",
         "drupal/ckeditor_uploadimage": "^2.0",
         "drupal/ckeditor_videodetector": "^1.0",

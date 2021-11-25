@@ -33,7 +33,7 @@
 
     $('.dropdown-toggle').prop('disabled', true);
 
-    $('.dropdown').hover( 
+    $('.dropdown').hover(
         function () {
             $(".dropdown-menu", this).css("display", "block");
         },

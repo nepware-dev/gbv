@@ -37,9 +37,11 @@
             features: [],
           };
           let postResult = $.ajax({
-            url: "https://gistcdn.githack.com/timilsinabishal/1df12bb0ce3afe5dbdd6081f89513cae/raw/ece2a05253c7e86a43d8f3e5ea4841cd79b59299/world-admin-0.geojson",
+            url: "https://gistcdn.githack.com/timilsinabishal/b2b59aa75b62810d56374d059ea17229/raw/b6252ee74737d273119debad9f7f6c6d3c3a616e/world-admin-0-fiji.geojson",
             dataType: "json",
           });
+
+            map.on("load", function () {
           postResult.then(function (countries) {
             let filteredCountryColor = [];
             mapData.countries.forEach(function (data) {
@@ -49,7 +51,7 @@
                 if(feature.iso_2 === data["iso-2"]){
                   feature.properties.color = data["color-code"];
                   if(feature.properties.color){
-                    filteredCountryColor.push(feature.properties.name, feature.properties.color.color);
+                    filteredCountryColor.push(feature.properties.name, feature.properties.color);
                   }
                 }
                 return feature.iso_2 === data["iso-2"];
@@ -57,8 +59,6 @@
 
               filteredCountries.features.push(filteredCountry[0]);
             });
-
-            map.on("load", function () {
               map.addSource("countries", {
                 type: "geojson",
                 data: filteredCountries,
@@ -69,12 +69,8 @@
                 source: "countries",
                 layout: {},
                 paint: {
-                  "fill-color": [
-                    'match',
-                    ['get', 'name'],
-                    ...filteredCountryColor,
-                    '#ad95ba'
-                  ],
+                  "fill-color": '#A991B6',
+                  "fill-opacity": 0.7,
                 },
               });
 
