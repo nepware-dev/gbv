@@ -3,7 +3,6 @@
 namespace Drupal\gbv_global_map\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal;
 use Drupal\node\Entity\Node;
 
 /**
@@ -17,14 +16,14 @@ class MapController extends ControllerBase {
    * {@inheritdoc}
    */
   public function getData() {
-    $serializer = Drupal::service('serializer');
-    $nids = Drupal::entityQuery('node')
+    $serializer = \Drupal::service('serializer');
+    $nids = \Drupal::entityQuery('node')
       ->condition('type', 'global_map')
       ->condition('status', 1)
       ->execute();
     $nodes = Node::loadMultiple($nids);
 
-    $terms = Drupal::entityTypeManager()
+    $terms = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
       ->loadTree("global_gbv", 0, NULL, TRUE);
     $countryColors = [];
@@ -56,11 +55,11 @@ class MapController extends ControllerBase {
    * {@inheritdoc}
    */
   public function getRegionalData($tid) {
-    $serializer = Drupal::service('serializer');
-    $countries = Drupal::entityTypeManager()
+    $serializer = \Drupal::service('serializer');
+    $countries = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
       ->loadChildren($tid);
-    $region = Drupal::entityTypeManager()
+    $region = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
       ->load($tid);
     foreach ($countries as $country) {
@@ -81,15 +80,19 @@ class MapController extends ControllerBase {
     return $data;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getCountryData($tid) {
-    $serializer = Drupal::service('serializer');
-    $country = Drupal::entityTypeManager()
+    $serializer = \Drupal::service('serializer');
+    $country = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
       ->load($tid);
     $mapData = [
       'name' => $country->name->value,
       'description' => $country->description->value,
       'iso-2' => $country->field_country->value,
+      'hr_info' => $country->field_hr_info->uri,
       'color-code' => $country->field_map_color[0],
     ];
     $data['mapData'] = $serializer->serialize($mapData, 'json', ['plugin_id' => 'entity']);
