@@ -3,6 +3,7 @@ global-styling:
   js:
     js/bootstrap.min.js: {}
     js/global.js: {}
+    js/event_tracking.js: {}
   css:
     component:
       css/style.css: {}

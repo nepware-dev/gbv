@@ -32,7 +32,7 @@ gbvregionalmap:
       assets/css/module-regional.css: {}
 
 gbvcountrymap:
-  version: 1.0.2
+  version: 1.0.3
   js:
     assets/js/module-country.js: {}
   css:

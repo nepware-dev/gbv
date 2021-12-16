@@ -45,7 +45,7 @@
         "drupal/facets": "^1.4",
         "drupal/flags": "^1.0@beta",
         "drupal/form_placeholder": "^1.0",
-        "drupal/google_analytics": "^2.4",
+        "drupal/google_analytics": "^4.0",
         "drupal/google_analytics_reports": "^3.0",
         "drupal/honeypot": "^2.0",
         "drupal/image_resize_filter": "^1.1",

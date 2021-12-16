@@ -1,3 +1,7 @@
+#block-gbv-main-menu-menu {
+  display: none;
+}
+
 .navbar {
   padding: 0;
 }
@@ -83,6 +87,7 @@
 
     .menu-item--expanded {
       padding: 8px 5px;
+
       .nav-link {
         min-width: 100px;
         outline: none;

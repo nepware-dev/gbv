@@ -28,8 +28,8 @@ class MapBlock extends BlockBase {
       '#attached' => [
         'drupalSettings' => [
           'mapData' => $mapData,
-          'accessToken' => getenv(MAPBOX_ACCESS_TOKEN),
-          'mapStyle' => getenv(MAPBOX_STYLE_URL),
+          'accessToken' => getenv('MAPBOX_ACCESS_TOKEN'),
+          'mapStyle' => getenv('MAPBOX_STYLE_URL'),
         ],
         'library' => ['gbv_map/mapboxgl', 'gbv_map/gbvmap'],
       ],

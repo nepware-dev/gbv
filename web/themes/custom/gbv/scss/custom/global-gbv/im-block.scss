@@ -1,37 +1,36 @@
 .global-im-container {
-    background-color: $primary-shade;
-    padding: 7.5em 0;
+  background-color: $primary-shade;
+  padding: 4em 0;
 
-    @media screen and (max-width: 767px) {
-        padding: 5em 0;
+  @media screen and (max-width: 767px) {
+    padding: 3em 0;
+  }
+
+  .global-im-wrapper {
+    width: 100%;
+
+    .global-im-title {
+      font-family: $font-pt-sans;
+      font-size: $hero-font-size;
+      font-weight: bold;
+      line-height: 1.19;
+      text-align: center;
+      color: $secondary-color;
+      text-transform: uppercase;
+      padding-bottom: 15px;
+      margin: 0 auto 40px;
+      display: block;
     }
 
-    .global-im-wrapper {
-        width: 100%;
-
-        .global-im-title {
-            font-family: $font-pt-sans;
-            font-size: $hero-font-size;
-            font-weight: bold;
-            line-height: 1.19;
-            text-align: center;
-            color: $secondary-color;
-            text-transform: uppercase;
-            border-bottom: 3px solid $secondary-color;
-            width: 130px;
-            padding-bottom: 15px;
-            margin: 0 auto 40px;
-        }
-
-        .global-im-desc {
-            max-width: 800px;
-            text-align: center;
-            font-family: $font-sans;
-            font-size: $font-size-base;
-            line-height: 1.88;
-            color: #212529;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
+    .global-im-desc {
+      max-width: 800px;
+      text-align: center;
+      font-family: $font-sans;
+      font-size: $font-size-base;
+      line-height: 1.88;
+      color: #212529;
+      margin: 0 auto;
+      padding: 0 30px;
     }
+  }
 }
