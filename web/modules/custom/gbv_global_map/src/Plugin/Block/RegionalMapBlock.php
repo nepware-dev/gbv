@@ -29,8 +29,8 @@ class RegionalMapBlock extends BlockBase {
       '#attached' => [
         'drupalSettings' => [
           'mapData' => $data['mapData'],
-          'accessToken' => getenv(MAPBOX_ACCESS_TOKEN),
-          'mapStyle' => getenv(MAPBOX_STYLE_URL),
+          'accessToken' => getenv('MAPBOX_ACCESS_TOKEN'),
+          'mapStyle' => getenv('MAPBOX_STYLE_URL'),
         ],
         'library' => [
           'gbv_global_map/mapboxgl',

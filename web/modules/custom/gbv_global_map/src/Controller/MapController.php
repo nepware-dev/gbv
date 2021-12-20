@@ -36,7 +36,7 @@ class MapController extends ControllerBase {
     $index = 0;
     foreach ($nodes as $key => $node) {
       $mapData[$index]['body'] = $node->get('field_global_gbv_description')
-        ->getValue()[0]['value'];
+        ->getValue() ? $node->get('field_global_gbv_description')->getValue()[0]['value'] : NULL;
       $mapData[$index]['hrp_country'] = $node->get('field_hrp_country')
         ->getValue()[0]['value'];
       $mapData[$index]['country'] = $node->get('field_countries')
