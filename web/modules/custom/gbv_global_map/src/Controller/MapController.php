@@ -15,7 +15,7 @@ class MapController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function getData() {
+  public static function getData() {
     $serializer = \Drupal::service('serializer');
     $nids = \Drupal::entityQuery('node')
       ->condition('type', 'global_map')
@@ -42,7 +42,7 @@ class MapController extends ControllerBase {
       $mapData[$index]['country'] = $node->get('field_countries')
         ->getValue()[0]['value'];
       $mapData[$index]['uri'] = $node->get('field_global_country_page_url')
-        ->getValue()[0]['uri'];
+        ->getValue() ? $node->get('field_global_country_page_url')->getValue()[0]['uri'] : NULL;
       $mapData[$index]['color_code'] = $countryColors[$node->get('field_countries')
         ->getValue()[0]['value']];
       $index++;
@@ -54,7 +54,7 @@ class MapController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function getRegionalData($tid) {
+  public static function getRegionalData($tid) {
     $serializer = \Drupal::service('serializer');
     $countries = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
@@ -83,7 +83,7 @@ class MapController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function getCountryData($tid) {
+  public static function getCountryData($tid) {
     $serializer = \Drupal::service('serializer');
     $country = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
