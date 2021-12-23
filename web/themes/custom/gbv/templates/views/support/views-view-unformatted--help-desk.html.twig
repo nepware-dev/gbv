@@ -15,20 +15,38 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-<div class="row">
-    {% if title %}
+{%
+  set classes = [
+    'col-sm-12',
+  ]
+%}
+
+
+<div {{ attributes.addClass(classes) }}>
+  {% if title %}
     <h3>{{ title }}</h3>
-    {% endif %}
-    {% for row in rows %}
-        {% set entity = row.content['#row']._entity %}
-        {%
-            set row_classes = [
-            default_row_class ? 'views-row',
-            ]
-        %}
-        <div class="col-12 col-md-6 desk-single">
-            <h3>{{entity.title[0].value}}</h3>
-            {{entity.field_help_desk_body[0].value|raw}}
-        </div>
-    {% endfor %}
+  {% endif %}
+  {% for row in rows %}
+    {%
+      set row_classes = [
+        default_row_class ? 'views-row',
+      ]
+    %}
+    <div{{ row.attributes.addClass(row_classes) }}>
+      {% set entity = row.content['#row']._entity %}
+      {%
+        set row_classes = [default_row_class ? 'views-row',]
+      %}
+      <div class="col-12 col-md-6 desk-single">
+        <h3>{{entity.name.value}}</h3>
+        {{entity.description.value | raw}}
+    </div>
+  {% endfor %}
+</div>
+<div class="view-footer">
+  {{ drupal_view('help_desk_slider') }}
+  <div class="container">
+    <h4>Checkout our helpdesk resources page to view all the resources</h4>
+    <a href="/help-desk" class="btn btn-primary">HELPDESK RESOURCES</a>
+  </div>
 </div>

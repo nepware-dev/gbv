@@ -1,0 +1,257 @@
+.view-help-desk-view {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(../images/BG/help-desk/help-desk.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 300px;
+  background-color: #f9f9f9;
+  margin-bottom: -2%;
+
+  @media only screen and (max-width: 479px), (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .view-header {
+    flex-basis: 100%;
+    display: flex;
+
+    .help-desk-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-size: 100% !important;
+        height: 315px;
+
+        @media only screen and (max-width: 479px) {
+          max-height: 242px;
+          background-size: cover !important;
+        }
+
+        .underline-h2-tag {
+          color: $white;
+          font-size: $font-size-heading-large;
+          background: linear-gradient($white, $white) bottom no-repeat;
+          background-size: 100px 3px;
+          display: inline-block;
+          padding-bottom: 22px;
+        }
+      }
+
+      .description {
+        color: #212529;
+        font-family: var(--bs-body-font-family);
+        font-size: var(--bs-body-font-size);
+        line-height: 1.88;
+        text-align: center;
+        padding: 76px 307px;
+
+        @media only screen and (max-width: 479px), (max-width: 768px) {
+          padding: 38px 32px;
+        }
+
+        ul {
+          list-style-type: none;
+        }
+      }
+    }
+  }
+
+  nav {
+    flex: 1;
+
+    @media only screen and (max-width: 479px), (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .view-filters {
+    flex: 1;
+    padding-left: 4%;
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+
+      legend {
+        font-size: 1em;
+
+        .fieldset-legend {
+          font-size: $font-size-sm;
+          color: $color-grape;
+          text-transform: uppercase;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      #edit-term-node-tid-depth-1 {
+        position: relative;
+
+        ul li {
+          .js-form-item {
+            margin-bottom: 10px;
+          }
+
+          label {
+            color: black;
+            font-size: $font-size-normal;
+          }
+
+          ul li {
+            label {
+              font-weight: $font-weight-lighter;
+              font-size: $font-size-normal;
+            }
+          }
+        }
+      }
+
+      #edit-field-thematic-resource-type-sec-target-id,
+      #edit-field-language-target-id {
+        position: relative;
+
+        .js-form-item {
+          margin-bottom: 10px;
+        }
+
+        label {
+          color: black;
+          font-size: $font-size-normal;
+        }
+      }
+
+      .bef-toggle {
+        display: flex;
+        justify-content: flex-end;
+        color: #000;
+        font-size: 0.75em;
+        font-weight: lighter;
+      }
+
+      ul {
+        list-style: none;
+
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .view-content {
+    flex: 2;
+    padding: 2%;
+
+    .help-desk-block-container {
+      display: flex;
+      align-items: center;
+      padding-bottom: 2em;
+
+      .help-desk-block-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 48px;
+
+        .help-desk-block-card {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          border-radius: 8px;
+          border: solid 1px #e1e1e1;
+          background-color: $white;
+
+          .image-wrapper {
+            img {
+              border-radius: 8px 8px 0 0;
+              object-fit: cover;
+              width: 100%;
+              height: 196px;
+            }
+          }
+
+          .text-wrapper {
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .title {
+              color: $black;
+              font-size: $font-size-subheading;
+              font-weight: $font-weight-bold;
+              padding: 0;
+
+              a {
+                text-decoration: none;
+
+                &:hover {
+                  filter: opacity(50%);
+                }
+              }
+            }
+
+            .description {
+              color: $black;
+              font-size: $font-size-normal;
+              padding-bottom: 32px;
+              margin-bottom: 32px;
+              font-weight: $font-weight-lighter;
+            }
+          }
+
+          .button-wrapper {
+            padding: 0 20px;
+            position: absolute;
+            bottom: 16px;
+            align-items: center;
+
+            @media only screen and (max-width: 479px) {
+              padding: 0 10px;
+            }
+
+            a {
+              text-decoration: none;
+              font-size: $font-size-sm;
+
+              span {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.help-desk-article-wrapper {
+  .breadcrumb {
+    text-transform: uppercase;
+
+    .breadcrumb-item {
+      font-size: var(--bs-body-font-size);
+      font-weight: 600;
+      color: #000;
+
+      a {
+        &:hover {
+          text-decoration: none;
+          filter: opacity(50%);
+        }
+      }
+    }
+
+    .breadcrumb-item:not(:first-child) {
+      &::before {
+        content: ">";
+        font-weight: 600;
+      }
+    }
+  }
+}

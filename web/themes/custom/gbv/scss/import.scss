@@ -39,7 +39,7 @@
 @import "custom/tools-and-resources/hpc-guidance.scss";
 @import "custom/search/search.scss";
 @import "custom/support/field-support.scss";
-@import "custom/support/help-desk.scss";
+@import "custom/support/help-desk-block.scss";
 @import "custom/support/help-desk-contact.scss";
 @import "custom/support/community-practise.scss";
 @import "custom/support/child-survivor.scss";
@@ -58,4 +58,5 @@
 @import "custom/global-gbv-country/key-figures.scss";
 @import "custom/global-gbv-country/country-overview.scss";
 @import "custom/global-gbv-country/contacts.scss";
-@import "custom/global-gbv-country/sub-national-hub.scss"
+@import "custom/global-gbv-country/sub-national-hub.scss";
+@import "custom/help-desk/help-desk.scss";

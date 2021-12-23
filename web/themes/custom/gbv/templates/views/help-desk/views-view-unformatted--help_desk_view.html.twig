@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'help-desk-block-container',
+  ]
+%}
+<div {{ attributes.addClass(classes) }}>
+  <div class="help-desk-block-wrapper">
+    {% for row in rows %}
+      {% set entity = row.content['#row']._entity %}
+      {% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ body }}'] |render|striptags %}
+      <div class="help-desk-block-card">
+        <div class="image-wrapper">
+          {% set image_url = media_file_url(entity.field_featured_image[0].target_id) %}
+          <img src="{{ image_url }}"/>
+        </div>
+        <div class="text-wrapper">
+          <h4 class="title">
+            <a href="{{ path('entity.node.canonical', {'node': entity.nid[0].value}) }}">
+              {{ entity.title[0].value }}
+            </a>
+          </h4>
+          <div class="description">
+            {% autoescape false %}
+              {{ text|length > 100 ? text|slice(0, 100) ~ '...' : text }}
+            {% endautoescape %}
+          </div>
+        </div>
+        <div class="button-wrapper">
+            {% set helpDeskLink = path('entity.node.canonical', {'node': entity.nid.value}) %}
+            <a href="{{helpDeskLink}}" class="button-outline-violet">
+                <span>READ MORE</span>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
