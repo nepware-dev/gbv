@@ -189,6 +189,10 @@ p {
       text-align: left;
       color: $secondary-color;
     }
+    .help-desk-title {
+      color: #5e3a9c;
+      margin-bottom: 1em;
+    }
   }
 
   .article-social-media-wrapper {
@@ -203,6 +207,18 @@ p {
       padding: 46px 30px 48px;
       border-radius: 8px;
       background-color: #ffffff;
+    }
+
+    .social-media {
+      .a2a_svg {
+        border-radius: 50%;
+        background-color: #464a4e !important;
+      }
+    }
+
+    .seperator {
+      margin: 0 12px 0 4px;
+      color: #bfbfbf;
     }
   }
 }

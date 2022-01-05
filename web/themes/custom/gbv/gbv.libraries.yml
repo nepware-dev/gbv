@@ -2,10 +2,13 @@ global-styling:
   version: VERSION
   js:
     js/bootstrap.min.js: {}
+    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: {type: external}
     js/global.js: {}
     js/event_tracking.js: {}
   css:
     component:
+      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css: {type: external}
+      https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css: {type: external}
       css/style.css: {}
   dependencies:
     - core/jquery
