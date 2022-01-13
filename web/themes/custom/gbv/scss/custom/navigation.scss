@@ -179,7 +179,6 @@
 
 .navbar-dark {
   .navbar-toggler[aria-expanded=false] {
-    padding: 0.25em 1.75em;
     z-index: 999;
     font-size: $font-size-large;
 
@@ -190,7 +189,6 @@
   }
 
   .navbar-toggler[aria-expanded=true] {
-    padding: 0.25em 1.75em;
     z-index: 999;
     font-size: $font-size-large;
 

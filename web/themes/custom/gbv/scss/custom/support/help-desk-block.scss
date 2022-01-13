@@ -86,6 +86,7 @@
 
       .help-desk-header-container {
         display: flex;
+        gap: 15px;
 
         @media only screen and (max-width: 479px), (max-width: 576px), (max-width: 768px) {
           flex-direction: column;
@@ -94,7 +95,6 @@
         p {
           font-size: $font-size-normal;
           line-height: 1.93;
-          white-space: pre-line;
         }
 
         .video-wrapper {
