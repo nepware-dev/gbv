@@ -71,8 +71,9 @@
             }
           }
         }
-
-        .desk-single:last-child {
+      }
+      .views-row:last-child {
+        .desk-single {
           border-bottom: none;
           border-bottom-right-radius: 0;
           border-bottom-left-radius: 0;
