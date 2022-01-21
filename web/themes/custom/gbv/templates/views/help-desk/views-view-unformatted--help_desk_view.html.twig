@@ -73,3 +73,26 @@
     {% endfor %}
   </div>
 </div>
+<script>
+    var checkboxes = document.querySelectorAll("input[type='checkbox']");
+    for(var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('change', (event) => {
+            var checked = event.target.checked;
+            if(event.target.parentNode.parentNode.getElementsByTagName("ul")[0] !== undefined) {
+                var nodeLists = event.target.parentNode.parentNode.getElementsByTagName("ul")[0].childNodes;
+                checkboxToggle(nodeLists, checked);
+            }
+        });
+    }
+
+    function checkboxToggle (nodeLists, checked) {
+        for(var i=0, n=nodeLists.length;i<n;i++) {
+            if(nodeLists[i].getElementsByTagName("ul")[0] !== undefined) {
+
+                childNodes = nodeLists[i].getElementsByTagName("ul")[0].childNodes;
+                checkboxToggle(childNodes, checked);
+            }
+            nodeLists[i].getElementsByTagName('input')[0].checked = checked;
+        }
+    }
+</script>
