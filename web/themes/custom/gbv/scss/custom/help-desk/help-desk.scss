@@ -62,17 +62,20 @@
   }
 
   nav {
-    flex: 1;
-
-    @media only screen and (max-width: 479px), (max-width: 768px) {
-      display: flex;
-      justify-content: center;
-    }
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
   }
 
   .view-filters {
-    flex: 1;
-    padding-left: 4%;
+    width: 30%;
+    padding-left: 6%;
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      padding: 2%;
+    }
 
     .form-row {
       display: flex;
@@ -144,19 +147,30 @@
   }
 
   .view-content {
-    flex: 2;
-    padding: 2%;
+    width: 70%;
+    padding: 2% 7% 0 7%;
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      padding: 2%;
+    }
 
     .help-desk-block-container {
       display: flex;
       align-items: center;
       padding-bottom: 2em;
 
+      @media screen and (max-width: 480px) {
+        padding-right: 0 !important;
+      }
+
       .help-desk-block-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 10px;
         grid-row-gap: 48px;
+
+
 
         .help-desk-block-card {
           position: relative;

@@ -4,7 +4,7 @@
   .help-desk {
     background-color: $white;
     justify-content: center;
-    padding: 4% 6%;
+    padding: 4% 25px;
 
     @media only screen and (max-width: 479px) {
       padding: 10% 6%;
@@ -32,6 +32,7 @@
             tr {
               td {
                 vertical-align: top;
+                font-size: 0.875em;
 
                 @media only screen and (max-width: 479px), (max-width: 576px), (max-width: 768px) {
                   display: flex;
@@ -86,7 +87,6 @@
 
       .help-desk-header-container {
         display: flex;
-        gap: 15px;
 
         @media only screen and (max-width: 479px), (max-width: 576px), (max-width: 768px) {
           flex-direction: column;
@@ -95,6 +95,11 @@
         p {
           font-size: $font-size-normal;
           line-height: 1.93;
+          padding-right: 40px;
+
+          @media screen and (max-width: 480px) {
+           padding-right: 0; 
+          }
         }
 
         .video-wrapper {
@@ -235,6 +240,8 @@
         .btn-primary {
           background-color: #63337c;
           border-color: #63337c;
+          font-family: $font-pt-sans;
+          font-weight: bold;
 
           &:hover {
             filter: opacity(0.5);
