@@ -1,14 +1,12 @@
 .help-desk-contact {
   background-color: $primary-color-light;
   margin-top: 2%;
-  padding: 5% 15% 3%;
+  padding: 5% 7% 3%;
   display: flex;
   flex-direction: column;
 
   .desk-col {
     display: flex;
-    padding-left: 10%;
-    padding-right: 4%;
 
     input {
       border-radius: 0;
