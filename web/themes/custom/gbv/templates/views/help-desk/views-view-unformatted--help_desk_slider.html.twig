@@ -49,7 +49,8 @@
       {% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ body }}'] |render|striptags %}
       <div class="help-desk-slider-card card">
         <div class="slider-image-wrapper card-header">
-          {% set image_url = media_file_url(entity.field_featured_image[0].target_id) %}
+          {% set image_id = entity.field_featured_image[0].target_id ? entity.field_featured_image[0].target_id : 867 %}
+          {% set image_url = media_file_url(image_id) %}
           <img src="{{ image_url }}" class="key-image"/>
         </div>
         <div class="card-body">
