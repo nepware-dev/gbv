@@ -73,6 +73,7 @@
           }
         }
       }
+
       .views-row:last-child {
         .desk-single {
           border-bottom: none;
@@ -98,7 +99,7 @@
           padding-right: 40px;
 
           @media screen and (max-width: 480px) {
-           padding-right: 0; 
+            padding-right: 0;
           }
         }
 
@@ -149,7 +150,7 @@
         .slick-prev::before {
           font-size: 47px;
           opacity: 1;
-          color: rgba(0, 0, 0, 0.16);
+          color: rgb(0 0 0 / 16%);
         }
 
         .slick-arrow {
@@ -159,7 +160,7 @@
         .help-desk-slider-card {
           position: relative;
           border-radius: 8px;
-          box-shadow: 0 2px 6px 0 rgba(107, 107, 107, 0.25);
+          box-shadow: 0 2px 6px 0 rgb(107 107 107 / 25%);
           padding-bottom: 32px;
           background-color: $white;
           border: 0;
@@ -182,7 +183,13 @@
               font-size: $font-size-heading;
               font-weight: $font-weight-bold;
               padding: 0;
-              margin: 15px 0 25px 0;
+              margin: 15px 0 25px;
+              display: box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              text-overflow: ellipsis;
+              height: 72px;
+              overflow: hidden;
 
               a {
                 text-decoration: none;
@@ -251,7 +258,7 @@
     }
   }
 
-  [id^='edit-message-wrapper'] {
+  [id^="edit-message-wrapper"] {
     padding: 0;
   }
 }
