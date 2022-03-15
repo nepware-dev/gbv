@@ -86,23 +86,6 @@
     ).html(newStr);
   }
 
-  for (
-    let i = 0;
-    i < $(".view-country-key-figures .view-content").children().length;
-    i++
-  ) {
-    let str = $(
-      `.view-country-key-figures .view-content .views-row:nth-child(${i + 1}) p`
-    ).html();
-    let newStr = str.replace(
-      countryNumbers[i],
-      `<span class='counter' data-count=${countryNumbers[i]}>${countryNumbers[i]}</span>`
-    );
-    $(
-      `.view-country-key-figures .view-content .views-row:nth-child(${i + 1}) p`
-    ).html(newStr);
-  }
-
   function runCounter() {
     $(".count").each(function () {
       const This = $(this);

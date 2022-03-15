@@ -6,6 +6,7 @@ services:
     build: .
     volumes:
       - .:/var/www
+      - /opt/gbv_uploads:/opt/gbv_uploads
     external_links:
       - redis
       - mysql-5.7:db
@@ -17,6 +18,7 @@ services:
       - .:/var/www
       - ./docker/certbot/conf:/etc/letsencrypt
       - ./docker/certbot/www:/var/www/certbot
+      - /opt/gbv_uploads:/opt/gbv_uploads
     ports:
       - "80:80"
       - "443:443"
