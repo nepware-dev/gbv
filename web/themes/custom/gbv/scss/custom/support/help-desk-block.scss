@@ -26,6 +26,15 @@
             margin-bottom: 1.875em;
           }
 
+         p {
+               font-size: 0.875em;
+         }
+
+         a {
+               color: #63337c;
+               text-decoration: underline;
+          }
+
           table {
             width: 100% !important;
 
@@ -102,6 +111,11 @@
             padding-right: 0;
           }
         }
+
+         a {
+               color: #63337c;
+               text-decoration: underline;
+          }
 
         .video-wrapper {
           position: relative;
@@ -183,8 +197,8 @@
               font-size: $font-size-heading;
               font-weight: $font-weight-bold;
               padding: 0;
-              margin: 15px 0 25px;
-              display: box;
+              margin: 15px 0 25px 0;
+              display: -webkit-box;
               -webkit-line-clamp: 3;
               -webkit-box-orient: vertical;
               text-overflow: ellipsis;

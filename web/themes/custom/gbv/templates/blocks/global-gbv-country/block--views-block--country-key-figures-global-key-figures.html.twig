@@ -1,3 +1,4 @@
+{% if content.view_build['#rows'] is not empty %}
 {% set classes = [
   'block',
   'block-' ~ configuration.provider|clean_class,
@@ -18,3 +19,4 @@
     <div class="global-key-figures-last-updated">Last Updated: {{ key_resources_taxonomy.field_last_updated.value }}</div>
   </div>
 </div>
+{% endif %}
