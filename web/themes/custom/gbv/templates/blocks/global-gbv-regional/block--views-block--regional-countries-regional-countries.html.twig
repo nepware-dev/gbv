@@ -1,3 +1,4 @@
+{% if content.view_build['#rows'] is not empty %}
 {% set classes = [
   'block',
   'regional-countries',
@@ -16,3 +17,4 @@
     {% endblock %}
   </div>
 </div>
+{% endif %}

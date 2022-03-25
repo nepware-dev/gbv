@@ -23,13 +23,14 @@
           map.boxZoom.disable();
           map.doubleClickZoom.disable();
           let mapData = JSON.parse(drupalSettings.mapData);
+          let regionalDescription = mapData.region.description ? '<p>'+ mapData.region.description +'</p>' : '';
           $(document).ready(function () {
             $(
               '<div class="gbv-regional-content-cont"><div class="gbv-regional-content"><h3>' +
                 mapData.region.name +
-                "</h3><p>" +
-                mapData.region.description +
-                "</p></div></div>"
+                "</h3>" +
+                regionalDescription +
+                "</div></div>"
             ).appendTo("#gbv-global-map");
           });
           let filteredCountries = {

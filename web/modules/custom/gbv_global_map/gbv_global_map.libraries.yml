@@ -14,7 +14,7 @@ mapboxgl:
     - core/drupal.ajax
 
 gbvglobalmap:
-  version: 1.0.2
+  version: 1.0.4
   js:
     assets/js/module.js: {}
   css:
@@ -24,7 +24,7 @@ gbvglobalmap:
     - gbv_global_map/mapboxgl
 
 gbvregionalmap:
-  version: 1.0.2
+  version: 1.0.4
   js:
     assets/js/module-regional.js: {}
   css:
@@ -32,7 +32,7 @@ gbvregionalmap:
       assets/css/module-regional.css: {}
 
 gbvcountrymap:
-  version: 1.0.3
+  version: 1.0.4
   js:
     assets/js/module-country.js: {}
   css:

@@ -25,12 +25,15 @@
           map.addControl(new mapboxgl.NavigationControl());
           let mapData = JSON.parse(drupalSettings.mapData);
           $(document).ready(function () {
-            let hr_info = mapData.hr_info ? '</p><a href="' + mapData.hr_info + '" target="_blank">HR Info</a></div></div>' : '';
+            let hr_info = mapData.hr_info ? '<a href="' + mapData.hr_info + '" target="_blank">HR Info</a>' : '';
+            let countryDescription = mapData.description ? '<p>' + mapData.description + '</p>' : '';
             $(
               '<div class="gbv-country-content-cont"><div class="gbv-country-content"><h3>' +
                 mapData.name +
-                "</h3><p>" +
-                mapData.description + hr_info
+                '</h3>' +
+                countryDescription +
+                hr_info +
+              '</div></div>'
             ).appendTo("#gbv-global-map");
           });
           let filteredCountries = {
