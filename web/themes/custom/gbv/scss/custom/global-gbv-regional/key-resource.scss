@@ -1,10 +1,10 @@
 .key-resource-container {
   background-color: $primary-shade;
   width: 100%;
-  padding: 7.5em 0;
+  padding-bottom: 7.5em;
 
   @media screen and (max-width: 767px) {
-    padding: 5em 0;
+    padding-bottom: 5em;
   }
 
   h2 {
@@ -31,7 +31,7 @@
           flex-direction: column;
           position: relative;
           width: calc(33.33% - 15px);
-          box-shadow: rgba(107, 107, 107, 0.35) 0 2px 6px 0;
+          box-shadow: rgb(107 107 107 / 35%) 0 2px 6px 0;
           background-color: $primary-shade;
           border-radius: 8px;
           overflow: hidden;

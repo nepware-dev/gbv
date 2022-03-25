@@ -12,6 +12,7 @@
   width: 50%;
   height: 600px;
   padding-left: 9em;
+  padding-right: 8px;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -48,10 +49,12 @@
     height: 400px;
   }
 
-  .gbv-regional-content-cont  {
+  .gbv-regional-content-cont {
+    overflow: unset;
     padding: 20px;
     width: 100%;
     height: 400px;
+    align-items: start;
   }
 
   .gbv-regional-content h3 {
