@@ -1,9 +1,9 @@
 .regional-team-container {
-  padding: 7.5em 0;
+  padding-bottom: 7.5em;
   background-color: $primary-shade;
 
   @media screen and (max-width: 767px) {
-    padding: 5em 0;
+    padding-bottom: 5em;
   }
 
   h2 {
