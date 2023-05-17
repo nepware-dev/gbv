@@ -56,7 +56,7 @@
                                 'fill-color': '#63337c',
                                 'fill-opacity': ['case',
                                     ['boolean', ['feature-state', 'hover'], false],
-                                    1,
+                                    0.8,
                                     0.5
                                 ]
                             }

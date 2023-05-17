@@ -26,7 +26,9 @@
       <div class="key-resource-card">
         <div class="image-wrapper">
           {% set image_url = media_file_url(entity.field_key_resources_image[0].target_id) %}
-          <img src="{{ image_url }}" class="key-image"/>
+          {% if image_url %}
+            <img src="{{ image_url }}" class="key-image"/>
+          {% endif %}
         </div>
         <div class="text-wrapper">
           <h4 class="title">

@@ -2,7 +2,7 @@ $accent-shade: #1c1c1c;
 
 .site-footer {
   background-color: $accent-shade !important;
-  padding: 40px 40px 0 40px;
+  padding: 40px 40px 0;
   color: $gray-100;
 
   p {
@@ -36,9 +36,26 @@ $accent-shade: #1c1c1c;
       margin-right: 10px;
     }
 
-    .fa {
+    .fa,
+    .fab {
       color: $gray-100;
       font-size: 36px;
+    }
+
+    .fa-facebook:hover {
+      color: #0165e1;
+    }
+
+    .fa-youtube:hover {
+      color: #f00;
+    }
+
+    .fa-twitter:hover {
+      color: #1d9bf0;
+    }
+
+    .fa-soundcloud:hover {
+      color: #f50;
     }
   }
 
@@ -62,7 +79,7 @@ $accent-shade: #1c1c1c;
 
       &::after {
         display: inline-block;
-        content: '\f178';
+        content: "\f178";
         font-family: $font-fontawsome;
         margin-left: 16px;
       }

@@ -23,12 +23,14 @@ class MapController extends ControllerBase {
       ->execute();
     $nodes = Node::loadMultiple($nids);
 
-    $terms = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
-      ->loadTree("global_gbv", 0, NULL, TRUE);
+    $manager = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term');
+    $terms = $manager->loadTree("global_gbv", 0, NULL, TRUE);
     $countryColors = [];
     foreach ($terms as $term) {
-      $countryColors[$term->field_country->value] = $term->field_map_color->color;
+      $parent = $manager->loadParents($term->id());
+      $parent = reset($parent);
+      $countryColors[$term->field_country->value] = $term->field_map_color->color ?? ($parent->get('field_map_color')[0]->color ?? '#63337c');
     }
 
     $data = [];
@@ -44,7 +46,7 @@ class MapController extends ControllerBase {
       $mapData[$index]['uri'] = $node->get('field_global_country_page_url')
         ->getValue() ? $node->get('field_global_country_page_url')->getValue()[0]['uri'] : NULL;
       $mapData[$index]['color_code'] = $countryColors[$node->get('field_countries')
-        ->getValue()[0]['value']];
+        ->getValue()[0]['value']] ?? NULL;
       $index++;
     }
     $data['mapData'] = $serializer->serialize($mapData, 'json', ['plugin_id' => 'entity']);
@@ -61,19 +63,26 @@ class MapController extends ControllerBase {
       ->loadChildren($tid);
     $region = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
-      ->load($tid);
+      ->loadByProperties(['vid' => 'global_gbv', 'tid' => $tid]);
+    if (empty($region)) {
+      return NULL;
+    }
+    $region = reset($region);
+    if ($region->parent->target_id != '0') {
+      return NULL;
+    }
     foreach ($countries as $country) {
       $countries_data[] = [
         'id' => $country->tid->value,
         'name' => $country->name->value,
         'iso-2' => $country->field_country->value,
-        'color-code' => $country->field_map_color[0],
+        'color-code' => $country->field_map_color[0]->color ?? ($region->get('field_map_color')[0]->color ?? '#A991B6'),
       ];
     }
     $mapData['region'] = $region_data = [
-      'name' => $region->name->value,
-      'description' => $region->description->value,
-      'color-code' => $region->field_map_color[0],
+      'name' => $region->label(),
+      'description' => $region->get('description')->value,
+      'color-code' => $region->get('field_map_color')[0]->color,
     ];
     $mapData['countries'] = $countries_data;
     $data['mapData'] = $serializer->serialize($mapData, 'json', ['plugin_id' => 'entity']);
@@ -87,13 +96,20 @@ class MapController extends ControllerBase {
     $serializer = \Drupal::service('serializer');
     $country = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
-      ->load($tid);
+      ->loadByProperties(['vid' => 'global_gbv', 'tid' => $tid]);
+    if (empty($country)) {
+      return NULL;
+    }
+    $country = reset($country);
+    if ($country->parent->target_id == '0') {
+      return NULL;
+    }
     $mapData = [
-      'name' => $country->name->value,
-      'description' => $country->description->value,
-      'iso-2' => $country->field_country->value,
-      'hr_info' => $country->field_hr_info->uri,
-      'color-code' => $country->field_map_color[0],
+      'name' => $country->label(),
+      'description' => $country->get('description')->value,
+      'iso-2' => $country->get('field_country')->value,
+      'hr_info' => $country->get('field_hr_info')->uri,
+      'color-code' => $country->get('field_map_color')[0]->color ?? NULL,
     ];
     $data['mapData'] = $serializer->serialize($mapData, 'json', ['plugin_id' => 'entity']);
     return $data;

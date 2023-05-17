@@ -79,7 +79,7 @@
 
             h4 {
               color: $secondary-color;
-              padding: 15px 15px;
+              padding: 15px;
             }
           }
 
@@ -128,6 +128,7 @@
       background: linear-gradient($secondary-color, $secondary-color) bottom no-repeat;
       background-size: 100px 3px;
       display: inherit;
+      justify-content: center;
       padding-bottom: 22px;
       white-space: pre;
       text-transform: capitalize;
@@ -216,9 +217,6 @@
 }
 
 #block-exposedformsearchpage-1 {
-  // #edit-type--wrapper {
-  //     display: none;
-  // }
   width: 100%;
 
   #views-exposed-form-search-page-1 {
@@ -232,12 +230,12 @@
         display: none;
       }
 
-      input[type=text] {
+      input[type="text"] {
         border: none;
         border-radius: 0;
         padding: 25px;
         width: 60%;
-        box-shadow: inset 0 -1px 0 0 rgba(144, 144, 144, 0.5);
+        box-shadow: inset 0 -1px 0 0 rgb(144 144 144 / 50%);
         margin: auto;
         margin-top: 3px;
         text-align: center;
@@ -280,7 +278,7 @@
   }
 
   fieldset {
-    input[type=text] {
+    input[type="text"] {
       padding: 25px 10px !important;
       margin-top: 4% !important;
       margin-left: 10px !important;

@@ -2,7 +2,7 @@ global-styling:
   version: VERSION
   js:
     js/popper.min.js: {}
-    js/bootstrap.min.js: {}
+    https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js: {type: external} # TODO:- Update SASS Bootstrap 5 Subtheme
     https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: {type: external}
     js/global.js: {}
     js/event_tracking.js: {}

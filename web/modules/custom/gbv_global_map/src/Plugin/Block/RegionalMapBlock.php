@@ -4,6 +4,7 @@ namespace Drupal\gbv_global_map\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\gbv_global_map\Controller\MapController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Provides a 'regional map' block.
@@ -23,6 +24,11 @@ class RegionalMapBlock extends BlockBase {
     $items = [];
     $tid = \Drupal::routeMatch()->getParameter('region');
     $data = MapController::getRegionalData($tid);
+
+    if (is_null($data)) {
+      throw new NotFoundHttpException();
+    }
+
     return [
       '#items' => $items,
       '#theme' => 'gbv_global_map-map',
