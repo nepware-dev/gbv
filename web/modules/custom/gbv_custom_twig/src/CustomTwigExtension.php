@@ -192,7 +192,7 @@ class CustomTwigExtension extends Twig_Extension {
     $fid = $media->$field->target_id;
     $file = File::load($fid);
     if ($file) {
-      $url = $file->url();
+      $url = $file->createFileUrl();
       return $url;
     }
     return NULL;

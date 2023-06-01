@@ -9,7 +9,7 @@ yarn
 # Usage
 ## Composer
 
-With `composer require ...` you can download new dependencies to your 
+With `composer require ...` you can download new dependencies to your
 installation.
 
 ```

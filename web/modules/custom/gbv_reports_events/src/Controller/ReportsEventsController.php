@@ -3,6 +3,7 @@
 namespace Drupal\gbv_reports_events\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 
 /**
  * Class ReportsEventsController.
@@ -16,14 +17,14 @@ class ReportsEventsController extends ControllerBase {
    */
   public static function getUpcomingEvent() {
     $event = NULL;
-    $timezone = drupal_get_user_timezone();
+    $timezone = date_default_timezone_get();
     $start = new \DateTime('now', new \DateTimezone($timezone));
     // To fix not fetching todays event.
     $start->modify('-1 day');
     $start->setTime(00, 00);
     $event_query = \Drupal::entityQuery('node');
     $event_query
-      ->condition('field_event_date', $start->format(DATETIME_DATETIME_STORAGE_FORMAT), '>=')
+      ->condition('field_event_date', $start->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '>=')
       ->condition('status', 1)
       ->sort('field_event_date', 'ASC');
     $event_results = $event_query->execute();

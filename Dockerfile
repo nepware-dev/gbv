@@ -1,14 +1,18 @@
-FROM php:7.2-fpm-alpine3.8
+FROM php:8.1-fpm-alpine3.18
 MAINTAINER bishaltimilsina@gmail.com
 
 RUN apk add --no-cache --virtual .build-deps \
-    libpng-dev \
+    freetype-dev \
     libjpeg-turbo-dev \
+    libjpeg-turbo-dev \
+    libpng-dev \
+    libzip-dev \
     libxml2-dev \
+    libwebp-dev \
+    zlib-dev \
+    oniguruma-dev \
     $PHPIZE_DEPS \
-    && docker-php-ext-configure gd \
-      --with-png-dir=/usr/include/ \
-      --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j "$(nproc)" \
       gd \
       mbstring \
@@ -17,14 +21,17 @@ RUN apk add --no-cache --virtual .build-deps \
       opcache \
       bcmath \
       soap \
-    && pecl install redis-3.1.1 \
-    && docker-php-ext-enable redis \
+    && pecl install redis-5.3.7 \
+    && docker-php-ext-enable redis zip \
     && apk add --no-cache \
       libpng \
       libjpeg \
       libpq \
       libxml2 \
       git \
+      freetype \
+      libwebp \
+      libzip \
       # for drush command
       mysql-client \
     && apk del .build-deps

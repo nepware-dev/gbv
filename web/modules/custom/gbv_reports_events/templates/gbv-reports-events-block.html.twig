@@ -62,14 +62,13 @@
                         <div class="col-12 col-md-4 news-report">
                             <button class="change-btns"><i class="fa" onclick="plusNews(-1)">&#xf104;</i></button>
                                 {% if attatchment_type=='Link' %}
-                                    {% set report_uri = report.field_report_link[0].uri %}
                                     <div class="news-single">
                                         <h3 class="news-title">{{report.title[0].value}}</h3>
                                         <span class="news-created-date">{{report.created[0].value|date('M d, Y')}}</span>
                                         {% set text = report.field_report_body[0].value |render|striptags %}
                                         <span class="news-body">{% autoescape false %}{{ text|length > 180 ? text|slice(0, 180) ~ '...' : text }}{% endautoescape %}</span>
-                                        <a class="download-link" href="{{event.field_event_url[0].value.uri}}" target="_blank">
-                                            <button class="button-outline-violet">{{ event.field_event_url[0].title }}  <i style="font-size:16px" class="fa fa-external-link"></i></button>
+                                        <a class="download-link" href="{{report.field_report_link[0].uri}}" target="_blank">
+                                            <button class="button-outline-violet">{{ report.field_report_link[0].title }}  <i style="font-size:16px" class="fa fa-external-link"></i></button>
                                         </a>
                                     </div>
                                 {% elseif attatchment_type=='Document' %}

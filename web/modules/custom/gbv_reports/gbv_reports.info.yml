@@ -1,8 +1,8 @@
 name: GBV Reports
 type: module
 description: 'Adds "Report" content type.'
-core: 8.x
+core_version_requirement: ^8 || ^9
 dependencies:
   - node
 
-  
+

@@ -9,10 +9,22 @@
   left: 0;
   max-width: 100%;
   z-index: 9999;
+
+  .placeholder {
+    background-color: $white;
+  }
 }
+
 .toast-wrapper {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 9999;
+}
+
+.user-pass-reset {
+  .placeholder {
+    background-color: $white;
+    color: purple;
+  }
 }

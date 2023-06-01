@@ -2,7 +2,7 @@ name: GBV SASS Bootstrap Subtheme
 type: theme
 description: 'GBV SASS Bootstrap for a Bootstrap Barrio SubTheme.'
 version: VERSION
-core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: bootstrap_barrio
 
 libraries:
@@ -35,7 +35,5 @@ regions:
   footer_fifth: 'Footer fifth'
   footer_sixth: 'Footer sixth'
 
-version: '8.x-1.9'
-core: '8.x'
 project: 'gbv'
 datestamp: 1551065297
