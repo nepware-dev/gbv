@@ -7,21 +7,21 @@
   ]
 %}
 <div {{ attributes.addClass(classes) }}>
-    <div class="col-12 desk-col">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                {{content.body}}
-            </div>
-            <div class="col-12 col-md-5 offset-md-1">
-                <h3>Contact HELP DESK</h3>
-                {{content.field_contact_help_desk}}
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="col-12 col-md-6 gbv-helpdesk">
-        {{content.field_extra_links}}
+    <div class="col-sm-8 offset-md-2">
+      <div class="col-12 desk-col">
+          <div class="row">
+              <div class="col-12 col-md-6">
+                  {{content.body}}
+              </div>
+              <div class="col-12 col-md-5 offset-md-1">
+                  <h3>Contact HELP DESK</h3>
+                  {{content.field_contact_help_desk}}
+              </div>
+          </div>
+      </div>
+      <hr>
+      <div class="col-12 col-md-6 gbv-helpdesk">
+          {{content.field_extra_links}}
+      </div>
     </div>
 </div>
-
-
