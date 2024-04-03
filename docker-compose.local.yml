@@ -13,6 +13,7 @@ services:
     external_links:
       - redis
       - mysql-8.0:db
+      - solr-9.5:solr
     networks:
       - default
       - external-services

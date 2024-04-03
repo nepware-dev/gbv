@@ -34,7 +34,13 @@ RUN apk add --no-cache --virtual .build-deps \
       libzip \
       # for drush command
       mysql-client \
+      wget \
+      openjdk11 \
     && apk del .build-deps
+
+ENV TIKA_VERSION=2.9.2
+
+RUN wget https://dlcdn.apache.org/tika/$TIKA_VERSION/tika-app-$TIKA_VERSION.jar -P /opt
 
 RUN curl -sS https://getcomposer.org/installer \
     | php -- --install-dir=/usr/bin --filename=composer

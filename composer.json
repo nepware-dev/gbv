@@ -15,95 +15,110 @@
             "url": "https://packages.drupal.org/8"
         },
         {
-          "type": "package",
-          "package": {
-            "name": "ckeditor/inserthtml4x",
-            "version": "2.0.0",
-            "type": "drupal-library",
-            "extra": {
-              "installer-name": "ckeditor/plugins/inserthtml4x"
-            },
-            "dist": {
-              "url": "https://download.ckeditor.com/inserthtml4x/releases/inserthtml4x_2.0_0.zip",
-              "type": "zip"
+            "type": "package",
+            "package": {
+                "name": "ckeditor/inserthtml4x",
+                "version": "2.0.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor/plugins/inserthtml4x"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/inserthtml4x/releases/inserthtml4x_2.0_0.zip",
+                    "type": "zip"
+                }
             }
-          }
         },
         {
-              "type": "package",
-              "package": {
+            "type": "package",
+            "package": {
                 "name": "ckeditor-plugin/uploadimage",
                 "version": "4.8.0",
                 "type": "drupal-library",
                 "extra": {
-                  "installer-name": "uploadimage"
+                    "installer-name": "uploadimage"
                 },
                 "dist": {
-                  "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.8.0.zip",
-                  "type": "zip"
-                    }
-                  }
-                },
-                {
-                  "type": "package",
-                  "package": {
-                    "name": "ckeditor-plugin/uploadwidget",
-                    "version": "4.8.0",
-                    "type": "drupal-library",
-                    "extra": {
-                      "installer-name": "uploadwidget"
-                    },
-                    "dist": {
-                      "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.8.0.zip",
-                      "type": "zip"
-                    }
-                  }
-                },
-                {
-                  "type": "package",
-                  "package": {
-                    "name": "ckeditor-plugin/filetools",
-                    "version": "4.8.0",
-                    "type": "drupal-library",
-                    "extra": {
-                      "installer-name": "filetools"
-                    },
-                    "dist": {
-                      "url": "https://download.ckeditor.com/filetools/releases/filetools_4.8.0.zip",
-                      "type": "zip"
-                    }
-                  }
-                },
-                {
-                  "type": "package",
-                  "package": {
-                    "name": "ckeditor-plugin/notification",
-                    "version": "4.8.0",
-                    "type": "drupal-library",
-                    "extra": {
-                      "installer-name": "notification"
-                    },
-                    "dist": {
-                      "url": "https://download.ckeditor.com/notification/releases/notification_4.8.0.zip",
-                      "type": "zip"
-                    }
-                  }
-                },
-                {
-                  "type": "package",
-                  "package": {
-                    "name": "ckeditor-plugin/notificationaggregator",
-                    "version": "4.8.0",
-                    "type": "drupal-library",
-                    "extra": {
-                      "installer-name": "notificationaggregator"
-                    },
-                    "dist": {
-                      "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.8.0.zip",
-                      "type": "zip"
-                    }
-                  }
+                    "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.8.0.zip",
+                    "type": "zip"
                 }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/uploadwidget",
+                "version": "4.8.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "uploadwidget"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.8.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/filetools",
+                "version": "4.8.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "filetools"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/filetools/releases/filetools_4.8.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/notification",
+                "version": "4.8.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "notification"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/notification/releases/notification_4.8.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/notificationaggregator",
+                "version": "4.8.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "notificationaggregator"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.8.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal/ckeditor_videodetector",
+                "version": "2.1.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "videodetector"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/videodetector/releases/videodetector_1.2.zip",
+                    "type": "zip"
+                }
+            }
+        }
     ],
     "require": {
         "php": ">=7.4",
@@ -147,7 +162,11 @@
         "drupal/page_manager": "^4.0",
         "drupal/panels": "^4.4",
         "drupal/pathauto": "^1.4",
+        "drupal/recaptcha": "^3.2",
         "drupal/search_api": "^1.13",
+        "drupal/search_api_attachments": "^9.0",
+        "drupal/search_api_solr": "^4.2",
+        "drupal/search_api_spellcheck": "^4.0",
         "drupal/smtp": "^1.0",
         "drupal/social_media_links": "^2.6",
         "drupal/token": "^1.5",

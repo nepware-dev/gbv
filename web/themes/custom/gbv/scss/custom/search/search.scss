@@ -3,6 +3,16 @@
     padding: 20px;
   }
 
+  .sapi-did-you-mean {
+    padding: 20px;
+
+    a {
+      color: $primary-color;
+      font-size: $font-size-lg;
+      font-style: italic;
+    }
+  }
+
   .search {
     background-color: $white;
 
