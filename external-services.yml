@@ -10,11 +10,22 @@ services:
     restart: always
     networks:
       - external-services
-
+  solr:
+    container_name: solr-9.5
+    image: solr:9.5
+    env_file: .env
+    volumes:
+      - solr-data:/var/solr
+    restart: always
+    command:
+      - solr-precreate
+      - gbv
 networks:
   external-services:
     external: true
 volumes:
   mysql-data:
     name: mysql-data
+  solr-data:
+    name: solr-data
 
