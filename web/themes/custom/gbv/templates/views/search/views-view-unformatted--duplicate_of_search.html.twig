@@ -71,7 +71,6 @@
               {% set event_end_date = object.get('field_event_date').getValue()[0].end_value %}
               {% set event_url = object.get('field_event_url').getValue()[0].uri %}
               {% set event_url_title = object.get('field_event_url').getValue()[0].title %}
-              {% set created_date = object.get('created').getValue()[0].value %}
               {% set event_body_text = event_body|striptags %}
               <div class="col-sm-12 rectangle">
                 <div class="rectangle-content row">
@@ -113,18 +112,14 @@
               </div>
             {% elseif type == 'tools_and_resources' %}
               {% set tr_document_url = media_file_url(object.get('field_resource_document').getValue()[0].target_id, 'field_media_file') %}
-              {% set tr_thematic = object.get('field_tools_resources_for_themat').getValue()[0].value %}
               {% set tr_media_url = object.get('field_media_url').getValue()[0].uri %}
               {% set tr_media_url_text = object.get('field_media_url').getValue()[0].title %}
-              {% set tr_thematic_sec = object.get('field_thematic_resource_type_sec').getValue()[0].value %}
               {% set tr_section = object.get('field_section').getValue()[0].target_id %}
-              {% set tr_type = object.get('field_tools_resources_type').getValue()[0].value %}
-              {% set tr_im_cat = object.get('field_im_tools_resources_categor').getValue()[0].value %}
-              {% set tr_co_cat = object.get('field_co_ordination_tools_resour').getValue()[0].value %}
               {% set tr_resource_type = object.get('field_resource_type').getValue()[0].value %}
               {% set tr_body = object.get('body').getValue()[0].value %}
               {% set tr_url = object.get('field_resource_url').getValue()[0].uri %}
               {% set tr_button_title = object.get('field_resource_url').getValue()[0].title %}
+              {% set created_date = object.get('created').getValue()[0].value %}
               {% set tr_body = tr_body|striptags %}
               <div class="col-sm-12 rectangle">
                   <div class="rectangle-content row">
@@ -162,12 +157,11 @@
               </div>
             {% elseif type == 'gbv_reports' %}
               {% set report_body = object.get('field_report_body').getValue()[0].value %}
-              {% set report_image = media_file_url(object.get('field_report_image').getValue()[0].target_id) %}
-              {% set report_date = object.get('field_report_date').getValue()[0].value %}
               {% set report_link = object.get('field_report_link').getValue()[0].uri %}
               {% set report_link_text = object.get('field_report_link').getValue()[0].title %}
               {% set report_attatchment_type = object.get('field_attatchment_type').getValue()[0].value %}
               {% set report_document = media_file_url(object.get('field_report_document').getValue()[0].target_id, 'field_media_file') %}
+              {% set created_date = object.get('created').getValue()[0].value %}
               {% set report_body_text = report_body|striptags %}
                   <div class="col-sm-12 rectangle">
                     <div class="rectangle-content row">
@@ -198,6 +192,7 @@
                   </div>
             {% elseif type == 'gbv_help_desk' %}
               {% set help_body = object.get('field_help_desk_body').getValue()[0].value %}
+              {% set created_date = object.get('created').getValue()[0].value %}
               {% set help_body = help_body|striptags %}
               <div class="col-sm-12 rectangle">
                 <div class="rectangle-content row">
@@ -217,11 +212,11 @@
               </div>
             {% elseif type == 'key_resources' %}
               {% set key_resources_body = object.get('field_key_resources_description').getValue()[0].value %}
-              {% set key_resources_image = media_file_url(object.get('field_key_resources_image').getValue()[0].target_id) %}
               {% set key_resources_link = object.get('field_key_resources_link').getValue()[0].uri %}
               {% set key_resources_link_text = object.get('field_key_resources_link').getValue()[0].title %}
               {% set key_resources_attatchment_type = object.get('field_attatchment_type').getValue()[0].value %}
               {% set key_resources_document = media_file_url(object.get('field_key_resources_document').getValue()[0].target_id, 'field_media_file') %}
+              {% set created_date = object.get('created').getValue()[0].value %}
               {% set key_resources_body = key_resources_body|striptags %}
                   <div class="col-sm-12 rectangle">
                     <div class="rectangle-content row">
@@ -256,6 +251,7 @@
                 {% set gbv_news_link_text = object.get('field_news_link').getValue()[0].title %}
                 {% set gbv_news_attatchment_type = object.get('field_attatchment_type').getValue()[0].value %}
                 {% set gbv_news_document = media_file_url(object.get('field_news_document').getValue()[0].target_id, 'field_media_file') %}
+                {% set created_date = object.get('created').getValue()[0].value %}
                 {% set gbv_news_body = gbv_news_body|striptags %}
                 <div class="col-sm-12 rectangle">
                   <div class="rectangle-content row">
