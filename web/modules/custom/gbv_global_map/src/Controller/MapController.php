@@ -30,7 +30,7 @@ class MapController extends ControllerBase {
     foreach ($terms as $term) {
       $parent = $manager->loadParents($term->id());
       $parent = reset($parent);
-      $countryColors[$term->field_country->value] = $term->field_map_color->color ?? ($parent->get('field_map_color')[0]->color ?? '#63337c');
+      $countryColors[$term->field_country->value] = $term->field_map_color->color ?? ($parent ? $parent->get('field_map_color')[0]->color : '#63337c');
     }
 
     $data = [];
