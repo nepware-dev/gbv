@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-alpine3.18
+FROM php:8.3-fpm-alpine3.20
 MAINTAINER bishaltimilsina@gmail.com
 
 RUN apk add --no-cache --virtual .build-deps \

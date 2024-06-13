@@ -6,8 +6,8 @@ gbvtimeline:
     theme:
       assets/css/module.css: {}
   dependencies:
-    - core/jquery
-    - core/jquery.once
     - core/drupal
+    - core/jquery
+    - core/once
     - core/drupalSettings
     - core/drupal.ajax

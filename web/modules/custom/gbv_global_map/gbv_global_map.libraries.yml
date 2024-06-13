@@ -7,9 +7,9 @@ mapboxgl:
     https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js: { type: external }
     https://npmcdn.com/@turf/turf/turf.min.js: { type: external }
   dependencies:
-    - core/jquery
-    - core/jquery.once
     - core/drupal
+    - core/jquery
+    - core/once
     - core/drupalSettings
     - core/drupal.ajax
 

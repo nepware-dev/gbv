@@ -17,7 +17,7 @@ class MapController extends ControllerBase {
    */
   public static function getData() {
     $serializer = \Drupal::service('serializer');
-    $nids = \Drupal::entityQuery('node')->condition('type', 'gbv_map')->condition('status', 1)->execute();
+    $nids = \Drupal::entityQuery('node')->accessCheck(FALSE)->condition('type', 'gbv_map')->condition('status', 1)->execute();
     $nodes = Node::loadMultiple($nids);
     $mapData = [];
     $index = 0;

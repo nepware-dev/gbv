@@ -11,12 +11,12 @@ fullcalendar:
   js:
     https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js: { type: external }
   dependencies:
-    - core/jquery
-    - core/jquery.once
     - core/drupal
+    - core/jquery
+    - core/once
     - core/drupalSettings
     - gbv_events/moment
-    
+
 eventcalendar:
   version: 1.1.2
   js:

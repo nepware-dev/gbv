@@ -1,7 +1,7 @@
 name: GBV Hooks
 type: module
 description: 'Adds Hooks to GBV'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - node
   - block
