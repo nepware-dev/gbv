@@ -232,7 +232,8 @@
   #views-exposed-form-search-page-1 {
     width: 100%;
 
-    fieldset {
+    fieldset,
+    .js-form-item {
       width: 100%;
       margin: 0;
 

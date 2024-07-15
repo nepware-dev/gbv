@@ -2,10 +2,10 @@
 
 namespace Drupal\gbv_custom_twig;
 
-use Twig_SimpleFunction;
 use Twig_ExtensionInterface;
 use Drupal;
-use Twig_Extension;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 use Drupal\node\Entity\Node;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
@@ -13,7 +13,7 @@ use Drupal\file\Entity\File;
 /**
  * Extend Drupal's Twig_Extension class.
  */
-class CustomTwigExtension extends Twig_Extension {
+class CustomTwigExtension extends AbstractExtension {
 
   /**
    * Name of twig.
@@ -27,23 +27,23 @@ class CustomTwigExtension extends Twig_Extension {
    */
   public function getFunctions() {
     $functions = [
-      new Twig_SimpleFunction('load_tax_term', [$this, 'loadTaxTerm']),
-      new Twig_SimpleFunction('load_tax_children', [$this, 'loadTaxChildren']),
-      new Twig_SimpleFunction('get_nodes_by_taxonomy_term_ids', [
+      new TwigFunction('load_tax_term', [$this, 'loadTaxTerm']),
+      new TwigFunction('load_tax_children', [$this, 'loadTaxChildren']),
+      new TwigFunction('get_nodes_by_taxonomy_term_ids', [
         $this,
         'getNodesByTaxonomyTermIds',
       ]),
-      new Twig_SimpleFunction('load_vocabulary_term', [
+      new TwigFunction('load_vocabulary_term', [
         $this,
         'loadVocabularyTerm',
       ]),
-      new Twig_SimpleFunction('check_taxonomy_has_items', [
+      new TwigFunction('check_taxonomy_has_items', [
         $this,
         'checkTaxonomyHasItems',
       ]),
-      new Twig_SimpleFunction('media_file_url', [$this, 'mediaFileUrl']),
-      new Twig_SimpleFunction('get_node', [$this, 'getNode']),
-      new Twig_SimpleFunction('media_file_type', [$this, 'mediaFileType']),
+      new TwigFunction('media_file_url', [$this, 'mediaFileUrl']),
+      new TwigFunction('get_node', [$this, 'getNode']),
+      new TwigFunction('media_file_type', [$this, 'mediaFileType']),
     ];
     return $functions;
   }

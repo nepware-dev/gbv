@@ -18,6 +18,7 @@ class MapController extends ControllerBase {
   public static function getData() {
     $serializer = \Drupal::service('serializer');
     $nids = \Drupal::entityQuery('node')
+      ->accessCheck(FALSE)
       ->condition('type', 'global_map')
       ->condition('status', 1)
       ->execute();

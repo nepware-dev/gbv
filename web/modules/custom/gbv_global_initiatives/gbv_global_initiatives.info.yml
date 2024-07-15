@@ -1,7 +1,7 @@
 name: GBV Global Initiatives
 type: module
 description: 'Adds Global Initiatives Content type'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - node
   - block

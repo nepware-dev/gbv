@@ -1,7 +1,7 @@
 name: Timeline Reference
 type: module
 description: 'Adds Timeline Reference section'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - node
   - block

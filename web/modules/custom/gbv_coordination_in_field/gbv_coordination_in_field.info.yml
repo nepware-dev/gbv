@@ -1,6 +1,6 @@
 name: GBV Coordination in the Field
 type: module
 description: 'Adds Custom "GBV Coordination in the Field" content type.'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - node

@@ -27,7 +27,7 @@ class ReportsEventsController extends ControllerBase {
       ->condition('field_event_date', $start->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '>=')
       ->condition('status', 1)
       ->sort('field_event_date', 'ASC');
-    $event_results = $event_query->execute();
+    $event_results = $event_query->accessCheck(FALSE)->execute();
     if (count($event_results) > 0) {
       $event = \Drupal::entityTypeManager()->getStorage('node')->load(reset($event_results));
     }
@@ -42,7 +42,7 @@ class ReportsEventsController extends ControllerBase {
     $report_query->condition('type', 'gbv_reports')->sort('created', 'DESC')
       ->condition('status', 1)
       ->range(0, 3);
-    $nids = $report_query->execute();
+    $nids = $report_query->accessCheck(FALSE)->execute();
     $reports = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
     return $reports;
   }

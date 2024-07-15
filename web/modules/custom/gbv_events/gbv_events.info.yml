@@ -1,7 +1,7 @@
 name: GBV Events
 type: module
 description: 'Adds Events Content type'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - node
   - block

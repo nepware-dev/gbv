@@ -1,7 +1,7 @@
 name: Events & New Report
 type: module
 description: 'Adds Events & New Report section'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - node
   - block
