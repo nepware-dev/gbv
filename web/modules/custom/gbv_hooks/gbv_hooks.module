@@ -36,7 +36,8 @@ function gbv_hooks_form_views_exposed_form_alter(&$form, FormStateInterface $for
       ->condition('type', 'tools_and_resources')
       ->condition('field_thematic_resource_type_sec', 120)
       ->groupBy('field_tools_resources_for_themat')
-      ->groupBy('field_language');
+      ->groupBy('field_language')
+      ->accessCheck(FALSE);
     $results = $query->execute();
     $selected_tools_resources_for_themat = array_filter(array_unique(array_column($results, 'field_tools_resources_for_themat_target_id')));
     $selected_language = array_filter(array_unique(array_column($results, 'field_language_target_id')));
