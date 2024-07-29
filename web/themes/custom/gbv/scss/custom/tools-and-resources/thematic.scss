@@ -23,7 +23,7 @@
     margin-bottom: 5%;
 
     hr {
-      border: 0.5px solid rgba(154, 154, 154, 0.5);
+      border: 0.5px solid rgb(154 154 154 / 50%);
     }
 
     .rectangle {
@@ -93,7 +93,8 @@
   .view-filters {
     flex-basis: 20%;
 
-    .form-row {
+    .form-row,
+    .d-flex {
       display: flex;
       flex-direction: column;
 
