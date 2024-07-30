@@ -1,25 +1,47 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
+const $ = require("gulp-load-plugins")();
 const cleanCss = require("gulp-clean-css");
 const rename = require("gulp-rename");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
+const postcssInlineSvg = require("postcss-inline-svg");
 const browserSync = require("browser-sync").create();
+const pxtorem = require("postcss-pxtorem");
+
+const postcssProcessors = [
+  postcssInlineSvg({
+    removeFill: true,
+    paths: ["./node_modules/bootstrap-icons/icons"],
+  }),
+  pxtorem({
+    propList: [
+      "font",
+      "font-size",
+      "line-height",
+      "letter-spacing",
+      "*margin*",
+      "*padding*",
+    ],
+    mediaQuery: true,
+  }),
+];
 
 const paths = {
   scss: {
     src: "./scss/style.scss",
     dest: "./css",
     watch: "./scss/**/*.scss",
-    bootstrap: "./node_modules/bootstrap/scss/bootstrap.scss"
+    bootstrap: "./node_modules/bootstrap/scss/bootstrap.scss",
   },
   js: {
     bootstrap: "./node_modules/bootstrap/dist/js/bootstrap.min.js",
     jquery: "./node_modules/jquery/dist/jquery.min.js",
-    popper: "node_modules/popper.js/dist/umd/popper.min.js",
-    dest: "./js"
-  }
+    popper: "./node_modules/@popperjs/core/dist/umd/popper.min.js",
+    barrio: "../../contrib/bootstrap_barrio/js/barrio.js",
+    dest: "./js",
+  },
 };
 
 // Compile sass into CSS & auto-inject into browsers
@@ -27,7 +49,15 @@ function styles() {
   return gulp
     .src([paths.scss.bootstrap, paths.scss.src])
     .pipe(sourcemaps.init())
-    .pipe(sass().on("error", sass.logError))
+    .pipe(
+      sass({
+        includePaths: [
+          "./node_modules/bootstrap/scss",
+          "../../contrib/bootstrap_barrio/scss",
+        ],
+      }).on("error", sass.logError),
+    )
+    .pipe($.postcss(postcssProcessors))
     .pipe(
       postcss([
         autoprefixer({
@@ -40,10 +70,10 @@ function styles() {
             "Safari >= 8",
             "Android 2.3",
             "Android >= 4",
-            "Opera >= 12"
-          ]
-        })
-      ])
+            "Opera >= 12",
+          ],
+        }),
+      ]),
     )
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.scss.dest))
@@ -56,7 +86,7 @@ function styles() {
 // Move the javascript files into our js folder
 function js() {
   return gulp
-    .src([paths.js.bootstrap, paths.js.jquery, paths.js.popper])
+    .src([paths.js.bootstrap, paths.js.popper, paths.js.barrio])
     .pipe(gulp.dest(paths.js.dest))
     .pipe(browserSync.stream());
 }
@@ -64,7 +94,7 @@ function js() {
 // Static Server + watching scss/html files
 function serve() {
   browserSync.init({
-    proxy: "http://127.0.0.1:8888"
+    proxy: "http://127.0.0.1:8080",
   });
 
   gulp

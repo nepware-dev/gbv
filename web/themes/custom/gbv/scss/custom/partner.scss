@@ -42,13 +42,13 @@
 
       img {
         width: 100%;
-        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
         filter: grayscale(100%);
         height: 100%;
         object-fit: contain;
 
         &:hover {
-          -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
           filter: grayscale(0%);
         }
       }
@@ -90,7 +90,7 @@
   }
 }
 
-@media screen and(max-width: 480px) {
+@media screen and (max-width: 480px) {
   .partner-block {
     margin-bottom: 10%;
   }
