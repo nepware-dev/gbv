@@ -54,6 +54,11 @@
         text-transform: uppercase;
         margin-bottom: 24px;
       }
+
+      a {
+        color: $secondary-color;
+        text-decoration: underline;
+      }
     }
 
     h2 {

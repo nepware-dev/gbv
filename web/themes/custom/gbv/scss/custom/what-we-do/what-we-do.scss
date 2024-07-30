@@ -20,6 +20,11 @@
         text-transform: uppercase;
         text-align: left;
       }
+
+      a {
+        color: $secondary-color;
+        text-decoration: underline;
+      }
     }
 
     p {
