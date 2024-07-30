@@ -1,5 +1,5 @@
-$background-image-vertical: linear-gradient(to top, #7f7f7f 70%, rgba(255, 255, 255, 0) 0%);
-$background-image-horizontal: linear-gradient(to right, #7f7f7f 71%, rgba(255, 255, 255, 0) 0%);
+$background-image-vertical: linear-gradient(to top, #7f7f7f 70%, rgb(255 255 255 / 0%) 0%);
+$background-image-horizontal: linear-gradient(to right, #7f7f7f 71%, rgb(255 255 255 / 0%) 0%);
 $background-position-horizontal: bottom;
 $background-position-vertical: right;
 $repeat-vertical: repeat-y;
@@ -58,7 +58,7 @@ $reverse: false;
   align-items: center;
 }
 
-@media screen and(max-width: 480px) {
+@media screen and (max-width: 480px) {
   .global-architecture-section {
     padding: 5% 3%;
 
