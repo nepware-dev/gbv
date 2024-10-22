@@ -2,11 +2,11 @@ version: "3.7"
 
 services:
   app:
+    container_name: gbv_app
     env_file: .env
     build: .
     volumes:
       - .:/var/www
-      - /opt/gbv_uploads:/opt/gbv_uploads
     external_links:
       - redis
       - mysql-8.0:db
@@ -16,13 +16,13 @@ services:
       - default
       - external-services
   nginx:
+    container_name: nginx
     image: nginx:alpine
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - .:/var/www
       - ./docker/certbot/conf:/etc/letsencrypt
       - ./docker/certbot/www:/var/www/certbot
-      - /opt/gbv_uploads:/opt/gbv_uploads
     ports:
       - "80:80"
       - "443:443"
@@ -31,6 +31,7 @@ services:
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     restart: always
   certbot:
+    container_name: certbot
     image: certbot/certbot
     volumes:
       - ./docker/certbot/conf:/etc/letsencrypt
