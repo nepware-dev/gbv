@@ -736,6 +736,8 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['trusted_host_patterns'] = [
   '^gbvaor\.net$',
   '^.+\.gbvaor\.net$',
+  '^gbvaor-dev\.myunfpa\.org$',
+  '^.+\.gbvao-dev\.myunfp\.org$',
 ];
 
 /**
