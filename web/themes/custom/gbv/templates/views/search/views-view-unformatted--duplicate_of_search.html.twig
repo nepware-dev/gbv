@@ -31,8 +31,10 @@
     <div class="col-sm-11 row offset-md-1">
         {% for row in rows %}
           {% set object = row.content['#row']._object %}
+          {% set entity = row.content['#row']._entity %}
           {% set type = object.get('type').getValue()[0].target_id %}
           {% set main_title = object.get('title').getValue()[0].value %}
+          {% set main_url = path('entity.node.canonical', {'node': entity.id}) %}
           {%
             set row_classes = [
               default_row_class ? 'views-row',
@@ -123,8 +125,8 @@
               {% set tr_body = tr_body|striptags %}
               <div class="col-sm-12 rectangle">
                   <div class="rectangle-content row">
-                    <div class="col-sm-12 search-description">
-                      <h4>{{ main_title }}</h4>
+                    <div class="col-sm-12 search-description resource-title">
+                        <a href="{{ main_url }}"><h4>{{ main_title }}</h4></a>
                       <p class='created-date'>{{ created_date|date('d M, Y') }}</p>
                       <p>{% autoescape false %}{{ tr_body|length > 1000 ? tr_body|slice(0, 1000) ~ '...' : tr_body }}{% endautoescape %}</p>
                     </div>
