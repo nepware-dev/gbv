@@ -70,7 +70,12 @@
                                     {% set resource_text = section_tools_resource.body[0].value|striptags %}
                                     <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : 'show' }}">
                                         <div class="rectangle-content row">
-                                            <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                            {% set toolResourceLink = path('entity.node.canonical', {'node': section_tools_resource.nid[0].value}) %}
+                                            <div class="col-sm-8 resource-title">
+                                                <a href="{{ toolResourceLink }}">
+                                                    <h4>{{section_tools_resource.title[0].value}}</h4>
+                                                </a>
+                                            </div>
                                             <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
                                             <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                             <div class="col-sm-12 row">
@@ -87,7 +92,12 @@
                                 {% for section_tools_resource in section_tools_resources %}
                                     <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : 'show' }}">
                                         <div class="rectangle-content row">
-                                            <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                            {% set toolResourceLink = path('entity.node.canonical', {'node': section_tools_resource.nid[0].value}) %}
+                                            <div class="col-sm-8 resource-title">
+                                                <a href="{{ toolResourceLink}}">
+                                                    <h4>{{section_tools_resource.title[0].value}}</h4>
+                                                </a>
+                                            </div>
                                             <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
                                             <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                             <div class="col-sm-12 row">
@@ -147,7 +157,12 @@
                                         {% set resource_text = section_tools_resource.body[0].value|striptags %}
                                         <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : '' }}">
                                             <div class="rectangle-content row">
-                                                <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                                {% set toolResourceLink = path('entity.node.canonical', {'node': section_tools_resource.nid[0].value}) %}
+                                                <div class="col-sm-8 resource-title">
+                                                    <a href="{{ toolResourceLink }}">
+                                                        <h4>{{section_tools_resource.title[0].value}}</h4>
+                                                    </a>
+                                                </div>
                                                 <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
                                                 <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                                 <div class="col-sm-12 row">
@@ -163,8 +178,13 @@
                                 {% else %}
                                     {% for section_tools_resource in section_tools_resources %}
                                         <div class="col-sm-6 rectangle {{ (loop.index > 4) ? 'hidden' : '' }}">
-                                            <div class="rectangle-content row">
-                                                <div class="col-sm-8"><h4>{{section_tools_resource.title[0].value}}</h4></div>
+                                                <div class="rectangle-content row">
+                                                {% set toolResourceLink = path('entity.node.canonical', {'node': section_tools_resource.nid[0].value}) %}
+                                                <div class="col-sm-8 resource-title">
+                                                    <a href="{{ toolResourceLink }}">
+                                                        <h4>{{section_tools_resource.title[0].value}}</h4>
+                                                    </a>
+                                                </div>
                                                 <div class="col-sm-4"><p>{{section_tools_resource.created[0].value|date('M d, Y')}}</p></div>
                                                 <div class="col-sm-12 hpc-description">{% autoescape false %}{{ resource_text|length > 100 ? resource_text|slice(0, 100) ~ '...' : resource_text }}{% endautoescape %}</div>
                                                 <div class="col-sm-12 row">

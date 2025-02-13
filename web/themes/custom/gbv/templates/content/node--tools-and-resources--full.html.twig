@@ -109,17 +109,27 @@
       <div{{ content_attributes.addClass('node__content', 'clearfix', 'news-desc') }}>
         {{ content.body }}
         {% set attatchment_type = node.field_resource_type.value %}
+        {% set resource_media_url = node.field_media_url.uri %}
+        {% if attatchment_type is empty and resource_media_url %}
+            {% set attatchment_type = 'Media' %}
+        {% endif %}
         {% if attatchment_type=='Link' %}
-          <div class="col-12 footer-wrap row">
+          <div class="col-12 footer-wrap">
             <a href="{{ node.field_resource_url.uri }}" target="_blank">
                 <button class="button-outline-violet">{{ node.field_resource_url.title }}<i style="font-size:16px; margin-left: 4px;" class="fa fa-external-link"></i></button>
             </a>
           </div>
         {% elseif attatchment_type=='Document' %}
           {% set document_url = media_file_url(node.field_resource_document.target_id, 'field_media_file') %}
-          <div class="col-12 footer-wrap row">
+          <div class="col-12 footer-wrap">
               <a class="download-link" href="{{document_url}}" download>
                   <button class="button-outline-violet">DOWNLOAD</button>
+              </a>
+          </div>
+        {% elseif attatchment_type=='Media' %}
+          <div class="col-12 footer-wrap">
+              <a href="{{ resource_media_url }}" target="_blank">
+                  <button class="button-outline-violet">{{ node.media_file_url.text ?? 'Available here' }}</button>
               </a>
           </div>
         {% endif %}
