@@ -208,8 +208,11 @@ class CustomTwigExtension extends AbstractExtension {
    *   The file url.
    */
   public function getNode($nid) {
-    $object = Node::load($nid);
-    return $object;
+    if (is_numeric($nid)) {
+      return Node::load($nid);
+    }
+    Drupal::logger('get_node')->warning('Invalid nid passed to getNode');
+    return NULL;
   }
 
   /**
