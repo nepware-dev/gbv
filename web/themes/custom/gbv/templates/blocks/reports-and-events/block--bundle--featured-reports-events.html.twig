@@ -24,6 +24,7 @@
         {% endblock %}
       </div>
       {% set item = get_node(content.field_featured_item['#items'][0].target_id) %}
+      {% if item %}
       {% set item_type = item.type.value[0].target_id %}
       <div class="item-wrapper col-12">
           <div class="rectangle">
@@ -68,5 +69,6 @@
               </div>
           </div>
       </div>
+      {% endif %}
     </div>
 </div>
