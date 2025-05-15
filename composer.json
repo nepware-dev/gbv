@@ -10,16 +10,22 @@
         }
     ],
     "require": {
-        "ckeditor-plugin/filetools": "4.8.0",
-        "ckeditor-plugin/notification": "4.8.0",
-        "ckeditor-plugin/notificationaggregator": "4.8.0",
-        "ckeditor-plugin/uploadimage": "4.8.0",
-        "ckeditor-plugin/uploadwidget": "4.8.0",
-        "composer/installers": "^2.1",
+        "ckeditor-plugin/filetools": "4.22.0",
+        "ckeditor-plugin/notification": "4.22.0",
+        "ckeditor-plugin/notificationaggregator": "4.22.0",
+        "ckeditor-plugin/uploadimage": "4.22.0",
+        "ckeditor-plugin/uploadwidget": "4.22.0",
+        "ckeditor/videodetector": "2.1.0",
+        "composer/installers": "^2.3",
         "cweagans/composer-patches": "^1.7",
+        "drupal-ckeditor-libraries-group/colorbutton": "^4.22.0",
+        "drupal-ckeditor-libraries-group/iframe": "^4.22.0",
+        "drupal-ckeditor-libraries-group/link": "^4.22.0",
+        "drupal-ckeditor-libraries-group/panelbutton": "^4.22",
+        "drupal-ckeditor-libraries-group/smiley": "^4.22.0",
         "drupal/access_filter": "^2.0",
         "drupal/addtoany": "^2.0",
-        "drupal/anchor_link": "^2.5",
+        "drupal/anchor_link": "^2.7",
         "drupal/antibot": "^2.0",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/bootstrap_barrio": "^5.5",
@@ -32,49 +38,51 @@
         "drupal/color_field": "^3.0",
         "drupal/colorbutton": "^1.3",
         "drupal/conditional_fields": "^4.0@alpha",
-        "drupal/contact_storage": "^1.0",
+        "drupal/contact_storage": "^1.4",
         "drupal/core-composer-scaffold": "^10.2.0",
         "drupal/core-project-message": "^10",
-        "drupal/core-recommended": "^10.2.0",
-        "drupal/country": "^2.0",
-        "drupal/ctools": "^3.2",
+        "drupal/core-recommended": "^10.4.6",
+        "drupal/country": "^2.1",
+        "drupal/ctools": "^4.1",
+        "drupal/db_maintenance": " ^3.0@RC",
         "drupal/devel": "^5.1",
-        "drupal/ds": "^3.3",
-        "drupal/facets": "^2.0",
+        "drupal/ds": "^3.30",
+        "drupal/facets": "^3.0",
         "drupal/flags": "^1.0@beta",
         "drupal/google_analytics": "^4.0",
         "drupal/google_analytics_reports": "^3.0",
-        "drupal/honeypot": "^2.0",
-        "drupal/image_resize_filter": "^1.1",
-        "drupal/mailchimp": "^2.2",
+        "drupal/honeypot": "2.1.4",
+        "drupal/image_resize_filter": "^1.2",
+        "drupal/mailchimp": "^3.0",
         "drupal/page_manager": "^4.0@RC",
-        "drupal/panels": "^4.4",
-        "drupal/pathauto": "^1.4",
-        "drupal/rdf": "^2.1",
-        "drupal/recaptcha": "^3.2",
-        "drupal/search_api": "^1.13",
-        "drupal/search_api_attachments": "^9.0",
-        "drupal/search_api_solr": "^4.2",
+        "drupal/panels": "^4.9",
+        "drupal/pathauto": "^1.13",
+        "drupal/rdf": "^3.0@beta",
+        "drupal/recaptcha": "^3.4",
+        "drupal/search_api": "^1.38",
+        "drupal/search_api_attachments": "^10.0",
+        "drupal/search_api_solr": "^4.3",
         "drupal/search_api_spellcheck": "^4.0",
-        "drupal/smtp": "^1.0",
-        "drupal/social_media_links": "^2.6",
+        "drupal/single_content_sync": "^1.4",
+        "drupal/smtp": "^1.4",
+        "drupal/social_media_links": "^2.10",
         "drupal/token": "^1.5",
-        "drupal/twig_tweak": "^3.3",
-        "drupal/video": "^3.0",
-        "drush/drush": "^12.4.3",
+        "drupal/twig_tweak": "^3.4",
+        "drupal/video": "^3.1",
+        "drush/drush": "^13.6",
         "oomphinc/composer-installers-extender": "^2.0",
-        "vlucas/phpdotenv": "^5.1",
+        "vlucas/phpdotenv": "^5.6",
         "webflo/drupal-finder": "^1.3",
         "webmozart/path-util": "^2.3",
-        "zaporylie/composer-drupal-optimizations": "^1.0"
+        "zaporylie/composer-drupal-optimizations": "^1.2"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
-        "drupal/core-dev": "^10.2.0",
-        "ergebnis/composer-normalize": "^2.42",
+        "drupal/core-dev": "^10.4.6",
+        "ergebnis/composer-normalize": "^2.44",
         "friendsoftwig/twigcs": "^6.4",
         "palantirnet/drupal-rector": "^0.20.3",
-        "vincentlanglet/twig-cs-fixer": "^0.5.0"
+        "vincentlanglet/twig-cs-fixer": "^3.6.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -103,13 +111,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/uploadimage",
-                "version": "4.8.0",
+                "version": "4.22.0",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "uploadimage"
                 },
                 "dist": {
-                    "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.8.0.zip",
+                    "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.22.0.zip",
                     "type": "zip"
                 }
             }
@@ -118,13 +126,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/uploadwidget",
-                "version": "4.8.0",
+                "version": "4.22.0",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "uploadwidget"
                 },
                 "dist": {
-                    "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.8.0.zip",
+                    "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.22.0.zip",
                     "type": "zip"
                 }
             }
@@ -133,13 +141,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/filetools",
-                "version": "4.8.0",
+                "version": "4.22.0",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "filetools"
                 },
                 "dist": {
-                    "url": "https://download.ckeditor.com/filetools/releases/filetools_4.8.0.zip",
+                    "url": "https://download.ckeditor.com/filetools/releases/filetools_4.22.0.zip",
                     "type": "zip"
                 }
             }
@@ -148,13 +156,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/notification",
-                "version": "4.8.0",
+                "version": "4.22.0",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "notification"
                 },
                 "dist": {
-                    "url": "https://download.ckeditor.com/notification/releases/notification_4.8.0.zip",
+                    "url": "https://download.ckeditor.com/notification/releases/notification_4.22.0.zip",
                     "type": "zip"
                 }
             }
@@ -163,13 +171,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/notificationaggregator",
-                "version": "4.8.0",
+                "version": "4.22.0",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "notificationaggregator"
                 },
                 "dist": {
-                    "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.8.0.zip",
+                    "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.22.0.zip",
                     "type": "zip"
                 }
             }
@@ -177,7 +185,7 @@
         {
             "type": "package",
             "package": {
-                "name": "drupal/ckeditor_videodetector",
+                "name": "ckeditor/videodetector",
                 "version": "2.1.0",
                 "type": "drupal-library",
                 "extra": {
@@ -202,17 +210,18 @@
     },
     "config": {
         "allow-plugins": {
-            "cweagans/composer-patches": true,
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "drupal/core-composer-scaffold": true,
-            "zaporylie/composer-drupal-optimizations": true,
             "drupal/console-extend-plugin": true,
-            "php-http/discovery": true,
+            "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
             "ergebnis/composer-normalize": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true,
+            "zaporylie/composer-drupal-optimizations": true
         },
         "discard-changes": true,
         "sort-packages": true

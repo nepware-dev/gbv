@@ -22,7 +22,7 @@ yarn
    - The server requires the database to be created before starting.
    - To create database
      - Access container shell by running the command: `docker exec -it <CONTAINER_NAME> bash`
-     - Access the database by running the command: `mysql -uroot -p`
+     - Access the database by running the command: `mysql -u root -p`
      - Create the database by running the command: `create database <DATABASE_NAME>`. Replace DATABASE_NAME with actual database
 5. Run `docker-compose up -d` to start the server.
 6. Access server using url http://localhost:8080
@@ -41,7 +41,7 @@ composer require drupal/devel:~1.0
 
 - Runserver (PHP’s built-in http server for development): `drush runserver`
 - Clear cache: `drush cc`
-- Clear all cache: `drush cache-rebuid`
+- Clear all cache: `drush cache-rebuild`
 - Shows list of available modules & themes `drush pml`
 - Run any pending database updates `drush updb`
 - Enable a module: `drush pm:enable {name_of_module}`
